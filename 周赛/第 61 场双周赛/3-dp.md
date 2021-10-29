@@ -1,5 +1,5 @@
+```python
 import collections
-
 
 class Solution:
     def run(self, n, rides):
@@ -20,3 +20,4 @@ if __name__ == "__main__":
              [11, 12, 2], [12, 15, 2], [13, 18, 1]]
     res = Solution().run(n, rides)
     print(res)
+```
