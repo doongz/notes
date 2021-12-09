@@ -1,4 +1,4 @@
-# Python 字典
+# 字典 dict
 
 ```python
 dict = {'Name': 'dodo', 'Age': 7, 'Class': 'First'}
