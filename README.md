@@ -30,15 +30,9 @@
 
 - [ ] 待补充
 
-## 然而
+## 优秀周赛题目
 
-一壶茶
-
-一包烟
-
-一道题
-
-一整天
+*得到一点感悟比得到答案更重要*
 
 ## 命名格式
 
@@ -53,7 +47,17 @@
 
 ## 来源
 
-`侵删`此仓仅用做个人笔记使用，理论和题解大多数来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)。
+`侵删` 此仓仅用做个人笔记使用，理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)。
+
+## 然而
+
+一壶茶
+
+一包烟
+
+一道题
+
+一整天
 
 
 
