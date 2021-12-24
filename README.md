@@ -49,7 +49,7 @@
 
 `侵删` 此仓仅用做个人笔记使用，理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
 
-其余都为自己总结，欢迎 star :) https://github.com/WalleDong/algorithm
+其余都为自己总结，欢迎 star :star:  https://github.com/WalleDong/algorithm
 
 ## 然而
 
