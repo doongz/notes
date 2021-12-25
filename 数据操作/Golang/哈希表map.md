@@ -10,10 +10,10 @@ hashMap = make(map[string]string) // 初始化 map
 
 // 创建哈希表的同时赋值
 hashMap := map[string]string{"France": "Paris", "Italy": "Rome", "Japan": "Tokyo"}
-hashMap := map[int]int{}
+hashMap := map[int]int{} // 常用
 
 // 创建并初始化哈希表
-hashMap := make(map[string]string)
+hashMap := make(map[string]string) // 常用
 
 // 赋值
 hashMap["France"] = "巴黎"
