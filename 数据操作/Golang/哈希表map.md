@@ -1,9 +1,3 @@
-# map
-
-- map 是无序的
-- map 是使用 hash 表来实现的
-
-```golang
 package main
 
 import "fmt"
@@ -46,4 +40,3 @@ func main() {
 	}
 	fmt.Println("哈希表中的键为：", keys)
 }
-```
