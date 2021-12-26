@@ -1,4 +1,4 @@
-# map
+# Golang 哈希表 map
 
 - map 是无序的
 - map 是使用 hash 表来实现的

@@ -1,4 +1,4 @@
-# 切片 slice
+# Golang 切片 slice
 
 Go 语言切片是对数组的抽象。**类似 Python 里面的列表**
 

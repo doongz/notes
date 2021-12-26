@@ -1,4 +1,4 @@
-# 字典 dict
+# Python 哈希表 dict
 
 ```python
 dict = {'Name': 'dodo', 'Age': 7, 'Class': 'First'}

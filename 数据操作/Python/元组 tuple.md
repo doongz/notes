@@ -1,4 +1,4 @@
-# 元组 tuple
+# Python 元组 tuple
 
 元组中的元素值不允许修改
 

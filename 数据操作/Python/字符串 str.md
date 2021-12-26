@@ -1,4 +1,4 @@
-# 字符串 str
+# Python 字符串 strs
 
 ## 统计字符串
 

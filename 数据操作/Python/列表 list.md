@@ -1,4 +1,4 @@
-# 列表 list
+# Python 列表 list
 
 ## 操作
 
