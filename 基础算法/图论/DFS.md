@@ -1,3 +1,13 @@
+# DFS 深度优先搜索
+
+Depth First Search
+
+## 遍历
+
+
+
+## 回溯
+
 ```python
 result = []
 def backtrack(路径, 选择列表):
@@ -10,4 +20,8 @@ def backtrack(路径, 选择列表):
         backtrack(路径, 选择列表)
         撤销选择
 ```
+
+## 记忆化
+
+
 

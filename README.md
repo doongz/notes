@@ -28,7 +28,28 @@
 
 ## 目录
 
-- [ ] 待补充
+### 基础算法
+
+- 图论
+  - BFS
+  - DFS
+  - 最短路径
+- [二分法-未完工](./基础算法/二分/二分法.md)
+- [滑动窗口](./基础算法/滑动窗口/滑动窗口.md)
+- 贪心
+  - 1
+  - 3
+- 树
+
+---
+
+### 数据操作
+
+- [Python](./数据操作/Python)
+- [C++ 未完工](./数据操作/C++)
+- [Golang](./数据操作/Golang)
+- [LaTeX 未完工](./数据操作/LaTex)
+
 
 ## 优秀周赛题目
 
@@ -42,15 +63,16 @@
 
 ## TODO
 
-- [ ] 将每个理论补充`应用场景`和`例题`
-- [ ] 补充 `C++` `Golang` 解
+- [ ] 将每个理论补充「应用场景」和「例题」
 - [ ] 整个算法总结，看一眼就能复习到所有算法
 
 ## 来源
 
-`侵删` 此仓仅用做个人笔记使用，理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
+此仓仅用做个人笔记使用，绝大多数为自己撰写
 
-其余都为自己总结，欢迎 star :star:  https://github.com/WalleDong/algorithm
+`侵删` 理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
+
+`感谢` star ✨ https://github.com/WalleDong/algorithm
 
 ## 然而
 
