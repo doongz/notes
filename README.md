@@ -89,7 +89,7 @@
 
 ## Statement
 
-此仓仅用做个人笔记使用，绝大多数为***自己撰写***，在达到自己满意前，***绝不太监***
+此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
 `侵删` 理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
 
