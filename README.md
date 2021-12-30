@@ -88,6 +88,7 @@
 
 - [ ] 将每个理论补充「应用场景」和「例题」
 - [ ] [「区间和」问题](https://leetcode-cn.com/problems/range-sum-query-mutable/solution/guan-yu-ge-lei-qu-jian-he-wen-ti-ru-he-x-41hv/)，线段树，树状数组
+- [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
 
 ## Statement
 
