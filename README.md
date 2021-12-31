@@ -1,4 +1,4 @@
-# 今天刷题的人
+# 今天学习的人
 
 > 是未来之星  
 > 是国家栋梁  
@@ -48,13 +48,15 @@
 
 ---
 
-### 第二章 数据操作
+### 第二章 知识储备
 
 - [Python](./数据操作/Python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [C++「未完工」](./数据操作/C++)
 - [Golang](./数据操作/Golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
 - [LaTeX「未完工」](./数据操作/LaTeX)
 - [Markdown](https://github.com/guodongxiaren/README)
+- [设计模式「未完工」]()  `工厂模式`  `建造者模式`  `单例模式`
+- [编程思想]()  `多态`
 
 ---
 
