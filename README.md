@@ -50,13 +50,13 @@
 
 ### 第二章 技能储备
 
-- [Python](./技能储备/Python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
-- [C++「未完工」](./技能储备/C++)
+- [Python](./技能储备/Python/)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
+- [C++「未完工」](./技能储备/C++/)
 - [Golang](./技能储备/Golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
-- [LaTeX「未完工」](./技能储备/LaTeX)
+- [LaTeX「未完工」](./技能储备/LaTeX/)
 - [Markdown](https://github.com/guodongxiaren/README)
-- [设计模式「未完工」](./技能储备/设计模式)  `工厂模式`  `建造者模式`  `单例模式`
-- [编程思想](./技能储备/编程思想)  `多态`
+- [设计模式「未完工」](./技能储备/设计模式/)  `工厂模式`  `建造者模式`  `单例模式`
+- [编程思想](./技能储备/编程思想/)  `多态`
 
 ### 第三章 周赛
 
