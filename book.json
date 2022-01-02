@@ -2,7 +2,7 @@
     "title": "algorithm",
     "outputfile": "SUMMARY.md",
     "catalog": "all",
-    "ignores": [],
+    "ignores": ["周赛"],
     "unchanged": [],
     "sortedBy": "-",
     "disableTitleFormatting": true

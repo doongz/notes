@@ -17,18 +17,18 @@
 
 ## 目录
 
-### 第一章 基础算法
-- [数据结构](./基础算法/数据结构)
+### 第一章 [基础算法](https://dowalle.gitbook.io/algo/ji-chu-suan-fa)
+- [数据结构](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/shu-ju-jie-gou)
   - [堆](./基础算法/数据结构/堆.md)  `大/小根堆`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`
   - [并查集](/基础算法/数据结构/并查集.md)  `合并`  `连通分量`
   - [单调栈「未完工」](/基础算法/数据结构/单调栈.md)
-- [树&链表](./基础算法/树&链表)
+- [树&链表](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/shu-lian-biao)
   - [链表「未完工」](./基础算法/树&链表/链表.md)
   - [树的遍历「未完工」](./基础算法/树&链表/树的遍历.md)  `前序`  `中序`  `后序`  `层`
   - [树的恢复](./基础算法/树&链表/树的恢复.md)
   - [平衡树&搜索树](./基础算法/树&链表/平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
   - [前缀树](./基础算法/树&链表/前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
-- [图论]()
+- [图论](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/tu-lun)
   - [图的基本知识「未完工」](./基础算法/图论/图的基本知识.md)
   - [图的存储](./基础算法/图论/图的存储.md)  `邻接表`  `邻接矩阵`
   - [BFS](./基础算法/图论/BFS.md)  `最短路径`  `双向bfs`
@@ -42,21 +42,21 @@
 - [滑动窗口](./基础算法/滑动窗口/滑动窗口.md)  `单调性`  `窗口数据结构`
 - [贪心「未完工」](./基础算法/贪心/贪心.md)  `证明难`
 - [动态规划「未完工」](./基础算法/动态规划/动态规划.md)
-- [前缀和&差分](./基础算法/前缀和&差分)
+- [前缀和&差分](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/qian-zhui-he-cha-fen)
   - [前缀和](./基础算法/前缀和&差分/前缀和.md)  `相减`  `历史前缀和`  `哈希表`  `二维`
   - [差分](./基础算法/前缀和&差分/差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`
 - [数学「未完工」](./基础算法/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./基础算法/系列题)
 
-### 第二章 技能储备
+### 第二章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
 
-- [Python](./技能储备/Python/)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
-- [C++「未完工」](./技能储备/C++/)
-- [Golang](./技能储备/Golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
-- [LaTeX「未完工」](./技能储备/LaTeX/)
+- [Python](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
+- [C++「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/c++)
+- [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
+- [LaTeX「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/latex)
 - [Markdown](https://github.com/guodongxiaren/README)
-- [设计模式「未完工」](./技能储备/设计模式/)  `工厂模式`  `建造者模式`  `单例模式`
-- [编程思想](./技能储备/编程思想/)  `多态`
+- [设计模式「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/she-ji-mo-shi)  `工厂模式`  `建造者模式`  `单例模式`
+- [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
 
 ### 第三章 周赛
 
@@ -88,9 +88,11 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
-`侵删` 理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
+`发布`  https://dowalle.gitbook.io/algo/
 
-`感谢` star ✨ https://github.com/WalleDong/algorithm
+`侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
+
+`感谢`  star ✨ https://github.com/WalleDong/algorithm
 
 ## However
 
