@@ -88,11 +88,11 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
-`发布`  https://dowalle.gitbook.io/algo/
+`发布`  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 `侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
 
-`感谢`  star ✨ https://github.com/WalleDong/algorithm
+`感谢`  star ✨ [https://github.com/WalleDong/algorithm](https://github.com/WalleDong/algorithm)
 
 ## However
 
