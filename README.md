@@ -90,7 +90,7 @@ book sm
 
 `感谢`  点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm)
 
-`发布`  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
+`发布`  Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 ## However
 
