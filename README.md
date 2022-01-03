@@ -63,8 +63,6 @@
 记录了些有价值的[周赛题](./周赛)
 
 > *得到一点感悟比得到答案更重要*
->
-> 真正的大佬10分钟做完题，忙着造🚀去了，我等菜🐔在题解区互啄
 
 ## TODO
 
@@ -88,11 +86,11 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
-`发布`  https://dowalle.gitbook.io/algo/
-
 `侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
 
-`感谢`  star ✨ https://github.com/WalleDong/algorithm
+`感谢`  点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm)
+
+`发布`  Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 ## However
 
