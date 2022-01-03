@@ -21,7 +21,7 @@ fmt.Println(slice, len(slice), cap(slice))
 var slice1 []int = make([]int, 5)
 // [0 0 0 0 0] 5 5
 
-slice2 := make([]int, 4) // 常用，事先不知到要往切片里放什么
+slice2 := make([]int, 4) // 常用，声明带长度的切片，默认值为0
 // [0 0 0 0] 4 4
 
 slice3 := make([]int, 4, 5)
