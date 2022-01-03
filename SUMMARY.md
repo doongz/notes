@@ -222,3 +222,4 @@
     * [运算符](技能储备/Python/运算符.md)
     * [字典 dict](技能储备/Python/字典%20dict.md)
     * [字符串 str](技能储备/Python/字符串%20str.md)
+- [致谢](致谢.md)
