@@ -1,8 +1,8 @@
 {
-    "title": "algorithm",
+    "title": "Algo",
     "outputfile": "SUMMARY.md",
     "catalog": "all",
-    "ignores": ["周赛"],
+    "ignores": ["竞赛"],
     "unchanged": [],
     "disableTitleFormatting": true
 }

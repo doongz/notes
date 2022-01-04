@@ -1,4 +1,4 @@
-# algorithm
+# Algo
 
 - 基础算法
   - [动态规划](基础算法/动态规划/动态规划.md)
@@ -188,6 +188,11 @@
 - 技能储备
   - 编程思想
     * [多态](技能储备/编程思想/多态.md)
+  - 软件
+    * [ceph-rbd](技能储备/软件/ceph-rbd.md)
+    * [git](技能储备/软件/git.md)
+    * [kubernetes](技能储备/软件/kubernetes.md)
+    * [vim](技能储备/软件/vim.md)
   - 设计模式
     * [备忘录模式](技能储备/设计模式/备忘录模式.md)
     * [材料](技能储备/设计模式/材料.md)
@@ -214,6 +219,22 @@
     * [goroutine](技能储备/Golang/goroutine.md)
   - LaTeX
     * [数学公式](技能储备/LaTeX/数学公式.md)
+  - Linux
+    * [存储卷](技能储备/Linux/存储卷.md)
+    * [环境变量 PATH](技能储备/Linux/环境变量%20PATH.md)
+    * [解压命令](技能储备/Linux/解压命令.md)
+    * [配置浮动IP](技能储备/Linux/配置浮动IP.md)
+    * [系统指令](技能储备/Linux/系统指令.md)
+    * [压测命令](技能储备/Linux/压测命令.md)
+    * [账户](技能储备/Linux/账户.md)
+    * [证书](技能储备/Linux/证书.md)
+    * [echo](技能储备/Linux/echo.md)
+    * [expect __ EOF](技能储备/Linux/expect%20__ EOF.md)
+    * [http代理](技能储备/Linux/http代理.md)
+    * [ln链接](技能储备/Linux/ln链接.md)
+    * [sed](技能储备/Linux/sed.md)
+    * [shell](技能储备/Linux/shell.md)
+    * [wget](技能储备/Linux/wget.md)
   - Python
     * [高级玩法](技能储备/Python/高级玩法.md)
     * [集合 set](技能储备/Python/集合%20set.md)
@@ -223,4 +244,10 @@
     * [运算符](技能储备/Python/运算符.md)
     * [字典 dict](技能储备/Python/字典%20dict.md)
     * [字符串 str](技能储备/Python/字符串%20str.md)
+- 生活
+  - [菜谱](生活/菜谱/README.md)
+  - [观后感](生活/观后感/README.md)
+  - 语录
+    * [老八语录](生活/语录/老八语录.md)
+    * [歇后语](生活/语录/歇后语.md)
 * [致谢](致谢.md)

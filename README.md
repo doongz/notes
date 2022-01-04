@@ -55,14 +55,22 @@
 - [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
 - [LaTeX「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/latex)
 - [Markdown](https://github.com/guodongxiaren/README)
+- Linux「未完工」
 - [设计模式「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/she-ji-mo-shi)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
+- 软件「未完工」  `git`  `vim`  `kubernetes`  `ceph`
 
-### 第三章 周赛
+### 第三章 竞赛
 
-记录了些有价值的[周赛题](./周赛)
+记录了些有价值的[周赛题](./竞赛)
 
 > *得到一点感悟比得到答案更重要*
+
+### 第四章 生活
+
+- 菜谱「未完工」
+- 观后感「未完工」
+- 语录  `老八语录`  `歇后语`
 
 ## TODO
 
