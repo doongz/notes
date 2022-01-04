@@ -86,11 +86,11 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
+`感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm) 笔芯🤞
+
+`发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
+
 `侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
-
-`感谢`  点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm)
-
-`发布`  Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 ## However
 
