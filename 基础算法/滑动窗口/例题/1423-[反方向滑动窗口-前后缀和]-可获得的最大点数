@@ -1,0 +1,144 @@
+#### [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)
+
+**方法一：滑动窗口**
+
+- 只能从首尾拿，意味着中间是连续的
+- cardPoints 中的值都是正数，具备单调性
+
+所以可以使用滑动窗口，找到窗口长度为 len(cardPoints) - k 的最小窗口
+
+时间复杂度：`O(n)`
+
+空间复杂度：`O(1)`
+
+执行用时：72 ms, 在所有 Python3 提交中击败了96.16%的用户
+
+内存消耗：24.3 MB, 在所有 Python3 提交中击败了91.05%的用户
+
+```python
+class Solution:
+    def maxScore(self, cardPoints: List[int], k: int) -> int:
+        sz = len(cardPoints)
+        minWindow = float("inf")
+        
+        for left in range(0, k+1):
+            right = left + sz - k - 1
+            if left == 0:
+                # 初始化第一次的windows
+                window = sum(cardPoints[left:right+1])
+            else:
+                window = window + cardPoints[right] - cardPoints[left-1]
+            minWindow = min(minWindow, window)
+
+        return sum(cardPoints) - minWindow
+```
+
+执行用时：56 ms, 在所有 Go 提交中击败了45.45%的用户
+
+内存消耗：8.3 MB, 在所有 Go 提交中击败了52.27%的用户
+
+```go
+func maxScore(cardPoints []int, k int) int {
+	sz := len(cardPoints)
+	minWindow := math.MaxInt64
+
+	var right int
+	var window int
+	for left := 0; left < k+1; left++ {
+		right = left + sz - k - 1
+		if left == 0 {
+			window = sum(cardPoints[left : right+1])
+		} else {
+			window = window + cardPoints[right] - cardPoints[left-1]
+		}
+		minWindow = min(minWindow, window)
+	}
+	return sum(cardPoints) - minWindow
+}
+
+func min(a int, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func sum(arr []int) int {
+	var res int
+	for _, v := range arr {
+		res += v
+	}
+	return res
+}
+```
+
+
+
+**方法二：前缀和+后缀和**
+
+- 首拿 cnt 张，0<=cnt<=k，pre_sum 中对应位置 pre_sum[cnt]
+- 尾拿 k-cnt 张，suf_sum 中对应位置 suf_sum[sz-(k-cnt)]
+
+时间复杂度：`O(n)`
+
+空间复杂度：`O(n)`
+
+执行用时：128 ms, 在所有 Python3 提交中击败了84.65%的用户
+
+内存消耗：27.1 MB, 在所有 Python3 提交中击败了84.91%的用户
+
+```python
+class Solution:
+    def maxScore(self, cardPoints: List[int], k: int) -> int:
+        sz = len(cardPoints)
+        pre_sum = [0 for _ in range(sz+1)]
+        suf_sum = [0 for _ in range(sz+1)]
+        for i in range(sz):
+            pre_sum[i+1] = pre_sum[i] + cardPoints[i]
+        for i in range(sz-1, -1, -1):
+            suf_sum[i] = suf_sum[i+1] + cardPoints[i]
+
+        # 首拿 cnt 张，0<=cnt<=k，pre_sum 中对应位置 pre_sum[cnt]
+        # 尾拿 k-cnt 张，suf_sum 中对应位置 suf_sum[sz-(k-cnt)]
+        ans = 0
+        for cnt in range(0, k+1):
+            ans = max(ans, pre_sum[cnt] + suf_sum[sz-(k-cnt)])
+        return ans
+```
+
+执行用时：56 ms, 在所有 Go 提交中击败了45.45%的用户
+
+内存消耗：8.9 MB, 在所有 Go 提交中击败了6.82%的用户
+
+```go
+func maxScore(cardPoints []int, k int) int {
+	sz := len(cardPoints)
+	pre_sum := make([]int, sz+1)
+	suf_sum := make([]int, sz+1)
+	for i := 0; i < sz; i++ {
+		pre_sum[i+1] = pre_sum[i] + cardPoints[i]
+	}
+	for i := sz - 1; i > -1; i-- {
+		suf_sum[i] = suf_sum[i+1] + cardPoints[i]
+	}
+
+	var ans int = 0
+	for cnt := 0; cnt < k+1; cnt++ {
+		ans = max(ans, pre_sum[cnt]+suf_sum[sz-(k-cnt)])
+	}
+	return ans
+}
+
+func max(a int, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+
+
+`感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm) 笔芯🤞
+
+`发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
