@@ -1,52 +1,55 @@
-#### [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/)
+[743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/)
 
-**方法一：dijkstra**
+## 方法一：dijkstra
 
 时间复杂度：`O(n*logn)`，假设每个点都与其余的点相连
 
 空间复杂度：`O(n^2)`
 
-执行用时：72 ms, 在所有 Python3 提交中击败了64.95%的用户
+执行用时：64 ms, 在所有 Python3 提交中击败了88.37%的用户
 
-内存消耗：16.2 MB, 在所有 Python3 提交中击败了52.87%的用户
+内存消耗：16.2 MB, 在所有 Python3 提交中击败了65.71%的用户
 
 ```python
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        # 邻接表 u -> v w
+        # 处理下节点是从 1到n 标记的
         adj = collections.defaultdict(list)
-        for u, v, w in times:
-            adj[u].append((v, w))
-        dis = [float("inf") for _ in range(n+1)] # 记录结点最早收到信号的时间
-        dis[k] = 0
-        print(adj)
+        for s, e, cost in times:
+            adj[s-1].append((e-1, cost))
+        start = k - 1
+        node_sz = n 
+        visited = [False for _ in range(node_sz)] # 记录已经确定最短路径的点
+        dis = [float("inf") for _ in range(node_sz)] # 记录从源点到目标点的「预估最短距离」
 
+        dis[start] = 0
         queue = []
-        heapq.heappush(queue, (dis[k], k)) # 小根堆
-        visited = set() # 记录已经找到的最小值了的点
+        heapq.heappush(queue, (dis[start], start))
+
         while queue:
-            _, cur = heappop(queue)
-            if cur in visited:
-                # 优先队列pop出的为最小值，已经确定的值，下次不用再走了
+            _, cur = heapq.heappop(queue)
+            if visited[cur]:
                 continue
-            visited.add(cur)
-            for n_node, cost in adj[cur]:
-                tmp = dis[cur] + cost
-                if tmp < dis[n_node]:
-                    dis[n_node] = tmp
-                    heapq.heappush(queue, (dis[n_node], n_node))
+            
+            visited[cur] = True
+
+            for n_idx, val in adj[cur]:
+                if dis[cur] + val < dis[n_idx]:
+                    dis[n_idx] = dis[cur] + val
+                    heapq.heappush(queue, (dis[n_idx], n_idx))
         # print(dis)
+
         ans = 0
-        for t in dis[1:]:
-            if t == float("inf"):
+        for d in dis:
+            if d == float("inf"):
                 return -1
-            ans = max(ans, t)
+            ans = max(ans, d)
         return ans
 ```
 
 
 
-**方法二：bfs**
+## 方法二：bfs
 
 时间复杂度：`O(n^2)`，假设每个点都与其余的点相连
 
@@ -82,7 +85,9 @@ class Solution:
         return ans
 ```
 
-**方法三：dfs + 剪枝**
+
+
+## 方法三：dfs + 剪枝
 
 时间复杂度：`O(n^n)`，假设每个点都与其余的点相连
 
@@ -122,5 +127,5 @@ class Solution:
 
 `感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm) 笔芯🤞
 
-`发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
+`发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)https://dowalle.gitbook.io/algo/)
 
