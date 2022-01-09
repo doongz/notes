@@ -31,4 +31,3 @@ ceph.conf 放到 /etc/ceph
 
 
 
-
