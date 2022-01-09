@@ -30,7 +30,7 @@
   - [前缀树](./基础算法/树&链表/前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
 - [图论](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/tu-lun)
   - [图的基本知识「未完工」](./基础算法/图论/图的基本知识.md)
-  - [图的存储](./基础算法/图论/图的存储.md)  `邻接表`  `邻接矩阵`
+  - [图的存储](./基础算法/图论/图的存储.md)  `邻接表`  `邻接矩阵`  `类边`
   - [BFS](./基础算法/图论/BFS.md)  `最短路径`  `双向bfs`
   - [DFS](./基础算法/图论/DFS.md)  `回溯`  `记忆化dfs`
   - [最短路径](./基础算法/图论/最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
@@ -43,8 +43,8 @@
 - [贪心「未完工」](./基础算法/贪心/贪心.md)  `证明难`
 - [动态规划「未完工」](./基础算法/动态规划/动态规划.md)
 - [前缀和&差分](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/qian-zhui-he-cha-fen)
-  - [前缀和](./基础算法/前缀和&差分/前缀和.md)  `相减`  `历史前缀和`  `哈希表`  `二维`
-  - [差分](./基础算法/前缀和&差分/差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`
+  - [前缀和](./基础算法/前缀和&差分/前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
+  - [差分](./基础算法/前缀和&差分/差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
 - [数学「未完工」](./基础算法/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./基础算法/系列题)
 
@@ -55,10 +55,10 @@
 - [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
 - [LaTeX「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/latex)
 - [Markdown](https://github.com/guodongxiaren/README)
-- Linux「未完工」
+- [Linux「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/linux)
 - [设计模式「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/she-ji-mo-shi)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
-- 软件「未完工」  `git`  `vim`  `kubernetes`  `ceph`
+- [软件「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/ruan-jian)  `git`  `vim`  `kubernetes`  `ceph`
 
 ### 第三章 竞赛
 
