@@ -33,7 +33,7 @@
   - [图的存储](./基础算法/图论/图的存储.md)  `邻接表`  `邻接矩阵`
   - [BFS](./基础算法/图论/BFS.md)  `最短路径`  `双向bfs`
   - [DFS](./基础算法/图论/DFS.md)  `回溯`  `记忆化dfs`
-  - [最短路径](./基础算法/图论/最短路径.md)  `dijkstra`
+  - [最短路径](./基础算法/图论/最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [拓扑排序](./基础算法/图论/拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
   - [欧拉图](./基础算法/图论/欧拉图.md)  `一笔画完整个图`
 - [排序](./基础算法/排序/排序.md)  `冒泡`  `选择`  `插入`  `快速`
@@ -68,11 +68,11 @@
 
 ### 第四章 生活
 
-- 咖啡  `如何饮用`  `种类`
-- 威士忌「未完工」
-- 菜谱「未完工」
-- 观后感「未完工」
-- 语录  `老八语录`  `歇后语`
+- [咖啡](https://dowalle.gitbook.io/algo/sheng-huo/ga-fei)  `如何饮用`  `种类`
+- [威士忌「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/wei-shi-ji)
+- [菜谱「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/cai-pu)
+- [观后感「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/guan-hou-gan)
+- [语录](https://dowalle.gitbook.io/algo/sheng-huo/yu-lu)  `老八语录`  `歇后语`
 
 ## TODO
 
