@@ -68,6 +68,8 @@
 
 ### 第四章 生活
 
+- 咖啡  `如何饮用`  `种类`
+- 威士忌「未完工」
 - 菜谱「未完工」
 - 观后感「未完工」
 - 语录  `老八语录`  `歇后语`
@@ -98,7 +100,7 @@ book sm
 
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
-`侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn)
+`侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
 
 ## However
 

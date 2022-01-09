@@ -2,7 +2,7 @@
     "title": "Algo",
     "outputfile": "SUMMARY.md",
     "catalog": "all",
-    "ignores": ["竞赛"],
+    "ignores": [],
     "unchanged": [],
     "disableTitleFormatting": true
 }
