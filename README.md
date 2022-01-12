@@ -48,6 +48,10 @@
 - [数学「未完工」](./基础算法/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./基础算法/系列题)
 
+### 第三章 进阶算法
+
+- 矩阵运算「未完工」  `卷积`
+
 ### 第二章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
 
 - [Python](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
