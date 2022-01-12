@@ -4,14 +4,14 @@
 
 > 是未来之星  
 > 是国家栋梁  
-> 是成语里面的学富五车  
+> 是自然界的丛林之王  
 > 是俗语里的下凡仙子  
-> 是都市小说里的城市之光  
 > 是粤语里的巴鸠撚闭  
+> 是成语里面的学富五车  
 > 是武侠小说里的人中龙  
+> 是都市小说里的城市之光  
 > 是吾日三省吾身的自律者  
 > 是相亲节目里面的心动嘉宾  
-> 是自然界的丛林之王  
 > 是世间所有丑与恶的唾弃者  
 > 是世间所有美与好的创造者  
 
@@ -48,11 +48,11 @@
 - [数学「未完工」](./基础算法/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./基础算法/系列题)
 
-### 第三章 进阶算法
+### 第二章 进阶算法
 
 - 矩阵运算「未完工」  `卷积`
 
-### 第二章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
+### 第三章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
 
 - [Python](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [C++「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/c++)
@@ -64,13 +64,13 @@
 - [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
 - [软件「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/ruan-jian)  `git`  `vim`  `kubernetes`  `ceph`
 
-### 第三章 竞赛
+### 第四章 竞赛
 
 > *得到一点感悟比得到答案更重要*
 
 - 做一些复杂的题的时候，一定要在做题的时候就「写注释」，方便之后检查
 
-### 第四章 生活
+### 第五章 生活
 
 - [咖啡](https://dowalle.gitbook.io/algo/sheng-huo/ga-fei)  `如何饮用`  `种类`
 - [威士忌「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/wei-shi-ji)
@@ -105,10 +105,3 @@ book sm
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 `侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
-
-## However
-
-> 一壶茶  
-> 一包烟  
-> 一道题  
-> 一整天  
