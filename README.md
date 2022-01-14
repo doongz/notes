@@ -56,7 +56,7 @@
 
 - [Python](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [C++「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/c++)
-- [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine`  
+- [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`  
 - [LaTeX「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/latex)
 - [Markdown](https://github.com/guodongxiaren/README)
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/linux)
