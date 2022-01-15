@@ -50,7 +50,7 @@
 
 ### 第二章 进阶算法
 
-- 矩阵运算「未完工」  `卷积`
+- 矩阵运算「未完工」
 
 ### 第三章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
 
@@ -62,7 +62,7 @@
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/linux)
 - [设计模式「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/she-ji-mo-shi)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
-- [软件「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/ruan-jian)  `git`  `vim`  `kubernetes`  `ceph`
+- [软件「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/ruan-jian)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
 
 ### 第四章 竞赛
 
