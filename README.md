@@ -72,7 +72,7 @@
 
 ### 第五章 生活
 
-- [咖啡](https://dowalle.gitbook.io/algo/sheng-huo/ga-fei)  `如何饮用`  `种类`
+- [咖啡](https://dowalle.gitbook.io/algo/sheng-huo/ga-fei)  `种类`  `饮用`  `品鉴`
 - [威士忌「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/wei-shi-ji)
 - [菜谱「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/cai-pu)
 - [观后感「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/guan-hou-gan)
@@ -104,4 +104,4 @@ book sm
 
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
-`侵删`  理论和题解部分来源于[oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
+`侵删`  理论和题解部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
