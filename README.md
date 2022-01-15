@@ -100,7 +100,7 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数为***自己撰写***
 
-`感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algorithm](https://github.com/DoWalle/algorithm) 笔芯🤞
+`感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algo](https://github.com/DoWalle/algo) 笔芯🤞
 
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
