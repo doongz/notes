@@ -86,10 +86,6 @@
 
 ## Usage
 
-例题命名格式：`题号-[技巧]-题目名.md`
-
-周赛命名格式：`题号-[算法]-题目名.md`
-
 [Generate SUMMARY.md](https://github.com/imfly/gitbook-summary) for gitbook:
 
 ```shell
