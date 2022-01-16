@@ -60,8 +60,8 @@
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX「未完工」](https://dowalle.gitbook.io/algo/skill/latex)
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
-- [software「未完工」](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
-- [design patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
+- [Software「未完工」](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
+- [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
 ### 第四章 [竞赛](https://dowalle.gitbook.io/algo/competition)
