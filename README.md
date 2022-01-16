@@ -72,11 +72,11 @@
 
 ### 第五章 生活
 
-- [咖啡](https://dowalle.gitbook.io/algo/sheng-huo/ga-fei)  `种类`  `饮用`  `品鉴`
-- [威士忌「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/wei-shi-ji)
-- [菜谱「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/cai-pu)
-- [观后感「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/guan-hou-gan)
-- [语录](https://dowalle.gitbook.io/algo/sheng-huo/yu-lu)  `老八语录`  `歇后语`
+- [Coffee](https://dowalle.gitbook.io/algo/sheng-huo/coffee)  `种类`  `饮用`  `品鉴`
+- [Whisky「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/whisky)
+- [Cooking](https://dowalle.gitbook.io/algo/sheng-huo/cooking)
+- [Watching](https://dowalle.gitbook.io/algo/sheng-huo/watching)
+- [Reading](https://dowalle.gitbook.io/algo/sheng-huo/reading)  `老八语录`  `歇后语`
 
 ## TODO
 
