@@ -12,14 +12,14 @@ using namespace std;
 
 int main()
 {
-   char site[7] = {'R', 'U', 'N', 'O', 'O', 'B', '\0'};
-   // 编译器会在初始化数组时，自动把 \0 放在字符串的末尾
-   char name[] = "dodo";
+    char site[7] = {'R', 'U', 'N', 'O', 'O', 'B', '\0'};
+    // 编译器会在初始化数组时，自动把 \0 放在字符串的末尾
+    char name[] = "dodo";
 
-   cout << site << endl; // "RUNOOB"
-   cout << name << endl; // "dodo"
+    cout << site << endl; // "RUNOOB"
+    cout << name << endl; // "dodo"
 
-   return 0;
+    return 0;
 }
 ```
 
@@ -48,24 +48,24 @@ using namespace std;
 
 int main()
 {
-   string str1 = "runoob";
-   string str2 = "google";
-   string str3;
-   int len;
+    string str1 = "runoob";
+    string str2 = "google";
+    string str3;
+    int len;
 
-   // 复制 str1 到 str3
-   str3 = str1;
-   cout << "str3 : " << str3 << endl; // runoob
+    // 复制 str1 到 str3
+    str3 = str1;
+    cout << "str3 : " << str3 << endl; // runoob
 
-   // 连接 str1 和 str2
-   str3 = str1 + str2;
-   cout << "str1 + str2 : " << str3 << endl; // runoobgoogle
+    // 连接 str1 和 str2
+    str3 = str1 + str2;
+    cout << "str1 + str2 : " << str3 << endl; // runoobgoogle
 
-   // 连接后，str3 的总长度
-   len = str3.size();
-   cout << "str3.size() :  " << len << endl; // 12
+    // 连接后，str3 的总长度
+    len = str3.size();
+    cout << "str3.size() :  " << len << endl; // 12
 
-   return 0;
+    return 0;
 }
 ```
 
