@@ -17,18 +17,18 @@
 
 ## 目录
 
-### 第一章 [基础算法](https://dowalle.gitbook.io/algo/ji-chu-suan-fa)
-- [数据结构](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/shu-ju-jie-gou)
+### 第一章 [基础算法](https://dowalle.gitbook.io/algo/algorithm)
+- 数据结构
   - [堆](./基础算法/数据结构/堆.md)  `大/小根堆`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`
   - [并查集](/基础算法/数据结构/并查集.md)  `合并`  `连通分量`
   - [单调栈「未完工」](/基础算法/数据结构/单调栈.md)
-- [树&链表](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/shu-lian-biao)
+- 树&链表
   - [链表「未完工」](./基础算法/树&链表/链表.md)
   - [树的遍历「未完工」](./基础算法/树&链表/树的遍历.md)  `前序`  `中序`  `后序`  `层`
   - [树的恢复](./基础算法/树&链表/树的恢复.md)
   - [平衡树&搜索树](./基础算法/树&链表/平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
   - [前缀树](./基础算法/树&链表/前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
-- [图论](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/tu-lun)
+- 图论
   - [图的基本知识「未完工」](./基础算法/图论/图的基本知识.md)
   - [图的存储](./基础算法/图论/图的存储.md)  `邻接表`  `邻接矩阵`  `类边`
   - [BFS](./基础算法/图论/BFS.md)  `最短路径`  `双向bfs`
@@ -42,41 +42,41 @@
 - [滑动窗口](./基础算法/滑动窗口/滑动窗口.md)  `单调性`  `窗口数据结构`  `断环成链`
 - [贪心「未完工」](./基础算法/贪心/贪心.md)  `证明难`
 - [动态规划「未完工」](./基础算法/动态规划/动态规划.md)
-- [前缀和&差分](https://dowalle.gitbook.io/algo/ji-chu-suan-fa/qian-zhui-he-cha-fen)
+- 前缀和&差分
   - [前缀和](./基础算法/前缀和&差分/前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
   - [差分](./基础算法/前缀和&差分/差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
 - [数学「未完工」](./基础算法/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./基础算法/系列题)
 
-### 第二章 进阶算法
+### 第二章 [进阶算法](https://dowalle.gitbook.io/algo/algorithm+)
 
 - 矩阵运算「未完工」
 
-### 第三章 [技能储备](https://dowalle.gitbook.io/algo/ji-neng-chu-bei)
+### 第三章 [技能](https://dowalle.gitbook.io/algo/skill)
 
-- [Python](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
-- [C++「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/c++)
-- [Golang](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`  
-- [LaTeX「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/latex)
+- [C++「未完工」](https://dowalle.gitbook.io/algo/skill/c++)
+- [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
+- [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
-- [Linux「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/linux)
-- [设计模式「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/she-ji-mo-shi)  `工厂模式`  `建造者模式`  `单例模式`
-- [编程思想](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/bian-cheng-si-xiang)  `多态`
-- [软件「未完工」](https://dowalle.gitbook.io/algo/ji-neng-chu-bei/ruan-jian)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
+- [LaTeX「未完工」](https://dowalle.gitbook.io/algo/skill/latex)
+- [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
+- [software「未完工」](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
+- [design patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
+- [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
-### 第四章 竞赛
+### 第四章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
 > *得到一点感悟比得到答案更重要*
 
 - 做一些复杂的题的时候，一定要在做题的时候就「写注释」，方便之后检查
 
-### 第五章 生活
+### 第五章 [生活](https://dowalle.gitbook.io/algo/living)
 
-- [Coffee](https://dowalle.gitbook.io/algo/sheng-huo/coffee)  `种类`  `饮用`  `品鉴`
-- [Whisky「未完工」](https://dowalle.gitbook.io/algo/sheng-huo/whisky)
-- [Cooking](https://dowalle.gitbook.io/algo/sheng-huo/cooking)
-- [Watching](https://dowalle.gitbook.io/algo/sheng-huo/watching)
-- [Reading](https://dowalle.gitbook.io/algo/sheng-huo/reading)  `老八语录`  `歇后语`
+- [Coffee](https://dowalle.gitbook.io/algo/living/coffee)  `种类`  `饮用`  `品鉴`
+- [Whisky「未完工」](https://dowalle.gitbook.io/algo/living/whisky)
+- [Cooking](https://dowalle.gitbook.io/algo/living/cooking)
+- [Watching](https://dowalle.gitbook.io/algo/living/watching)
+- [Reading](https://dowalle.gitbook.io/algo/living/reading)  `老八语录`  `歇后语`
 
 ## TODO
 
@@ -104,5 +104,5 @@ book sm
 
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
-`侵删`  理论和题解部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [洛谷](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
+`侵删`  理论和题解部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [luogu](https://www.luogu.com.cn) [bilibili](https://www.bilibili.com)
 
