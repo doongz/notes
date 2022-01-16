@@ -263,15 +263,17 @@
   * [leetcode-双周赛](竞赛/leetcode-双周赛.md)
   * [leetcode-周赛](竞赛/leetcode-周赛.md)
 - 生活
-  - [菜谱](生活/菜谱/README.md)
-  - [观后感](生活/观后感/README.md)
-  - 咖啡
-    * [咖啡品鉴](生活/咖啡/咖啡品鉴.md)
-    * [咖啡饮用](生活/咖啡/咖啡饮用.md)
-    * [咖啡种类](生活/咖啡/咖啡种类.md)
-  - 威士忌
-    * [威士忌种类](生活/威士忌/威士忌种类.md)
-  - 语录
-    * [老八语录](生活/语录/老八语录.md)
-    * [歇后语](生活/语录/歇后语.md)
+  - Coffee
+    * [咖啡品鉴](生活/Coffee/咖啡品鉴.md)
+    * [咖啡饮用](生活/Coffee/咖啡饮用.md)
+    * [咖啡种类](生活/Coffee/咖啡种类.md)
+  - Cooking
+    * [1-排骨汤](生活/Cooking/1-排骨汤.md)
+    * [菜单](生活/Cooking/菜单.md)
+  - Reading
+    * [老八语录](生活/Reading/老八语录.md)
+    * [歇后语](生活/Reading/歇后语.md)
+  - [Watching](生活/Watching/README.md)
+  - Whisky
+    * [威士忌种类](生活/Whisky/威士忌种类.md)
 * [THANKS](THANKS.md)
