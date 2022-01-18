@@ -28,6 +28,7 @@ ceph.conf 放到 /etc/ceph
 |rbd snap unprotect user_pool/zd_image@zd_snap|快照去保护|
 |ceph osd pool delete user_pool user_pool --yes-i-really-really-mean-it|删除存储池|
 |    |    |
-
+|rbd showmapped|查看本机上挂载的rbd设备，配合grep可以查|
+|rbd unmap /dev/rbd10|卸载块设备，-o force 强制删除|
 
 
