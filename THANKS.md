@@ -6,3 +6,14 @@
 > 知识是无价的，很高兴能给大家分享出来  
 > 最后感谢大家的 Star  
 
+## 记录
+
+### 2022-01-19 01:15:38
+
+Total : 279 files,  14529 codes, 10 comments, 6538 blanks, all 21077 lines
+
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Markdown | 276 | 14,488 | 0 | 6,526 | 21,014 |
+| YAML | 2 | 33 | 10 | 11 | 54 |
+| JSON | 1 | 8 | 0 | 1 | 9 |
