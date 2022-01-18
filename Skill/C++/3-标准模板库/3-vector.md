@@ -84,3 +84,6 @@ int main(void)
 }
 ```
 
+## 打印 vector
+
+https://zhuanlan.zhihu.com/p/67447529
