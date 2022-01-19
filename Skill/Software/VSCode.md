@@ -15,7 +15,7 @@
 谷歌风格，缩进4字符，访问说明符顶格，行数不受限
 
 ```
-{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0}
+{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0, NamespaceIndentation: All}
 ```
 
 ## 三、配置文件
@@ -42,7 +42,7 @@ vscode 本身和一些插件的配置文件
     "latex-workshop.view.pdf.viewer": "tab",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.formatOnSave": true,
-    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0}"
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0, NamespaceIndentation: All}"
 }
 ```
 
