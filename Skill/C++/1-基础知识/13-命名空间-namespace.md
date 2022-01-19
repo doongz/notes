@@ -61,6 +61,16 @@ int main() {
 
 所以，命名空间定义可以是定义一个新的命名空间，也可以是为已有的命名空间增加新的元素
 
+例如下面可以将多个文件描述的命名空间 space，导入
+
+```c++
+#include <file1>
+#include <file2>
+#include <file3.h>
+
+using namespace space;
+```
+
 ## 嵌套的命名空间
 
 ```c++
