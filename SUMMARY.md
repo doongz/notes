@@ -205,6 +205,7 @@
   - Cooking
     * [1-排骨汤](Living/Cooking/1-排骨汤.md)
     * [2-烤红薯](Living/Cooking/2-烤红薯.md)
+    * [3-炒米粉](Living/Cooking/3-炒米粉.md)
     * [菜单](Living/Cooking/菜单.md)
   - Reading
     * [老八语录](Living/Reading/老八语录.md)
@@ -220,7 +221,9 @@
       * [1-基本数据类型](Skill/C++/1-基础知识/1-基本数据类型.md)
       * [10-引用-&](Skill/C++/1-基础知识/10-引用-&.md)
       * [11-结构体-struct](Skill/C++/1-基础知识/11-结构体-struct.md)
-      * [12-GCC](Skill/C++/1-基础知识/12-GCC.md)
+      * [12-编译器集合-GCC](Skill/C++/1-基础知识/12-编译器集合-GCC.md)
+      * [13-命名空间-namespace](Skill/C++/1-基础知识/13-命名空间-namespace.md)
+      * [14-头文件](Skill/C++/1-基础知识/14-头文件.md)
       * [2-条件判断](Skill/C++/1-基础知识/2-条件判断.md)
       * [3-循环](Skill/C++/1-基础知识/3-循环.md)
       * [4-运算符](Skill/C++/1-基础知识/4-运算符.md)
@@ -283,4 +286,5 @@
     * [kubernetes](Skill/Software/kubernetes.md)
     * [vim](Skill/Software/vim.md)
     * [VSCode](Skill/Software/VSCode.md)
+  * [sql](Skill/sql.md)
 * [THANKS](THANKS.md)
