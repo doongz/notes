@@ -232,7 +232,8 @@
       * [7-字符串-char-string](Skill/C++/1-基础知识/7-字符串-char-string.md)
       * [8-数组-[]](Skill/C++/1-基础知识/8-数组-[].md)
       * [9-指针-*](Skill/C++/1-基础知识/9-指针-*.md)
-    - [2-面向对象](Skill/C++/2-面向对象/readme.md)
+    - 2-面向对象
+      * [1-类和对象](Skill/C++/2-面向对象/1-类和对象.md)
     - 3-标准模板库
       * [1-STL基础](Skill/C++/3-标准模板库/1-STL基础.md)
       * [3-vector](Skill/C++/3-标准模板库/3-vector.md)
@@ -286,5 +287,7 @@
     * [kubernetes](Skill/Software/kubernetes.md)
     * [vim](Skill/Software/vim.md)
     * [VSCode](Skill/Software/VSCode.md)
-  * [sql](Skill/sql.md)
+  - SQL
+    * [1-数据库理论](Skill/SQL/1-数据库理论.md)
+    * [2-sql-语法](Skill/SQL/2-sql-语法.md)
 * [THANKS](THANKS.md)

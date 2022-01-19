@@ -1,4 +1,4 @@
-# SQL 基础
+# SQL 语法
 
 **SQL 是用于访问和处理数据库的标准的计算机语言**
 
@@ -15,7 +15,7 @@ SELECT * FROM tbl_table;
 - SQL 对大小写不敏感
 - 分号 是分隔每条 SQL 语句的标准方法，可在对服务器的相同请求中执行一条以上的语句
 
-## DML 和 DDL 两部分
+## 1、DML 和 DDL 两部分
 
 **查询和更新指令** 构成了 SQL 的 DML 部分
 
@@ -38,14 +38,14 @@ SQL 的数据定义语言 (DDL) 部分使我们有 **能力创建或删除表格
 | CREATE INDEX    | 创建索引（搜索键）   |
 | DROP INDEX      | 删除索引             |
 
-## SELECT 语句
+## 2、SELECT 语句
 
 ```sql
 SELECT * FROM 表名称
 SELECT 列名称1,列名称2,列名称3 FROM 表名称
 ```
 
-## SELECT DISTINCT 语句
+## 3、SELECT DISTINCT 语句
 
 在表中可能会包含重复值，关键词 DISTINCT 用于返回唯一不同的值。
 
@@ -53,7 +53,7 @@ SELECT 列名称1,列名称2,列名称3 FROM 表名称
 SELECT DISTINCT 列名称 FROM 表名称
 ```
 
-## WHERE 子句
+## 4、WHERE 子句
 
 将 WHERE 子句添加到 SELECT 语句后，按条件的从表中选取数据
 
