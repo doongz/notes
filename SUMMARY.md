@@ -86,6 +86,7 @@
       * [147-对链表进行插入排序](Algorithm/树&链表/链表例题/147-对链表进行插入排序.md)
       * [148-排序链表](Algorithm/树&链表/链表例题/148-排序链表.md)
       * [160-相交链表](Algorithm/树&链表/链表例题/160-相交链表.md)
+      * [2-[基础]-两数相加](Algorithm/树&链表/链表例题/2-[基础]-两数相加.md)
       * [82-删除排序链表中的重复元素](Algorithm/树&链表/链表例题/82-删除排序链表中的重复元素.md)
       * [83-删除排序链表中的重复元素](Algorithm/树&链表/链表例题/83-删除排序链表中的重复元素.md)
       * [86-分隔链表](Algorithm/树&链表/链表例题/86-分隔链表.md)
@@ -280,6 +281,7 @@
     * [6-字典-dict](Skill/Python/6-字典-dict.md)
     * [7-高级玩法](Skill/Python/7-高级玩法.md)
     * [8-内置函数-未完工](Skill/Python/8-内置函数-未完工.md)
+    * [9-内置包](Skill/Python/9-内置包.md)
   - Software
     * [常用工具](Skill/Software/常用工具.md)
     * [ceph-rbd](Skill/Software/ceph-rbd.md)
