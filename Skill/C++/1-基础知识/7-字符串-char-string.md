@@ -1,6 +1,6 @@
 # 字符串-char-string
 
-## C 风格字符串
+## 一、C 风格字符串
 
 C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。
 
@@ -23,49 +23,145 @@ int main()
 }
 ```
 
-| 函数                | 描述                                                         |
-| ------------------- | ------------------------------------------------------------ |
-| **strcpy(s1, s2);** | 复制字符串 s2 到字符串 s1                                    |
-| **strcat(s1, s2);** | 连接字符串 s2 到字符串 s1 的末尾。连接字符串也可以用 **+** 号 |
-| **strlen(s1);**     | 返回字符串 s1 的长度                                         |
-| **strcmp(s1, s2);** | 如果 s1 和 s2 是相同的，则返回 0；如果 s1<s2 则返回值小于 0；如果 s1>s2 则返回值大于 0。 |
-| **strchr(s1, ch);** | 返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置     |
-| **strstr(s1, s2);** | 返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置   |
+| 函数            | 描述                                                         |
+| --------------- | ------------------------------------------------------------ |
+| strcpy(s1, s2); | 复制字符串 s2 到字符串 s1                                    |
+| strcat(s1, s2); | 连接字符串 s2 到字符串 s1 的末尾。连接字符串也可以用 **+** 号 |
+| strlen(s1);     | 返回字符串 s1 的长度                                         |
+| strcmp(s1, s2); | 如果 s1 和 s2 是相同的，则返回 0；如果 s1<s2 则返回值小于 0；如果 s1>s2 则返回值大于 0。 |
+| strchr(s1, ch); | 返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置     |
+| strstr(s1, s2); | 返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置   |
 
-
-
-## C++ 中的 String 类（常用）
+## 二、C++ 中的 String 类（常用）
 
 C++ 标准库提供了 **string** 类类型，支持上述所有的操作，另外还增加了其他更多的功能。
 
+C++ 的 string 可以修改字符串中的内容，python 和 golang 不可以
+
 需引入头文件 `<string>`
+
+| 方法                 | 描述                                              |
+| -------------------- | ------------------------------------------------- |
+| s.length()           | 返回字符串长度                                    |
+| s.insert(2, "bb")    | 在指定下标插入字符串                              |
+| s.erase(5)           | 删除指定下标后的元素，可指定删除数量              |
+| s.substr(5)          | 提取指定下标后的元素，可指定提取数量              |
+| s.find("aa")         | 待查找指定子串，可指定开始查找的下标              |
+| s.rfind("aa", 5)     | 最多查找到第二个参数处                            |
+| s1.find_first_of(s1) | 查找 s1 和 s2 中第一次相同的字符 ，在 s1 中的下标 |
+
+### 1、初始化和赋值
 
 ```c++
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-int main()
-{
-    string str1 = "runoob";
-    string str2 = "google";
-    string str3;
-    int len;
-
-    // 复制 str1 到 str3
-    str3 = str1;
-    cout << "str3 : " << str3 << endl; // runoob
-
-    // 连接 str1 和 str2
-    str3 = str1 + str2;
-    cout << "str1 + str2 : " << str3 << endl; // runoobgoogle
-
-    // 连接后，str3 的总长度
-    len = str3.size();
-    cout << "str3.size() :  " << len << endl; // 12
-
-    return 0;
+int main() {
+    string s1;
+    string s2 = "hello world";
+    string s3 = s2;
+    string s4(3, 'd');                         // 只能一个字符，只能单引号
+    cout << s1 << " " << s1.length() << endl;  // "" 0
+    cout << s2 << " " << s2.length() << endl;  // "hello world" 11
 }
+```
+
+### 2、访问
+
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s1 = "hello";
+    for (int i = 0; i < s1.length(); i++) {
+        cout << s1[i] << ",";
+    }
+    cout << endl;  // h,e,l,l,o,
+}
+```
+
+### 3、修改
+
+```c++
+string s = "hello";
+s[0] = 'H';
+cout << s << endl; // Hello
+```
+
+### 4、拼接
+
+```c++
+string s1 = "hello";
+string s2 = s1 + " world";
+cout << s2 << endl;  // hello world
+```
+
+### 5、插入字符串
+
+第一个参数 为插入下标；第二个参数 为插入的字符串
+
+```c++
+string s1 = "aaaa";
+s1.insert(2, "bb");
+cout << s1 << endl;  // aabbaa
+```
+
+### 6、删除字符串
+
+s3.erase(5, 2) 表示，从第 5 个位置开始删，删除两个元素停下来，拼接上后面剩余的
+
+```c++
+string s1, s2, s3;
+s1 = s2 = s3 = "1234567890";
+s2.erase(5);
+s3.erase(5, 2);
+cout << s1 << endl;  // 1234567890
+cout << s2 << endl;  // 12345
+cout << s3 << endl;  // 12345890
+```
+
+### 7、提取子串
+
+s1.substr(5, 2) 表示，从第五个位置开始提取，提取两个元素
+
+```c++
+string s1 = "1234567890";
+string s2 = s1.substr(5);
+string s3 = s1.substr(5, 2);
+cout << s1 << endl;  // 1234567890
+cout << s2 << endl;  // 67890
+cout << s3 << endl;  // 67
+```
+
+### 8、查找
+
+`s1.find(s2, 5)`  第一个参数为待查找的子字符串，第二个参数为开始查找的下标；如不指明，则从第0个字符开始查找。
+
+如果没有查找到子字符串，那么会返回个很大的数
+
+```c++
+string s1 = "first second third";
+cout << s1.find("second", 5) << endl;  // 6
+cout << s1.find("aaa", 5) << endl;     // 18446744073709551615
+```
+
+` rfind()` 函数则最多查找到第二个参数处，
+
+如果到了第二个参数所指定的下标还没有找到子字符串，则返回一个无穷大值
+
+```c++
+string s1 = "first second third";
+cout << s1.rfind("second", 5) << endl;  // 18446744073709551615
+```
+
+`find_first_of()` 函数用于查找 s1 和 s2 中第一次相同的 **字符** ，在 s1 中的下标
+
+```c++
+string s1 = "first second second third";
+string s2 = "asd";
+cout << s1.find_first_of(s2) << endl;  // 3
 ```
 
