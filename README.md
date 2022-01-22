@@ -93,7 +93,13 @@ book sm
 
 ## Statement
 
-此仓仅用做个人笔记使用，绝大多数为***自己撰写***
+此仓仅用做个人笔记使用，绝大多数 ***自己总结写作***
+
+在学习的过程中，深受 ***布道者*** 的知识分享 [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/) 
+
+
+
+---
 
 `感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algo](https://github.com/DoWalle/algo) 笔芯🤞
 
@@ -101,5 +107,5 @@ book sm
 
 `侵删`  部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [luogu](https://www.luogu.com.cn) [runoob](https://www.runoob.com/) [biancheng](http://c.biancheng.net/)
 
-`布道者` [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/)
+
 
