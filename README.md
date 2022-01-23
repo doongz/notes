@@ -95,7 +95,7 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数 ***自己总结写作***
 
-在学习的过程中，深受 ***布道者*** 的知识分享 [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/) 
+在学习的过程中，深受 ***布道者*** 的影响 [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/) 
 
 
 
