@@ -15,6 +15,30 @@
 > 是世间所有丑与恶的唾弃者  
 > 是世间所有美与好的创造者  
 
+<p>
+    <a>
+        <img src="https://img.shields.io/badge/mardown-writing-white?logo=markdown" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/license/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/workflow/status/dowalle/algo/Markdown-CI?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/stars/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/last-commit/dowalle/algo?color=white&logo=github" />
+    </a>
+</p>
+
 ## 目录
 
 ### 第一章 [基础算法](https://dowalle.gitbook.io/algo/algorithm)
@@ -106,28 +130,4 @@ book sm
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 `侵删`  部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [luogu](https://www.luogu.com.cn) [runoob](https://www.runoob.com/) [biancheng](http://c.biancheng.net/)
-
-<p>
-    <a>
-        <img src="https://img.shields.io/badge/mardown-writing-white?logo=markdown" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/license/dowalle/algo?color=white&logo=github" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/workflow/status/dowalle/algo/Markdown-CI?color=white&logo=github" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=github" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/stars/dowalle/algo?color=white&logo=github" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/github/last-commit/dowalle/algo?color=white&logo=github" />
-    </a>
-</p>
 
