@@ -23,19 +23,20 @@
         <img src="https://img.shields.io/github/license/dowalle/algo?color=white&logo=github" />
     </a>
     <a>
-        <img src="https://img.shields.io/github/workflow/status/dowalle/algo/Markdown-CI?color=white&logo=github" />
-    </a>
-    <a>
         <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=github" />
     </a>
     <a>
         <img src="https://img.shields.io/github/stars/dowalle/algo?color=white&logo=github" />
     </a>
+    <br>
     <a>
-        <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
+        <img src="https://img.shields.io/github/workflow/status/dowalle/algo/Markdown-CI?color=white&logo=github" />
     </a>
     <a>
         <img src="https://img.shields.io/github/last-commit/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
     </a>
 </p>
 
