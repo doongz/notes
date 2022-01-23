@@ -97,11 +97,7 @@ book sm
 
 在学习的过程中，深受 ***布道者*** 的影响 [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/) 
 
-
-
 ---
-
-
 
 `感谢`  大家点赞 Star🌟 [https://github.com/dowalle/algo](https://github.com/dowalle/algo) 笔芯🤞
 
@@ -111,7 +107,23 @@ book sm
 
 ![](https://img.shields.io/badge/Mardown-writing-blue?logo=markdown) ![](https://img.shields.io/github/license/dowalle/algo?logo=github) ![](https://img.shields.io/github/repo-size/dowalle/algo?logo=github) ![](https://img.shields.io/github/stars/dowalle/algo?color=E3BA3E&logo=github) ![](https://img.shields.io/github/last-commit/dowalle/algo?logo=github)
 
-
-
-
-
+<p align="center">
+    <a>
+      <img src="https://img.shields.io/badge/Mardown-writing-blue?logo=markdown" />
+    </a>
+    <a>
+      <img src="https://img.shields.io/github/license/dowalle/algo?logo=github" />
+    </a>
+    <a>
+      <img src="https://img.shields.io/github/repo-size/dowalle/algo?logo=github" />
+    </a>
+    <a>
+      <img src="https://img.shields.io/github/stars/dowalle/algo?color=E3BA3E&logo=github" />
+    </a>
+    <a>
+      <img src="https://badgen.net/github/commits/dowalle/algo/" />
+    </a>
+    <a>
+      <img src="https://img.shields.io/github/last-commit/dowalle/algo?logo=github" />
+    </a>
+  </p>
