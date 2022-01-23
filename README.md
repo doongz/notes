@@ -109,10 +109,13 @@ book sm
 
 <p>
     <a>
-        <img src="https://img.shields.io/badge/Mardown-writing-blue?color=white&logo=markdown" />
+        <img src="https://img.shields.io/badge/mardown-writing-white?logo=markdown" />
     </a>
     <a>
         <img src="https://img.shields.io/github/license/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
+        <img src="https://img.shields.io/github/workflow/status/dowalle/algo/Markdown-CI?color=white&logo=github" />
     </a>
     <a>
         <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=github" />
@@ -121,6 +124,10 @@ book sm
         <img src="https://img.shields.io/github/stars/dowalle/algo?color=white&logo=github" />
     </a>
     <a>
+        <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
+    </a>
+    <a>
         <img src="https://img.shields.io/github/last-commit/dowalle/algo?color=white&logo=github" />
     </a>
 </p>
+
