@@ -226,7 +226,6 @@
       * [14-头文件](Skill/C++/1-基础知识/14-头文件.md)
       * [15-链接库](Skill/C++/1-基础知识/15-链接库.md)
       * [16-异常处理](Skill/C++/1-基础知识/16-异常处理.md)
-      * [17-元组-tuple](Skill/C++/1-基础知识/17-元组-tuple.md)
       * [2-条件判断](Skill/C++/1-基础知识/2-条件判断.md)
       * [3-循环](Skill/C++/1-基础知识/3-循环.md)
       * [4-运算符](Skill/C++/1-基础知识/4-运算符.md)
@@ -243,6 +242,7 @@
       * [5-模板和泛型](Skill/C++/2-面向对象/5-模板和泛型.md)
     - 3-标准模板库
       * [1-STL基础](Skill/C++/3-标准模板库/1-STL基础.md)
+      * [2-array](Skill/C++/3-标准模板库/2-array.md)
       * [3-vector](Skill/C++/3-标准模板库/3-vector.md)
   - Design-Patterns
     * [备忘录模式](Skill/Design-Patterns/备忘录模式.md)
