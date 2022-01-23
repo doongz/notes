@@ -101,11 +101,17 @@ book sm
 
 ---
 
-`感谢`  大家点赞 Star🌟 [https://github.com/DoWalle/algo](https://github.com/DoWalle/algo) 笔芯🤞
+
+
+`感谢`  大家点赞 Star🌟 [https://github.com/dowalle/algo](https://github.com/dowalle/algo) 笔芯🤞
 
 `发布`  于 Gitbook [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
 `侵删`  部分来源于 [oi-wiki](https://oi-wiki.org) [leetcode](https://leetcode-cn.com/problemset/all/) [luogu](https://www.luogu.com.cn) [runoob](https://www.runoob.com/) [biancheng](http://c.biancheng.net/)
+
+![](https://img.shields.io/badge/Mardown-writing-blue?logo=markdown) ![](https://img.shields.io/github/license/dowalle/algo?logo=github) ![](https://img.shields.io/github/repo-size/dowalle/algo?logo=github) ![](https://img.shields.io/github/stars/dowalle/algo?color=E3BA3E&logo=github) ![](https://img.shields.io/github/last-commit/dowalle/algo?logo=github)
+
+
 
 
 

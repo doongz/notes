@@ -7,6 +7,8 @@
 > 感谢你们的鼓励和Star  
 > 是我持续下去的动力
 
+![dowalle](https://github-readme-stats.vercel.app/api?username=dowalle&repo=algo&show_icons=true&include_all_commits=true&hide=contribs&theme=solarized-light)
+
 
 
 ## Records
