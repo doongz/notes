@@ -182,7 +182,7 @@ int main() {
 }
 ```
 
-### 3、访问多个元素
+### 2、访问多个元素
 
 ```c++
 #include <iostream>
@@ -212,9 +212,104 @@ int main() {
 }
 ```
 
+## 五、添加元素
 
+在 vector 容器尾部添加一个元素，涉及两个成员函数 push_back() emplace_back()，emplace_back是c++11新加的。
 
-## capacity 和 size 属性区别
+```c++
+vector<int> values{};  // 1 2
+values.push_back(1);
+values.push_back(2);
+
+vector<int> nums{};  // 1 2
+nums.emplace_back(1);
+nums.emplace_back(2);
+```
+
+**emplace_back() 和 push_back() 的底层实现机制不同**
+
+- push_back() 向容器尾部添加元素时，首先会创建这个元素，然后再将这个元素拷贝或者移动到容器中（如果是拷贝的话，事后会自行销毁先前创建的这个元素）；
+- emplace_back() 在实现时，则是直接在容器尾部创建这个元素，省去了拷贝或移动元素的过程。
+
+**emplace_back() 的执行效率比 push_back() 高**。因此，在实际使用时，建议大家优先选用 emplace_back()
+
+## 六、插入元素
+
+**insert() 函数是在 vector 容器的指定位置插入一个或多个元素，**常用的有下面四种用法
+
+```c++
+vector<int> nums{1, 2};
+//迭代器正向 idx=1 的位置上插入
+nums.insert(nums.begin() + 1, 3);  // 1 3 2
+
+//迭代器逆向 idx=-2 的位置上插入
+nums.insert(nums.end(), 2, 5);  // 1 3 2 5 5
+
+//在末尾添加另一个容器
+array<int, 3> n2{7, 8, 9};
+nums.insert(nums.end(), n2.begin(), n2.end());  // 1 3 2 5 5 7 8 9
+
+//在末尾添加一组数据
+nums.insert(nums.end(), {10, 11});  // 1 3 2 5 5 7 8 9 10 11
+```
+
+**emplace() 在 vector 容器指定位置插入一个新的元素。**是 C++11 标准新增加的成员函数
+
+```c++
+vector<int> nums{1, 2};
+nums.emplace(nums.begin() + 1, 3);  // 1 3 2
+```
+
+- insert() 函数向 vector 容器中插入 testDemo 类对象，需要调用类的构造函数和移动构造函数
+- emplace() 在插入元素时，是在容器的指定位置直接构造元素
+
+因此，在实际使用中，推荐大家优先使用 emplace()
+
+## 七、删除元素
+
+删除 vector 容器的元素可以借助本身提供的成员函数，还可以借助一些全局函数
+
+| 函数                  | 功能                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| pop_back()            | 删除 vector 容器中最后一个元素，该容器的大小（size）会减 1，但容量（capacity）不会发生改变。 |
+| erase(pos)            | 删除 vector 容器中 pos 迭代器指定位置处的元素，并返回指向被删除元素下一个位置元素的迭代器。该容器的大小（size）会减 1，但容量（capacity）不会发生改变。 |
+| swap(beg)、pop_back() | 先调用 swap() 函数交换要删除的目标元素和容器最后一个元素的位置，然后使用 pop_back() 删除该目标元素。 |
+| erase(beg,end)        | 删除 vector 容器中位于迭代器 [beg,end)指定区域内的所有元素，并返回指向被删除区域下一个位置元素的迭代器。该容器的大小（size）会减小，但容量（capacity）不会发生改变。 |
+| clear()               | 删除 vector 容器中所有的元素，使其变成空的 vector 容器。该函数会改变 vector 的大小（变为 0），但不是改变其容量。 |
+| remove() 公共函数     | 删除容器中所有和指定元素值相等的元素，并返回指向最后一个元素下一个位置的迭代器。值得一提的是，调用该函数不会改变容器的大小和容量。需要导入 <algorithm> |
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> nums{1, 2, 3, 4, 5};
+    // 删除最后一个元素
+    nums.pop_back();                                  // 1 2 3 4
+    cout << "size: " << nums.size() << endl;          // 4
+    cout << "capacity: " << nums.capacity() << endl;  // 5
+
+    // 迭代器删除指定位置，指定区间
+    nums.erase(nums.begin() + 1);          // 1 3 4
+    nums.erase(nums.begin(), nums.end());  //
+
+    // 清空容器
+    nums = {1, 1, 5};
+    nums.clear();  //
+
+    // 公共函数 remove 删除，指定区间内与指定值相同的元素
+    vector<int> demo = {1, 1, 2, 3};
+    auto iter = remove(demo.begin(), demo.end(), 1);     // 2 3 2 3
+    demo.erase(iter, demo.end());                        // 2 3
+    cout << "size is :" << demo.size() << endl;          // 2
+    cout << "capacity is :" << demo.capacity() << endl;  // 4
+    return 0;
+}
+```
+
+## 八、capacity 和 size 属性区别
 
 在 STL 中，拥有 capacity 属性的容器只有 vector 和 string
 
@@ -257,7 +352,3 @@ int main(void)
    return 0;
 }
 ```
-
-## 打印 vector
-
-https://zhuanlan.zhihu.com/p/67447529
