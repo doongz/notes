@@ -25,7 +25,7 @@ int main() {
     map<string, int> m3(m2);
     
     // 指定区域内的键值对
-    map<string, int> m4(m2.begin()++, m2.end());
+    map<string, int> m4(++m2.begin(), m2.end());
 
     // 指定排序规则
     map<string, int, less<string>> m5{{"a", 1}, {"b", 2}, {"c", 3}};
