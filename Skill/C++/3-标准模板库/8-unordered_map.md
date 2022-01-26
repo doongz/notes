@@ -38,8 +38,8 @@ int main() {
 
 | 成员方法           | 功能                                                         |
 | ------------------ | ------------------------------------------------------------ |
-| begin()            | 返回指向容器中第一个键值对的正向迭代器。                     |
-| end()              | 返回指向容器中最后一个键值对之后位置的正向迭代器。           |
+| **begin()**        | **返回指向容器中第一个键值对的正向迭代器。**                 |
+| **end()**          | **返回指向容器中最后一个键值对之后位置的正向迭代器。**       |
 | cbegin()           | 和 begin() 功能相同，只不过在其基础上增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。 |
 | cend()             | 和 end() 功能相同，只不过在其基础上，增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。 |
 | empty()            | 若容器为空，则返回 true；否则 false。                        |
@@ -52,8 +52,8 @@ int main() {
 | equal_range(key)   | 返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中键为 key 的键值对所在的范围。 |
 | emplace()          | 向容器中添加新键值对，效率比 insert() 方法高。               |
 | emplace_hint()     | 向容器中添加新键值对，效率比 insert() 方法高。               |
-| insert()           | 向容器中添加新键值对。                                       |
-| erase()            | 删除指定键值对。                                             |
+| **insert()**       | **向容器中添加新键值对。**                                   |
+| **erase()**        | **删除指定键值对。**                                         |
 | clear()            | 清空容器，即删除容器中存储的所有键值对。                     |
 | swap()             | 交换 2 个 unordered_map 容器存储的键值对，前提是必须保证这 2 个容器的类型完全相等。 |
 | bucket_count()     | 返回当前容器底层存储键值对时，使用桶（一个线性链表代表一个桶）的数量。 |
@@ -138,3 +138,44 @@ unordered_map 容器类模板中提供了以下 2 个成员方法：
 
 - erase()：删除 unordered_map 容器中指定的键值对；
 - clear()：删除 unordered_map 容器中所有的键值对，即清空容器。
+
+```c++
+unordered_map<string, int> um{
+    {"a", 1},
+    {"b", 2},
+    {"c", 3}};
+
+// 删除并返回结果
+auto res = um.erase("b");
+cout << res << endl;  // 1
+
+auto res2 = um.erase(um.begin());
+cout << res2->first << " : " << res2->second << endl;
+// c : 3
+
+// 清空键值对
+um.clear();
+```
+
+## 七、unordered_multimap
+
+unordered_multimap 容器可以存储多个键相等的键值对
+
+无序容器中存储的各个键值对，都会哈希存到各个桶（本质为链表）中。而对于 unordered_multimap 容器来说，其存储的所有键值对中，键相等的键值对会被哈希到同一个桶中存储。
+
+```c++
+unordered_multimap<string, int> umm{
+    {"a", 1},
+    {"b", 2},
+    {"b", 2},
+    {"c", 3}};
+
+for (auto it = umm.begin(); it != umm.end(); it++) {
+    cout << it->first << " : " << it->second << endl;
+}
+// b : 2
+// b : 2
+// a : 1
+// c : 3
+```
+
