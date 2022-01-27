@@ -20,10 +20,10 @@
         <img src="https://img.shields.io/badge/mardown-writing-white?logo=markdown" />
     </a>
     <a>
-        <img src="https://img.shields.io/github/license/dowalle/algo?color=white&logo=github" />
+        <img src="https://img.shields.io/github/license/dowalle/algo?color=white" />
     </a>
     <a>
-        <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=github" />
+        <img src="https://img.shields.io/github/repo-size/dowalle/algo?color=white&logo=git&logoColor=white" />
     </a>
     <a>
         <img src="https://img.shields.io/github/stars/dowalle/algo?color=white&logo=github" />
@@ -39,6 +39,7 @@
         <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
     </a>
 </p>
+
 
 ## 目录
 
@@ -78,7 +79,7 @@
 
 ### 第三章 [技能](https://dowalle.gitbook.io/algo/skill)
 
-- [C++「未完工」](https://dowalle.gitbook.io/algo/skill/c++)
+- [C++「未完工」](https://dowalle.gitbook.io/algo/skill/c++)  `vector`  `deque`  `map`  `set`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
