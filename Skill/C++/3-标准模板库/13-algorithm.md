@@ -1,5 +1,7 @@
 # algorithm
 
+来源：[http://c.biancheng.net/stl/](http://c.biancheng.net/stl/)
+
 ## 一、排序
 
 | 函数名                                                     | 用法                                                         |
@@ -254,9 +256,7 @@ int main() {
 }
 ```
 
-## 二、合并有序序列
-
-### 1、merge()
+### 7、merge()
 
 merge() 函数用于**将 2 个有序序列合并为 1 个有序序列**，前提是这 2 个有序序列的排序规则相同（要么都是升序，要么都是降序）。并且最终借助该函数获得的新有序序列，其排序规则也和这 2 个有序序列相同。
 
@@ -296,7 +296,7 @@ int main() {
 }
 ```
 
-### 2、inplace_merge()
+### 8、inplace_merge()
 
 当 2 个有序序列存储在同一个数组或容器中时，inplace_merge() 函数将它们合并为 1 个有序序列
 
@@ -307,7 +307,41 @@ inplace_merge(vec, vec + 4, vec.end());
 // 1 2 3 4 5 6 7 8 9
 ```
 
-## 三、查找
+### 9、next_permutation()
+
+在容器内所有元素的排列组合中，排序为最小的一个，即升序的方式生成排列
+
+```c++
+vector<int> vec{5, 3, 1, 2, 4};
+
+while (next_permutation(vec.begin(), vec.end())) {
+}
+for (int i = 0; i < vec.size(); i++) {
+    cout << vec[i] << " ";
+}
+// 1 2 3 4 5
+```
+
+### 10、prev_permutation()
+
+在容器内所有元素的排列组合中，排序为最大的一个，即降序的方式生成排列
+
+```c++
+vector<int> vec{5, 3, 1, 2, 4};
+
+while (prev_permutation(vec.begin(), vec.end())) {
+}
+for (int i = 0; i < vec.size(); i++) {
+    cout << vec[i] << " ";
+}
+// 5 4 3 2 1
+```
+
+
+
+## 二、查找
+
+在无序序列中查
 
 ### 1、find()
 
@@ -527,7 +561,91 @@ if (it != vec.end()) {
 
 ## 四、二分查找
 
+在有序序列中查
 
+### 1、lower_bound()
+
+lower_bound() 函数用于在指定区域内查找 **等于或大于目标值的第一个元素**
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 3, 4};
+
+    int *p = lower_bound(arr, arr + 5, 3);
+    cout << "idx: " << p - arr << " val: " << *p << endl;
+    // idx: 2 val: 3
+
+    vector<int> vec1 = {1, 2, 3, 3, 4};
+    auto res1 = lower_bound(vec1.begin(), vec1.end(), 3);
+    cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
+    // idx: 2 val: 3
+
+    vector<int> vec2 = {1, 2, 4, 4, 4};
+    auto res2 = lower_bound(vec2.begin(), vec2.end(), 3);
+    cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
+    // idx: 2 val: 4
+    return 0;
+}
+```
+
+### 2、upper_bound()
+
+upper_bound() 函数用于在指定范围内查找 **大于目标值的第一个元素**
+
+```c++
+int arr[5] = {1, 2, 3, 3, 4};
+
+int *p = upper_bound(arr, arr + 5, 3);
+cout << "idx: " << p - arr << " val: " << *p << endl;
+// idx: 4 val: 4
+
+vector<int> vec1 = {1, 2, 3, 3, 4};
+auto res1 = upper_bound(vec1.begin(), vec1.end(), 3);
+cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
+// idx: 4 val: 4
+
+vector<int> vec2 = {1, 2, 4, 4, 4};
+auto res2 = upper_bound(vec2.begin(), vec2.end(), 3);
+cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
+// idx: 2 val: 4
+```
+
+### 3、equel_range()
+
+equel_range() 函数用于在指定范围内查找 **等于目标值的所有元素**
+
+```c++
+int arr[6] = {1, 2, 3, 3, 3, 4};
+pair<int*, int*> range1 = equal_range(arr, arr + 6, 3);
+cout << "first: " << range1.first - arr
+        << " second: " << range1.second - arr << endl;
+// first: 2 second: 5
+
+vector<int> vec = {1, 2, 3, 3, 3, 4};
+pair<vector<int>::iterator, vector<int>::iterator> range2;
+range2 = equal_range(vec.begin(), vec.end(), 3);
+cout << "first: " << range2.first - vec.begin()
+        << " second: " << range2.second - vec.begin() << endl;
+// first: 2 second: 5
+```
+
+### 4、binary_search()
+
+binary_search() 用于查找指定区域内是否包含某个目标元素
+
+```c++
+vector<int> vec = {1, 2, 3, 3, 3, 4};
+bool res1 = binary_search(vec.begin(), vec.end(), 3);
+cout << res1 << endl;  // 1
+
+bool res2 = binary_search(vec.begin(), vec.end(), 5);
+cout << res2 << endl;  // 0
+```
 
 ## 五、分组
 
@@ -626,3 +744,103 @@ int main() {
 ### 4、partition_point()
 
 partition_point() 函数在已分好组的数据中找到分界位置
+
+## 六、判断
+
+### 1、all_of()
+
+序列中的所有元素「都满足条件时」，返回自定义的 true 结果，否则返回 false 结果
+
+```c++
+vector<int> ages{6, 7, 8, 9};
+int max_age = 10;
+
+// 判断向量中全部都小于 10
+string res;
+res = (all_of(ages.begin(), ages.end(), [max_age](int age) { return age < max_age; }) ? "Yes" : "No");
+cout << res << endl;  // Yes
+```
+
+### 2、any_of()
+
+序列中的元素「有一个满足条件时」，返回自定义的 true 结果，否则返回 false 结果
+
+```c++
+vector<int> ages{6, 7, 8, 9};
+int max_age = 7;
+
+// 判断向量中有一个小于 7
+string res;
+res = (any_of(ages.begin(), ages.end(), [max_age](int age) { return age < max_age; }) ? "Yes" : "No");
+cout << res << endl;  // Yes
+```
+
+### 3、none_of()
+
+序列中的所有元素「都不满足条件时」，返回自定义的 true 结果，否则返回 false 结果
+
+```c++
+vector<int> ages{6, 7, 8, 9};
+int min_age = 5;
+
+// 判断向量中没有一个小于5
+string res;
+res = (none_of(ages.begin(), ages.end(), [min_age](int age) { return age < min_age; }) ? "Yes" : "No");
+cout << res << endl;  // Yes
+```
+
+### 4、equal()
+
+equal() 比较两个序列是否相等，包括元素值和元素排序，推荐使用接受 4 个参数的版本
+
+```c++
+vector<int> vec1 = {1, 2, 3, 4};
+vector<int> vec2 = {2, 3, 4, 5};
+
+cout << equal(vec1.begin(), vec1.end(), vec2.begin(), vec2.end()) << endl;          // 0
+cout << equal(vec1.begin() + 1, vec1.end(), vec2.begin(), vec2.end() - 1) << endl;  // 1
+cout << equal(vec1.begin() + 1, vec1.end(), vec2.begin()) << endl;                  // 1
+```
+
+### 5、is_permutation()
+
+is_permutation() 比较两个序列是否相等，只检查元素值，不包含元素排序
+
+```c++
+vector<int> vec1{5, 3, 1, 2, 4};
+vector<int> vec2{1, 2, 3, 4, 5};
+
+bool res1 = is_permutation(vec1.begin(), vec1.end(), vec2.begin(), vec2.end());
+bool res2 = equal(vec1.begin(), vec1.end(), vec2.begin(), vec2.end());
+cout << res1 << endl;  // 1
+cout << res2 << endl;  // 0
+```
+
+### 6、mismatch()
+
+mismatch() 也可以判断两个序列是否匹配，而且如果不匹配，返回不匹配的位置
+
+### 7、lexicographical_compare()
+
+字符串字典许排序算法
+
+```c++
+vector<string> phrase1{"the", "tigers", "of", "wrath"};
+vector<string> phrase2{"the", "horses", "of", "instruction"};
+bool res = lexicographical_compare(begin(phrase1), end(phrase1),
+                                    begin(phrase2), end(phrase2));
+cout << res << endl;  // 0 因为 tigers 大于 horses
+```
+
+## 七、改变
+
+### 1、unique()
+
+unique() 算法可以在序列中原地移除重复的元素
+
+
+
+### 2、replace()
+
+新的值来替换和给定值相匹配的元素
+

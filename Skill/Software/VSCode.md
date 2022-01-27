@@ -115,3 +115,31 @@ launch.json 用来执行编译后二进制的配置文件
 }
 ```
 
+### 4、c_cpp_properties.json
+
+用于配置编译器环境的，包括启动器代号、位数（这些是自定义的）、编译选项、启动设置、编译模式等
+
+"cppStandard": "c++17" 这个涉及静态检查
+
+```c++
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
