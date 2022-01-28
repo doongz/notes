@@ -11,6 +11,24 @@ int res = max(5, 4);
 cout << res << endl; // 5
 ```
 
+### 2、`*min_element()` 和 `*max_element`
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> vec = {5, 3, 1, 4, 2};
+
+    int min = *min_element(vec.begin(), vec.end());
+    int max = *max_element(vec.begin(), vec.end());
+    cout << min << endl;  // 1
+    cout << max << endl;  // 5
+}
+```
+
 ## 一、排序
 
 | 函数名                                                     | 用法                                                         |
