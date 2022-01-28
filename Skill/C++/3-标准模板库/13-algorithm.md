@@ -2,6 +2,15 @@
 
 来源：[http://c.biancheng.net/stl/](http://c.biancheng.net/stl/)
 
+## 比较
+
+### 1、max()
+
+```c++
+int res = max(5, 4);
+cout << res << endl; // 5
+```
+
 ## 一、排序
 
 | 函数名                                                     | 用法                                                         |
