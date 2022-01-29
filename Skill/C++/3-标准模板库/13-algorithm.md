@@ -29,6 +29,26 @@ int main() {
 }
 ```
 
+### 3、reverse()
+
+反转
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> vec{1, 2, 3};
+    reverse(vec.begin(), vec.end());
+    for (int i = 0; i < vec.size(); i++) {
+        cout << vec[i] << " ";
+    }
+    // 3 2 1
+}
+```
+
 ## 一、排序
 
 | 函数名                                                     | 用法                                                         |
