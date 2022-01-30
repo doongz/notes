@@ -48,7 +48,7 @@ int main() {
 | operator[key]      | 该模板类中重载了 [] 运算符，其功能是可以向访问数组中元素那样，只要给定某个键值对的键 key，就可以获取该键对应的值。注意，如果当前容器中没有以 key 为键的键值对，则其会使用该键向当前容器中插入一个新键值对。 |
 | at(key)            | 返回容器中存储的键 key 对应的值，如果 key 不存在，则会抛出 out_of_range 异常。 |
 | find(key)          | 查找以 key 为键的键值对，如果找到，则返回一个指向该键值对的正向迭代器；反之，则返回一个指向容器中最后一个键值对之后位置的迭代器（如果 end() 方法返回的迭代器）。 |
-| count(key)         | 在容器中查找以 key 键的键值对的个数。                        |
+| **count(key)**     | **在容器中查找以 key 键的键值对的个数。用来检测 key 在不在里面** |
 | equal_range(key)   | 返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中键为 key 的键值对所在的范围。 |
 | emplace()          | 向容器中添加新键值对，效率比 insert() 方法高。               |
 | emplace_hint()     | 向容器中添加新键值对，效率比 insert() 方法高。               |
@@ -90,18 +90,27 @@ cout << it->first << " : " << it->second << endl;  // a : 1
 如果没有存储指定的元素作为键的键值对，则此时 [ ] 运算符的功能将转变为：向当前容器中添加以目标元素为键的键值对
 
 ```c++
-unordered_map<string, int> um{{"a", 1}, {"b", 2}, {"c", 3}};
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 
-int m = um["a"];
-cout << m << endl;  // 1
+int main() {
+    unordered_map<string, int> um{{"a", 1}, {"b", 2}, {"c", 3}};
 
-int n = um["d"];
-cout << n << endl;  // 0
+    int m = um["a"];
+    cout << m << endl;  // 1
 
-// b : 2
-// d : 0
-// c : 3
-// a : 1 
+    // 判断元素在不在map里面
+    cout << um.count("b") << endl;  // 1 相当于找到了，返回true
+    cout << um.count("d") << endl;  // 0 相当于没有，返回false
+
+    // 使用 um["e"] 有个风险，如果里面没有"e"，就会往里面添加
+    cout << um.count("e") << endl;  // 0
+    cout << um["e"] << endl;        // 0 值的默认值是0
+    cout << um.count("e") << endl;  // 1
+
+    return 0;
+}
 ```
 
 2) unordered_map 类模板中，还提供有 at() 成员方法，和使用 [ ] 运算符一样，at() 成员方法也需要根据指定的键，才能从容器中找到该键对应的值；不同之处在于，如果在当前容器中查找失败，该方法不会向容器中添加新的键值对，而是直接抛出`out_of_range`异常
@@ -178,4 +187,3 @@ for (auto it = umm.begin(); it != umm.end(); it++) {
 // a : 1
 // c : 3
 ```
-
