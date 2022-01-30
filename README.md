@@ -74,11 +74,7 @@
 - [数学「未完工」](./Algorithm/数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [系列题「未完工」](./Algorithm/系列题)
 
-### 第二章 [进阶算法](https://dowalle.gitbook.io/algo/algorithm+)
-
-- 矩阵运算「未完工」
-
-### 第三章 [技能](https://dowalle.gitbook.io/algo/skill)
+### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
 
 - [C++「未完工」](https://dowalle.gitbook.io/algo/skill/c++)  `vector`  `deque`  `map`  `set`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
@@ -90,19 +86,11 @@
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
-### 第四章 [竞赛](https://dowalle.gitbook.io/algo/competition)
+### 第三章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
 > *得到一点感悟比得到答案更重要*
 
 - 做一些复杂的题的时候，一定要在做题的时候就「写注释」，方便之后检查
-
-### 第五章 [生活](https://dowalle.gitbook.io/algo/living)
-
-- [Coffee](https://dowalle.gitbook.io/algo/living/coffee)  `种类`  `饮用`  `品鉴`
-- [Whisky「未完工」](https://dowalle.gitbook.io/algo/living/whisky)
-- [Cooking](https://dowalle.gitbook.io/algo/living/cooking)
-- [Watching](https://dowalle.gitbook.io/algo/living/watching)
-- [Reading](https://dowalle.gitbook.io/algo/living/reading)  `老八语录`  `歇后语`
 
 ## TODO
 

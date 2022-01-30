@@ -195,28 +195,9 @@
     * [股票买卖问题](Algorithm/系列题/股票买卖问题.md)
     * [环问题](Algorithm/系列题/环问题.md)
     * [括号问题](Algorithm/系列题/括号问题.md)
-- Algorithm+
-  - 矩阵运算
-    * [卷积](Algorithm+/矩阵运算/卷积.md)
 - Competition
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
-- Living
-  - Coffee
-    * [咖啡品鉴](Living/Coffee/咖啡品鉴.md)
-    * [咖啡饮用](Living/Coffee/咖啡饮用.md)
-    * [咖啡种类](Living/Coffee/咖啡种类.md)
-  - Cooking
-    * [1-排骨汤](Living/Cooking/1-排骨汤.md)
-    * [2-烤红薯](Living/Cooking/2-烤红薯.md)
-    * [3-炒米粉](Living/Cooking/3-炒米粉.md)
-    * [菜单](Living/Cooking/菜单.md)
-  - Reading
-    * [老八语录](Living/Reading/老八语录.md)
-    * [歇后语](Living/Reading/歇后语.md)
-  - [Watching](Living/Watching/README.md)
-  - Whisky
-    * [威士忌种类](Living/Whisky/威士忌种类.md)
 - Skill
   - 编程思想
     * [多态和多态性](Skill/编程思想/多态和多态性.md)
