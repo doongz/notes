@@ -2,6 +2,34 @@
 
 ## 一、C 风格字符串
 
+char 本质上还是 int，char 单个字符单引号，string 双引号
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+    char c_zero = '0';
+    int zero = c_zero;
+
+    int one = '1';
+    int nine = '9';
+
+    int a = 'a';
+    int z = 'z';
+    int A = 'A';
+    int Z = 'Z';
+
+    cout << zero << endl;  // 48
+    cout << one << endl;   // 49
+    cout << a << endl;     // 97
+    cout << z << endl;     // 122
+    cout << A << endl;     // 65
+    cout << Z << endl;     // 90
+    return 0;
+}
+```
+
 C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。
 
 字符串实际上是使用 **null** 字符 **\0** 终止的一维字符数组。由于在数组的末尾存储了空字符，所以字符数组的大小比原字符数多一个。
