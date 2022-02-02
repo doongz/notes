@@ -13,6 +13,7 @@ unordered_set 容器具有以下几个特性：
 ```c++
 #include <iostream>
 #include <string>
+#include <vector>
 #include <unordered_set>
 using namespace std;
 
@@ -24,10 +25,14 @@ int main() {
     unordered_set<string> us2{"a", "b", "c"};
 
     // 3 复制（拷贝）构造函数
-    unordered_set<string> us3(us2);  // // a c b
+    unordered_set<string> us3(us2);  // a c b
 
     // 4 部分选择
     unordered_set<string> us4(++us2.begin(), us2.end());  // a c
+  
+    // 5 不同类型的容器转换
+    vector<int> vec = {1, 2, 3, 2};
+    unordered_set<int> us5(vec.begin(), vec.end()); // 3 2 1
 
     for (auto it = us4.begin(); it != us4.end(); it++) {
         cout << *it << " ";
@@ -49,7 +54,7 @@ int main() {
 | **size()**         | **返回当前容器中存有元素的个数。**                           |
 | max_size()         | 返回容器所能容纳元素的最大个数，不同的操作系统，其返回值亦不相同。 |
 | find(key)          | 查找以值为 key 的元素，如果找到，则返回一个指向该元素的正向迭代器；反之，则返回一个指向容器中最后一个元素之后位置的迭代器（如果 end() 方法返回的迭代器）。 |
-| count(key)         | 在容器中查找值为 key 的元素的个数。                          |
+| **count(key)**     | **在容器中查找值为 key 的元素的个数。用来检测在不在里面**    |
 | equal_range(key)   | 返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中值为 key 的元素所在的范围。 |
 | emplace()          | 向容器中添加新元素，效率比 insert() 方法高。                 |
 | emplace_hint()     | 向容器中添加新元素，效率比 insert() 方法高。                 |

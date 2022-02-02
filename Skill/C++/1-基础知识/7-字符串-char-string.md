@@ -193,3 +193,61 @@ string s2 = "asd";
 cout << s1.find_first_of(s2) << endl;  // 3
 ```
 
+## 三、格式转换
+
+### 1、查看格式
+
+```c++
+#include <iostream>
+#include <typeinfo>
+#include <vector>
+using namespace std;
+
+int main() {
+    int a = 1;
+    char c = '1';
+    string str = "123";
+    vector<int> vec = {1, 2, 3};
+
+    cout << typeid(a).name() << endl;       // i
+    cout << typeid(c).name() << endl;       // c
+    cout << typeid(str).name() << endl;     // NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+    cout << typeid(str[0]).name() << endl;  // c 字符串string 是由 char 组成的
+    cout << typeid(vec).name() << endl;     // NSt3__16vectorIiNS_9allocatorIiEEEE
+
+    cout << c + 1 << endl;  // 50 char 其实也是整形
+
+    return 0;
+}
+```
+
+### 2、string -> int
+
+```c++
+int atoi(const char* str)
+```
+
+```c++
+string str = "123";
+cout << atoi(str.c_str()) + 1 << endl;  // 124
+```
+
+### 3、string -> char
+
+字符串string 是由 char 组成的，所以直接去值就好
+
+```c++
+string str = "123";
+char c = str[0];
+```
+
+### 4、char -> int
+
+char 就是 int
+
+```c++
+char a = 'a';
+int a_int = a;
+cout << a_int << endl;  // 97
+```
+

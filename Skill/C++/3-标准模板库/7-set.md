@@ -1,13 +1,15 @@
 # set 容器
 
-使用 set 容器存储的各个键值对，要求键 key 和值 value 必须相等
+使用 set 容器存储的各个键值对，**键 key 和值 value 必须相等**
 
 {<'a', 1>, <'b', 2>, <'c', 3>}
 {<'a', 'a'>, <'b', 'b'>, <'c', 'c'>}
 
-对于 set 容器来说，只能存储第 2 组键值对。基于 set 容器的这种特性，只需要为其提供各键值对中的 value 值
+对于 set 容器来说，只能存储第 2 组键值对。基于 set 容器的这种特性，**只需要为其提供各键值对中的 value 值**
 
-set 容器也会自行根据键的大小对存储的键值对进行排序。
+set 容器会自行根据键的大小对存储的键值对进行排序。**默认升序**
+
+**常用 multiset，**因为可以存相同的值
 
 ## 一、创建
 
@@ -128,7 +130,7 @@ s.erase(s.begin());             // c d e
 s.erase(++s.begin(), s.end());  // 
 ```
 
-## 六、multiset 
+## 六、multiset (常用)
 
 multiset 容器和 set 容器唯一的差别在于，multiset 容器允许存储多个值相同的元素，而 set 容器中只能存储互不相同的元素
 
@@ -137,5 +139,32 @@ multiset<string> s1;
 multiset<string> s2{"a", "c", "b", "b"};      // a b b c
 multiset<string> s3(s2);                      // a b b c
 multiset<string> s4(++s2.begin(), s2.end());  // b b c
+```
+
+- 用 `s1.erase("b")` 这种方式删除元素时，会将所有相同的元素删除
+- 先用 `s2.lower_bound("b")` 找到第一个与指定值相等的迭代器，转为 `const`，然后删除 `s2.erase(it)`
+
+```c++
+#include <iostream>
+#include <set>
+#include <string>
+using namespace std;
+
+int main() {
+    multiset<string> s1{"a", "c", "b", "b"};  // a b b c
+    s1.erase("b");
+    for (auto it = s1.begin(); it != s1.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;  // a c
+
+    multiset<string> s2{"a", "c", "b", "b"};  // a b b c
+    const auto it = s2.lower_bound("b");      // 找到第一个与指定值相等的迭代器
+    s2.erase(it);                             // 注意这个仅接受常数
+    for (auto itt = s2.begin(); itt != s2.end(); itt++) {
+        cout << *itt << " ";
+    }  // a b c
+    return 0;
+}
 ```
 
