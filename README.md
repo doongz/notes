@@ -76,7 +76,12 @@
 
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
 
-- [C++「未完工」](https://dowalle.gitbook.io/algo/skill/c++)  `vector`  `deque`  `map`  `set`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`
+- [C++](https://dowalle.gitbook.io/algo/skill/c++)  
+  - [基础知识]()  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常`  `GCC`
+  - [面向对象「未完工」]()  `类`
+  - [标准模版库]()  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
+  - [C语言内存]()  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
+
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
