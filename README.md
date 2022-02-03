@@ -52,7 +52,7 @@
   - [前缀树](./Algorithm/1-树&链表/4-前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/2-shu-ju-jie-gou)
   - [栈](./Algorithm/2-数据结构/1-栈.md)  `括号问题`  `单调栈`
-  - [堆&优先队列](./Algorithm/2-数据结构/2-堆&优先队列.md)  `大/小根堆`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`
+  - [堆&优先队列](./Algorithm/2-数据结构/2-堆&优先队列.md)  `大/小根堆`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `中位数`
   - [并查集](./Algorithm/2-数据结构/3-并查集.md)  `合并`  `连通分量`
 - 图论
   - [图的基本知识「未完工」](./Algorithm/图论/图的基本知识.md)

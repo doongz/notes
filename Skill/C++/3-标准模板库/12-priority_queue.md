@@ -43,11 +43,11 @@ int main() {
 | ------------------------------ | ------------------------------------------------------------ |
 | empty()                        | 如果 priority_queue 为空的话，返回 true；反之，返回 false。  |
 | size()                         | 返回 priority_queue 中存储元素的个数。                       |
-| top()                          | 返回 priority_queue 中第一个元素的引用形式。                 |
+| **top()**                      | **返回 priority_queue 中第一个元素的引用形式。**             |
 | push(const T& obj)             | 根据既定的排序规则，将元素 obj 的副本存储到 priority_queue 中适当的位置。 |
-| push(T&& obj)                  | 根据既定的排序规则，将元素 obj 移动存储到 priority_queue 中适当的位置。 |
+| **push(T&& obj)**              | **根据既定的排序规则，将元素 obj 移动存储到 priority_queue 中适当的位置。** |
 | emplace(Args&&... args)        | Args&&... args 表示构造一个存储类型的元素所需要的数据（对于类对象来说，可能需要多个数据构造出一个对象）。此函数的功能是根据既定的排序规则，在容器适配器适当的位置直接生成该新元素。 |
-| pop()                          | 移除 priority_queue 容器适配器中第一个元素。                 |
+| **pop()**                      | **移除 priority_queue 容器适配器中第一个元素。**             |
 | swap(priority_queue<T>& other) | 将两个 priority_queue 容器适配器中的元素进行互换，需要注意的是，进行互换的 2 个 priority_queue 容器适配器中存储的元素类型以及底层采用的基础容器类型，都必须相同。 |
 
 ```c++
