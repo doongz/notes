@@ -77,10 +77,10 @@
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
 
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)  
-  - [基础知识]()  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常`  `GCC`
-  - [面向对象「未完工」]()  `类`
-  - [标准模版库]()  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
-  - [C语言内存]()  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
+  - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常`  `GCC`
+  - [面向对象「未完工」](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类`
+  - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
+  - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
@@ -114,12 +114,6 @@ book sm
 ## Statement
 
 此仓仅用做个人笔记使用，绝大多数 ***自己总结写作***
-
-在学习的过程中，深受 ***布道者*** 的影响 [宫水三叶](https://leetcode-cn.com/u/ac_oier/) [灵茶山艾府](https://leetcode-cn.com/u/endlesscheng/) 
-
-
-
----
 
 `感谢`  大家点赞 Star🌟 [https://github.com/dowalle/algo](https://github.com/dowalle/algo) 笔芯🤞
 
