@@ -32,7 +32,7 @@ int main() {
     // 4 部分元素
     set<string> s4(++s2.begin(), s2.end());  // b c
 
-    // 5 排序
+    // 5 排序，指定比较算法
     set<string, greater<string>> s5{"b", "a", "b", "c"};  // c b a
 
     for (auto it = s5.begin(); it != s5.end(); it++) {

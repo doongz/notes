@@ -41,7 +41,7 @@ int main() {
 
 | 成员函数                       | 功能                                                         |
 | ------------------------------ | ------------------------------------------------------------ |
-| empty()                        | 如果 priority_queue 为空的话，返回 true；反之，返回 false。  |
+| **empty()**                    | **如果 priority_queue 为空的话，返回 true；反之，返回 false。** |
 | size()                         | 返回 priority_queue 中存储元素的个数。                       |
 | **top()**                      | **返回 priority_queue 中第一个元素的引用形式。**             |
 | push(const T& obj)             | 根据既定的排序规则，将元素 obj 的副本存储到 priority_queue 中适当的位置。 |
