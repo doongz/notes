@@ -115,9 +115,9 @@ book sm
 
 此仓仅用做个人笔记使用，绝大多数 ***自己总结写作***
 
-`感谢`  大家点赞 Star🌟 [https://github.com/dowalle/algo](https://github.com/dowalle/algo) 笔芯🤞
+`感谢`  大家点赞 Star🌟 [this repo](https://github.com/dowalle/algo) 笔芯🤞
 
-`发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/) ｜ [Leetcode](https://leetcode-cn.com/u/dodo_1202/)
+`发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/)
 
 `侵删`  部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [runoob](https://www.runoob.com/) | [biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/)
 

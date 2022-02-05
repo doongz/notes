@@ -4,14 +4,7 @@
 
 ## 比较
 
-### 1、max()
-
-```c++
-int res = max(5, 4);
-cout << res << endl; // 5
-```
-
-### 2、`*min_element()` 和 `*max_element`
+### 1、`*min_element()` 和 `*max_element`
 
 ```c++
 #include <algorithm>
@@ -29,7 +22,7 @@ int main() {
 }
 ```
 
-### 3、reverse()
+### 2、reverse()
 
 反转
 
