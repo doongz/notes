@@ -1,93 +1,70 @@
-复制
+# Vim
+
+## 一、使用
+
+| 快捷键           | 说明                   |
+| ---------------- | ---------------------- |
+| :gg dG           | 清空                   |
+| dd               | 删行                   |
+| u                | 撤销上一步的操作       |
+| Ctrl+r           | 恢复上一步被撤销的操作 |
+| page             | 翻页                   |
+| Home             | 移动到当前行行首       |
+| end              | 移动到当前行行尾       |
+| :set nu          | 显示行数               |
+| :$               | 跳转到最后一行         |
+| :1               | 跳转到第一行           |
+| :n               | 跳转到第n行            |
+| shift+g          | 跳转到最后一行         |
+| gg               | 跳转到第一行           |
+| command+上下箭头 |                        |
+| /<查找内容>      | 查找，回车，n下一个    |
+|                  |                        |
+|                  |                        |
+|                  |                        |
+|                  |                        |
+
+**复制**
 
 1. 将光标移动到要复制的文本开始的地方，按v进入可视模式。
-
 2. 将光标移动到要复制的文本的结束的地方，按y复制。此时vim会自动将光标定位到选中文本的开始的地方，并退出可视模式。
-
 3. 移动光标到文本结束的地方，按p粘贴。
 
-清空：gg dG
+**多行注释**
 
-删行：shift d  或者dd
+1. 进入vi/vim编辑器，按CTRL+V进入可视化模式（VISUAL BLOCK）
 
-u   撤销上一步的操作
+2. 移动光标上移或者下移，选中多行的开头，如下图所示
 
-Ctrl+r 恢复上一步被撤销的操作
+3. 选择完毕后，按大写的的I键，此时下方会提示进入“insert”模式，输入你要插入的注释符，例如#
 
-page 翻页
+4. 最后按ESC键，你就会发现多行代码已经被注释了
 
-Home 移动到当前行行首
+5. 删除多行注释的方法，同样 Ctrl+v 进入列选择模式，移到光标把注释符选中，按下d，注释就被删除了。
 
-end 移动到当前行行尾
-
-显示行数
-
-:set nu
-
-第一种方式
-
-	• :$ 跳转到最后一行
-	
-	• :1 跳转到第一行
-	
-	• :n 跳转到第n行
-
-第二种方式
-
-	• shift+g 跳转到最后一行
-	
-	• gg 跳转到第一行
-	
-	• command+上下箭头
-
-查找
-
-/print
-
-回车
-
-n下一个
-
-多行注释
-
-1、进入vi/vim编辑器，按CTRL+V进入可视化模式（VISUAL BLOCK）
-
-2、移动光标上移或者下移，选中多行的开头，如下图所示
-
-3、选择完毕后，按大写的的I键，此时下方会提示进入“insert”模式，输入你要插入的注释符，例如#
-
-4、最后按ESC键，你就会发现多行代码已经被注释了
-
-5、删除多行注释的方法，同样 Ctrl+v 进入列选择模式，移到光标把注释符选中，按下d，注释就被删除了。
-
-vim设置
+## 二、配置文件
 
 vim ~/.vimrc
 
-set tabstop=4        设置tab键缩进为4个字符
+```shell
+syntax on	" 自动语法高亮
+set number " 显示行号
+set cindent
+set smartindent " 开启新行时使用智能自动缩进
+set showmatch " 插入括号时，短暂地跳转到匹配的对应括号
+set ruler " 打开状态栏标尺
+:set mouse=a "在vim所有模式下开鼠标，复制文档就可以不包含行号了
 
-set expandtab    转化为空格
-
-set autoindent  设置自动缩进
-
-set paste               首行 不会自动添加好多空格了 
-
- 
-
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-
-set termencoding=utf-8
-
-set encoding=utf-8
-
-
-光标回到上次退出的地方
-
-if has("autocmd")
-
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
+if has("autocmd") " 重新打开光标调到上次退出的地方
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+set ts=4    " tab 为4个空格
+"set expandtab    " 换行保持当前缩进
+"set autoindent
+
+```
+
+
 
 
 

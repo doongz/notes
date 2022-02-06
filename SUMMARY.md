@@ -331,13 +331,19 @@
     * [5-集合-set](Skill/Python/5-集合-set.md)
     * [6-字典-dict](Skill/Python/6-字典-dict.md)
     * [7-高级玩法](Skill/Python/7-高级玩法.md)
-    * [8-内置函数-未完工](Skill/Python/8-内置函数-未完工.md)
-    * [9-内置包](Skill/Python/9-内置包.md)
+    * [8-常用函数](Skill/Python/8-常用函数.md)
+    * [9-常用包](Skill/Python/9-常用包.md)
   - Software
+    - kubernetes
+      * [1-常用命令](Skill/Software/kubernetes/1-常用命令.md)
+      * [2-service&deployment](Skill/Software/kubernetes/2-service&deployment.md)
+      * [3-configmap](Skill/Software/kubernetes/3-configmap.md)
+      * [4-定时任务](Skill/Software/kubernetes/4-定时任务.md)
+      * [k8s存储](Skill/Software/kubernetes/k8s存储.md)
+      * [k8s文档](Skill/Software/kubernetes/k8s文档.md)
     * [常用工具](Skill/Software/常用工具.md)
     * [ceph-rbd](Skill/Software/ceph-rbd.md)
     * [git](Skill/Software/git.md)
-    * [kubernetes](Skill/Software/kubernetes.md)
     * [vim](Skill/Software/vim.md)
     * [VSCode](Skill/Software/VSCode.md)
   - SQL
