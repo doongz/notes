@@ -252,3 +252,13 @@ int a_int = a;
 cout << a_int << endl;  // 97
 ```
 
+### 5、int -> string
+
+string to_string (int val);
+
+```c++
+int a = 123;
+string b = to_string(a);
+cout << b << endl;  // "123"
+```
+

@@ -52,7 +52,7 @@
   - [前缀树](./Algorithm/1-树&链表/4-前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/2-shu-ju-jie-gou)
   - [栈](./Algorithm/2-数据结构/1-栈.md)  `括号问题`  `单调栈`  `Medium`
-  - [堆&优先队列](./Algorithm/2-数据结构/2-堆&优先队列.md)  `大/小根堆`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `中位数`  `Hard`
+  - [堆&优先队列](./Algorithm/2-数据结构/2-堆&优先队列.md)  `大/小根堆`  `控制大小`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
   - [并查集](./Algorithm/2-数据结构/3-并查集.md)  `合并`  `连通分量`
 - 图论
   - [图的基本知识「未完工」](./Algorithm/图论/图的基本知识.md)
@@ -87,7 +87,7 @@
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX「未完工」](https://dowalle.gitbook.io/algo/skill/latex)
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
-- [Software「未完工」](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
+- [Software](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
