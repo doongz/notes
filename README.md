@@ -45,15 +45,15 @@
 
 ### 第一章 [基础算法](https://dowalle.gitbook.io/algo/algorithm)
 
-- [树&链表](https://dowalle.gitbook.io/algo/algorithm/1-shu-lian-biao)
+- [数据结构](https://dowalle.gitbook.io/algo/algorithm/2-shu-ju-jie-gou)
   - [链表](./Algorithm/1-树&链表/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
   - [二叉树](./Algorithm/1-树&链表/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
-  - [平衡树&搜索树](./Algorithm/1-树&链表/3-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
-  - [前缀树](./Algorithm/1-树&链表/4-前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
-- [数据结构](https://dowalle.gitbook.io/algo/algorithm/2-shu-ju-jie-gou)
   - [栈](./Algorithm/2-数据结构/1-栈.md)  `括号问题`  `单调栈`  `Medium`
   - [堆&优先队列](./Algorithm/2-数据结构/2-堆&优先队列.md)  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
   - [并查集](./Algorithm/2-数据结构/3-并查集.md)  `合并`  `连通分量`
+  - [平衡树&搜索树](./Algorithm/1-树&链表/3-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
+  - [前缀树](./Algorithm/1-树&链表/4-前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
+
 - 图论
   - [图的基本知识「未完工」](./Algorithm/图论/图的基本知识.md)
   - [图的存储](./Algorithm/图论/图的存储.md)  `邻接表`  `邻接矩阵`  `类边`
