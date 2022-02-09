@@ -1,6 +1,4 @@
-#### [547. 省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
-
-欢迎 star :star:  https://github.com/WalleDong/algorithm
+[547. 省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
 
 由题意可知：
 
@@ -8,7 +6,136 @@
 - isConnected 本身就是邻接矩阵
 - 相当于求几个连通分量，可用并查集
 
-**方法一：dfs**
+## 方法一：并查集
+
+执行用时：16 ms, 在所有 C++ 提交中击败了92.48%的用户
+
+内存消耗：13.4 MB, 在所有 C++ 提交中击败了41.19%的用户
+
+时间复杂度：`O(n^2logn)`
+
+空间复杂度：`O(n)`
+
+```c++
+class UnionFind {
+public:
+    vector<int> parent;  // 下标idx为节点，parent[idx]为该节点的父亲
+    vector<int> size;    // 若idx为父亲根节点，size[idx]为该连通分量的大小
+    int n;               // 节点数量
+    int setCount;        // 连通分量的数量
+
+public:
+    UnionFind(int _n) : n(_n), setCount(_n), parent(_n), size(_n, 1) {
+        iota(parent.begin(), parent.end(), 0);
+    }
+
+    int find(int x) {
+        return parent[x] == x ? x : parent[x] = find(parent[x]);
+    }
+
+    bool unite(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if (x == y) return false;
+
+        if (size[x] < size[y]) {
+            swap(x, y);
+        }
+        parent[y] = x;       // x 作为 y 的父亲
+        size[x] += size[y];  // 父亲节点x的联通分量大小加上y节点的
+        --setCount;
+        return true;
+    }
+
+    bool is_connected(int x, int y) {
+        x = find(x);
+        y = find(y);
+        return x == y;
+    }
+
+    void disconnected(int x) {
+        if (x != parent[x]) {
+            parent[x] = x;
+            size[x] = 1;
+            ++setCount;
+        }
+    }
+};
+
+class Solution {
+public:
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int rows = isConnected.size();
+        int cols = isConnected[0].size();
+        if (rows == 1) return 1;
+
+        UnionFind uf(rows);
+
+        // 只用遍历一半就行
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (r < c) {  // 右上
+                    if (isConnected[r][c] == 1)
+                        uf.unite(r, c);
+                }
+            }
+        }
+        return uf.setCount;
+    }
+};
+```
+
+执行用时：44 ms, 在所有 Python3 提交中击败了74.87%的用户
+
+内存消耗：15.3 MB, 在所有 Python3 提交中击败了47.20%的用户
+
+```python
+class UnionFind:
+    def __init__(self, n):
+        self.count = n
+        self.parent = [i for i in range(n)] # 初始化节点i的父节点为i
+        self.rank = [0] * n
+
+    def find(self, i):
+        # 递归查找根节点，如果节点i的父节点为本身就找到了根，结束递归
+        if self.parent[i] != i:
+            self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
+
+    def union(self, x, y):
+        # 合并两个节点
+        rootx = self.find(x)
+        rooty = self.find(y)
+        if rootx != rooty:
+            if self.rank[rootx] < self.rank[rooty]:
+                rootx, rooty = rooty, rootx
+            self.parent[rooty] = rootx
+            if self.rank[rootx] == self.rank[rooty]:
+                self.rank[rootx] += 1
+            self.count -= 1
+            
+    def is_connected(self, x, y):
+        # 判断两个节点是否连通
+        return self.find(x) == self.find(y)
+
+    def disconnected(self, x):
+        # 断开节点与他父亲的连接
+        self.parent[x] = x
+        self.rank[x] = 0
+
+
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        cities = len(isConnected)
+        uf = UnionFind(cities)
+        for i in range(cities):
+            for j in range(i):  # 无向图，只用扫描一半就好了，全扫也不影响结果
+                if isConnected[i][j] == 1:
+                    uf.union(i, j)
+        return uf.count
+```
+
+## 方法二：dfs
 
 时间复杂度：`O(n^2)`，其中 n 是城市的数量。需要遍历矩阵 n 中的每个元素
 
@@ -68,7 +195,7 @@ func findCircleNum(isConnected [][]int) int {
 
 
 
-**方法二：bfs**
+## 方法三：bfs
 
 时间复杂度：`O(n^2)`
 
@@ -134,62 +261,4 @@ func findCircleNum(isConnected [][]int) int {
 	}
 	return ans
 }
-```
-
-
-
-**方法三：并查集**
-
-时间复杂度：`O(n^2)`
-
-空间复杂度：`O(n)`
-
-执行用时：44 ms, 在所有 Python3 提交中击败了74.87%的用户
-
-内存消耗：15.3 MB, 在所有 Python3 提交中击败了47.20%的用户
-
-```python
-class UnionFind:
-    def __init__(self, n):
-        self.count = n
-        self.parent = [i for i in range(n)] # 初始化节点i的父节点为i
-        self.rank = [0] * n
-
-    def find(self, i):
-        # 递归查找根节点，如果节点i的父节点为本身就找到了根，结束递归
-        if self.parent[i] != i:
-            self.parent[i] = self.find(self.parent[i])
-        return self.parent[i]
-
-    def union(self, x, y):
-        # 合并两个节点
-        rootx = self.find(x)
-        rooty = self.find(y)
-        if rootx != rooty:
-            if self.rank[rootx] < self.rank[rooty]:
-                rootx, rooty = rooty, rootx
-            self.parent[rooty] = rootx
-            if self.rank[rootx] == self.rank[rooty]:
-                self.rank[rootx] += 1
-            self.count -= 1
-            
-    def is_connected(self, x, y):
-        # 判断两个节点是否连通
-        return self.find(x) == self.find(y)
-
-    def disconnected(self, x):
-        # 断开节点与他父亲的连接
-        self.parent[x] = x
-        self.rank[x] = 0
-
-
-class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        cities = len(isConnected)
-        uf = UnionFind(cities)
-        for i in range(cities):
-            for j in range(i):  # 无向图，只用扫描一半就好了，全扫也不影响结果
-                if isConnected[i][j] == 1:
-                    uf.union(i, j)
-        return uf.count
 ```
