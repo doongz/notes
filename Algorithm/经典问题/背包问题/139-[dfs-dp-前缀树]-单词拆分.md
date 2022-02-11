@@ -1,3 +1,5 @@
+- 
+
 [139. 单词拆分](https://leetcode-cn.com/problems/word-break/)
 
 参考一：https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/
@@ -25,7 +27,6 @@ public:
         unordered_set<string> us(wordDict.begin(), wordDict.end());
         return dfs(0, s, us);
     }
-
     bool dfs(int start, string &s, unordered_set<string> &us) {
         if (start == s.size()) {
             return true;
@@ -63,7 +64,6 @@ public:
         vector<int> memory(s.size(), -1);  // 初始状态为-1，代表没来过
         return dfs(0, memory, s, us);
     }
-
     bool dfs(int start, vector<int> &memory, string &s, unordered_set<string> &us) {
         if (start == s.size()) {
             return true;
@@ -92,10 +92,46 @@ bfs也可以做，可看看参考链接
 
 ## 方法四：动态规划
 
+单词就是物品，字符串s就是背包，单词能否组成字符串s，就是问物品能不能把背包装满。拆分时可以重复使用字典中的单词，说明就是一个完全背包！
 
+将大问题分解为规模小一点的子问题：
+
+- 前 i 个字符的子串，能否分解成单词
+- 剩余子串，是否为单个单词
+
+dp[i] 代表：长度为 i 的 s[0:i] 子串是否能拆分成单词。或者说以 i-1 结尾的子串能否拆分成单词
+
+所以题目求：dp[s.length]
 
 <img src="../doc/139-5.png" style="zoom:40%;" />
 
-
+**如果前面的 j-1 个ok，截取的word（从 j 到 i-1）也在，那得出前面 i-1 个ok，dp[i] = true**
 
 <img src="../doc/139-6.png" style="zoom:40%;" />
+
+时间复杂度：`O(n^3)`，因为substr返回子串的副本是O(n)的复杂度（这里的n是substring的长度）
+
+空间复杂度：`O(n)`
+
+```c++
+class Solution {
+public:
+    bool wordBreak(string s, vector<string>& wordDict) {
+        unordered_set<string> us(wordDict.begin(), wordDict.end());
+        vector<bool> dp(s.length() + 1, false);
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {      // 遍历背包
+            for (int j = 0; j < i; j++) {            // 遍历物品
+                string word = s.substr(j, i - j);    // substr(起始位置，截取的个数)
+                if (dp[j] && us.count(word) == 1) {  // 
+                    dp[i] = true;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+};
+```
+
+
+
