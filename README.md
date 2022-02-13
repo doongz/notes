@@ -52,6 +52,7 @@
   - [并查集](./Algorithm/1-数据结构/6-并查集.md)  `连通`  `连通分量`  ``连通性判断``  `添加、连通、查找O(logn)`  `Medium`
   - [平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/7-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
   - [字典树「未完工」](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`
+
 - [图论]()
   - [基本知识「未完工」](./Algorithm/图论/1-基本知识.md)
   - [图的存储](./Algorithm/图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -61,6 +62,7 @@
   - [最短路径](./Algorithm/图论/最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [拓扑排序](./Algorithm/图论/拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
   - [欧拉图](./Algorithm/图论/欧拉图.md)  `一笔画完整个图`
+
 - [排序](./Algorithm/排序/排序.md)  `冒泡`  `选择`  `插入`  `快速`
 - [二分法「未完工」](./Algorithm/二分法/二分法.md)  `单调性`  `O(logn)`
 - [双指针「未完工」](./Algorithm/双指针/双指针.md)
@@ -77,7 +79,7 @@
 
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
 
-- [C++](https://dowalle.gitbook.io/algo/skill/c++)  
+- [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常`  `GCC`
   - [面向对象「未完工」](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类`
   - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
@@ -85,10 +87,9 @@
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
-- [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
+- [LaTeX](./Skill/LaTeX)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)
   - [数学公式](./Skill/LaTeX/2-数学公式.md)
-
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
 - [Software](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
