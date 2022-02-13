@@ -252,7 +252,7 @@ int a_int = a;
 cout << a_int << endl;  // 97
 ```
 
-### 5、int -> string
+### 5、char / int -> string
 
 string to_string (int val);
 

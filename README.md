@@ -51,7 +51,7 @@
   - [哈希表「未完工」](./Algorithm/1-数据结构/5-哈希表.md)
   - [并查集](./Algorithm/1-数据结构/6-并查集.md)  `连通`  `连通分量`  ``连通性判断``  `添加、连通、查找O(logn)`  `Medium`
   - [平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/7-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
-  - [前缀树](./Algorithm/1-数据结构/8-前缀树.md)  `字典树`  `字符串/字符前缀是否存在`
+  - [字典树「未完工」](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`
 - [图论]()
   - [基本知识「未完工」](./Algorithm/图论/1-基本知识.md)
   - [图的存储](./Algorithm/图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -82,11 +82,13 @@
   - [面向对象「未完工」](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类`
   - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
-
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
-- [LaTeX「未完工」](https://dowalle.gitbook.io/algo/skill/latex)
+- [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
+  - [数学符号](./Skill/LaTeX/1-数学符号.md)
+  - [数学公式](./Skill/LaTeX/2-数学公式.md)
+
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
 - [Software](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
