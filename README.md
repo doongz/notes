@@ -51,7 +51,8 @@
   - [哈希表「未完工」](./Algorithm/1-数据结构/5-哈希表.md)
   - [并查集](./Algorithm/1-数据结构/6-并查集.md)  `连通`  `连通分量`  ``连通性判断``  `添加、连通、查找O(logn)`  `Medium`
   - [平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/7-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
-  - [字典树「未完工」](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`
+  - [字典树](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
+  - [树状数组 & 线段树](./Algorithm/1-数据结构/9-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`
 - [图论]()
   - [基本知识「未完工」](./Algorithm/图论/1-基本知识.md)
   - [图的存储](./Algorithm/图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -95,7 +96,7 @@
   - [Git「未完工」](./Skill/Software/3-git.md)
   - [Vim](./Skill/Software/4-vim.md)  `快捷键`  `配置文件`
   - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
-  - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/kubernetes)
+  - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/6-kubernetes)
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
