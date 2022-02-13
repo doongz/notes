@@ -27,6 +27,8 @@ int main() {
     int values[]{4, 1, 2, 3};
     priority_queue<int, deque<int>, greater<int> > q4(values, values + 4);
     // 1 2 3 4
+    // 底层容器为 vector 会快一些
+    priority_queue<int, vector<int>, greater<int> > q5(values, values + 4);
 
     while (!q4.empty()) {
         cout << q4.top() << " ";
