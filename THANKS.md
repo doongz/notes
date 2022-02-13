@@ -1,11 +1,10 @@
 # THANKS
 
 > 虽说，开始行动的最好时机是现在  
-> 但是，在 @^ 的时候才开始专注于积累 😮‍💨  
+> 但是，在 @^ 的时候才开始专注于学习 😮‍💨  
 >
 > 知识是无价的嘛，很高兴能给大家分享出来  
-> 感谢你们的鼓励和 Star  
-> 是我持续下去的动力
+> 非常感谢你们的 Star  
 
 ![dowalle](https://github-readme-stats.vercel.app/api?username=dowalle&repo=algo&show_icons=true&include_all_commits=true&hide=contribs&theme=solarized-light)
 
