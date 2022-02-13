@@ -85,11 +85,17 @@
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `interface`  `*pointer`  `goroutine「未完工」`
 - [Markdown](https://github.com/guodongxiaren/README)
-- [LaTeX](./Skill/LaTeX)
-  - [数学符号](./Skill/LaTeX/1-数学符号.md)
-  - [数学公式](./Skill/LaTeX/2-数学公式.md)
+- [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
+  - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
+  - [数学公式「未完工」](./Skill/LaTeX/2-数学公式.md)
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
-- [Software](https://dowalle.gitbook.io/algo/skill/software)  `git`  `vim`  `kubernetes`  `ceph`  `常用工具`
+- [Software](https://dowalle.gitbook.io/algo/skill/software)
+  - [软件 & 工具](./Skill/Software/1-软件&网站.md)  `开发`  `创作`  `效率`  `文献`
+  - [VS Code](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
+  - [Git「未完工」](./Skill/Software/3-git.md)
+  - [Vim](./Skill/Software/4-vim.md)  `快捷键`  `配置文件`
+  - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
+  - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/kubernetes)
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
