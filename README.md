@@ -53,27 +53,27 @@
   - [平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/7-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
   - [字典树](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
   - [树状数组 & 线段树](./Algorithm/1-数据结构/9-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard`
-- [图论]()
-  - [基本知识「未完工」](./Algorithm/图论/1-基本知识.md)
-  - [图的存储](./Algorithm/图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
-  - [图的种类](./Algorithm/图论/3-图的种类.md)  `二分图`
-  - [BFS](./Algorithm/图论/BFS.md)  `最短路径`  `双向bfs`
-  - [DFS](./Algorithm/图论/DFS.md)  `回溯`  `记忆化dfs`
-  - [最短路径](./Algorithm/图论/最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
-  - [拓扑排序](./Algorithm/图论/拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
-  - [欧拉图](./Algorithm/图论/欧拉图.md)  `一笔画完整个图`
-- [排序](./Algorithm/排序/排序.md)  `冒泡`  `选择`  `插入`  `快速`
-- [二分法「未完工」](./Algorithm/二分法/二分法.md)  `单调性`  `O(logn)`
-- [双指针「未完工」](./Algorithm/双指针/双指针.md)
-- [滑动窗口](./Algorithm/滑动窗口/滑动窗口.md)  `单调性`  `窗口数据结构`  `断环成链`
-- [贪心「未完工」](./Algorithm/贪心/贪心.md)  `证明难`
-- [动态规划「未完工」](./Algorithm/动态规划/动态规划.md)
-- 前缀和&差分
-  - [前缀和](./Algorithm/前缀和&差分/前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
-  - [差分](./Algorithm/前缀和&差分/差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
-- [数学「未完工」](./Algorithm/数学/数学.md)  `倍增`  `快速幂`  `求余`
+- [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
+  - [排序](./Algorithm/2-算法基础/1-排序.md)  `冒泡`  `选择`  `插入`  `快速`
+  - [二分法「未完工」](./Algorithm/2-算法基础/2-二分法.md)  `单调性`  `O(logn)`
+  - [双指针「未完工」](./Algorithm/2-算法基础/3-双指针.md)
+  - [滑动窗口](./Algorithm/2-算法基础/4-滑动窗口.md)  `单调性`  `窗口数据结构`  `断环成链`
+  - [前缀和](./Algorithm/2-算法基础/5-前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
+  - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
+  - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `证明难`
+- [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
+- [图论](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
+  - [基本知识](./Algorithm/4-图论/1-基本知识.md)
+  - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
+  - [图的种类](./Algorithm/4-图论/3-图的种类.md)  `二分图`
+  - [DFS](./Algorithm/4-图论/4-DFS.md)  `回溯`  `记忆化dfs`
+  - [BFS](./Algorithm/4-图论/5-BFS.md)  `最短路径`  `双向bfs`
+  - [拓扑排序](./Algorithm/4-图论/6-拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
+  - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
+  - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
+- [数学「未完工」](./Algorithm/5-数学/数学.md)  `倍增`  `快速幂`  `求余`
 - [经典问题](./Algorithm/经典问题)
-  - [背包问题](./Algorithm/经典问题/背包问题/0-背包问题.md)
+  - [背包问题](./Algorithm/经典问题/背包问题/背包问题概述.md)
 
 
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
@@ -106,7 +106,6 @@
 
 ## TODO
 
-- [ ] [「区间和」问题](https://leetcode-cn.com/problems/range-sum-query-mutable/solution/guan-yu-ge-lei-qu-jian-he-wen-ti-ru-he-x-41hv/)，线段树，树状数组
 - [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
 - [ ] 扫描线
 
