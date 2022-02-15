@@ -66,17 +66,17 @@ int main() {
 #include <vector>
 using namespace std;
 
-// 以普通函数的方式实现自定义排序规则，< 大的在前
-bool cmp1(int i, int j) {
-    return (i < j);
+// 方法一：以普通函数的方式实现自定义排序规则，< 大的在前
+bool cmp1(int &a, int &b) {
+    return (a < b);
 }
 
-// （推荐）以函数对象的方式实现自定义排序规则，> 大的在前
+// 方法二：以函数对象的方式实现自定义排序规则，> 大的在前
 class cmp2 {
 public:
     // 重载 operator
-    bool operator()(int i, int j) {
-        return (i > j);
+    bool operator()(int &a, int &b) {
+        return (a > b);
     }
 };
 
@@ -94,8 +94,14 @@ int main() {
     sort(vec.begin(), vec.begin() + 3);  // 2 3 5 4 1
 
     sort(vec.begin(), vec.end(), greater<int>());  // 5 4 3 2 1
-    sort(vec.begin(), vec.end(), cmp1());          // 5 4 3 2 1
+    sort(vec.begin(), vec.end(), cmp1);            // 5 4 3 2 1
     sort(vec.begin(), vec.end(), cmp2());          // 5 4 3 2 1
+
+    // 方法三：lambda 函数
+    auto cmp3 = [&](const int &a, const int &b) -> bool {
+        return a > b;
+    };
+    sort(vec.begin(), vec.end(), cmp3);  // 5 4 3 2 1
 
     show(vec);
     return 0;
