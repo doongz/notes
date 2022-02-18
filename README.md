@@ -61,6 +61,7 @@
   - [前缀和](./Algorithm/2-算法基础/5-前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
   - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
   - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `证明难`
+  - [位运算「未完工」](./Algorithm/2-算法基础/8-位运算.md)  `奇偶`  `除2`
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
 - [图论](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
@@ -106,6 +107,7 @@
 
 ## TODO
 
+- [ ] 状态压缩
 - [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
 - [ ] 扫描线
 
