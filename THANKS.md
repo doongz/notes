@@ -12,7 +12,7 @@
 
 ## Records
 
-### 2022-01-19 01:15:38 🎉🎉🎉
+### Date : 2022-01-19 01:15:38 🎉🎉🎉
 
 Total : 279 files,  14529 codes, 10 comments, 6538 blanks, all 21077 lines
 
@@ -22,3 +22,12 @@ Total : 279 files,  14529 codes, 10 comments, 6538 blanks, all 21077 lines
 | YAML | 2 | 33 | 10 | 11 | 54 |
 | JSON | 1 | 8 | 0 | 1 | 9 |
 
+### Date : 2022-02-19 20:55:45 🤯😮‍💨👿
+
+Total : 342 files,  22916 codes, 10 comments, 8726 blanks, all 31652 lines
+
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Markdown | 339 | 22,875 | 0 | 8,714 | 31,589 |
+| YAML | 2 | 33 | 10 | 11 | 54 |
+| JSON | 1 | 8 | 0 | 1 | 9 |

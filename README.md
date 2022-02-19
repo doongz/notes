@@ -54,7 +54,7 @@
   - [字典树](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
   - [树状数组 & 线段树](./Algorithm/1-数据结构/9-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard`
 - [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
-  - [排序](./Algorithm/2-算法基础/1-排序.md)  `冒泡`  `选择`  `插入`  `快速`
+  - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)`  `并归O(nlogn)`
   - [二分法「未完工」](./Algorithm/2-算法基础/2-二分法.md)  `单调性`  `O(logn)`
   - [双指针「未完工」](./Algorithm/2-算法基础/3-双指针.md)
   - [滑动窗口](./Algorithm/2-算法基础/4-滑动窗口.md)  `单调性`  `窗口数据结构`  `断环成链`
