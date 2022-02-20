@@ -45,9 +45,9 @@
 
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [链表](./Algorithm/1-数据结构/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
-  - [二叉树](./Algorithm/11-数据结构/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
-  - [栈 & 单调栈](./Algorithm/1-数据结构/1-栈&单调栈.md)  `括号问题`  `单调栈`  `Medium`
-  - [堆](./Algorithm/1-数据结构/2-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
+  - [二叉树](./Algorithm/1-数据结构/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
+  - [栈 & 单调栈](./Algorithm/1-数据结构/3-栈&单调栈.md)  `括号问题`  `单调栈`  `Medium`
+  - [堆](./Algorithm/1-数据结构/4-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
   - [哈希表「未完工」](./Algorithm/1-数据结构/5-哈希表.md)
   - [并查集](./Algorithm/1-数据结构/6-并查集.md)  `连通`  `连通分量`  ``连通性判断``  `添加、连通、查找O(logn)`  `Medium`
   - [平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/7-平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
@@ -101,7 +101,7 @@
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
-### 第三章 [面试]()
+### 第三章 [面试](https://dowalle.gitbook.io/algo/interview)
 
 - [面经](./Interview/1-面经.md)
 
