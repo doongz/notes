@@ -41,7 +41,7 @@
 
 ## 目录
 
-### 第一章 [基础算法](https://dowalle.gitbook.io/algo/algorithm)
+### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
 
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [链表](./Algorithm/1-数据结构/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
