@@ -101,7 +101,11 @@
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
-### 第三章 [竞赛](https://dowalle.gitbook.io/algo/competition)
+### 第三章 [面试]()
+
+- [面经](./Interview/1-面经.md)
+
+### 第四章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
 > *得到一点感悟比得到答案更重要*
 
