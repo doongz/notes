@@ -88,7 +88,6 @@
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `*pointer`  `interface`
   - [goroutine](https://dowalle.gitbook.io/algo/skill/golang/goroutine)  `使用`  `如何实现`
-
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
@@ -101,14 +100,13 @@
   - [Vim](./Skill/Software/4-vim.md)  `快捷键`  `配置文件`
   - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
   - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/6-kubernetes)
-- [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
-- [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
-- 计算机系统
-- 计算机网络
-- 数据库
+- [计算机系统](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-xi-tong)
+- [计算机网络](https://dowalle.gitbook.io/algo/knowledge/2-ji-suan-ji-wang-luo)
+- [数据库](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
+- [面向对象](https://dowalle.gitbook.io/algo/knowledge/4-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
