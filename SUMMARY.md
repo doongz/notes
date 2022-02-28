@@ -1,7 +1,5 @@
 # Algo
 
-- 八股文
-  * [1-进程、线程、协程](八股文/1-进程、线程、协程.md)
 - Algorithm
   - 1-数据结构
     - 例题-并查集
@@ -287,9 +285,22 @@
       * [字节-1](Interview/面经/待整理/字节-1.md)
       * [字节-2](Interview/面经/待整理/字节-2.md)
     * [1-字节跳动](Interview/面经/1-字节跳动.md)
+- Knowledge
+  - 1-计算机系统
+    * [1-进程、线程、协程](Knowledge/1-计算机系统/1-进程、线程、协程.md)
+  - [2-计算机网络](Knowledge/2-计算机网络/readme.md)
+  - [3-数据库](Knowledge/3-数据库/readme.md)
+  - 4-面向对象
+    - 设计模式
+      * [0-原始代码](Knowledge/4-面向对象/设计模式/0-原始代码.md)
+      * [备忘录模式](Knowledge/4-面向对象/设计模式/备忘录模式.md)
+      * [材料](Knowledge/4-面向对象/设计模式/材料.md)
+      * [抽象工厂模式](Knowledge/4-面向对象/设计模式/抽象工厂模式.md)
+      * [工厂方法模式](Knowledge/4-面向对象/设计模式/工厂方法模式.md)
+      * [简单工厂模式](Knowledge/4-面向对象/设计模式/简单工厂模式.md)
+      * [生成器模式](Knowledge/4-面向对象/设计模式/生成器模式.md)
+    * [多态和多态性](Knowledge/4-面向对象/多态和多态性.md)
 - Skill
-  - 编程思想
-    * [多态和多态性](Skill/编程思想/多态和多态性.md)
   - C++
     - 1-基础知识
       * [0-GCC](Skill/C++/1-基础知识/0-GCC.md)
@@ -344,14 +355,6 @@
       * [9-栈-函数调用](Skill/C++/4-C语言内存/9-栈-函数调用.md)
     * [常用函数](Skill/C++/常用函数.md)
     * [algorithm](Skill/C++/algorithm.md)
-  - Design-Patterns
-    * [备忘录模式](Skill/Design-Patterns/备忘录模式.md)
-    * [材料](Skill/Design-Patterns/材料.md)
-    * [抽象工厂模式](Skill/Design-Patterns/抽象工厂模式.md)
-    * [工厂方法模式](Skill/Design-Patterns/工厂方法模式.md)
-    * [简单工厂模式](Skill/Design-Patterns/简单工厂模式.md)
-    * [生成器模式](Skill/Design-Patterns/生成器模式.md)
-    * [原始代码](Skill/Design-Patterns/原始代码.md)
   - Golang
     - goroutine
       * [1-使用goroutine](Skill/Golang/goroutine/1-使用goroutine.md)

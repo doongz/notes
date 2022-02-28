@@ -87,7 +87,7 @@
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `*pointer`  `interface`
-  - [goroutine]()  `使用`  `如何实现`
+  - [goroutine](https://dowalle.gitbook.io/algo/skill/golang/goroutine)  `使用`  `如何实现`
 
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
@@ -104,11 +104,17 @@
 - [Design Patterns「未完工」](https://dowalle.gitbook.io/algo/skill/design-patterns)  `工厂模式`  `建造者模式`  `单例模式`
 - [编程思想](https://dowalle.gitbook.io/algo/skill/bian-cheng-si-xiang)  `多态`
 
-### 第三章 [面试](https://dowalle.gitbook.io/algo/interview)
+### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
+
+- 计算机系统
+- 计算机网络
+- 数据库
+
+### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
 - [面经]()  `字节`
 
-### 第四章 [竞赛](https://dowalle.gitbook.io/algo/competition)
+### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
 > *得到一点感悟比得到答案更重要*
 
