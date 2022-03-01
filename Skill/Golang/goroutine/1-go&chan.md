@@ -1,4 +1,4 @@
-# goroutine
+# go & chan
 
 参考：[Go语言并发](http://c.biancheng.net/golang/concurrent/)
 
