@@ -358,7 +358,7 @@
     * [algorithm](Skill/C++/algorithm.md)
   - Golang
     - goroutine
-      * [1-使用goroutine](Skill/Golang/goroutine/1-使用goroutine.md)
+      * [1-goroutine](Skill/Golang/goroutine/1-goroutine.md)
       * [2-goroutine是如何实现的](Skill/Golang/goroutine/2-goroutine是如何实现的.md)
     * [1-条件判断](Skill/Golang/1-条件判断.md)
     * [10-结构体-struct](Skill/Golang/10-结构体-struct.md)
