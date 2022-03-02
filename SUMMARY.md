@@ -188,7 +188,15 @@
       * [70-爬楼梯](Algorithm/3-动态规划/例题/70-爬楼梯.md)
       * [72-编辑距离](Algorithm/3-动态规划/例题/72-编辑距离.md)
       * [91-解码方法](Algorithm/3-动态规划/例题/91-解码方法.md)
-    * [动态规划](Algorithm/3-动态规划/动态规划.md)
+    * [0-概述](Algorithm/3-动态规划/0-概述.md)
+    * [1-记忆化搜索](Algorithm/3-动态规划/1-记忆化搜索.md)
+    * [2-线性DP](Algorithm/3-动态规划/2-线性DP.md)
+    * [3-背包DP](Algorithm/3-动态规划/3-背包DP.md)
+    * [4-序列DP](Algorithm/3-动态规划/4-序列DP.md)
+    * [5-区间DP](Algorithm/3-动态规划/5-区间DP.md)
+    * [6-状压DP](Algorithm/3-动态规划/6-状压DP.md)
+    * [7-状态机DP](Algorithm/3-动态规划/7-状态机DP.md)
+    * [8-数位DP](Algorithm/3-动态规划/8-数位DP.md)
   - 4-图论
     - 例题-高级算法
       * [207-[拓扑排序-有向无环图]-课程表](Algorithm/4-图论/例题-高级算法/207-[拓扑排序-有向无环图]-课程表.md)
@@ -361,6 +369,7 @@
     - goroutine
       * [1-go&chan](Skill/Golang/goroutine/1-go&chan.md)
       * [2-goroutine是如何实现的](Skill/Golang/goroutine/2-goroutine是如何实现的.md)
+      * [3-锁](Skill/Golang/goroutine/3-锁.md)
     * [1-条件判断](Skill/Golang/1-条件判断.md)
     * [10-结构体-struct](Skill/Golang/10-结构体-struct.md)
     * [11-接口-interface](Skill/Golang/11-接口-interface.md)
