@@ -1,6 +1,9 @@
 # Algo
 
 - Algorithm
+  - 0-前述
+    * [1-刷题经验](Algorithm/0-前述/1-刷题经验.md)
+    * [2-C++调试模版](Algorithm/0-前述/2-C++调试模版.md)
   - 1-数据结构
     - 例题-并查集
       * [130-[并查集-bfs]-被围绕的区域](Algorithm/1-数据结构/例题-并查集/130-[并查集-bfs]-被围绕的区域.md)
@@ -285,7 +288,6 @@
   - 小众算法
     * [169-[投票算法]-多数元素](Algorithm/小众算法/169-[投票算法]-多数元素.md)
     * [Boyer-Moore投票算法](Algorithm/小众算法/Boyer-Moore投票算法.md)
-  * [刷题经验](Algorithm/刷题经验.md)
 - Competition
   * [竞赛心得](Competition/竞赛心得.md)
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)

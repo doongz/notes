@@ -43,7 +43,7 @@
 
 ### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
 
-- [刷题经验]()
+- [前述]()  `刷题经验`  `C++调试模版`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [链表](./Algorithm/1-数据结构/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
   - [二叉树](./Algorithm/1-数据结构/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
@@ -85,10 +85,10 @@
   - [面向对象「未完工」](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类`
   - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
-- [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `指针`  `interface`
   - [goroutine](https://dowalle.gitbook.io/algo/skill/golang/goroutine)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
-  - [工具包]()  `计时器`
+  - [工具包](https://dowalle.gitbook.io/algo/skill/golang/gong-ju-bao)  `计时器`
+- [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
