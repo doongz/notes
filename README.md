@@ -43,7 +43,7 @@
 
 ### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
 
-- [前述]()  `刷题经验`  `C++调试模版`
+- [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [链表](./Algorithm/1-数据结构/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
   - [二叉树](./Algorithm/1-数据结构/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
