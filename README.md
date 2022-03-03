@@ -86,8 +86,9 @@
   - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
-- [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `*pointer`  `interface`
+- [Golang](https://dowalle.gitbook.io/algo/skill/golang)  `string`  `slice`  `map`  `struct`  `指针`  `interface`
   - [goroutine](https://dowalle.gitbook.io/algo/skill/golang/goroutine)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
+  - [工具包]()  `计时器`
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
