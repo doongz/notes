@@ -68,15 +68,15 @@ a.sort()        # 在原地址上排序 [1, 2, 3]
 指定元素排序，a.sort(key)和sorted(a,key) key的使用方式一样
 """
 m = [["dodo",2,5],["koko",3,8],["gogo",4,10],["jojo",8,5],["bobo",4,11]]
-sorted(m, key=lambda x: x[1])
+res = sorted(m, key=lambda x: x[1])
 # [['dodo', 2, 5], ['koko', 3, 8], ['gogo', 4, 10], ['bobo', 4, 11], ['jojo', 8, 5]]
 
 # 先根据第二个值升序排序，若第二个值相等则根据第三个值降序排列
-sorted(m, key=lambda x: (x[1], -x[2]))
+res = sorted(m, key=lambda x: (x[1], -x[2]))
 # [['dodo', 2, 5], ['koko', 3, 8], ['bobo', 4, 11], ['gogo', 4, 10], ['jojo', 8, 5]]
 
 # 先根据第三个值升序排序，若第三个值相等则根据第二个值降序排列
-sorted(m, key=lambda x: (x[2], -x[1]))
+res = sorted(m, key=lambda x: (x[2], -x[1]))
 # [['jojo', 8, 5], ['dodo', 2, 5], ['koko', 3, 8], ['gogo', 4, 10], ['bobo', 4, 11]]
 ```
 

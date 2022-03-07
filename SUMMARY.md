@@ -370,24 +370,28 @@
     * [常用函数](Skill/C++/常用函数.md)
     * [algorithm](Skill/C++/algorithm.md)
   - Golang
-    - 工具包
-      * [1-计时器](Skill/Golang/工具包/1-计时器.md)
-    - goroutine
-      * [1-go&chan](Skill/Golang/goroutine/1-go&chan.md)
-      * [2-goroutine是如何实现的](Skill/Golang/goroutine/2-goroutine是如何实现的.md)
-      * [3-锁](Skill/Golang/goroutine/3-锁.md)
-    * [1-条件判断](Skill/Golang/1-条件判断.md)
-    * [10-结构体-struct](Skill/Golang/10-结构体-struct.md)
-    * [11-接口-interface](Skill/Golang/11-接口-interface.md)
-    * [13-高级玩法](Skill/Golang/13-高级玩法.md)
-    * [2-循环](Skill/Golang/2-循环.md)
-    * [3-运算符](Skill/Golang/3-运算符.md)
-    * [4-字符串-string](Skill/Golang/4-字符串-string.md)
-    * [5-元组-非原生](Skill/Golang/5-元组-非原生.md)
-    * [6-切片-slice](Skill/Golang/6-切片-slice.md)
-    * [7-集合-非原生](Skill/Golang/7-集合-非原生.md)
-    * [8-哈希表-map](Skill/Golang/8-哈希表-map.md)
-    * [9-指针](Skill/Golang/9-指针.md)
+    - 1-基础知识
+      * [1-条件判断](Skill/Golang/1-基础知识/1-条件判断.md)
+      * [10-结构体-struct](Skill/Golang/1-基础知识/10-结构体-struct.md)
+      * [11-接口-interface](Skill/Golang/1-基础知识/11-接口-interface.md)
+      * [12-高级玩法](Skill/Golang/1-基础知识/12-高级玩法.md)
+      * [2-循环](Skill/Golang/1-基础知识/2-循环.md)
+      * [3-运算符](Skill/Golang/1-基础知识/3-运算符.md)
+      * [4-字符串-string](Skill/Golang/1-基础知识/4-字符串-string.md)
+      * [5-元组-非原生](Skill/Golang/1-基础知识/5-元组-非原生.md)
+      * [6-切片-slice](Skill/Golang/1-基础知识/6-切片-slice.md)
+      * [7-集合-非原生](Skill/Golang/1-基础知识/7-集合-非原生.md)
+      * [8-哈希表-map](Skill/Golang/1-基础知识/8-哈希表-map.md)
+      * [9-指针](Skill/Golang/1-基础知识/9-指针.md)
+    - 2-goroutine
+      * [1-go&chan](Skill/Golang/2-goroutine/1-go&chan.md)
+      * [2-goroutine调度器](Skill/Golang/2-goroutine/2-goroutine调度器.md)
+      * [3-锁](Skill/Golang/2-goroutine/3-锁.md)
+    - 3-进阶知识
+      * [1-内存](Skill/Golang/3-进阶知识/1-内存.md)
+      * [2-垃圾回收](Skill/Golang/3-进阶知识/2-垃圾回收.md)
+    - 4-工具包
+      * [1-计时器](Skill/Golang/4-工具包/1-计时器.md)
   - LaTeX
     * [1-数学符号](Skill/LaTeX/1-数学符号.md)
     * [2-数学公式](Skill/LaTeX/2-数学公式.md)
