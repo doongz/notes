@@ -392,8 +392,7 @@
       * [2-goroutine调度器](Skill/Golang/2-goroutine/2-goroutine调度器.md)
       * [3-锁](Skill/Golang/2-goroutine/3-锁.md)
     - 3-进阶知识
-      * [1-内存](Skill/Golang/3-进阶知识/1-内存.md)
-      * [2-垃圾回收](Skill/Golang/3-进阶知识/2-垃圾回收.md)
+      * [1-垃圾回收](Skill/Golang/3-进阶知识/1-垃圾回收.md)
     - 4-工具包
       * [1-计时器](Skill/Golang/4-工具包/1-计时器.md)
   - LaTeX
