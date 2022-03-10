@@ -390,10 +390,10 @@
       * [7-集合-非原生](Skill/Golang/1-基础知识/7-集合-非原生.md)
       * [8-哈希表-map](Skill/Golang/1-基础知识/8-哈希表-map.md)
       * [9-指针](Skill/Golang/1-基础知识/9-指针.md)
-    - 2-goroutine
-      * [1-go&chan](Skill/Golang/2-goroutine/1-go&chan.md)
-      * [2-goroutine调度器](Skill/Golang/2-goroutine/2-goroutine调度器.md)
-      * [3-锁](Skill/Golang/2-goroutine/3-锁.md)
+    - 2-Go语言并发
+      * [1-go&chan](Skill/Golang/2-Go语言并发/1-go&chan.md)
+      * [2-goroutine调度器](Skill/Golang/2-Go语言并发/2-goroutine调度器.md)
+      * [3-锁](Skill/Golang/2-Go语言并发/3-锁.md)
     - 3-进阶知识
       * [1-垃圾回收](Skill/Golang/3-进阶知识/1-垃圾回收.md)
     - 4-工具包

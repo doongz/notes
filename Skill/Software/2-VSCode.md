@@ -64,6 +64,7 @@ tasks.json 用于编译的配置文件，可配置 GCC 编译参数
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-std=c++17", // 设置 c++ 标准
+                "-pthread", // 链接上多线程的动态库
                 "-Wall", // 显示所有警告
                 "-Wextra", // 显示额外警告
                 "-Wfatal-errors" // 遇到第一个错误就停止，减少查找错误时间
