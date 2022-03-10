@@ -87,8 +87,8 @@
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/golang/1-ji-chu-zhi-shi)   `string`  `slice`  `map`  `struct`  `指针`  `interface`
-  - [Go语言并发](https://dowalle.gitbook.io/algo/skill/golang/2-goroutine)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
-  - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `垃圾回收`
+  - [Go语言并发](https://dowalle.gitbook.io/algo/skill/golang/2go-yu-yan-bing-fa)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
+  - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`
   - [工具包](https://dowalle.gitbook.io/algo/skill/golang/4-gong-ju-bao)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Markdown](https://github.com/guodongxiaren/README)
