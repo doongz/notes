@@ -38,7 +38,6 @@
         <img src="https://img.shields.io/github/commit-activity/m/dowalle/algo?color=white&logo=github" />
     </a>
 </p>
-
 ## 目录
 
 ### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
@@ -89,7 +88,7 @@
   - [基础知识](https://dowalle.gitbook.io/algo/skill/golang/1-ji-chu-zhi-shi)   `string`  `slice`  `map`  `struct`  `指针`  `interface`
   - [Go语言并发](https://dowalle.gitbook.io/algo/skill/golang/2go-yu-yan-bing-fa)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`
-  - [工具包](https://dowalle.gitbook.io/algo/skill/golang/4-gong-ju-bao)  `计时器`
+  - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
@@ -141,5 +140,5 @@ book sm
 
 `发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/)
 
-`侵删`  部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [runoob](https://www.runoob.com/) | [biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/)
+`侵删`  全部自己为总结撰写，部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [runoob](https://www.runoob.com/) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/)
 
