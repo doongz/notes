@@ -94,7 +94,9 @@
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
   - [数学公式「未完工」](./Skill/LaTeX/2-数学公式.md)
-- [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
+- [Linux](https://dowalle.gitbook.io/algo/skill/linux)
+  - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
+
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
   - [软件 & 工具](./Skill/Software/1-软件&网站.md)  `开发`  `创作`  `效率`  `文献`
   - [VS Code](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
