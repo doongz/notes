@@ -303,12 +303,8 @@
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Interview
   - 面经
-    - 待整理
-      * [微软-1](Interview/面经/待整理/微软-1.md)
-      * [字节-1](Interview/面经/待整理/字节-1.md)
-      * [字节-2](Interview/面经/待整理/字节-2.md)
-      * [字节-3](Interview/面经/待整理/字节-3.md)
-    * [1-字节跳动](Interview/面经/1-字节跳动.md)
+    * [1-面经合集](Interview/面经/1-面经合集.md)
+    * [2-字节跳动](Interview/面经/2-字节跳动.md)
 - Knowledge
   - 1-计算机系统
     * [1-进程、线程、协程](Knowledge/1-计算机系统/1-进程、线程、协程.md)
