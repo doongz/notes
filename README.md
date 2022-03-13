@@ -87,7 +87,7 @@
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/golang/1-ji-chu-zhi-shi)   `string`  `slice`  `map`  `struct`  `指针`  `interface`
   - [Go语言并发](https://dowalle.gitbook.io/algo/skill/golang/2go-yu-yan-bing-fa)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
-  - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`
+  - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
 - [Markdown](https://github.com/guodongxiaren/README)
