@@ -61,7 +61,7 @@
   - [前缀和](./Algorithm/2-算法基础/5-前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
   - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
   - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `证明难`
-  - [位运算「未完工」](./Algorithm/2-算法基础/8-位运算.md)  `奇偶`  `除2`
+  - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
 - [图论](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
@@ -73,6 +73,8 @@
   - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
 - [数学「未完工」](./Algorithm/5-数学/数学.md)  `倍增`  `快速幂`  `求余`
+  - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
+
 - [经典问题](./Algorithm/经典问题)
   - [背包问题](./Algorithm/经典问题/背包问题/背包问题概述.md)
 
