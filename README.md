@@ -117,8 +117,8 @@
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
-- [面经合集]()
-- [字节跳动]()
+- [优秀面经]()
+- [面试记录]()
 
 ### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
