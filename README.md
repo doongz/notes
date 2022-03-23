@@ -110,9 +110,10 @@
 
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
+- [计算机组成]()
 - [计算机系统](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-xi-tong)
 - [计算机网络](https://dowalle.gitbook.io/algo/knowledge/2-ji-suan-ji-wang-luo)
-- [数据库](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
+- [数据存储](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
 - [面向对象](https://dowalle.gitbook.io/algo/knowledge/4-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)

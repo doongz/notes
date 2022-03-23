@@ -329,28 +329,34 @@
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Interview
+  - [面试记录](Interview/面试记录/readme.md)
   - 优秀面经
     * [1-面经合集](Interview/优秀面经/1-面经合集.md)
     * [2-字节跳动](Interview/优秀面经/2-字节跳动.md)
   * [待整理](Interview/待整理.md)
 - Knowledge
-  - 1-计算机系统
-    * [1-进程、线程、协程](Knowledge/1-计算机系统/1-进程、线程、协程.md)
-  - [2-计算机网络](Knowledge/2-计算机网络/readme.md)
-  - [3-数据库](Knowledge/3-数据库/readme.md)
-  - 4-面向对象
-    - 设计模式
-      * [0-原始代码](Knowledge/4-面向对象/设计模式/0-原始代码.md)
-      * [备忘录模式](Knowledge/4-面向对象/设计模式/备忘录模式.md)
-      * [材料](Knowledge/4-面向对象/设计模式/材料.md)
-      * [抽象工厂模式](Knowledge/4-面向对象/设计模式/抽象工厂模式.md)
-      * [工厂方法模式](Knowledge/4-面向对象/设计模式/工厂方法模式.md)
-      * [简单工厂模式](Knowledge/4-面向对象/设计模式/简单工厂模式.md)
-      * [生成器模式](Knowledge/4-面向对象/设计模式/生成器模式.md)
-    * [多态和多态性](Knowledge/4-面向对象/多态和多态性.md)
-  - 数据
+  - [1-计算机组成](Knowledge/1-计算机组成/readme.md)
+  - 2-计算机系统
+    * [1-进程、线程、协程](Knowledge/2-计算机系统/1-进程、线程、协程.md)
+  - [3-计算机网络](Knowledge/3-计算机网络/readme.md)
+  - 4-数据存储
     - 1-设计数据密集型应用
-      * [0-序言](Knowledge/数据/1-设计数据密集型应用/0-序言.md)
+      * [1-序言](Knowledge/4-数据存储/1-设计数据密集型应用/1-序言.md)
+    - 2-数据库
+      * [1-关系型数据库](Knowledge/4-数据存储/2-数据库/1-关系型数据库.md)
+      * [2-NoSQL](Knowledge/4-数据存储/2-数据库/2-NoSQL.md)
+      * [3-mysql](Knowledge/4-数据存储/2-数据库/3-mysql.md)
+      * [4-redis](Knowledge/4-数据存储/2-数据库/4-redis.md)
+  - 5-面向对象
+    - 设计模式
+      * [0-原始代码](Knowledge/5-面向对象/设计模式/0-原始代码.md)
+      * [备忘录模式](Knowledge/5-面向对象/设计模式/备忘录模式.md)
+      * [材料](Knowledge/5-面向对象/设计模式/材料.md)
+      * [抽象工厂模式](Knowledge/5-面向对象/设计模式/抽象工厂模式.md)
+      * [工厂方法模式](Knowledge/5-面向对象/设计模式/工厂方法模式.md)
+      * [简单工厂模式](Knowledge/5-面向对象/设计模式/简单工厂模式.md)
+      * [生成器模式](Knowledge/5-面向对象/设计模式/生成器模式.md)
+    * [多态和多态性](Knowledge/5-面向对象/多态和多态性.md)
 - Skill
   - C++
     - 1-基础知识
