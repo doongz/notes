@@ -111,10 +111,10 @@
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
 - [计算机组成「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
-- [计算机系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-xi-tong)
-- [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-ji-suan-ji-wang-luo)
-- [数据存储「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
-- [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
+- [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
+- [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
+- [数据存储「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)  `设计数据密集型应用`  `关系型数据库`  `NoSQL`  
+- [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
@@ -123,7 +123,7 @@
 
 ### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
-> *得到一点感悟比得到答案更重要*
+> *得到一点点感悟比得到答案更重要*
 
 ## TODO
 
@@ -143,9 +143,9 @@ book sm
 
 > 「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓也仅用作自己的积累
 
-`感谢`  大家点赞 Star🌟 [my Repo](https://github.com/dowalle/algo) 笔芯🤞
+`感谢`  大家点赞 Star🌟 [我的仓库](https://github.com/dowalle/algo) 笔芯🤞
 
 `发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/)
 
-`侵删`  全部自己为总结撰写，部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [runoob](https://www.runoob.com/) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/)
+`侵删`  本仓库全部为自己总结，部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [runoob](https://www.runoob.com/) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/)
 
