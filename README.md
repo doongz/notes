@@ -102,7 +102,7 @@
 
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
   - [软件 & 工具](./Skill/Software/1-软件&网站.md)  `开发`  `创作`  `效率`  `文献`
-  - [VS Code](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
+  - [VS Code「未完工」](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
   - [Git「未完工」](./Skill/Software/3-git.md)
   - [Vim](./Skill/Software/4-vim.md)  `快捷键`  `配置文件`
   - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
@@ -110,16 +110,16 @@
 
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
-- [计算机组成]()
-- [计算机系统](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-xi-tong)
-- [计算机网络](https://dowalle.gitbook.io/algo/knowledge/2-ji-suan-ji-wang-luo)
-- [数据存储](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
-- [面向对象](https://dowalle.gitbook.io/algo/knowledge/4-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
+- [计算机组成「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
+- [计算机系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-xi-tong)
+- [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-ji-suan-ji-wang-luo)
+- [数据存储「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-shu-ju-ku)
+- [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
-- [优秀面经]()
-- [面试记录]()
+- [优秀面经「未完工」]()
+- [面试记录「未完工」]()
 
 ### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
