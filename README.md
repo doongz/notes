@@ -75,7 +75,6 @@
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
 - [数学「未完工」](./Algorithm/5-数学/数学.md)  `倍增`  `快速幂`  `求余`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
-
 - [经典问题](./Algorithm/经典问题)
   - [背包问题](./Algorithm/经典问题/背包问题/背包问题概述.md)
 
@@ -99,7 +98,6 @@
   - [数学公式「未完工」](./Skill/LaTeX/2-数学公式.md)
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
-
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
   - [软件 & 工具](./Skill/Software/1-软件&网站.md)  `开发`  `创作`  `效率`  `文献`
   - [VS Code「未完工」](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
@@ -113,7 +111,10 @@
 - [计算机组成「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
-- [数据存储「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)  `设计数据密集型应用`  `关系型数据库`  `NoSQL`  
+- [数据存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)   
+  - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
+  - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
+  - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
 - [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
