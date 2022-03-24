@@ -118,8 +118,8 @@
 
 ### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
 
-- [优秀面经「未完工」]()
-- [面试记录「未完工」]()
+- [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
+- [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
 
 ### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
