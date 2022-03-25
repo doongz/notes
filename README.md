@@ -112,7 +112,7 @@
 - [计算机组成「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
-- [数据存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)   
+- [数据存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
   - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
