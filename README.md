@@ -109,7 +109,12 @@
 
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
-- [计算机组成「未完工」](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
+- [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
+  - [序]()  `大纲`  `程序是如何在计算机里跑起来的`
+  - [计算机系统概述「重点」]()  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
+  - [数据的表示和运算]()  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
+  - [存储系统「重点」]()  `分类`  `性能指标`  `层次化结构`  `SRAM`  `DRAM`  `ROM`  `MM组成和使用`
+
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
 - [数据存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
