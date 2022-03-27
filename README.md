@@ -112,10 +112,11 @@
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
 
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
-  - [序]()  `大纲`  `程序是如何在计算机里跑起来的`
-  - [计算机系统概述「重点」]()  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
-  - [数据的表示和运算]()  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
-  - [存储系统「重点」]()  `分类`  `性能指标`  `层次化结构`  `SRAM`  `DRAM`  `ROM`  `MM组成和使用`
+  - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
+  - [计算机系统概述「重点」](./Knowledge/1-计算机组成/1-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
+  - [数据的表示和运算](./Knowledge/1-计算机组成/2-数据的表示和运算.md)  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
+  - [存储系统「重点」](./Knowledge/1-计算机组成/3-存储系统.md)  `分类`  `性能指标`  `层次化结构`  `SRAM`  `DRAM`  `ROM`  `MM组成和使用`  `Cache`  `虚拟存储器`
+  - 
 
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
@@ -150,7 +151,7 @@ book sm
 
 ## Statement
 
-> 「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓也仅用作自己的积累
+> 「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓库也仅用作自己的积累
 
 `感谢`  大家点赞 Star🌟 [我的仓库](https://github.com/dowalle/algo) 笔芯🤞
 
