@@ -65,7 +65,7 @@
   - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `证明难`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
-- [图论](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
+- [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
   - [图的种类](./Algorithm/4-图论/3-图的种类.md)  `二分图`
@@ -75,6 +75,8 @@
   - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
 - [数学「未完工」](./Algorithm/5-数学/数学.md)  `倍增`  `快速幂`  `求余`
+  - [计算机算法]()  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`
+  - [数学算法]()  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 - [经典问题](./Algorithm/经典问题)
   - [背包问题](./Algorithm/经典问题/背包问题/背包问题概述.md)
