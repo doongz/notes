@@ -78,8 +78,6 @@
   - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
-- [经典问题](./Algorithm/经典问题)
-  - [背包问题](./Algorithm/经典问题/背包问题/背包问题概述.md)
 
 
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
