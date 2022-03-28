@@ -55,6 +55,7 @@
   - [字典树](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
   - [树状数组 & 线段树](./Algorithm/1-数据结构/9-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard+`
   - [单调队列](./Algorithm/1-数据结构/10-单调队列.md)  `取最小值->单增队列`  `取最大值->单减队列`
+  - [环状数组](./Algorithm/1-数据结构/11-环状数组.md)  `i = (i + 1) % n`  `尾首拼接`  `环状链表`
 - [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `玄学算法`  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
@@ -62,7 +63,7 @@
   - [滑动窗口](./Algorithm/2-算法基础/4-滑动窗口.md)  `单调性`  `窗口数据结构`  `右边届入窗`  `左边届收缩`  `延时删除`  `采集答案`  `步长`  `起始位置`  `Medium`
   - [前缀和](./Algorithm/2-算法基础/5-前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
   - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
-  - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `证明难`
+  - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `极难想通`  `排序预处理`  `区间调度问题`  `跳跃问题`  `Hard`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
 - [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
@@ -139,6 +140,7 @@
 - [ ] 状态压缩
 - [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
 - [ ] 扫描线
+- [ ] amp
 
 ## Usage
 
