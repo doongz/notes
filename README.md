@@ -117,6 +117,7 @@
   - [数据的表示和运算](./Knowledge/1-计算机组成/2-数据的表示和运算.md)  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
   - [存储系统「重点」](./Knowledge/1-计算机组成/3-存储系统.md)  `分类`  `性能指标`  `层次化结构`  `SRAM(cache)`  `DRAM(内存)`  `ROM(闪存、固态)`  `MM组成和使用`  `Cache`  `虚拟存储器`
   - [指令系统](./Knowledge/1-计算机组成/4-指令系统.md)  `指令(操作码+地址码)`  `指令寻址`  `数据寻址`  `指令集`  `CISC`  `RISC`
+  - [中央处理器](./Knowledge/1-计算机组成/5-中央处理器.md)  `CPU(运算器+控制器)`  `指令执行`  `数据通路`  `硬布线控制器`  `微程序控制器`  `指令流水线`
 
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
