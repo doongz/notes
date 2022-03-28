@@ -4,7 +4,55 @@
 
 [参考题解 贪心](https://leetcode-cn.com/problems/jump-game-ii/solution/tan-xin-suan-fa-zhu-xing-jie-shi-python3-by-zhu_sh/)
 
-## 方法一：bfs
+## 方法一：贪心
+
+目的：使用最少的步数到达最后一个位置
+
+**贪心策略：第 i 步位置为「第 i-1 步前」的点中所能达到的「最远位置」**，通过每一步的最优解，更新全局最优解，这就是贪心
+
+算法步骤：
+
+1. 定义步数step=0，能达到的最远位置max_bound=0，和上一步到达的边界pre_end=0
+2. 遍历数组，遍历范围[0,n-1)
+   - 更新当前能达到的最远位置max_bound=max(max_bound,nums[i]+i)
+   - 如果索引i 到达了上一步的边界pre_end即i==pre_end，则
+     - 更新边界pre_end，令 pre_end 等于新的最远边界max_bound
+     - 令步数 step 加一
+
+**注意：不要去遍历最后一个位置**
+
+因为当 i == pre_end == n-1 时，说明已经可以走到 n-1位置了。如果这个时候站在 n-1 位置再往后跳，就跳出去了
+
+时间复杂度：`O(n)`
+
+空间复杂度：`O(1)`
+
+执行用时：4 ms, 在所有 C++ 提交中击败了99.59%的用户
+
+内存消耗：16.1 MB, 在所有 C++ 提交中击败了75.74%的用户
+
+```c++
+class Solution {
+public:
+    int jump(vector<int>& nums) {
+        int n = nums.size();
+        int max_bound = 0;  // 当前能达到的最远位置
+        int pre_end = 0;    // 上一步到达的边界
+        int step = 0;       // 跳跃次数
+
+        for (int cur = 0; cur < n - 1; cur++) {
+            max_bound = max(max_bound, cur + nums[cur]);
+            if (cur == pre_end) {
+                pre_end = max_bound;  // 重新起跳，这一次跳的最远边界为 max_bound
+                step++;
+            }
+        }
+        return step;
+    }
+};
+```
+
+## 方法二：bfs
 
 <img src="../doc/45.png" alt="45" style="zoom:30%;" />
 
@@ -55,52 +103,6 @@ public:
             depth++;
         }
         return depth;
-    }
-};
-```
-
-## 方法二：贪心
-
-目的：使用最少的步数到达最后一个位置
-
-**贪心策略：第 i 步位置为「第 i-1 步前」的点中所能达到的「最远位置」**
-
-算法步骤：
-
-1. 定义步数step=0，能达到的最远位置max\_bound=0，和上一步到达的边界end=0
-2. 遍历数组，遍历范围[0,n-1)
-   - 更新当前能达到的最远位置max\_bound=max(max\_bound,nums[i]+i)
-   - 如果索引i 到达了上一步的边界end，即i==end，则
-     - 更新边界end，令 end 等于新的最远边界max\_bound
-     - 令步数 step 加一
-
-**注意：不要去遍历最后一个位置**，和 55 题思路上略有不同（由于 max() 的位置引起的）
-
-因为当 i == end == n-1 时，说明上一次已经可以走到 n-1位置了
-
-如果这个时候站在 n-1 位置再往后跳，就跳出去了
-
-时间复杂度：`O(n)`
-
-空间复杂度：`O(1)`
-
-```c++
-class Solution {
-public:
-    int jump(vector<int>& nums) {
-        int n = nums.size();
-        int max_bound = 0;  // 当前能达到的最远位置
-        int end = 0;        // 上一步到达的边界
-        int step = 0;       // 跳跃次数
-
-        for (int i = 0; i < n - 1; i++) {
-            max_bound = max(max_bound, i + nums[i]);
-            if (i == end) {
-                end = max_bound;  // 重新起跳，这一次跳的最远边界为 max_bound
-                step++;
-            }
-        }
-        return step;
     }
 };
 ```
