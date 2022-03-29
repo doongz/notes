@@ -63,7 +63,7 @@
   - [滑动窗口](./Algorithm/2-算法基础/4-滑动窗口.md)  `单调性`  `窗口数据结构`  `右边届入窗`  `左边届收缩`  `延时删除`  `采集答案`  `步长`  `起始位置`  `Medium`
   - [前缀和](./Algorithm/2-算法基础/5-前缀和.md)  `相减`  `哈希表`  `二维前缀和`  `前缀和思想`
   - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
-  - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `难想通`  `排序预处理`  `区间调度问题`  `跳跃问题`  `Hard`
+  - [贪心「未完工」](./Algorithm/2-算法基础/7-贪心.md)  `难想通`  `排序预处理`  `区间调度问题`  `跳跃问题`  `环形贪心`  `Hard`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
   - [分治「未完工」]()
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
@@ -109,7 +109,7 @@
   - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
   - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/6-kubernetes)
 
-### 第三章 [八股文](https://dowalle.gitbook.io/algo/interview)
+### 第三章 [八股文](https://dowalle.gitbook.io/algo/knowledge)
 
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
@@ -120,8 +120,9 @@
   - [中央处理器](./Knowledge/1-计算机组成/5-中央处理器.md)  `CPU(运算器+控制器)`  `指令执行`  `数据通路`  `硬布线控制器`  `微程序控制器`  `指令流水线`
   - [总线](./Knowledge/1-计算机组成/6-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
   - [输入输出系统](./Knowledge/1-计算机组成/7-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
-
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
+  - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的`  `功能`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用  `
+
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
