@@ -111,6 +111,11 @@
 
 ### 第三章 [八股文](https://dowalle.gitbook.io/algo/knowledge)
 
+> *这里给出一些学习基础知识的建议
+> 学习科学知识时会陷入一个误区，即只注重对定理、公式的应用，而忽视对基础概念的理解
+> 这是从小到大为应付考试而培养出的一个毛病，因为熟练应用公式和定理对考试有立竿见影的效果
+> 但基础概念的理解能让我透彻的、系统性的理解一门学科，更利于我产生「兴趣」，培养「创造性」思维*
+
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
   - [计算机系统概述](./Knowledge/1-计算机组成/1-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
@@ -121,8 +126,9 @@
   - [总线](./Knowledge/1-计算机组成/6-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
   - [输入输出系统](./Knowledge/1-计算机组成/7-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
 - [操作系统「未完工」](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
-  - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的`  `功能`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用  `
-
+  - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的(管理、调度软硬资源、提供接口)`   `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用  `
+  - [进程管理](./Knowledge/2-操作系统/2-进程管理.md)  `进程(程序段、数据段、进程控制块)`  `目的(并发、共享)`  `进程通信`  `线程(ID、计数器、寄存器集合)`  `目的(减少开销)`  `实现方式(用户级、内核级)`  `处理机调度`  `进程同步`  `互斥`  `死锁`  `饥饿`
+  - [进程 & 线程 & 协程](./Knowledge/2-操作系统/3-进程&线程&协程.md)  `时间角度`  `资源角度`
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
@@ -137,14 +143,14 @@
 
 ### 第五章 [竞赛](https://dowalle.gitbook.io/algo/competition)
 
-> *得到一点点感悟比得到答案更重要*
+> *得到一点点「感悟」比得到答案更重要*
 
 ## TODO
 
 - [ ] 状态压缩
 - [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
 - [ ] 扫描线
-- [ ] amp
+- [ ] kmp
 
 ## Usage
 
@@ -156,9 +162,9 @@ book sm
 
 ## Statement
 
-> 「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓库也仅用作自己的积累
+> *「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓库也仅用作自己的积累*
 
-`感谢`  大家点赞 Star🌟 [我的仓库](https://github.com/dowalle/algo) 笔芯🤞
+`感谢`  大家不用 Star
 
 `发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/)
 
