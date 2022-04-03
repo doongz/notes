@@ -131,6 +131,7 @@
   - [进程 & 线程 & 协程](./Knowledge/2-操作系统/进程&线程&协程.md)  `时间角度`  `资源角度`
   - [内存管理](./Knowledge/2-操作系统/3-内存管理.md)  `目的(并发)`  `覆盖与交换`  `连续分配`  `非连续分配(分页存储)`  `分段存储`  `虚拟内存`  `局部性原理(时间、空间)`
   - [文件管理](./Knowledge/2-操作系统/4-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
+  - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)  `
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
