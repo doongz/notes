@@ -45,9 +45,12 @@
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
-  - [链表](./Algorithm/1-数据结构/1-链表.md)  `哨兵`  `多画`  `舍得变量`  `双指针`  `Medium`
+  - [概述](./Algorithm/1-数据结构/0-概述.md)  `基本概念`  `算法评价`
+  - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
+  - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `括号匹配`  `表达式求值`  `递归`   `Medium`
+  - [队列](./Algorithm/1-数据结构/3-队列.md)  `顺序、链式、双端`  `单调队列`  `层遍历`  `Medium`
+  - [字符串](./Algorithm/1-数据结构/4-字符串.md)
   - [二叉树](./Algorithm/1-数据结构/2-二叉树.md)  `前序`  `中序`  `后序`  `层`  `树的恢复`  `dfs`  `bfs`  `Easy`
-  - [栈 & 单调栈](./Algorithm/1-数据结构/3-栈&单调栈.md)  `括号问题`  `单调栈`  `Medium`
   - [堆](./Algorithm/1-数据结构/4-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
   - [哈希表](./Algorithm/1-数据结构/5-哈希表.md)   `本质为数组`  `核心为哈希函数`  `不存哈希值`
   - [并查集](./Algorithm/1-数据结构/6-并查集.md)  `连通`  `连通分量`  `连通性判断`  `添加、连通、查找O(logn)`  `Medium`
@@ -55,7 +58,6 @@
   - [字典树](./Algorithm/1-数据结构/8-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
   - [树状数组 & 线段树](./Algorithm/1-数据结构/9-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard+`
   - [单调队列](./Algorithm/1-数据结构/10-单调队列.md)  `取最小值->单增队列`  `取最大值->单减队列`
-  - [环状数组](./Algorithm/1-数据结构/11-环状数组.md)  `i = (i + 1) % n`  `尾首拼接`  `环状链表`
 - [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `玄学算法`  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
