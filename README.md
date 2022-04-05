@@ -133,7 +133,7 @@
   - [文件管理](./Knowledge/2-操作系统/4-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
   - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
-  - [网络体系结构](./Knowledge/3-计算机网络/1-网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
+  - [计算机网络体系结构](./Knowledge/3-计算机网络/1-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
 
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
