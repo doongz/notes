@@ -39,7 +39,7 @@
     </a>
 </p>
 
-## 目录
+## Contents
 
 ### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
 
@@ -141,12 +141,20 @@
   - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
 - [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
-### 第四章 [面试](https://dowalle.gitbook.io/algo/interview)
+### 第四章 [数学]()
+
+> *2016年留存下来的手稿，再次翻开时已是2022年，且看且珍惜*
+
+- 微积分「未完工」
+- 线性代数「未完工」
+- 概率与统计「未完工」
+
+### 第五章 [面试](https://dowalle.gitbook.io/algo/interview)
 
 - [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
 - [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
 
-### 第五章 竞赛
+### 第六章 竞赛
 
 > *得到一点点「感悟」比得到答案更重要*
 
