@@ -84,7 +84,6 @@
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 
-
 ### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
 
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
@@ -134,8 +133,8 @@
   - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
 - [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
   - [计算机网络体系结构](./Knowledge/3-计算机网络/1-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
-  - [物理层](./Knowledge/3-计算机网络/2-物理层.md)  `码元`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `物理设备`
-
+  - [物理层](./Knowledge/3-计算机网络/2-物理层.md)  `码元`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `物理设备(中继器、集线器)`
+  - [数据链路层](./Knowledge/3-计算机网络/3-数据链路层.md)  `数据逻辑上无差错`  `链路管理`  `组帧`  `差错控制`  `流量控制(滑窗)`  `介质访问控制(多路复用、随机访问)`  `局域网(以太网)`  `IEEE 802.3/11`  `网卡(MAC地址)`  `广域网(交换机+链路)`  `网桥`  `以太网交换机`
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
