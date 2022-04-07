@@ -209,7 +209,7 @@ func AsyncFunc(index int, wg *sync.WaitGroup) {
 	sum := 0
 	for i := 0; i < 10; i++ {
 		sum += 1
-		fmt.Printf("线程%d, sum为:%d\n", index, sum)
+		fmt.Printf("协程%d, sum为:%d\n", index, sum)
 		time.Sleep(1 * time.Second)
 	}
 	// wg.Done() // 在函数尾部，加上也行
