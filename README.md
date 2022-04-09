@@ -131,12 +131,13 @@
   - [内存管理](./Knowledge/2-操作系统/3-内存管理.md)  `目的(并发)`  `覆盖与交换`  `连续分配`  `非连续分配(分页存储)`  `分段存储`  `虚拟内存`  `局部性原理(时间、空间)`
   - [文件管理](./Knowledge/2-操作系统/4-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
   - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
-- [计算机网络「未完工」](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
+- [计算机网络](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
   - [计算机网络体系结构](./Knowledge/3-计算机网络/1-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
   - [物理层](./Knowledge/3-计算机网络/2-物理层.md)  `码元`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制PSK`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `中继器`  `集线器`
   - [数据链路层](./Knowledge/3-计算机网络/3-数据链路层.md)  `数据逻辑上无差错`  `链路管理`  `组帧`  `差错控制`  `流量控制(滑窗)`  `介质访问控制(多路复用、随机访问CSMA)`  `局域网(以太网)`  `IEEE 802.3/11`  `网卡(MAC地址)`  `广域网(交换机+链路)`  `网桥`  `以太网交换机`
   - [网络层](./Knowledge/3-计算机网络/4-网络层.md)  `功能(异构互联、分组转发、拥塞控制)`  `路由算法`  `IPv4`  `IP数据报`  `IP地址`  `子网`  `IPv6`  `路由协议`  `IP组播`  `移动IP`  `路由器`
   - [传输层](./Knowledge/3-计算机网络/5-传输层.md)  `功能(进程间通信)`  `端口`  `socket(嵌套字)`  `UDP(无连接)`  `TCP(连接)`  `报文段`  `TCP建立连接(三次挥手)`  `TCP释放连接(四次握手)`  `可靠传输`  `流量控制`  `拥塞控制`
+  - [应用层](./Knowledge/3-计算机网络/6-应用层.md)  `网络应用模型(C/S、P2P)`  `DNS`  `FTP`  `电子邮件(SMTP、POP3/IMAP)`  `万维网(HTTP)`  `Cookie`
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
