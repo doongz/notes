@@ -144,12 +144,21 @@
   - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
 - [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
 
-### 第四章 [数学]()
+### 第四章 [数学](https://dowalle.gitbook.io/algo/math)
 
 > *2016年留存下来的手稿，再翻开时已是2022年*
 
-- [微积分]()
-- [线性代数]()
+- [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)
+  - [极限](./Math/微积分/1-极限.md)
+  - [一元函数微积分](./Math/微积分/2-一元函数微积分.md)
+  - [多元函数微分学](./Math/微积分/3-多元函数微分学.md)
+  - [二重积分](./Math/微积分/4-二重积分.md)
+  - [微分方程](./Math/微积分/5-微分方程.md)
+- [线性代数](https://dowalle.gitbook.io/algo/math/xian-xing-dai-shu)
+  - [行列式](./Math/线性代数/1-行列式.md)
+  - [矩阵](./Math/线性代数/2-矩阵.md)
+  - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
+  - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
 ### 第五章 [面试](https://dowalle.gitbook.io/algo/interview)
 
