@@ -526,16 +526,16 @@
     * [8-常用函数](Skill/Python/8-常用函数.md)
     * [9-常用包](Skill/Python/9-常用包.md)
   - Software
-    - 服务端软件
-      * [ceph-CLI](Skill/Software/服务端软件/ceph-CLI.md)
-      * [docker-CLI](Skill/Software/服务端软件/docker-CLI.md)
-      * [Docker核心技术与实现原理](Skill/Software/服务端软件/Docker核心技术与实现原理.md)
-      * [k8s-CLI](Skill/Software/服务端软件/k8s-CLI.md)
     - 开发软件
       * [1-工具&网站](Skill/Software/开发软件/1-工具&网站.md)
       * [2-vscode](Skill/Software/开发软件/2-vscode.md)
       * [3-git](Skill/Software/开发软件/3-git.md)
       * [4-vim](Skill/Software/开发软件/4-vim.md)
+    - docker&kubernetes
+      * [1-docker核心技术与实现原理](Skill/Software/docker&kubernetes/1-docker核心技术与实现原理.md)
+      * [ceph-CLI](Skill/Software/docker&kubernetes/ceph-CLI.md)
+      * [docker-CLI](Skill/Software/docker&kubernetes/docker-CLI.md)
+      * [k8s-CLI](Skill/Software/docker&kubernetes/k8s-CLI.md)
     - kubernetes
       * [1-常用命令](Skill/Software/kubernetes/1-常用命令.md)
       * [2-service&deployment](Skill/Software/kubernetes/2-service&deployment.md)
