@@ -104,12 +104,11 @@
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
-  - [软件 & 工具](./Skill/Software/1-软件&网站.md)  `开发`  `创作`  `效率`  `文献`
-  - [VS Code「未完工」](./Skill/Software/2-VSCode.md)  `快捷键`  `代码格式化`  `配置文件`
-  - [Git「未完工」](./Skill/Software/3-git.md)
-  - [Vim](./Skill/Software/4-vim.md)  `快捷键`  `配置文件`
-  - [Ceph & RBD](./Skill/Software/5-ceph-rbd.md)  `ceph`  `rbd`
-  - [kubernetes「未完工」](https://dowalle.gitbook.io/algo/skill/software/6-kubernetes)
+  - [开发软件]()  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
+  - [服务端软件]()
+    - [docker]()
+    - [kubernetes]()
+    - [ceph]()  `rbd`
 
 ### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
 

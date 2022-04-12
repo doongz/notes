@@ -526,18 +526,23 @@
     * [8-常用函数](Skill/Python/8-常用函数.md)
     * [9-常用包](Skill/Python/9-常用包.md)
   - Software
-    - 6-kubernetes
-      * [1-常用命令](Skill/Software/6-kubernetes/1-常用命令.md)
-      * [2-service&deployment](Skill/Software/6-kubernetes/2-service&deployment.md)
-      * [3-configmap](Skill/Software/6-kubernetes/3-configmap.md)
-      * [4-定时任务](Skill/Software/6-kubernetes/4-定时任务.md)
-      * [k8s存储](Skill/Software/6-kubernetes/k8s存储.md)
-      * [k8s文档](Skill/Software/6-kubernetes/k8s文档.md)
-    * [1-软件&网站](Skill/Software/1-软件&网站.md)
-    * [2-VSCode](Skill/Software/2-VSCode.md)
-    * [3-git](Skill/Software/3-git.md)
-    * [4-vim](Skill/Software/4-vim.md)
-    * [5-ceph-rbd](Skill/Software/5-ceph-rbd.md)
+    - 服务端软件
+      * [ceph-CLI](Skill/Software/服务端软件/ceph-CLI.md)
+      * [docker-CLI](Skill/Software/服务端软件/docker-CLI.md)
+      * [Docker核心技术与实现原理](Skill/Software/服务端软件/Docker核心技术与实现原理.md)
+      * [k8s-CLI](Skill/Software/服务端软件/k8s-CLI.md)
+    - 开发软件
+      * [1-工具&网站](Skill/Software/开发软件/1-工具&网站.md)
+      * [2-vscode](Skill/Software/开发软件/2-vscode.md)
+      * [3-git](Skill/Software/开发软件/3-git.md)
+      * [4-vim](Skill/Software/开发软件/4-vim.md)
+    - kubernetes
+      * [1-常用命令](Skill/Software/kubernetes/1-常用命令.md)
+      * [2-service&deployment](Skill/Software/kubernetes/2-service&deployment.md)
+      * [3-configmap](Skill/Software/kubernetes/3-configmap.md)
+      * [4-定时任务](Skill/Software/kubernetes/4-定时任务.md)
+      * [k8s存储](Skill/Software/kubernetes/k8s存储.md)
+      * [k8s文档](Skill/Software/kubernetes/k8s文档.md)
   - SQL
     * [1-数据库理论](Skill/SQL/1-数据库理论.md)
     * [2-sql-语法](Skill/SQL/2-sql-语法.md)

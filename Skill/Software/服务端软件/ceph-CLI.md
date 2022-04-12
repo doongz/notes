@@ -1,4 +1,4 @@
-# Ceph RBD
+# ceph CLI
 
 apt install ceph-common
 
