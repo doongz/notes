@@ -541,12 +541,10 @@
       * [docker-CLI](Skill/Software/docker&kubernetes/docker-CLI.md)
       * [k8s-CLI](Skill/Software/docker&kubernetes/k8s-CLI.md)
     - kubernetes
-      * [1-常用命令](Skill/Software/kubernetes/1-常用命令.md)
       * [2-service&deployment](Skill/Software/kubernetes/2-service&deployment.md)
       * [3-configmap](Skill/Software/kubernetes/3-configmap.md)
       * [4-定时任务](Skill/Software/kubernetes/4-定时任务.md)
       * [k8s存储](Skill/Software/kubernetes/k8s存储.md)
-      * [k8s文档](Skill/Software/kubernetes/k8s文档.md)
   - SQL
     * [1-数据库理论](Skill/SQL/1-数据库理论.md)
     * [2-sql-语法](Skill/SQL/2-sql-语法.md)
