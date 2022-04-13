@@ -80,7 +80,7 @@
   - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
 - [数学「未完工」]()  `倍增`  `快速幂`  `求余`
-  - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`
+  - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 
@@ -104,8 +104,8 @@
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
-  - [开发软件]()  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
-  - [docker & kubernetes]()
+  - [开发软件](https://dowalle.gitbook.io/algo/skill/software/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
+  - [docker & kubernetes](https://dowalle.gitbook.io/algo/skill/software/docker-and-kubernetes)
     - [docker 核心技术与实现原理](./Skill/Software/docker&kubernetes/1-docker核心技术与实现原理.md)
     - [docker CLI]()
     - [k8s CLI]()
