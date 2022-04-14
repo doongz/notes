@@ -102,10 +102,9 @@
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
   - [数学公式「未完工」](./Skill/LaTeX/2-数学公式.md)
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
-  - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
-- [Software](https://dowalle.gitbook.io/algo/skill/software)
-  - [开发软件](https://dowalle.gitbook.io/algo/skill/software/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
-  - [后端软件](https://dowalle.gitbook.io/algo/skill/software/docker-and-kubernetes)  `docker原理`  `docker CLI`  `k8s CLI`  `ceph CLI`
+  - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
+- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
+- [后端软件](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker原理`  `docker CLI`  `k8s CLI`  `ceph CLI`
 
 ### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
 
