@@ -517,7 +517,7 @@
       * [1-计时器](Skill/Golang/4-实用函数/1-计时器.md)
   - LaTeX
     * [1-数学符号](Skill/LaTeX/1-数学符号.md)
-    * [2-数学公式](Skill/LaTeX/2-数学公式.md)
+    * [2-公式格式](Skill/LaTeX/2-公式格式.md)
   - Linux
     - filesystem
       * [Overlay-Filesystem](Skill/Linux/filesystem/Overlay-Filesystem.md)
