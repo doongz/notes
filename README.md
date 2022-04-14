@@ -105,11 +105,7 @@
   - [filesystem](/Users/zhangdong/Desktop/algo/Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [Software](https://dowalle.gitbook.io/algo/skill/software)
   - [开发软件](https://dowalle.gitbook.io/algo/skill/software/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
-  - [docker & kubernetes](https://dowalle.gitbook.io/algo/skill/software/docker-and-kubernetes)
-    - [docker 核心技术与实现原理](./Skill/Software/docker&kubernetes/1-docker核心技术与实现原理.md)
-    - [docker CLI]()
-    - [k8s CLI]()
-    - [ceph CLI]()
+  - [后端软件](https://dowalle.gitbook.io/algo/skill/software/docker-and-kubernetes)  `docker原理`  `docker CLI`  `k8s CLI`  `ceph CLI`
 
 ### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
 

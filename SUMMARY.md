@@ -199,6 +199,7 @@
       * [1024-[跳跃问题-综合题]-视频拼接](Algorithm/2-算法基础/例题-贪心/1024-[跳跃问题-综合题]-视频拼接.md)
       * [134-[环形贪心-环状数组]-加油站](Algorithm/2-算法基础/例题-贪心/134-[环形贪心-环状数组]-加油站.md)
       * [1405-[贪心+大根堆]-最长快乐字符串](Algorithm/2-算法基础/例题-贪心/1405-[贪心+大根堆]-最长快乐字符串.md)
+      * [1414-[先找大的]-和为K的最少斐波那契数字数目](Algorithm/2-算法基础/例题-贪心/1414-[先找大的]-和为K的最少斐波那契数字数目.md)
       * [1705-[贪心+小根堆]-吃苹果的最大数目](Algorithm/2-算法基础/例题-贪心/1705-[贪心+小根堆]-吃苹果的最大数目.md)
       * [1846-[单调性]-减小和重新排列数组后的最大元素](Algorithm/2-算法基础/例题-贪心/1846-[单调性]-减小和重新排列数组后的最大元素.md)
       * [1877-[数对贪心]-数组中最大数对和的最小值](Algorithm/2-算法基础/例题-贪心/1877-[数对贪心]-数组中最大数对和的最小值.md)
@@ -426,6 +427,17 @@
     * [3-向量组与方程组](Math/线性代数/3-向量组与方程组.md)
     * [4-特征与二次型](Math/线性代数/4-特征与二次型.md)
 - Skill
+  - 后端软件
+    * [1-docker核心技术与实现原理](Skill/后端软件/1-docker核心技术与实现原理.md)
+    * [2-k8s原理](Skill/后端软件/2-k8s原理.md)
+    * [3-docker-CLI](Skill/后端软件/3-docker-CLI.md)
+    * [4-k8s-CLI](Skill/后端软件/4-k8s-CLI.md)
+    * [5-ceph-CLI](Skill/后端软件/5-ceph-CLI.md)
+  - 开发软件
+    * [1-工具&网站](Skill/开发软件/1-工具&网站.md)
+    * [2-vscode](Skill/开发软件/2-vscode.md)
+    * [3-git](Skill/开发软件/3-git.md)
+    * [4-vim](Skill/开发软件/4-vim.md)
   - C++
     - 1-基础知识
       * [0-GCC](Skill/C++/1-基础知识/0-GCC.md)
@@ -529,22 +541,6 @@
     * [7-高级玩法](Skill/Python/7-高级玩法.md)
     * [8-常用函数](Skill/Python/8-常用函数.md)
     * [9-常用包](Skill/Python/9-常用包.md)
-  - Software
-    - 开发软件
-      * [1-工具&网站](Skill/Software/开发软件/1-工具&网站.md)
-      * [2-vscode](Skill/Software/开发软件/2-vscode.md)
-      * [3-git](Skill/Software/开发软件/3-git.md)
-      * [4-vim](Skill/Software/开发软件/4-vim.md)
-    - docker&kubernetes
-      * [1-docker核心技术与实现原理](Skill/Software/docker&kubernetes/1-docker核心技术与实现原理.md)
-      * [ceph-CLI](Skill/Software/docker&kubernetes/ceph-CLI.md)
-      * [docker-CLI](Skill/Software/docker&kubernetes/docker-CLI.md)
-      * [k8s-CLI](Skill/Software/docker&kubernetes/k8s-CLI.md)
-    - kubernetes
-      * [2-service&deployment](Skill/Software/kubernetes/2-service&deployment.md)
-      * [3-configmap](Skill/Software/kubernetes/3-configmap.md)
-      * [4-定时任务](Skill/Software/kubernetes/4-定时任务.md)
-      * [k8s存储](Skill/Software/kubernetes/k8s存储.md)
   - SQL
     * [1-数据库理论](Skill/SQL/1-数据库理论.md)
     * [2-sql-语法](Skill/SQL/2-sql-语法.md)
