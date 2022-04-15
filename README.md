@@ -100,7 +100,7 @@
 - [Markdown](https://github.com/guodongxiaren/README)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
-  - [公式格式](./Skill/LaTeX/2-公式格式.md)
+  - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
