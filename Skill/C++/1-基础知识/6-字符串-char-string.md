@@ -225,12 +225,22 @@ int main() {
 ### 2、string -> int
 
 ```c++
-int atoi(const char* str)
+int atoi(const char* str)  // 要先使用 str.c_str() 转化后才能使用
+int stoi(const string* str)
 ```
 
 ```c++
-string str = "123";
-cout << atoi(str.c_str()) + 1 << endl;  // 124
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string str1 = "123";
+    string str2 = "456";
+    cout << atoi(str1.c_str()) << endl;  // 123
+    cout << stoi(str2) << endl;          // 456
+}
 ```
 
 ### 3、string -> char
