@@ -440,7 +440,7 @@
     * [4-特征与二次型](Math/线性代数/4-特征与二次型.md)
 - Skill
   - 后端软件
-    * [1-docker核心技术与实现原理](Skill/后端软件/1-docker核心技术与实现原理.md)
+    * [1-docker原理](Skill/后端软件/1-docker原理.md)
     * [2-k8s原理](Skill/后端软件/2-k8s原理.md)
     * [3-docker-CLI](Skill/后端软件/3-docker-CLI.md)
     * [4-k8s-CLI](Skill/后端软件/4-k8s-CLI.md)
