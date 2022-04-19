@@ -60,7 +60,7 @@
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
 - [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
-  - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)「未完工」`  `外部排序「未完工」`  `Hard`
+  - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)`  `外部排序「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `玄学算法`  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
   - [双指针](./Algorithm/2-算法基础/3-双指针.md)  `快慢双指针`  `左右双指针`  `前后双指针`  `指向各自集合的双指针`  `Floyd判圈算法`  `时O(n)`  `空O(1)`  `Medium`
   - [滑动窗口](./Algorithm/2-算法基础/4-滑动窗口.md)  `单调性`  `窗口数据结构`  `右边届入窗`  `左边届收缩`  `延时删除`  `采集答案`  `步长`  `起始位置`  `Medium`
@@ -68,7 +68,7 @@
   - [差分](./Algorithm/2-算法基础/6-差分.md)  `两端操作`  `操作区间从O(k)降至O(1)`  `二维差分`
   - [贪心](./Algorithm/2-算法基础/7-贪心.md)  `难想通`  `排序预处理`  `区间调度问题`  `跳跃问题`  `环形贪心`  `堆`  `单调栈`  `Hard`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
-  - [分治「未完工」]()
+  - [分治「未完工」](./Algorithm/2-算法基础/9-分治.md)
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
 - [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
