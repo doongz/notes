@@ -70,6 +70,8 @@
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
   - [分治](./Algorithm/2-算法基础/9-分治.md)  `分解 -> 解决 -> 合并`
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
+  - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最有子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
+  - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)
 - [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
