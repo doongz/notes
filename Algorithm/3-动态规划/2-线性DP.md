@@ -1,0 +1,29 @@
+# 线性 DP
+
+最基础的动态规划形态
+
+
+
+| 题目                                                         | 题解                                                         | 难度 | 推荐指数 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | -------- |
+| [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching) | [LeetCode 题解链接](https://leetcode-cn.com/problems/regular-expression-matching/solution/shua-chuan-lc-dong-tai-gui-hua-jie-fa-by-zn9w/) | 困难 | 🤩🤩🤩🤩     |
+| [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/wildcard-matching/solution/gong-shui-san-xie-xiang-jie-dong-tai-gui-ifyx/) | 困难 | 🤩🤩🤩🤩     |
+| [45. 跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/jump-game-ii/solution/xiang-jie-dp-tan-xin-shuang-zhi-zhen-jie-roh4/) | 中等 | 🤩🤩🤩🤩     |
+| [91. 解码方法](https://leetcode-cn.com/problems/decode-ways/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/decode-ways/solution/gong-shui-san-xie-gen-ju-shu-ju-fan-wei-ug3dd/) | 中等 | 🤩🤩🤩      |
+| [115. 不同的子序列](https://leetcode-cn.com/problems/distinct-subsequences/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/distinct-subsequences/solution/xiang-jie-zi-fu-chuan-pi-pei-wen-ti-de-t-wdtk/) | 困难 | 🤩🤩🤩🤩     |
+| [119. 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/pascals-triangle-ii/solution/dong-tai-gui-hua-luo-ti-chang-jian-de-ko-n2xj/) | 简单 | 🤩🤩🤩      |
+| [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/house-robber-ii/solution/gong-shui-san-xie-ru-he-jiang-xin-xian-z-zf0w/) | 中等 | 🤩🤩🤩      |
+| [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/counting-bits/solution/po-su-jie-fa-dong-tai-gui-hua-jie-fa-by-vvail/) | 简单 | 🤩🤩🤩      |
+| [403. 青蛙过河](https://leetcode-cn.com/problems/frog-jump/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/frog-jump/solution/gong-shui-san-xie-yi-ti-duo-jie-jiang-di-74fw/) | 困难 | 🤩🤩🤩      |
+| [576. 出界的路径数](https://leetcode-cn.com/problems/out-of-boundary-paths/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/out-of-boundary-paths/solution/gong-shui-san-xie-yi-ti-shuang-jie-ji-yi-asrz/) | 中等 | 🤩🤩🤩🤩     |
+| [639. 解码方法 II](https://leetcode-cn.com/problems/decode-ways-ii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/decode-ways-ii/solution/gong-shui-san-xie-fen-qing-kuang-tao-lun-902h/) | 困难 | 🤩🤩🤩🤩     |
+| [650. 只有两个键的键盘](https://leetcode-cn.com/problems/2-keys-keyboard/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/2-keys-keyboard/solution/gong-shui-san-xie-yi-ti-san-jie-dong-tai-f035/) | 中等 | 🤩🤩🤩🤩     |
+| [678. 有效的括号字符串](https://leetcode-cn.com/problems/valid-parenthesis-string/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/valid-parenthesis-string/solution/gong-shui-san-xie-yi-ti-shuang-jie-dong-801rq/) | 中等 | 🤩🤩🤩🤩🤩    |
+| [688. 骑士在棋盘上的概率](https://leetcode-cn.com/problems/knight-probability-in-chessboard/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/knight-probability-in-chessboard/solution/gong-shui-san-xie-jian-dan-qu-jian-dp-yu-st8l/) | 中等 | 🤩🤩🤩🤩🤩    |
+| [1137. 第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/n-th-tribonacci-number/solution/gong-shui-san-xie-yi-ti-si-jie-die-dai-d-m1ie/) | 简单 | 🤩🤩🤩🤩     |
+| [1220. 统计元音字母序列的数目](https://leetcode-cn.com/problems/count-vowels-permutation/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/count-vowels-permutation/solution/gong-shui-san-xie-yi-ti-shuang-jie-xian-n8f4o/) | 困难 | 🤩🤩🤩🤩     |
+| [1751. 最多可以参加的会议数目 II](https://leetcode-cn.com/problems/maximum-number-of-events-that-can-be-attended-ii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/maximum-number-of-events-that-can-be-attended-ii/solution/po-su-dp-er-fen-dp-jie-fa-by-ac_oier-88du/) | 困难 | 🤩🤩🤩      |
+| [1787. 使所有区间的异或结果为零](https://leetcode-cn.com/problems/make-the-xor-of-all-segments-equal-to-zero/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/make-the-xor-of-all-segments-equal-to-zero/solution/gong-shui-san-xie-chou-xiang-cheng-er-we-ww79/) | 困难 | 🤩🤩🤩🤩     |
+| [剑指 Offer 10- I. 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/solution/gong-shui-san-xie-yi-ti-si-jie-dong-tai-9zip0/) | 简单 | 🤩🤩🤩🤩🤩    |
+| [剑指 Offer 42. 连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/solution/gong-shui-san-xie-jian-dan-xian-xing-dp-mqk5v/) | 简单 | 🤩🤩🤩🤩🤩    |
+| [LCP 07. 传递信息](https://leetcode-cn.com/problems/chuan-di-xin-xi/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/chuan-di-xin-xi/solution/gong-shui-san-xie-tu-lun-sou-suo-yu-dong-cyxo/) | 简单 | 🤩🤩🤩🤩     |

@@ -148,7 +148,7 @@
 
 > *2016年留存下来的手稿，再翻开时已是2022年*
 
-- [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)
+- [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)  `微分->趋势`  `积分->概率`
   - [极限](./Math/微积分/1-极限.md)
   - [一元函数微积分](./Math/微积分/2-一元函数微积分.md)
   - [多元函数微分学](./Math/微积分/3-多元函数微分学.md)
