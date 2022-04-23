@@ -2,7 +2,7 @@
 
 最基础的动态规划形态
 
-
+https://blog.csdn.net/u011815404/article/details/81870275
 
 | 题目                                                         | 题解                                                         | 难度 | 推荐指数 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | -------- |
@@ -27,3 +27,11 @@
 | [剑指 Offer 10- I. 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/solution/gong-shui-san-xie-yi-ti-si-jie-dong-tai-9zip0/) | 简单 | 🤩🤩🤩🤩🤩    |
 | [剑指 Offer 42. 连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/solution/gong-shui-san-xie-jian-dan-xian-xing-dp-mqk5v/) | 简单 | 🤩🤩🤩🤩🤩    |
 | [LCP 07. 传递信息](https://leetcode-cn.com/problems/chuan-di-xin-xi/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/chuan-di-xin-xi/solution/gong-shui-san-xie-tu-lun-sou-suo-yu-dong-cyxo/) | 简单 | 🤩🤩🤩🤩     |
+
+
+
+LIS问题（最长上升子序列问题）
+
+
+
+LCS问题（最长公共子序列）

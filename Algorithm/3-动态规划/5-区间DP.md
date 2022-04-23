@@ -24,7 +24,57 @@ $$
 
 ## 经典例题
 
-[877. 石子游戏](https://leetcode-cn.com/problems/stone-game/)
+### [375. 猜数字大小 II](https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/)
+
+通过「记忆化搜索」的递归过程，我们发现，在求解 [i, j] 的最小成本时，需要依赖于 [i, k - 1] 和 [k + 1, j] 这样的比 [i, j] 更小的区间。
+
+这引导我们使用「区间 DP」进行求解
+
+**定义状态数组和状态**：`dp[i][j]` 为区间 [i, j] 内进行猜数的最小成本
+
+**状态方程**：结合【确保你获胜的最小现金数】这个条件
+$$
+f(i,j) = \min\limits_{i<=k<=j}\{max(f(i,k-1),f(k+1,j)+k)\}
+$$
+最终的 `dp[i][j]` 为所有可选的数值 `k` 中的最小值
+
+时间复杂度：`O(n^3)`
+
+空间复杂度：`O(n^2)`
+
+```c++
+class Solution {
+public:
+    int getMoneyAmount(int n) {
+        // 初始化动态数组
+        vector<vector<int>> dp(n + 2, vector<int>(n + 2));
+
+        // 区间dp的常用遍历方法，可确保left<right
+        for (int left = n - 1; left >= 1; left--) {
+            for (int right = left + 1; right <= n; right++) {
+                int tmp = INT_MAX;
+                for (int k = left; k <= right; k++) {
+                    tmp = min(tmp, max(dp[left][k - 1], dp[k + 1][right]) + k);
+                }
+                dp[left][right] = tmp;
+            }
+        }
+        return dp[1][n];
+    }
+};
+```
+
+```
+问：为什么在循环中 int left = n - 1、int right = left + 1？
+答：注意，right不可与left重合，因为重合时left=right=k，dp[k][k]将会等于k，而dp[k][k]根据题意初始时为0，且之后状态不会刷新
+
+问：动态数组的size为n+2？
+答：首先+1是因为，我们使用数组的范围是[1,n]，因此申请n+1个位置
+再+1是因为，在第三个循环会使 k=right，而且需要使用dp[k+1]，right所使用的范围是[1,n]，那么 k+1=right+1 所使用的范围是[1,n+1]
+因此，需要动态数组的size为n+2
+```
+
+### [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/)
 
 亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。
 
@@ -52,7 +102,7 @@ Alice 先开始，只能拿前 5 颗或后 5 颗石子 。
 - 1 <= piles[i] <= 500
 - sum(piles) 是奇数。
 
-### 解题步骤
+**解题步骤**:
 
 **定义 `dp[left][right]` 为考虑区间 [left, right] ，在双方都做最好选择的情况下，先手与后手的最大得分差值为多少。**
 
