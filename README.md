@@ -72,6 +72,10 @@
 - [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
   - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
+  - [线性 DP](./Algorithm/3-动态规划/2-线性DP.md)
+  - [背包 DP](./Algorithm/3-动态规划/3-背包DP.md)
+  - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)
+  - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)
 - [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -148,7 +152,7 @@
 
 > *2016年留存下来的手稿，再翻开时已是2022年*
 
-- [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)  `微分->趋势`  `积分->面积->概率`
+- [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)  `微分->趋势->时间`  `积分->面积(概率)->空间`
   - [极限](./Math/微积分/1-极限.md)
   - [一元函数微积分](./Math/微积分/2-一元函数微积分.md)
   - [多元函数微分学](./Math/微积分/3-多元函数微分学.md)
