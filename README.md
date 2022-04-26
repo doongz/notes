@@ -69,13 +69,13 @@
   - [贪心](./Algorithm/2-算法基础/7-贪心.md)  `排序预处理`  `区间调度问题`  `跳跃问题`  `环形贪心`  `堆`  `单调栈`  `Hard`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
   - [分治](./Algorithm/2-算法基础/9-分治.md)  `分解 -> 解决 -> 合并`
-- [动态规划「未完工」](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
+- [动态规划](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
   - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
-  - [线性 DP](./Algorithm/3-动态规划/2-线性DP.md)
-  - [背包 DP](./Algorithm/3-动态规划/3-背包DP.md)
-  - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)
-  - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)
+  - [线性 DP「未完工」](./Algorithm/3-动态规划/2-线性DP.md)
+  - [背包 DP「未完工」](./Algorithm/3-动态规划/3-背包DP.md)
+  - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
+  - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)  `f(l,r)=max(f(l,k), f(k+1,r))+cost k in [l,r]`
 - [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
