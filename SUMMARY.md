@@ -462,6 +462,9 @@
     * [4-特征与二次型](Math/线性代数/4-特征与二次型.md)
 - Skill
   - 后端软件
+    - k8s详解
+      * [1-pod](Skill/后端软件/k8s详解/1-pod.md)
+      * [Untitled](Skill/后端软件/k8s详解/Untitled.md)
     * [1-docker原理](Skill/后端软件/1-docker原理.md)
     * [2-k8s原理](Skill/后端软件/2-k8s原理.md)
     * [3-docker-CLI](Skill/后端软件/3-docker-CLI.md)
