@@ -464,6 +464,7 @@
   - 后端软件
     - k8s详解
       * [1-pod](Skill/后端软件/k8s详解/1-pod.md)
+      * [2-service](Skill/后端软件/k8s详解/2-service.md)
       * [Untitled](Skill/后端软件/k8s详解/Untitled.md)
     * [1-docker原理](Skill/后端软件/1-docker原理.md)
     * [2-k8s原理](Skill/后端软件/2-k8s原理.md)

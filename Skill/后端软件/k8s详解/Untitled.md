@@ -1,6 +1,6 @@
 
 
-[详解 Kubernetes Service 的实现原理](https://draveness.me/kubernetes-service/)
+
 
 [详解 Kubernetes Volume 的实现原理](https://draveness.me/kubernetes-volume/)
 

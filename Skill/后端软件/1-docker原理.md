@@ -60,7 +60,7 @@ root        40     2  0 Apr08 ?        00:01:54 [watchdog/0]
 
 这两个进程都是被 Linux 中的上帝进程 `idle` 创建出来的，其中前者负责执行内核的一部分初始化工作和系统配置，也会创建一些类似 `getty` 的注册进程，而后者负责管理和调度其他的内核进程
 
-<img src="./doc/docker-3.png" alt="docker-3" style="zoom:60%;" />
+![](./doc/docker-3.png)
 
 如果我们在当前的 Linux 操作系统下运行一个新的 Docker 容器，并通过 `exec` 进入其内部的 `bash` 并打印其中的全部进程，我们会得到以下的结果：
 
@@ -88,7 +88,7 @@ root      5006  1554  0 08:38 ?        00:00:00 docker-containerd-shim b809a2eb3
 
 在当前的宿主机器上，可能就存在由上述的不同进程构成的进程树：
 
-<img src="./doc/docker-4.png" alt="docker-4" style="zoom:60%;" />
+![](./doc/docker-4.png)
 
 这就是在使用 `clone(2)` 创建新进程时传入 `CLONE_NEWPID` 实现的，也就是**使用 Linux 的命名空间实现进程的隔离**，Docker 容器内部的任意进程都对宿主机器的进程一无所知
 
@@ -172,7 +172,7 @@ Docker 为我们提供了四种不同的网络模式，Host、Container、None �
 
 当 Docker 服务器在主机上启动之后会创建新的虚拟网桥 docker0，随后在该主机上启动的全部服务在默认情况下都与该网桥相连。
 
-<img src="./doc/docker-6.png" alt="docker-6" style="zoom:60%;" />
+![](./doc/docker-6.png)
 
 在默认情况下，每一个容器在创建时都会创建一对虚拟网卡，两个虚拟网卡组成了数据的通道
 
@@ -227,7 +227,7 @@ rtt min/avg/max/mdev = 0.043/0.056/0.069/0.013 ms
 
 当有 Docker 的容器需要将服务暴露给宿主机器，就会为容器分配一个 IP 地址，同时向 iptables 中追加一条新的规则。
 
-<img src="./doc/docker-7.png" alt="docker-7" style="zoom:60%;" />
+![](./doc/docker-7.png)
 
 当我们使用 `redis-cli` 在宿主机器的命令行中访问 127.0.0.1:6379 的地址时，经过 iptables 的 NAT PREROUTING 将 ip 地址定向到了 192.168.0.4，
 
@@ -304,17 +304,17 @@ chdir("/");
 
 在同一台机器上运行了多个对彼此以及宿主机器一无所知的「容器」，这些容器却共同占用了宿主机器的物理资源。
 
-<img src="./doc/docker-11.png" alt="docker-11" style="zoom:50%;" />
+![](./doc/docker-11.png)
 
 如果其中的某一个容器正在执行 CPU 密集型的任务，那么就会影响其他容器中任务的性能与执行效率，导致多个容器相互影响并且抢占资源。如何**对多个容器的资源使用进行限制**就成了解决进程虚拟资源隔离之后的主要问题，而 Control Groups（简称 CGroups）就是能够隔离宿主机器上的物理资源，**例如 CPU、内存、磁盘 I/O 和网络带宽**。
 
 每一个 CGroup 都是一组被相同的标准和参数限制的进程，不同的 CGroup 之间是有层级关系的，也就是说它们之间可以从父类继承一些用于限制资源使用的标准和参数。
 
-<img src="./doc/docker-12.png" alt="docker-12" style="zoom:50%;" />
+![](./doc/docker-12.png)
 
 **Linux 的 CGroup 能够为一组进程分配资源**，也就是我们在上面提到的 CPU、内存、网络带宽等资源，通过对资源的分配，CGroup 能够提供以下的几种功能：资源限制、优先级、计算、控制
 
-<img src="./doc/docker-13.png" alt="docker-13" style="zoom:50%;" />
+![](./doc/docker-13.png)
 
 > 在 CGroup 中，所有的任务就是一个系统的一个进程，而 CGroup 就是一组按照某种标准划分的进程，在 CGroup 这种机制中，所有的资源控制都是以 CGroup 作为单位实现的，每一个进程都可以随时加入一个 CGroup 也可以随时退出一个 CGroup。
 >
@@ -361,7 +361,7 @@ tasks
 
 `9c3057xxx` 其实就是我们运行的一个 Docker 容器，启动这个容器时，Docker 会为这个容器创建一个与容器标识符相同的 CGroup，在当前的主机上 CGroup 就会有以下的层级关系
 
-<img src="./doc/docker-14.png" alt="docker-14" style="zoom:50%;" />
+![](./doc/docker-14.png)
 
 每一个 CGroup 下面都有一个 `tasks` 文件，其中存储着属于当前控制组的所有进程的 pid，作为负责 cpu 的子系统，`cpu.cfs_quota_us` 文件中的内容能够对 CPU 的使用作出限制，如果当前文件的内容为 50000，那么当前控制组中的全部进程的 CPU 占用率不能超过 50%。
 
@@ -410,13 +410,13 @@ CMD python /app/app.py
 
 容器中的每一层都只对当前容器进行了非常小的修改，上述的 Dockerfile 文件会构建一个拥有四层 layer 的镜像：
 
-<img src="./doc/docker-15.png" alt="docker-15" style="zoom:50%;" />
+![](./doc/docker-15.png)
 
 当镜像被 `docker run` 命令创建时就会在镜像的最上层添加一个可写的层，也就是容器层，所有对于运行时容器的修改其实都是对这个容器读写层的修改。
 
 **容器和镜像的区别就在于，所有的镜像都是只读的，而每一个容器其实等于镜像加上一个可读写的层，也就是同一个镜像可以对应多个容器**。
 
-<img src="./doc/docker-16.png" alt="docker-16" style="zoom:50%;" />
+![](./doc/docker-16.png)
 
 ### 2、AUFS
 
@@ -424,7 +424,7 @@ UnionFS 其实是一种为 Linux 操作系统设计的用于把多个文件系�
 
 AUFS 作为联合文件系统，它能够将不同文件夹中的层联合（Union）到了同一个文件夹中，这些文件夹在 AUFS 中称作分支，整个『联合』的过程被称为*联合挂载（Union Mount）*：
 
-<img src="./doc/docker-17.png" alt="docker-17" style="zoom:60%;" />
+![](./doc/docker-17.png)
 
 每一个镜像层或者容器层都是 `/var/lib/docker/` 目录下的一个子文件夹；在 Docker 中，所有镜像层和容器层的内容都存储在 `/var/lib/docker/aufs/diff/` 目录中：
 
@@ -437,7 +437,7 @@ $ ls /var/lib/docker/aufs/diff/00adcccc1a55a36a610a6ebb3e07cc35577f2f5a3b671be3d
 
 而 `/var/lib/docker/aufs/layers/` 中存储着镜像层的元数据，每一个文件都保存着镜像层的元数据，最后的 `/var/lib/docker/aufs/mnt/` 包含镜像或者容器层的挂载点，最终会被 Docker 通过联合的方式进行组装。
 
-<img src="./doc/docker-18.png" alt="docker-18" style="zoom:60%;" />
+![](./doc/docker-18.png)
 
 上面的这张图片非常好的展示了组装的过程，
 
@@ -451,7 +451,7 @@ $ ls /var/lib/docker/aufs/diff/00adcccc1a55a36a610a6ebb3e07cc35577f2f5a3b671be3d
 
 AUFS 只是 Docker 使用的存储驱动的一种，除了 AUFS 之外，Docker 还支持了不同的存储驱动，包括 `aufs`、`devicemapper`、`overlay2`、`zfs` 和 `vfs` 等等，在最新的 Docker 中，`overlay2` 取代了 `aufs` 成为了推荐的存储驱动，但是在没有 `overlay2` 驱动的机器上仍然会使用 `aufs` 作为 Docker 的默认驱动。
 
-<img src="./doc/docker-19.png" alt="docker-19" style="zoom:70%;" />
+![](./doc/docker-19.png)
 
 不同的存储驱动在存储镜像和容器文件时也有着完全不同的实现，有兴趣的读者可以在 Docker 的官方文档 [Select a storage driver](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/) 中找到相应的内容。
 

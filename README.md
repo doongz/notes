@@ -103,18 +103,19 @@
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
-- [Markdown](https://github.com/guodongxiaren/README)
-- [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
-  - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
-  - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
 - [后端软件](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  
   - [docker 原理](./Skill/后端软件/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
   - [k8s 原理](./Skill/后端软件/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
-  - [k8s 详解](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)
+  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`
   - [CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
+- [Markdown](https://github.com/guodongxiaren/README)
+- [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
+  - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
+  - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
+- [Mermaid](https://github.com/mermaid-js/mermaid)
 
 
 ### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
