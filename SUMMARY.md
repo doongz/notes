@@ -572,6 +572,9 @@
     * [http代理](Skill/Linux/http代理.md)
     * [ln链接](Skill/Linux/ln链接.md)
     * [sed](Skill/Linux/sed.md)
+  - [Markdown](Skill/Markdown/README.md)
+    * [emoji](Skill/Markdown/emoji.md)
+  - [Mermaid](Skill/Mermaid/README.md)
   - Python
     * [1-运算符](Skill/Python/1-运算符.md)
     * [2-字符串-str](Skill/Python/2-字符串-str.md)

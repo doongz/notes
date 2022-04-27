@@ -111,11 +111,11 @@
   - [k8s 原理](./Skill/后端软件/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
   - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`
   - [CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
-- [Markdown](https://github.com/guodongxiaren/README)
+- [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
   - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
-- [Mermaid](https://github.com/mermaid-js/mermaid)
+- [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 
 ### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
