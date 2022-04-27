@@ -94,12 +94,13 @@
 
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
-  - [面向对象「未完工」](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `运行时多态与虚函数`
+  - [面向对象](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `多态与虚函数`  `运算符重载`  `模版和范型`
   - [标准模版库](https://dowalle.gitbook.io/algo/skill/c++/3-biao-zhun-mo-ban-ku)  `vector`  `deque`  `multimap`  `multiset`  `unordered_map`  `unordered_set`  `queue`  `priority_queue`  `algorithm`
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c++/4c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [Golang](https://dowalle.gitbook.io/algo/skill/golang)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/golang/1-ji-chu-zhi-shi)   `string`  `slice`  `map`  `struct`  `指针`  `interface`
   - [Go语言并发](https://dowalle.gitbook.io/algo/skill/golang/2go-yu-yan-bing-fa)  `go`  `chan`  `WaitGroup`  `如何实现`  `sync.Mutex`  `sync.RWMutex`  `atomic`  `死锁`
+  - [go tool「未完工」]()
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`
