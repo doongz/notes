@@ -1,5 +1,7 @@
 # SQL 语法
 
+参考：[https://www.w3school.com.cn/sql/index.asp](https://www.w3school.com.cn/sql/index.asp)
+
 **SQL 是用于访问和处理数据库的标准的计算机语言**
 
 - SQL 指结构化查询语言
