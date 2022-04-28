@@ -1,9 +1,5 @@
 
 
-
-
-[详解 Kubernetes Volume 的实现原理](https://draveness.me/kubernetes-volume/)
-
 [详解 Kubernetes ReplicaSet 的实现原理](https://draveness.me/kubernetes-replicaset/)
 
 [详解 Kubernetes 垃圾收集器的实现原理](https://draveness.me/kubernetes-garbage-collector/)
@@ -25,3 +21,6 @@
 [谈谈 Kubernetes 的问题和局限性](https://draveness.me/kuberentes-limitations/)
 
 [Kubernetes、集群联邦和资源分发](https://draveness.me/kuberentes-federation/)
+
+
+

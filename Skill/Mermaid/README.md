@@ -190,3 +190,21 @@ pie
       Sit down: 3: Me
 ```
 
+```
+graph TD
+    subgraph Node
+        VolumeManager-.->Kubelet
+        DesiredStateOfWorldPopulator-.->VolumeManager
+        Reconciler-.->VolumeManager
+    end
+```
+
+```mermaid
+graph TD
+    subgraph Node
+        VolumeManager-.->Kubelet
+        DesiredStateOfWorldPopulator-.->VolumeManager
+        Reconciler-.->VolumeManager
+    end
+```
+

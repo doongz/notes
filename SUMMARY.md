@@ -280,7 +280,9 @@
     - 例题-序列DP
       * [334-[定长LIS]-递增的三元子序列](Algorithm/3-动态规划/例题-序列DP/334-[定长LIS]-递增的三元子序列.md)
       * [354-[二维LIS-树状数组]-俄罗斯套娃信封问题](Algorithm/3-动态规划/例题-序列DP/354-[二维LIS-树状数组]-俄罗斯套娃信封问题.md)
+      * [368-[LIS应用]-最大整除子集](Algorithm/3-动态规划/例题-序列DP/368-[LIS应用]-最大整除子集.md)
       * [583-[LCS]-两个字符串的删除操作](Algorithm/3-动态规划/例题-序列DP/583-[LCS]-两个字符串的删除操作.md)
+      * [673-[LIS方案数]-最长递增子序列的个数](Algorithm/3-动态规划/例题-序列DP/673-[LIS方案数]-最长递增子序列的个数.md)
       * [712-[LCS]-两个字符串的最小ASCII删除和](Algorithm/3-动态规划/例题-序列DP/712-[LCS]-两个字符串的最小ASCII删除和.md)
     * [0-动态规划基础](Algorithm/3-动态规划/0-动态规划基础.md)
     * [1-记忆化搜索](Algorithm/3-动态规划/1-记忆化搜索.md)
@@ -465,6 +467,7 @@
     - k8s详解
       * [1-pod](Skill/后端软件/k8s详解/1-pod.md)
       * [2-service](Skill/后端软件/k8s详解/2-service.md)
+      * [3-volume](Skill/后端软件/k8s详解/3-volume.md)
       * [Untitled](Skill/后端软件/k8s详解/Untitled.md)
     * [1-docker原理](Skill/后端软件/1-docker原理.md)
     * [2-k8s原理](Skill/后端软件/2-k8s原理.md)
