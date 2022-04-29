@@ -12,7 +12,7 @@
 
 Kubernetes 中的 Volume 种类非常多，它不仅要支持临时的、易失的磁盘文件，还需要解决持久存储的问题；第一个问题往往都比较容易解决，后者作为持久存储在很多时候都需要与云服务商提供的存储方案打交道，如果是 Kubernetes 中已经支持的存储类型倒是还好，遇到不支持的类型还是比较麻烦的。
 
-![k8s-20](./doc/k8s-20.png)
+![k8s-20](../doc/k8s-20.png)
 
 除了卷和持久卷之外，Kubernetes 还有另外一种更加复杂的概念 - 动态存储供应，它能够允许存储卷按需进行创建，不再需要集群的管理员手动调用云服务商提供的接口或者界面创建新的存储卷。
 
@@ -65,7 +65,7 @@ spec:
 
 临时的卷没有办法解决数据持久存储的问题，想要让数据能够持久化，首先就需要将 Pod 和卷的声明周期分离，这也就是引入持久卷 `PersistentVolume(PV)` 的原因。我们可以将 `PersistentVolume` 理解为集群中资源的一种，它与集群中的节点 Node 有些相似，PV 为 Kubernete 集群提供了一个如何提供并且使用存储的抽象，与它一起被引入的另一个对象就是 `PersistentVolumeClaim(PVC)`，这两个对象之间的关系与节点和 Pod 之间的关系差不多：
 
-![k8s-21](./doc/k8s-21.png)
+![k8s-21](../doc/k8s-21.png)
 
 `PersistentVolume` 是集群中的一种被管理员分配的存储资源，而 `PersistentVolumeClaim` 表示用户对存储资源的申请，它与 Pod 非常相似，PVC 消耗了持久卷资源，而 Pod 消耗了节点上的 CPU 和内存等物理资源。
 
@@ -85,7 +85,7 @@ Kubernetes 中的 PV 提供三种不同的访问模式，分别是 `ReadWriteOnc
 
 当某个服务使用完某一个卷之后，它们会从 apiserver 中删除 PVC 对象，这时 Kubernetes 就需要对卷进行回收（Reclaim），持久卷也同样包含三种不同的回收策略，这三种回收策略会指导 Kubernetes 选择不同的方式对使用过的卷进行处理。
 
-![k8s-22](./doc/k8s-22.png)
+![k8s-22](../doc/k8s-22.png)
 
 第一种回收策略就是保留（Retain）PV 中的数据，如果希望 PV 能够被重新使用，系统管理员需要删除被使用的 `PersistentVolume` 对象并手动清除存储和相关存储上的数据。
 
@@ -160,7 +160,7 @@ func (kl *Kubelet) syncPod(o syncPodOptions) error {
 
 这个方法会将当前的 Pod 加入需要重新处理卷挂载的队列并在循环中持续调用 `verifyVolumesMounted` 方法来比较期望挂载的卷和实际挂载卷的区别，这个循环会等待两者变得完全相同或者超时后才会返回，当前方法的返回一般也意味着 Pod 中的全部卷已经挂载成功了。
 
-### 2、卷管理器
+### 2、VolumeManager（卷管理器）
 
 当前节点卷的管理就都是由 `VolumeManager` 来负责了，在 Kubernetes 集群中的每一个节点（Node）上的 kubelet 启动时都会运行一个 `VolumeManager`Goroutine，它会负责在当前节点上的 Pod 和 Volume 发生变动时对 Volume 进行挂载和卸载等操作。
 
@@ -190,7 +190,7 @@ graph LR
 
 如上图所示，这里的 `DesiredStateOfWorldPopulator` 和 `Reconciler` 两个 Goroutine 会通过图中两个的 `XXXStateOfWorld` 状态进行通信，`DesiredStateOfWorldPopulator` 主要负责从 Kubernetes 节点中获取新的 Pod 对象并更新 `DesiredStateOfWorld` 结构；而后者会根据实际状态和当前状态的区别对当前节点的状态进行迁移，也就是通过 `DesiredStateOfWorld` 中状态的变更更新 `ActualStateOfWorld` 中的内容。
 
-卷管理器中的两个 Goroutine，一个根据工程师的需求更新节点的期望状态 `DesiredStateOfWorld`，另一个 Goroutine 保证节点向期望状态『迁移』，也就是说 `DesiredStateOfWorldPopulator` 是卷管理器中的生产者，而 `Reconciler` 是消费者，接下来我们会分别介绍这两个 Goroutine 的工作和实现。
+卷管理器中的两个 Goroutine，一个根据工程师的需求更新节点的期望状态 `DesiredStateOfWorld`，另一个 Goroutine 保证节点向期望状态『迁移』，也就是说 `DesiredStateOfWorldPopulator` 是卷管理器中的消费者，而 `Reconciler` 是生产者，接下来我们会分别介绍这两个 Goroutine 的工作和实现。
 
 #### 1）DesiredStateOfWorldPopulator
 
@@ -303,7 +303,7 @@ sequenceDiagram
 
 在当前的循环中首先会保证应该被卸载但是仍然在节点中存在的卷被卸载，然后将应该挂载的卷挂载到合适的位置，最后将设备与节点分离或者卸载，所有挂载和卸载的操作都是通过 `OperationExecutor` 完成的，这个结构体负责调用相应的插件执行操作，我们会在文章的后面展开进行介绍。
 
-### 3、附着分离控制器
+### 3、AttachDetachController（附着分离控制器）
 
 除了 `VolumeManager` 之外，另一个负责管理 Kubernetes 卷的组件就是 `AttachDetachController` 了，引入这个组件的目的主要是：
 
@@ -410,7 +410,7 @@ sequenceDiagram
 
 这里处理的工作其实相对更少一些，`Reconciler` 会将期望状态中的卷与实际状态进行比较，然后分离需要分离的卷、附着需要附着的卷，逻辑非常的清晰和简单。
 
-### 4、持久卷控制器
+### 4、PVController（持久卷控制器）
 
 作为集群中与 PV 和 PVC 打交道的控制器，持久卷控制器同时运行着三个 Goroutine 用于处理相应的逻辑，其中 `Resync` 协程负责从 Kubernetes 集群中同步 PV 和 PVC 的信息，而另外两个工作协程主要负消费队列中的任务：
 

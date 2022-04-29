@@ -110,7 +110,7 @@
 - [后端软件](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  
   - [docker 原理](./Skill/后端软件/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
   - [k8s 原理](./Skill/后端软件/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
-  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`  `volume`
+  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`
   - [CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)

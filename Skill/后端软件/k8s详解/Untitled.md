@@ -1,6 +1,6 @@
 
 
-[详解 Kubernetes ReplicaSet 的实现原理](https://draveness.me/kubernetes-replicaset/)
+
 
 [详解 Kubernetes 垃圾收集器的实现原理](https://draveness.me/kubernetes-garbage-collector/)
 
