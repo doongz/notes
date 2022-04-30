@@ -2,9 +2,9 @@
 
 
 
-[详解 Kubernetes 垃圾收集器的实现原理](https://draveness.me/kubernetes-garbage-collector/)
 
-[详解 Kubernetes Deployment 的实现原理](https://draveness.me/kubernetes-deployment/)
+
+
 
 [详解 Kubernetes StatefulSet 实现原理](https://draveness.me/kubernetes-statefulset/)
 
