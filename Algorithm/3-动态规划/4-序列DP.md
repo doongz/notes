@@ -4,9 +4,23 @@
 
 参考 2：[leetcode 1143 题解（LCS）](https://leetcode-cn.com/problems/longest-common-subsequence/solution/fu-xue-ming-zhu-er-wei-dong-tai-gui-hua-r5ez6/)
 
-参考 3：[LCS 问题与 LIS 问题的相互关系，以及 LIS 问题的最优解证明](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247487814&idx=1&sn=e33023c2d474ff75af83eda1c4d01892&chksm=fd9cba59caeb334f1fbfa1aefd3d9b2ab6abfccfcab8cb1dbff93191ae9b787e1b4681bbbde3&token=252055586&lang=zh_CN#rd)
+参考 3：[leetcode 53 题解（最大子数组和）](https://leetcode-cn.com/problems/maximum-subarray/solution/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/)
 
-参考 4：[leetcode 53 题解（最大子数组和）](https://leetcode-cn.com/problems/maximum-subarray/solution/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/)
+## 无后效性
+
+**「无后效性」是「动态规划」中非常重要的概念，在我看来，理解这个概念无比重要**。很遗憾，《算法导论》上没有讲到「无后效性」。我找了一本在「豆瓣」目前豆瓣上评分为 9.2 的书 《算法竞赛进阶指南》，这本书和《算法导论》《算法 4》和 liuyubobobo 老师的算法课程一样，在我学习算法与数据结构的道路上，都发挥了巨大的作用。
+
+李煜东著《算法竞赛进阶指南》，摘录如下：：
+
+**为了保证计算子问题能够按照顺序、不重复地进行，动态规划要求已经求解的子问题不受后续阶段的影响**。这个条件也被叫做「无后效性」。换言之，动态规划对状态空间的遍历构成一张有向无环图，遍历就是该有向无环图的一个拓扑序。有向无环图中的节点对应问题中的「状态」，图中的边则对应状态之间的「转移」，转移的选取就是动态规划中的「决策」。
+
+解释：
+
+- 「有向无环图」「拓扑序」表示了每一个子问题只求解一次，以后求解问题的过程不会修改以前求解的子问题的结果；
+- 换句话说：如果之前的阶段求解的子问题的结果包含了一些不确定的信息，导致了后面的阶段求解的子问题无法得到，或者很难得到，这叫「有后效性」，我们在当前这个问题第 1 次拆分的子问题就是「有后效性」的（大家可以再翻到上面再看看）；
+- 解决「有后效性」的办法是固定住需要分类讨论的地方，记录下更多的结果。在代码层面上表现为：
+  - 状态数组增加维度，例如：「力扣」的股票系列问题；
+  - 把状态定义得更细致、准确，例如：前天推送的第 124 题：状态定义只解决路径来自左右子树的其中一个子树。
 
 ## 思考顺序
 
@@ -219,7 +233,7 @@ public:
 解释：两个字符串没有公共子序列，返回 0 。
 ```
 
-### 1、动态规划
+### 动态规划
 
 动态规划是有套路的：
 
@@ -297,7 +311,234 @@ public:
 };
 ```
 
-## 三、最大子数组和
+## 三、LCS 问题转化为 LIS 问题（时间复杂度优化）
+
+题目：[1713. 得到子序列的最少操作次数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/)
+
+给你一个数组 target ，包含若干 互不相同 的整数，以及另一个整数数组 arr ，arr 可能 包含重复元素。
+
+每一次操作中，你可以在 arr 的任意位置插入任一整数。比方说，如果 arr = [1,4,1,2] ，那么你可以在中间添加 3 得到 [1,4,3,1,2] 。你可以在数组最开始或最后面添加整数。
+
+请你返回 最少 操作次数，使得 target 成为 arr 的一个子序列。
+
+- 1 <= target.length, arr.length <= 10^5
+- 1 <= target[i], arr[i] <= 10^9
+- target 不包含任何重复元素。
+
+```
+输入：target = [5,1,3], arr = [9,4,2,3,4]
+输出：2
+解释：你可以添加 5 和 1 ，使得 arr 变为 [5,9,4,1,2,3,4] ，target 为 arr 的子序列。
+
+输入：target = [6,4,8,1,3,2], arr = [4,7,6,2,3,8,6,1]
+输出：3
+```
+
+### 思路历程
+
+看完题目，答案显然是，先求出两个数组的最大公共子序列的长度 len，最后 target.size() - len
+
+但是两个数组的最长都为 10^5，上述方法的时间复杂度为 O(nm)，显然会超时
+
+那么，看到另一个条件： `target` 包含若干 **互不相同** 的整数
+
+引导我们要将 **LCS 问题转化为 LIS 问题**，把时间复杂度 O(nm) 降至 O(nlogn)
+
+声明：**LCS 转化为 LIS 问题的先决条件是，其中一个数组内的元素「不重复」**，例如 target 数组
+
+还有个事实要明确：**「下标上升」意味着「顺序排布」，「顺序排布」意味着「下标上升」**，这是可以进行转化的理论基础
+
+### 如何转化
+
+**1. 预处理**：找出 arr 中且「同时存在」于 target 中的元素，将这些「同时存在」元素在「target 中的下标」，按照「arr 的顺序」缓存下来
+
+例如：
+
+```
+target = [6,4,8,1,3,2]
+arr = [4,7,6,2,3,8,6,1]
+index_list = [1,0,5,4,2,0,3]
+```
+
+```c++
+unordered_map<int, int> valIdx_map;
+for (int i = 0; i < n; i++) {
+    valIdx_map[target[i]] = i;
+}
+vector<int> index_list;
+for (int num : arr) {
+    if (valIdx_map.count(num)) {
+        // cout << num << " " << "idx in target:" << valIdx_map[num] << endl;
+        index_list.push_back(valIdx_map[num]);
+    }
+}
+```
+
+**2. 将 LCS 转化为 LIS 问题**
+
+首先看下 index_list 内的这些元素具备什么性质：
+
+- 里面存储的元素是 target 的下标
+- 是按照在 arr 中的顺序构成的
+- 根据 target 的下标，检索出的数，是属于 target 和 arr 公共的
+
+在这样一个 index_list 中求出「最长上升子序列」，这个 LIS 具备什么性质：
+
+- 「同时」满足了在 target 和 arr 中按照「顺序」排布，**「下标上升」意味着「顺序排布」，「顺序排布」意味着「下标上升」**
+- 其中的元素，「同时」存在于 target 和 arr 中，也就是公共的
+
+这样的一个序列，对于 index_list 是「最长上升子序列」，对于 target 和 arr 就是「最长公共子序列」
+
+求解的过程，就是将 LCS 问题转化为 LIS 问题
+
+> 问：为什么其中一个数组内的元素「不重复」，这样的转换方式才能生效呢？
+>
+> - 如果 target 数组中某个元素重复出现，应该选择其中的哪个下标来构成最终的那个最长上升子序列」，那么就又得一个个判断这些重复值O(n)，整体的时间复杂度退化为 O(nm)，这样的转换方式又有什么意义
+>
+> - 如果 target 数组中所有元素都是「不重复」，直接就可选中在target唯一的公共元素 O(1)，嵌入到LCS的O(nlogn)的求解过程中，整体的时间复杂度优化为O(nlogn)
+
+时间复杂度：`O(nlogn)`
+
+空间复杂度：`O(n)`
+
+```c++
+class Solution {
+public:
+    int minOperations(vector<int>& target, vector<int>& arr) {
+        int n = target.size();
+        int m = arr.size();
+
+        unordered_map<int, int> valIdx_map;
+        for (int i = 0; i < n; i++) {
+            valIdx_map[target[i]] = i;
+        }
+        vector<int> index_list;
+        for (int num : arr) {
+            if (valIdx_map.count(num)) {
+                index_list.push_back(valIdx_map[num]);
+            }
+        }
+        if (index_list.empty()) {  // 没有公共子序列
+            return n;
+        }
+
+        vector<int> tail;
+        tail.push_back(index_list[0]);
+        for (int i = 1; i < index_list.size(); i++) {
+            int cur = index_list[i];
+            int end = *tail.rbegin();
+            if (cur > end) {
+                tail.push_back(cur);
+            } else {
+                auto it = lower_bound(tail.begin(), tail.end(), cur);
+                *it = cur;
+            }
+        }
+        return n - tail.size();
+    }
+};
+```
+
+## 四、最长上升子数组
+
+题目：[674. 最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
+
+给定一个未经排序的整数数组，找到最长且 **连续递增的子序列**，并返回该序列的长度。
+
+- `1 <= nums.length <= 104`
+- `-109 <= nums[i] <= 109`
+
+```
+输入：nums = [1,3,5,4,7]
+输出：3
+解释：最长连续递增序列是 [1,3,5], 长度为3。
+尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。 
+
+输入：nums = [2,2,2,2,2]
+输出：1
+解释：最长连续递增序列是 [2], 长度为1。
+```
+
+### 动态规划
+
+**1. 定义状态**
+
+dp[i] 为以 nums[i] 结尾的最长递增子数组的长度
+
+**2. 状态转移方程**
+$$
+dp[i] =
+\begin{cases}
+dp[i-1] + 1 & nums[i] > nums[i-1] \\ \\
+1 & nums[i] \leq nums[i-1]
+\end{cases}
+$$
+**3. 初始化**
+
+ dp 默认都为 1，自身
+
+**4. 输出**
+
+dp 中的最大值
+
+**5. 空间优化**
+
+状态转移过程中，仅需知道前一个的最长递增子数组的长度 dp[i-1]，可以用一个变量 pre 记录
+
+**复杂度分析**：
+
+时间复杂度：`O(n)`
+
+空间复杂度：`O(n)`，`O(1)`
+
+```c++
+class Solution {
+public:
+    int findLengthOfLCIS(vector<int>& nums) {
+        int n = nums.size();
+        // dp[i] 为以 nums[i] 结尾的最长递增子数组的长度，默认为 1，自身
+        vector<int> dp(n, 1);
+        int ans = 1;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > nums[i - 1]) {
+                dp[i] = dp[i - 1] + 1;
+            } else if (nums[i] <= nums[i - 1]) {
+                dp[i] = 1;  // 也可以不做处理
+            }
+            ans = max(ans, dp[i]);
+        }
+        return ans;
+    }
+};
+```
+
+```c++
+class Solution {
+public:
+    int findLengthOfLCIS(vector<int>& nums) {
+        int n = nums.size();
+        int pre = 1;
+        int ans = 1;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > nums[i - 1]) {
+                pre++;
+            } else if (nums[i] <= nums[i - 1]) {
+                pre = 1;
+            }
+            ans = max(ans, pre);
+        }
+        return ans;
+    }
+};
+```
+
+## 五、最长公共子数组
+
+题目：[718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/)
+
+
+
+## 六、最大子数组和
 
 题目：[53. 最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
 
@@ -472,44 +713,12 @@ public:
 
 
 
-## 无后效性
-
-**「无后效性」是「动态规划」中非常重要的概念，在我看来，理解这个概念无比重要**。很遗憾，《算法导论》上没有讲到「无后效性」。我找了一本在「豆瓣」目前豆瓣上评分为 9.2 的书 《算法竞赛进阶指南》，这本书和《算法导论》《算法 4》和 liuyubobobo 老师的算法课程一样，在我学习算法与数据结构的道路上，都发挥了巨大的作用。
-
-李煜东著《算法竞赛进阶指南》，摘录如下：：
-
-**为了保证计算子问题能够按照顺序、不重复地进行，动态规划要求已经求解的子问题不受后续阶段的影响**。这个条件也被叫做「无后效性」。换言之，动态规划对状态空间的遍历构成一张有向无环图，遍历就是该有向无环图的一个拓扑序。有向无环图中的节点对应问题中的「状态」，图中的边则对应状态之间的「转移」，转移的选取就是动态规划中的「决策」。
-
-解释：
-
-- 「有向无环图」「拓扑序」表示了每一个子问题只求解一次，以后求解问题的过程不会修改以前求解的子问题的结果；
-- 换句话说：如果之前的阶段求解的子问题的结果包含了一些不确定的信息，导致了后面的阶段求解的子问题无法得到，或者很难得到，这叫「有后效性」，我们在当前这个问题第 1 次拆分的子问题就是「有后效性」的（大家可以再翻到上面再看看）；
-- 解决「有后效性」的办法是固定住需要分类讨论的地方，记录下更多的结果。在代码层面上表现为：
-  - 状态数组增加维度，例如：「力扣」的股票系列问题；
-  - 把状态定义得更细致、准确，例如：前天推送的第 124 题：状态定义只解决路径来自左右子树的其中一个子树。
-
-
-
-
-
 
 | 题目                                                         | 题解                                                         | 难度 | 推荐指数 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | -------- |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
 | [446. 等差数列划分 II - 子序列](https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/solution/gong-shui-san-xie-xiang-jie-ru-he-fen-xi-ykvk/) | 困难 | 🤩🤩🤩🤩🤩    |
 | [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/concatenated-words/solution/gong-shui-san-xie-xu-lie-dpzi-fu-chuan-h-p7no/) | 困难 | 🤩🤩🤩🤩     |
-|                                                              |                                                              |      |          |
 | [629. K个逆序对数组](https://leetcode-cn.com/problems/k-inverse-pairs-array/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/k-inverse-pairs-array/solution/gong-shui-san-xie-yi-dao-xu-lie-dp-zhuan-tm01/) | 中等 | 🤩🤩🤩🤩🤩    |
-|                                                              |                                                              |      |          |
 | [689. 三个无重叠子数组的最大和](https://leetcode-cn.com/problems/maximum-sum-of-3-non-overlapping-subarrays/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/maximum-sum-of-3-non-overlapping-subarrays/solution/gong-shui-san-xie-jie-he-qian-zhui-he-de-ancx/) | 困难 | 🤩🤩🤩🤩     |
-| [740. 删除并获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/delete-and-earn/solution/gong-shui-san-xie-zhuan-huan-wei-xu-lie-6c9t0/) | 中等 | 🤩🤩🤩🤩🤩    |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
-|                                                              |                                                              |      |          |
 | [1473. 粉刷房子 III](https://leetcode-cn.com/problems/paint-house-iii/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/paint-house-iii/solution/gong-shui-san-xie-san-wei-dong-tai-gui-h-ud7m/) | 困难 | 🤩🤩🤩🤩     |
-| [1713. 得到子序列的最少操作次数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/solution/gong-shui-san-xie-noxiang-xin-ke-xue-xi-oj7yu/) | 困难 | 🤩🤩🤩🤩🤩    |
 

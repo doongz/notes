@@ -22,9 +22,23 @@ $$
 
 **求解**：对整个问题设最优值，**枚举合并点，将问题分解为左右两个部分**，最后合并两个部分的最优值得到原问题的最优值。
 
-## 经典例题
+**返回**：通常返回整个区间的解 `dp[0][n-1]`
 
-### [375. 猜数字大小 II](https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/)
+### 1、经典遍历方法
+
+**如何遍历「一定要会」**：对于区间 `dp[left][right]` 来说，将 `left` 从 `n - 1` 往前遍历到 `0`，而 `right` 从 `left` 位置往后遍历到 `n-1`，这样能够方便 `left < right`，将大区间划分成小区间。从小区间开始判断，不断的扩大我们的判断范围看会不会赢
+
+### 2、经典初始化方法
+
+`dp[left][right]` ，left 等于 right 时每个值默认为 1，为自身
+
+### 3、经典返回方法
+
+`dp[0][n - 1]` 描述了整个区间的结果，将其返回
+
+## 一、猜数字大小
+
+题目：[375. 猜数字大小 II](https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/)
 
 通过「记忆化搜索」的递归过程，我们发现，在求解 [i, j] 的最小成本时，需要依赖于 [i, k - 1] 和 [k + 1, j] 这样的比 [i, j] 更小的区间。
 
@@ -74,7 +88,9 @@ public:
 因此，需要动态数组的size为n+2
 ```
 
-### [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/)
+## 二、石子游戏
+
+题目：[877. 石子游戏](https://leetcode-cn.com/problems/stone-game/)
 
 亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。
 
@@ -165,3 +181,217 @@ public:
 ```
 
 此题还有「博弈论」的解法：先手的人必然获胜
+
+## 三、最长回文子序列
+
+题目：[516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+
+给你一个字符串 `s` ，找出其中最长的回文子序列，并返回该序列的长度。
+
+- `1 <= s.length <= 1000`
+- `s` 仅由小写英文字母组成
+
+```
+输入：s = "bbbab"
+输出：4
+解释：一个可能的最长回文子序列为 "bbbb" 。
+
+输入：s = "cbbd"
+输出：2
+解释：一个可能的最长回文子序列为 "bb" 。
+```
+
+**1. 状态定义**
+
+`dp[i][j]` 表示 `s` 的第 `i` 个字符到第 `j` 个字符组成的子串中，最长回文序列的长度
+
+> 不可将状态定义：dp[i] 为 nums[i] 结尾的最长回文子序列，时间复杂度为 O(n^3)
+
+**2. 状态转移方程**
+
+如果求 `dp[i][j]`，假设知道了子问题 `dp[i+1][j-1]` 的结果（s[i+1..j-1] 中最长回文子序列的长度），是否能想办法算出 `dp[i][j]` 的值（s[i..j] 中，最长回文子序列的长度）呢？
+
+<img src="./doc/516-1.png" alt="516-1" style="zoom:40%;" />
+
+可以！这取决于区间首尾 `s[i]` 和 `s[j]` 的字符
+
+- **如果区间首尾相等，首尾「必然参与」构成当前的最长回文子序列**，那么它俩加上 `s[i+1..j-1]` 中的最长回文子序列就是 `s[i..j]` 的最长回文子序列：
+
+<img src="./doc/516-2.png" alt="516-2" style="zoom:40%;" />
+
+- **如果区间首尾不相等，首尾「必然不同时参与」构成当前的最长回文子序列**，说明它俩不可能同时出现在 s[i..j] 的最长回文子序列中，那么把它俩分别加入 s[i+1..j-1] 中，看看哪个子串产生的回文子序列更长即可：
+
+<img src="./doc/516-3.png" alt="516-3" style="zoom:40%;" />
+
+因此，写出状态转移方程：
+$$
+dp[i][j] = 
+\begin{cases}
+dp[i+1][j-1] + 2 & s[i] = s[j] \\ \\
+max(dp[i+1][j], dp[i][j-1]) & s[i] \neq s[j]
+\end{cases}
+$$
+对于区间 `dp[left][right]` 来说，将 `left` 从 `n - 1` 往前遍历到 `0`，而 `right` 从 `left` 位置往后遍历到 `n-1`，这样能够方便 `left < right`，将大区间划分成小区间。
+
+**3. 初始化**
+
+`dp[left][right]` ，left 等于 right 时每个值默认为 1，s 中单个元素可构成回文子序列
+
+**4. 返回**
+
+`dp[0][n - 1]` 整个 s 的最长回文子串长度
+
+**复杂度分析**
+
+时间复杂度：`O(n^2)`
+
+空间复杂度：`O(n^2)`
+
+```c++
+class Solution {
+public:
+    int longestPalindromeSubseq(string s) {
+        int n = s.size();
+        vector<vector<int>> dp(n, vector<int>(n, 0));
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = 1;
+        }
+
+        for (int left = n - 1; left >= 0; left--) {
+            for (int right = left + 1; right < n; right++) {
+                if (s[left] == s[right]) {
+                    dp[left][right] = dp[left + 1][right - 1] + 2;
+                } else if (s[left] != s[right]) {
+                    dp[left][right] = max(dp[left + 1][right], dp[left][right - 1]);
+                }
+            }
+        }
+        return dp[0][n - 1];
+    }
+};
+
+```
+
+## 四、最长回文子串
+
+题目：[5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+给你一个字符串 `s`，找到 `s` 中最长的回文子串。
+
+- `1 <= s.length <= 1000`
+- `s` 仅由数字和英文字母组成
+
+注意：子串是连续的
+
+```
+输入：s = "babad"
+输出："bab"
+解释："aba" 同样是符合题意的答案。
+
+输入：s = "cbbd"
+输出："bb"
+```
+
+**1. 状态定义**
+
+`dp[i][j]` 表示 `s` 的第 `i` 个字符到第 `j` 个字符组成的子串，是否可构成回文子串
+
+> 其实也可以将子串的长度保存到 `dp[i][j]` 里面
+
+- true 代表区间 [i,j] 为回文串
+- false 代表区间 [i,j] 不为回文串
+
+**2. 状态转移方程**
+
+状态转移的分析过程与上题类似，但是要注意的是**子串是连续的**，所以 `d[i][j]` 能否构成回文子串，取决于两个因素
+
+- 当前首位元素相同，`s[i] == s[j]`
+- 前面的子串是回文的，`dp[i+1][j-1] == true`
+
+可写出下面的转移过程：
+
+```c++
+if (s[left] == s[right] && dp[left + 1][right - 1] == true) {
+    dp[left][right] = true;
+} else {
+    dp[left][right] = false;
+}
+```
+
+直到遇到上面第二个用例，s = "cbbd"，当 left = 1，right = 2 时，做的判断是：
+
+```
+s[1] == s[2] -> true
+dp[2][1] -> false
+
+从而导致 d[1][2] 错误的置为 false
+```
+
+错误的根源是，当「首尾元素紧挨着」的时候 left + 1 和 right - 1 引起的问题
+
+因此，根据「**首尾元素是否紧挨着**」重新整理下状态转移方程
+
+- 当首尾元素紧挨着，`right - left == 1`
+  - 如果首尾元素相同，可构成回文串
+  - 如果首尾元素不同，不构成回文串
+- 当首尾元素中间有隔着的，`right - left > 1`
+  - 当前首位元素相同 `s[i] == s[j]`，且前面的子串是回文的 `dp[i+1][j-1] == true`，可构成回文串
+  - 当前首位元素不相同 或 前面的子串不回文，不构成回文串
+
+**3. 初始化**
+
+`dp[left][right]` ，left 等于 right 时每个值默认为 1，s 中单个元素可构成回文子串
+
+**4. 返回**
+
+在遍历的过程中，记录最长的子串出现的开始位置和长度
+
+最后将这个最长的子串返回
+
+**复杂度分析**
+
+时间复杂度：`O(n^2)`
+
+空间复杂度：`O(n^2)`
+
+```c++
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int n = s.size();
+        vector<vector<bool>> dp(n, vector<bool>(n, false));
+        // 初始化，单个元素为回文串
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = true;
+        }
+
+        int begin = 0;
+        int maxLen = 1;  // 初始相当于 1 个元素的长度
+        for (int left = n - 1; left >= 0; left--) {
+            for (int right = left + 1; right < n; right++) {
+                if (right - left == 1) {  // 首尾紧挨着
+                    if (s[left] == s[right]) {
+                        dp[left][right] = true;
+                    } else {
+                        dp[left][right] = false;
+                    }
+                } else {  // 首尾中间有隔着的
+                    if (s[left] == s[right] && dp[left + 1][right - 1] == true) {
+                        dp[left][right] = true;
+                    } else {
+                        dp[left][right] = false;
+                    }
+                }
+
+                // 记录答案
+                if (dp[left][right] && right - left + 1 > maxLen) {
+                    begin = left;
+                    maxLen = right - left + 1;
+                }
+            }
+        }
+        return s.substr(begin, maxLen);
+    }
+};
+```
+
