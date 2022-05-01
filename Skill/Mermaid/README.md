@@ -2,6 +2,8 @@
 
 来源：[https://github.com/mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
 
+文档：[https://mermaid-js.github.io/mermaid/#/](https://mermaid-js.github.io/mermaid/#/)
+
 ## About
 
 Mermaid is a Javascript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.
