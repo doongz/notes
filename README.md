@@ -107,11 +107,7 @@
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
-- [后端软件](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  
-  - [docker 原理](./Skill/后端软件/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
-  - [k8s 原理](./Skill/后端软件/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
-  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`
-  - [CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
+- [常用 CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
@@ -150,7 +146,11 @@
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
   - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
-- [面向对象「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `设计模式`
+- [容器技术](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  
+  - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
+  - [k8s 原理](./Knowledge/5-容器技术/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
+  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`
+- [设计模式](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `工厂模式`
 
 ### 第四章 [数学](https://dowalle.gitbook.io/algo/math)
 

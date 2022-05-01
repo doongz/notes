@@ -444,16 +444,27 @@
     - 3-消息队列
       * [1-消息队列](Knowledge/4-数据存储/3-消息队列/1-消息队列.md)
       * [2-Kafka](Knowledge/4-数据存储/3-消息队列/2-Kafka.md)
-  - 5-面向对象
+  - 5-容器技术
+    - k8s详解
+      * [1-pod](Knowledge/5-容器技术/k8s详解/1-pod.md)
+      * [2-service](Knowledge/5-容器技术/k8s详解/2-service.md)
+      * [3-volume](Knowledge/5-容器技术/k8s详解/3-volume.md)
+      * [4-replicaSet](Knowledge/5-容器技术/k8s详解/4-replicaSet.md)
+      * [5-garbage-collector](Knowledge/5-容器技术/k8s详解/5-garbage-collector.md)
+      * [6-deployment](Knowledge/5-容器技术/k8s详解/6-deployment.md)
+      * [Untitled](Knowledge/5-容器技术/k8s详解/Untitled.md)
+    * [1-docker原理](Knowledge/5-容器技术/1-docker原理.md)
+    * [2-k8s原理](Knowledge/5-容器技术/2-k8s原理.md)
+  - 6-设计模式
     - 设计模式
-      * [0-原始代码](Knowledge/5-面向对象/设计模式/0-原始代码.md)
-      * [备忘录模式](Knowledge/5-面向对象/设计模式/备忘录模式.md)
-      * [材料](Knowledge/5-面向对象/设计模式/材料.md)
-      * [抽象工厂模式](Knowledge/5-面向对象/设计模式/抽象工厂模式.md)
-      * [工厂方法模式](Knowledge/5-面向对象/设计模式/工厂方法模式.md)
-      * [简单工厂模式](Knowledge/5-面向对象/设计模式/简单工厂模式.md)
-      * [生成器模式](Knowledge/5-面向对象/设计模式/生成器模式.md)
-    * [多态和多态性](Knowledge/5-面向对象/多态和多态性.md)
+      * [0-原始代码](Knowledge/6-设计模式/设计模式/0-原始代码.md)
+      * [备忘录模式](Knowledge/6-设计模式/设计模式/备忘录模式.md)
+      * [材料](Knowledge/6-设计模式/设计模式/材料.md)
+      * [抽象工厂模式](Knowledge/6-设计模式/设计模式/抽象工厂模式.md)
+      * [工厂方法模式](Knowledge/6-设计模式/设计模式/工厂方法模式.md)
+      * [简单工厂模式](Knowledge/6-设计模式/设计模式/简单工厂模式.md)
+      * [生成器模式](Knowledge/6-设计模式/设计模式/生成器模式.md)
+    * [多态和多态性](Knowledge/6-设计模式/多态和多态性.md)
 - Math
   - 微积分
     * [1-极限](Math/微积分/1-极限.md)
@@ -467,20 +478,10 @@
     * [3-向量组与方程组](Math/线性代数/3-向量组与方程组.md)
     * [4-特征与二次型](Math/线性代数/4-特征与二次型.md)
 - Skill
-  - 后端软件
-    - k8s详解
-      * [1-pod](Skill/后端软件/k8s详解/1-pod.md)
-      * [2-service](Skill/后端软件/k8s详解/2-service.md)
-      * [3-volume](Skill/后端软件/k8s详解/3-volume.md)
-      * [4-replicaSet](Skill/后端软件/k8s详解/4-replicaSet.md)
-      * [5-garbage-collector](Skill/后端软件/k8s详解/5-garbage-collector.md)
-      * [6-deployment](Skill/后端软件/k8s详解/6-deployment.md)
-      * [Untitled](Skill/后端软件/k8s详解/Untitled.md)
-    * [1-docker原理](Skill/后端软件/1-docker原理.md)
-    * [2-k8s原理](Skill/后端软件/2-k8s原理.md)
-    * [3-docker-CLI](Skill/后端软件/3-docker-CLI.md)
-    * [4-k8s-CLI](Skill/后端软件/4-k8s-CLI.md)
-    * [5-ceph-CLI](Skill/后端软件/5-ceph-CLI.md)
+  - 常用CLI
+    * [1-docker-CLI](Skill/常用CLI/1-docker-CLI.md)
+    * [2-k8s-CLI](Skill/常用CLI/2-k8s-CLI.md)
+    * [3-ceph-CLI](Skill/常用CLI/3-ceph-CLI.md)
   - 开发软件
     * [1-工具&网站](Skill/开发软件/1-工具&网站.md)
     * [2-vscode](Skill/开发软件/2-vscode.md)
