@@ -142,6 +142,7 @@
   - [网络层](./Knowledge/3-计算机网络/4-网络层.md)  `功能(异构互联、分组转发、拥塞控制)`  `路由算法`  `IPv4`  `IP数据报`  `IP地址`  `子网`  `IPv6`  `路由协议`  `IP组播`  `移动IP`  `路由器`
   - [传输层](./Knowledge/3-计算机网络/5-传输层.md)  `功能(进程间通信)`  `端口`  `socket(嵌套字)`  `UDP(无连接)`  `TCP(连接)`  `报文段`  `TCP建立连接(三次挥手)`  `TCP释放连接(四次握手)`  `可靠传输`  `流量控制`  `拥塞控制`
   - [应用层](./Knowledge/3-计算机网络/6-应用层.md)  `网络应用模型(C/S、P2P)`  `DNS`  `FTP`  `电子邮件(SMTP、POP3/IMAP)`  `万维网(HTTP)`  `Cookie`
+  - [5G 网络架构](./Knowledge/3-计算机网络/7-5G网络架构.md)  `场景`  `网络架构`  `接口`  `协议栈`  `核心网`  `接入网`  `组网`
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
