@@ -41,7 +41,7 @@
 
 ## Contents
 
-### Chapter 1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)
+### Chapter-1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
@@ -90,7 +90,7 @@
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 
-### Chapter 2 [Skill](https://dowalle.gitbook.io/algo/skill)
+### Chapter-2 [Skill](https://dowalle.gitbook.io/algo/skill)
 
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
@@ -115,9 +115,9 @@
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 
-### Chapter 3 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
+### Chapter-3 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
 
-> *系统性的理解一门学科，更利于产生「兴趣」，培养「创造性」思维*
+> *A systematic understanding of a subject is more conducive to generating interest and fostering creativity*
 
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
@@ -153,9 +153,9 @@
   - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
 - [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
-### Chapter 4 [Math](https://dowalle.gitbook.io/algo/math)
+### Chapter-4 [Math](https://dowalle.gitbook.io/algo/math)
 
-> *2016年留存下来的手稿，再翻开时已是2022年*
+> *Manuscript written in 2016, opened again in 2022*
 
 - [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)  `微分->趋势->时间`  `积分->面积(概率)->空间`
   - [极限](./Math/微积分/1-极限.md)
@@ -169,19 +169,14 @@
   - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
   - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
-### Chapter 5 [Interview](https://dowalle.gitbook.io/algo/interview)
+### Chapter-5 [Interview](https://dowalle.gitbook.io/algo/interview)
 
 - [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
 - [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
 
-### Chapter 6 Competition
+### Chapter-6 Competition
 
-> *得到一点点「感悟」比得到答案更重要*
-
-## TODO
-
-- [ ] 单调栈 [概念](https://www.jianshu.com/p/6bbd3653a57f) [题目](https://leetcode-cn.com/problems/longest-well-performing-interval/solution/can-kao-liao-ji-ge-da-shen-de-ti-jie-zhi-hou-zong-/)
-- [ ] 矩阵快速幂
+> *Getting a little insight is more important than getting an answer*
 
 ## Usage
 
@@ -193,11 +188,13 @@ book sm
 
 ## Statement
 
-> *「学习」唯有靠自己的积累和总结，其他所有的资料和题解都只是参考，包括此仓库也仅用作自己的积累*
+> *Learning can only rely on your own accumulation and summary*  
+>*All other materials and solutions are for reference only*  
+> *This repository is also only used as its own accumulation*
 
-`感谢`  大家不用 Star
+`Thanks`        [Your Star]()
 
-`发布`  于 [Gitbook](https://dowalle.gitbook.io/algo/)
+`Publish`      [Gitbook](https://dowalle.gitbook.io/algo/)
 
-`侵删`  本仓库全部为自己总结，部分来源于 [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/)
+`Reference`  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode-cn.com/problemset/all/) | [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/)
 
