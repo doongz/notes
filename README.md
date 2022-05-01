@@ -41,7 +41,7 @@
 
 ## Contents
 
-### 第一章 [算法](https://dowalle.gitbook.io/algo/algorithm)
+### Chapter 1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
 - [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
@@ -90,7 +90,7 @@
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 
-### 第二章 [技能](https://dowalle.gitbook.io/algo/skill)
+### Chapter 2 [Skill](https://dowalle.gitbook.io/algo/skill)
 
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
@@ -107,7 +107,7 @@
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
-- [常用 CLI](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  `docker CLI`  `k8s CLI`  `ceph CLI`
+- [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker CLI`  `k8s CLI`  `ceph CLI`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
@@ -115,7 +115,7 @@
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 
-### 第三章 [知识](https://dowalle.gitbook.io/algo/knowledge)
+### Chapter 3 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
 
 > *系统性的理解一门学科，更利于产生「兴趣」，培养「创造性」思维*
 
@@ -146,13 +146,13 @@
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
   - [消息队列](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
-- [容器技术](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian)  
+- [容器技术](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu)
   - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
   - [k8s 原理](./Knowledge/5-容器技术/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `实现(对象、pod、控制器)`
-  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/skill/hou-duan-ruan-jian/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`
-- [设计模式](https://dowalle.gitbook.io/algo/knowledge/5-mian-xiang-dui-xiang)  `多态和多态性`  `工厂模式`
+  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`
+- [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
-### 第四章 [数学](https://dowalle.gitbook.io/algo/math)
+### Chapter 4 [Math](https://dowalle.gitbook.io/algo/math)
 
 > *2016年留存下来的手稿，再翻开时已是2022年*
 
@@ -168,12 +168,12 @@
   - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
   - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
-### 第五章 [面试](https://dowalle.gitbook.io/algo/interview)
+### Chapter 5 [Interview](https://dowalle.gitbook.io/algo/interview)
 
 - [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
 - [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
 
-### 第六章 竞赛
+### Chapter 6 Competition
 
 > *得到一点点「感悟」比得到答案更重要*
 
