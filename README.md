@@ -149,8 +149,8 @@
   - [消息队列「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
 - [容器技术](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu)
   - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
-  - [k8s 原理](./Knowledge/5-容器技术/2-k8s原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
-  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/k8s-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
+  - [kubernetes 原理](./Knowledge/5-容器技术/2-kubernetes原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
+  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/kubernetes-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
 - [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
 ### Chapter-4 [Math](https://dowalle.gitbook.io/algo/math)

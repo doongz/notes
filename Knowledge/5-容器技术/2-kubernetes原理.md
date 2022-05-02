@@ -1,4 +1,4 @@
-# k8s 原理
+# kubernetes 原理
 
 来源 1：[谈 Kubernetes 的架构设计与实现原理](https://draveness.me/understanding-kubernetes/)
 
