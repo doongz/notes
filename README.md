@@ -150,7 +150,11 @@
 - [容器技术](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu)
   - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
   - [kubernetes 原理](./Knowledge/5-容器技术/2-kubernetes原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
-  - [k8s 详解「未完工」](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/kubernetes-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
+  - [kubernetes 对象详解](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu/kubernetes-dui-xiang-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
+  - [kubernetes 定制特性](./Knowledge/5-容器技术/3-kubernetes定制特性.md)  `扩展接口`  `容器接口(网络插件、存储插件、运行时接口)`  `设备插件`  `调度框架`
+  - [kubernetes 问题 & 局限性](./Knowledge/5-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
+  - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
+  - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
 - [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
 ### Chapter-4 [Math](https://dowalle.gitbook.io/algo/math)

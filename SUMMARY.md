@@ -446,19 +446,22 @@
       * [1-消息队列](Knowledge/4-数据存储/3-消息队列/1-消息队列.md)
       * [2-Kafka](Knowledge/4-数据存储/3-消息队列/2-Kafka.md)
   - 5-容器技术
-    - kubernetes详解
-      * [1-pod](Knowledge/5-容器技术/kubernetes详解/1-pod.md)
-      * [2-service](Knowledge/5-容器技术/kubernetes详解/2-service.md)
-      * [3-volume](Knowledge/5-容器技术/kubernetes详解/3-volume.md)
-      * [4-replicaSet](Knowledge/5-容器技术/kubernetes详解/4-replicaSet.md)
-      * [5-garbage-collector](Knowledge/5-容器技术/kubernetes详解/5-garbage-collector.md)
-      * [6-deployment](Knowledge/5-容器技术/kubernetes详解/6-deployment.md)
-      * [7-statefulSet](Knowledge/5-容器技术/kubernetes详解/7-statefulSet.md)
-      * [8-daemonSet](Knowledge/5-容器技术/kubernetes详解/8-daemonSet.md)
-      * [9-job&cronJob](Knowledge/5-容器技术/kubernetes详解/9-job&cronJob.md)
-      * [Untitled](Knowledge/5-容器技术/kubernetes详解/Untitled.md)
+    - kubernetes对象详解
+      * [1-pod](Knowledge/5-容器技术/kubernetes对象详解/1-pod.md)
+      * [2-service](Knowledge/5-容器技术/kubernetes对象详解/2-service.md)
+      * [3-volume](Knowledge/5-容器技术/kubernetes对象详解/3-volume.md)
+      * [4-replicaSet](Knowledge/5-容器技术/kubernetes对象详解/4-replicaSet.md)
+      * [5-garbage-collector](Knowledge/5-容器技术/kubernetes对象详解/5-garbage-collector.md)
+      * [6-deployment](Knowledge/5-容器技术/kubernetes对象详解/6-deployment.md)
+      * [7-statefulSet](Knowledge/5-容器技术/kubernetes对象详解/7-statefulSet.md)
+      * [8-daemonSet](Knowledge/5-容器技术/kubernetes对象详解/8-daemonSet.md)
+      * [9-job&cronJob](Knowledge/5-容器技术/kubernetes对象详解/9-job&cronJob.md)
     * [1-docker原理](Knowledge/5-容器技术/1-docker原理.md)
     * [2-kubernetes原理](Knowledge/5-容器技术/2-kubernetes原理.md)
+    * [3-kubernetes定制特性](Knowledge/5-容器技术/3-kubernetes定制特性.md)
+    * [4-kubernetes问题&局限性](Knowledge/5-容器技术/4-kubernetes问题&局限性.md)
+    * [5-kubernetes集群联邦&资源分发](Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)
+    * [6-kubernetes贡献指南](Knowledge/5-容器技术/6-kubernetes贡献指南.md)
   - 6-设计模式
     - 设计模式
       * [0-原始代码](Knowledge/6-设计模式/设计模式/0-原始代码.md)

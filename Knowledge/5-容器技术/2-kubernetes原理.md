@@ -4,6 +4,8 @@
 
 来源 2：[从 Kubernetes 中的对象谈起](https://draveness.me/kubernetes-object-intro/)
 
+来源 3：[为什么 Kubernetes 要替换 Docker](https://draveness.me/whys-the-design-kubernetes-deprecate-docker/)
+
 ## 一、介绍
 
 作为一个目前在生产环境已经广泛使用的开源项目 Kubernetes 被定义成一个用于自动化部署、扩容和管理容器应用的开源系统；它将一个分布式软件的一组容器打包成一个个更容易管理和发现的逻辑单元。
