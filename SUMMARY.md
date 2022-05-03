@@ -600,6 +600,7 @@
   - [Mermaid](Skill/Mermaid/README.md)
   - Python
     * [1-运算符](Skill/Python/1-运算符.md)
+    * [10-CPython](Skill/Python/10-CPython.md)
     * [2-字符串-str](Skill/Python/2-字符串-str.md)
     * [3-元组-tuple](Skill/Python/3-元组-tuple.md)
     * [4-列表-list](Skill/Python/4-列表-list.md)
