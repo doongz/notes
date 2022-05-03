@@ -21,6 +21,12 @@ def backtrack(路径, 选择列表):
         撤销选择
 ```
 
+
+
+https://leetcode-cn.com/problems/increasing-subsequences/solution/491-di-zeng-zi-xu-lie-shen-sou-hui-su-xiang-jie-by/
+
+
+
 ## 记忆化 dfs
 
 
