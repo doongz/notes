@@ -26,7 +26,7 @@ public:
         for (int end = cur; end < sz; end++) {
             string sub = s.substr(cur, end - cur + 1);  // 获取下个可能的字符
             if (wordSet.count(sub)) {
-                vector<string> right = dfs(end + 1, s);  //当前字符后面的所有路径
+                vector<string> right = dfs(end + 1, s);  // 当前字符后面的所有路径
                 for (string path : right) {
                     if (path == "") {  // 如果这个路径是空，说明到底了
                         res.push_back(sub);
@@ -36,6 +36,7 @@ public:
                 }
             }
         }
+        memo[cur] = res;
         return res;
     }
 
