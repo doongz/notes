@@ -406,7 +406,7 @@
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
-  - [南京大学2022操作系统](Course/南京大学2022操作系统/README.md)
+  - [南京大学-操作系统](Course/南京大学-操作系统/README.md)
   - [MIT-6.828](Course/MIT-6.828/README.md)
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
   * [课表推荐](Course/课表推荐.md)
