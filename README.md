@@ -44,7 +44,7 @@
 ### Chapter-1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
-- [数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
+- **数据结构**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [概述](./Algorithm/1-数据结构/0-概述.md)  `基本概念`  `算法评价`
   - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
   - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `括号问题`  `表达式求值`  `递归`  `移除问题`   `Medium`
@@ -59,7 +59,7 @@
     - [哈夫曼树「未完工」](./Algorithm/1-数据结构/5-哈夫曼树.md)
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
-- [算法基础](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
+- **算法基础**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)`  `外部排序「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
   - [双指针](./Algorithm/2-算法基础/3-双指针.md)  `快慢双指针`  `左右双指针`  `前后双指针`  `指向各自集合的双指针`  `Floyd判圈算法`  `时O(n)`  `空O(1)`  `Medium`
@@ -69,7 +69,8 @@
   - [贪心](./Algorithm/2-算法基础/7-贪心.md)  `排序预处理`  `区间调度问题`  `跳跃问题`  `环形贪心`  `堆`  `单调栈`  `Hard`
   - [位运算](./Algorithm/2-算法基础/8-位运算.md)  `异或`  `奇偶`  `除2`  `求中值`  `平均数`  `交换值`  `加法`  `1个数`
   - [分治](./Algorithm/2-算法基础/9-分治.md)  `分解 -> 解决 -> 合并`
-- [动态规划](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
+  - [模拟](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu/li-ti-mo-ni)
+- **动态规划**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
   - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
   - [线性 DP「未完工」](./Algorithm/3-动态规划/2-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`
@@ -77,7 +78,7 @@
   - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
   - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)  `f(l,r)=max(f(l,k), f(k+1,r))+cost k in [l,r]`  `遍历方法`  `初始化(dp[i][i]=1)`  `返回(dp[0][i])`  `回文问题`  `时O(n^2)`
   - [树形 DP]()  `后序遍历`  `打家劫舍III`
-- [图论「未完工」](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
+- **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
   - [图的种类](./Algorithm/4-图论/3-图的种类.md)  `二分图`
@@ -86,7 +87,7 @@
   - [拓扑排序](./Algorithm/4-图论/6-拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
   - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
-- [数学「未完工」]()  `倍增`  `快速幂`  `求余`
+- **数学**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/5-shu-xue)  `倍增`  `快速幂`  `求余`
   - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
