@@ -405,6 +405,11 @@
   * [竞赛心得](Competition/竞赛心得.md)
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
+- Course
+  - [南京大学2022操作系统](Course/南京大学2022操作系统/README.md)
+  - [MIT-6.828](Course/MIT-6.828/README.md)
+  - [MIT-6.S081](Course/MIT-6.S081/README.md)
+  * [课表推荐](Course/课表推荐.md)
 - Interview
   - 1-找工作经验
     * [1-字节跳动](Interview/1-找工作经验/1-字节跳动.md)
@@ -486,7 +491,6 @@
       * [简单工厂模式](Knowledge/6-设计模式/设计模式/简单工厂模式.md)
       * [生成器模式](Knowledge/6-设计模式/设计模式/生成器模式.md)
     * [多态和多态性](Knowledge/6-设计模式/多态和多态性.md)
-  * [course](Knowledge/course.md)
 - Math
   - 微积分
     * [1-极限](Math/微积分/1-极限.md)

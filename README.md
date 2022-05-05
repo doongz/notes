@@ -159,7 +159,14 @@
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
 - [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
-### Chapter-4 [Math](https://dowalle.gitbook.io/algo/math)
+### Chapter-4 [Course](https://dowalle.gitbook.io/algo/course)
+
+- [课表推荐](./Course/课表推荐.md)  `Stanford`  `MIT`  `南京大学`
+- [南京大学-操作系统：设计与实现「未完工」]()
+- [MIT-6.S081「未完工」]()
+- [MIT-6.828「未完工」]()
+
+### Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)
 
 > *Manuscript written in 2016, opened again in 2022*
 
@@ -175,7 +182,7 @@
   - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
   - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
-### Chapter-5 [Interview](https://dowalle.gitbook.io/algo/interview)
+### Chapter-6 [Interview](https://dowalle.gitbook.io/algo/interview)
 
 - [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
 - [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
