@@ -47,7 +47,7 @@
 - **数据结构**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
   - [概述](./Algorithm/1-数据结构/0-概述.md)  `基本概念`  `算法评价`
   - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
-  - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `括号问题`  `表达式求值`  `递归`  `移除问题`   `Medium`
+  - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `表达式求值`  `递归`  `移除问题`   `Medium`
   - [队列](./Algorithm/1-数据结构/3-队列.md)  `顺序、链式、双端`  `单调队列`  `层遍历`  `Medium`
   - [字符串「未完工」](./Algorithm/1-数据结构/4-字符串.md)  `顺序、堆分配、块链存储`  `KMP算法`
   - [树 & 二叉树](./Algorithm/1-数据结构/5-树和二叉树.md)  `树的种类`  `二叉树遍历(前序、中序、后序、层)`  `二叉树构造「未完工」`   `线索二叉树`  `Easy`
@@ -73,7 +73,7 @@
 - **动态规划**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua)
   - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
-  - [线性 DP「未完工」](./Algorithm/3-动态规划/2-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`
+  - [线性 DP](./Algorithm/3-动态规划/2-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`
   - [背包 DP「未完工」](./Algorithm/3-动态规划/3-背包DP.md)
   - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
   - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)  `f(l,r)=max(f(l,k), f(k+1,r))+cost k in [l,r]`  `遍历方法`  `初始化(dp[i][i]=1)`  `返回(dp[0][i])`  `回文问题`  `时O(n^2)`
@@ -91,6 +91,7 @@
   - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
+- **系列题目**   [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)  `括号问题`  `接雨水问题`
 
 ### Chapter-2 [Skill](https://dowalle.gitbook.io/algo/skill)
 
