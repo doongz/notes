@@ -95,6 +95,8 @@
 
 ### Chapter-2 [Skill](https://dowalle.gitbook.io/algo/skill)
 
+- [Assembly Language「未完工」]()
+- [C「未完工」]()
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
   - [面向对象](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `多态与虚函数`  `运算符重载`  `模版和范型`

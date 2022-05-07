@@ -19,6 +19,14 @@
 {BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0, NamespaceIndentation: All}
 ```
 
+### c
+
+```json
+{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, NamespaceIndentation: All, FixNamespaceComments: false}
+```
+
+
+
 ## 三、配置文件
 
 ### 1、setting.json
