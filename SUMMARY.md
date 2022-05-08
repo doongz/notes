@@ -316,6 +316,7 @@
     * [9-子区间覆盖问题](Algorithm/3-动态规划/9-子区间覆盖问题.md)
     * [多路并归「未完工」](Algorithm/3-动态规划/多路并归「未完工」.md)
     * [股票买卖问题「未完工」](Algorithm/3-动态规划/股票买卖问题「未完工」.md)
+    * [路径问题](Algorithm/3-动态规划/路径问题.md)
   - 4-图论
     - 例题-高级算法
       * [207-[拓扑排序-有向无环图]-课程表](Algorithm/4-图论/例题-高级算法/207-[拓扑排序-有向无环图]-课程表.md)
@@ -523,6 +524,10 @@
     * [2-vscode](Skill/开发软件/2-vscode.md)
     * [3-git](Skill/开发软件/3-git.md)
     * [4-vim](Skill/开发软件/4-vim.md)
+    * [5-gdb](Skill/开发软件/5-gdb.md)
+    * [6-gcc](Skill/开发软件/6-gcc.md)
+  - [ASM](Skill/ASM/README.md)
+  - [C](Skill/C/README.md)
   - C++
     - 1-基础知识
       * [0-GCC](Skill/C++/1-基础知识/0-GCC.md)

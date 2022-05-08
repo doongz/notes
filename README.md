@@ -109,9 +109,7 @@
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
-- [Linux](https://dowalle.gitbook.io/algo/skill/linux)
-  - [filesystem](./Skill/Linux/filesystem)  `overlayfs`  `shared-subrees`
-- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`
+- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`  `gdb`  `gcc`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker CLI`  `k8s CLI`  `ceph CLI`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
@@ -184,15 +182,6 @@
   - [矩阵](./Math/线性代数/2-矩阵.md)
   - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
   - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
-
-### Chapter-6 [Interview](https://dowalle.gitbook.io/algo/interview)
-
-- [找工作经验](https://dowalle.gitbook.io/algo/interview/1-zhao-gong-zuo-jing-yan)
-- [面经](https://dowalle.gitbook.io/algo/interview/2-mian-jing)
-
-### Chapter-6 Competition
-
-「未完工」
 
 ## Usage
 

@@ -1,15 +1,5 @@
 # 背包问题概述
 
-参考1：[一套框架解决「背包问题」](https://leetcode-cn.com/problems/word-break/solution/yi-tao-kuang-jia-jie-jue-bei-bao-wen-ti-kchg9/)
-
-参考 2：[完全背包详解](https://leetcode-cn.com/problems/word-break/solution/139-dan-ci-chai-fen-hui-su-fa-wan-quan-b-0zwf/)
-
-参考 3：[宫水三叶 背包问题合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4NDE3MTEyMA==&action=getalbum&album_id=1751702161341628417#wechat_redirect)
-
-参考 4：[oi-wiki 背包dp](https://oi-wiki.org/dp/knapsack/)
-
-https://leetcode-cn.com/problems/shopping-offers/solution/gong-shui-san-xie-yi-ti-shuang-jie-zhuan-qgk1/
-
 背包问题是一类经典的动态规划问题，非常灵活。
 
 常见背包问题可分为：01背包问题、完全背包问题
@@ -21,11 +11,35 @@ https://leetcode-cn.com/problems/shopping-offers/solution/gong-shui-san-xie-yi-t
 
 
 ## 一、01背包问题
-最基本的背包问题就是 01 背包问题：一共有 N 件物品，第 i（i 从 1 开始）件物品的重量为 w[i]，价值为 v[i]。在总重量不超过背包承载上限 W 的情况下，能够装入背包的最大价值是多少？
+给你一个可装载重量为`W`的背包和`N`个物品，每个物品有重量和价值两个属性。其中第`i`个物品的重量为`wt[i]`，价值为`val[i]`，现在让你用这个背包装物品，最多能装的价值是多少？
+
+举个简单的例子，输入如下：
+
+```
+N = 3, W = 4
+wt = [2, 1, 3]
+val = [4, 2, 3]
+```
+
+算法返回 6，选择前两件物品装进背包，总重量 3 小于`W`，可以获得最大价值 6。
+
+在上述例题中，由于每个物体只有两种可能的状态（取与不取），对应二进制中的 1 和 0，这类问题便被称为「0-1 背包问题」。不能切成两块装一半，也不能重复选取
+
+
+
+`dp[i][j]` 表示在只能放前 i 个物品的情况下，容量为 j 的背包所能达到的最大总价值
+
+
+
+
+
+
 
 解法：如果是 01 背包，即数组中的元素不可重复使用，外循环遍历 arrs，内循环遍历 target，且内循环倒序
 
 例题：[416. 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/)、[494. 目标和](https://leetcode-cn.com/problems/target-sum/)
+
+
 
 ## 二、完全背包问题
 
@@ -38,6 +52,12 @@ https://leetcode-cn.com/problems/shopping-offers/solution/gong-shui-san-xie-yi-t
 - 如果组合问题需考虑元素之间的顺序，需将 target 放在外循环，将 arrs 放在内循环，且内循环正序。
 
 例题：[139. 单词拆分](./139-[完全背包-记忆化dfs]-单词拆分.md)、[279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)、[322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)、[377. 组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/)、[518. 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
+
+
+
+
+
+
 
 ## 三、动态规划五部曲
 
@@ -112,5 +132,22 @@ dp[0]表示如果字符串为空的话，说明出现在字典里。
 | [1449. 数位成本和为目标值的最大数字](https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/solution/gong-shui-san-xie-fen-liang-bu-kao-lu-we-uy4y/) | 困难 | 🤩🤩🤩🤩  |
 | [1995. 统计特殊四元组](https://leetcode-cn.com/problems/count-special-quadruplets/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/count-special-quadruplets/solution/gong-shui-san-xie-yi-ti-si-jie-mei-ju-ha-gmhv/) | 简单 | 🤩🤩🤩🤩  |
 
+## Reference
+
+超高优先级去学习：[宫水三叶 背包问题合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4NDE3MTEyMA==&action=getalbum&album_id=1751702161341628417#wechat_redirect)
+
+理论部分：[oi-wiki 背包dp](https://oi-wiki.org/dp/knapsack/)
 
 
+
+参考1：[一套框架解决「背包问题」](https://leetcode-cn.com/problems/word-break/solution/yi-tao-kuang-jia-jie-jue-bei-bao-wen-ti-kchg9/)
+
+参考 2：[完全背包详解](https://leetcode-cn.com/problems/word-break/solution/139-dan-ci-chai-fen-hui-su-fa-wan-quan-b-0zwf/)
+
+
+
+https://leetcode-cn.com/problems/shopping-offers/solution/gong-shui-san-xie-yi-ti-shuang-jie-zhuan-qgk1/
+
+[经典动态规划：0-1 背包问题](https://mp.weixin.qq.com/s/RXfnhSpVBmVneQjDSUSAVQ)
+
+[经典动态规划：完全背包问题](https://mp.weixin.qq.com/s/zGJZpsGVMlk-Vc2PEY4RPw)
