@@ -419,6 +419,11 @@
   - [南京大学-操作系统](Course/南京大学-操作系统/README.md)
   - [MIT-6.828](Course/MIT-6.828/README.md)
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
+    - Labs
+      * [0-将实验代码提交到github](Course/MIT-6.S081/Labs/0-将实验代码提交到github.md)
+      * [1-Lab-util](Course/MIT-6.S081/Labs/1-Lab-util.md)
+    * [1-Introduction-and-Examples](Course/MIT-6.S081/1-Introduction-and-Examples.md)
+    * [2-C-and-gdb](Course/MIT-6.S081/2-C-and-gdb.md)
   * [课表推荐](Course/课表推荐.md)
 - Interview
   - 1-找工作经验
