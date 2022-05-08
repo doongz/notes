@@ -2,6 +2,8 @@
 
 课程链接： https://pdos.csail.mit.edu/6.828/2020/index.html
 
+课表：https://pdos.csail.mit.edu/6.828/2020/schedule.html
+
 视频：https://www.bilibili.com/video/BV19k4y1C7kA?spm_id_from=333.337.search-card.all.click
 
 课程翻译：https://github.com/huihongxiao/MIT6.S081

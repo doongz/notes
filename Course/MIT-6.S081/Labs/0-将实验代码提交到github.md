@@ -16,7 +16,7 @@ git clone git://g.csail.mit.edu/xv6-labs-2020
 创建完成后会有提示代码，请**不要**根据提示代码操作，并且记下右图中红色标注的仓库地址
 
 ```
-git@github.com:dowalle/xv6-labs-2020.git
+git@github.com:xxxxxx/xv6-labs-2020.git
 ```
 
 
