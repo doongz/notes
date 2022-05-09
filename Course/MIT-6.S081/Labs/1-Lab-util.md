@@ -36,6 +36,7 @@ $
 - **构建并运行xv6**
 
 ```bash
+$ make clean
 $ make qemu
 riscv64-unknown-elf-gcc    -c -o kernel/entry.o kernel/entry.S
 riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/start.o kernel/start.c
@@ -54,6 +55,66 @@ hart 1 starting
 init: starting sh
 $ 
 ```
+
+
+
+### 安装 xv6 报错解决
+
+来源：https://zhuanlan.zhihu.com/p/509296983
+
+来源：https://blog.csdn.net/qq_36393978/article/details/118086216
+
+报错：
+
+```
+***
+*** Error: Couldn't find a riscv64 version of GCC/binutils.
+*** To turn off this error, run 'gmake TOOLPREFIX= ...'.
+***
+```
+
+解决：
+
+```
+apt install binutils-riscv64-linux-gnu
+apt install binutils-riscv64-linux-gnu-dbg
+apt install binutils-riscv64-unknown-elf
+```
+
+报错：
+
+```
+make: riscv64-unknown-elf-gcc: Command not found
+make: *** [<builtin>: kernel/entry.o] Error 127
+```
+
+解决：
+
+```
+apt install gcc-10-riscv64-linux-gnu
+cd /usr/bin 
+ln -s riscv64-linux-gnu-gcc-10 riscv64-unknown-elf-gcc
+```
+
+
+
+```
+git clone https://gitee.com/abner-chu/qemu.git
+
+apt install ninja-build
+apt install pkg-config
+apt install libglib2.0-dev
+apt install g++
+apt install libpixman-1-dev
+
+cd qemu
+mkdir build && cd build
+../configure --target-list=riscv64-softmmu && make
+开始编译
+cp qemu-system-riscv64 /usr/bin/
+```
+
+
 
 如果你在提示符下输入 `ls`，你会看到类似如下的输出:
 

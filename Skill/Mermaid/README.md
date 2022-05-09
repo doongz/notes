@@ -210,3 +210,125 @@ graph TD
     end
 ```
 
+
+
+```mermaid
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+```
+
+```mermaid
+graph TD
+    PI[PodInformer]-. Event .->RSC[ReplicaSetController]
+    RSI[ReplicaSetInformer]-. Event .->RSC
+    RSC-->worker1
+    RSC-. Add ReplicaSet .->queue
+    worker1-. Loop .->worker1
+    queue-. Get ReplicaSet .->worker1
+    RSC-->worker2
+    worker2-. Loop .->worker2
+    queue-. Get ReplicaSet .->worker2
+    style worker1 fill:#fffede,stroke:#ebebb7
+    style worker2 fill:#fffede,stroke:#ebebb7
+```
+
+```mermaid
+graph TD
+    Deployment-.->ReplicaSet
+    ReplicaSet-.->Pod1
+    ReplicaSet-.->Pod2
+    ReplicaSet-.->Pod3
+```
+
+```mermaid
+flowchart TD
+	subgraph service[极速空间服务 cluster]
+		controller
+	end
+    controller-.->agent-1
+    controller-.->agent-2
+    controller-.->agent-3
+    controller-.->agent-4
+	
+	subgraph cluster-1[智慧工程 cluster]
+	    agent-1[agent]
+	    agent-1-.->worker-1
+	    agent-1-.->pvc-1
+        subgraph worker-1[worker]
+            workspace-1([极速空间])
+        end
+        pvc-1[(pvc)]
+	end
+
+	subgraph cluster-2[媒体软件 cluster]
+	    agent-2[agent]
+	    agent-2-.->worker-2
+	    agent-2-.->pvc-2
+        subgraph worker-2[worker]
+            workspace-2([极速空间])
+        end
+        pvc-2[(pvc)]
+	end
+	
+	subgraph cluster-3[平台软件 cluster]
+		agent-3[agent]
+	    agent-3-.->worker-3
+	    agent-3-.->pvc-3
+        subgraph worker-3[worker]
+            workspace-3([极速空间])
+        end
+        pvc-3[(pvc)]
+	end
+	
+	subgraph cluster-4[balong cluster]
+		agent-4[agent]
+	    agent-4-.->worker-4
+	    agent-4-.->pvc-4
+        subgraph worker-4[worker]
+            workspace-4([极速空间])
+        end
+        pvc-4[(pvc)]
+	end
+	
+	style controller fill:#C1FFE4
+	style agent-1 fill:#97CBFF
+	style agent-2 fill:#97CBFF
+	style agent-3 fill:#97CBFF
+	style agent-4 fill:#97CBFF
+
+```
+
+```mermaid
+flowchart TD
+    controller
+    controller-.->label-1
+    controller-.->label-2
+    controller-.->label-3
+    
+    subgraph label-1[智慧工程 label]
+    	workspace-1([极速空间])
+    end
+    subgraph label-2[平台软件 label]
+    	workspace-2([极速空间])
+    end
+    subgraph label-3[媒体软件 label]
+    	workspace-3([极速空间])
+    end
+    
+	storage[(storage)]
+	workspace-1-.-storage
+	workspace-2-.-storage
+	workspace-3-.-storage
+	
+	style controller fill:#C1FFE4
+```
+
