@@ -56,9 +56,19 @@ init: starting sh
 $ 
 ```
 
+### mac 安装 xv6 问题解决
+
+解决方案：https://blog.csdn.net/zhayujie5200/article/details/106374189/
+
+```shell
+brew install pkg-config
+brew install glib
+brew install pixman
+```
 
 
-### 安装 xv6 报错解决
+
+### linux 安装 xv6 问题解决
 
 来源：https://zhuanlan.zhihu.com/p/509296983
 
@@ -96,8 +106,6 @@ cd /usr/bin
 ln -s riscv64-linux-gnu-gcc-10 riscv64-unknown-elf-gcc
 ```
 
-
-
 ```
 git clone https://gitee.com/abner-chu/qemu.git
 
@@ -114,7 +122,7 @@ mkdir build && cd build
 cp qemu-system-riscv64 /usr/bin/
 ```
 
-
+### 验证
 
 如果你在提示符下输入 `ls`，你会看到类似如下的输出:
 

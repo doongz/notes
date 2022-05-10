@@ -1,0 +1,1 @@
+# [File system performance and fast crash recovery](https://pdos.csail.mit.edu/6.828/2020/lec/l-journal.txt)
