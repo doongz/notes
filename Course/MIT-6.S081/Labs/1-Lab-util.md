@@ -58,7 +58,9 @@ $
 
 ### mac 安装 xv6 问题解决
 
-解决方案：https://blog.csdn.net/zhayujie5200/article/details/106374189/
+解决方案1：https://blog.csdn.net/zhayujie5200/article/details/106374189/
+
+解决方案2：https://blog.csdn.net/qq_43271202/article/details/120306694
 
 ```shell
 brew install pkg-config

@@ -66,7 +66,7 @@
 
 「01背包」是指给定物品价值与体积（对应了「给定价值与成本」），在规定容量下（对应了「限定决策规则」）如何使得所选物品的总价值最大。由于每个物体只有两种可能的状态（取与不取），对应二进制中的 1 和 0，这类问题便被称为「0-1 背包问题」。有些题用体积有些用质量，其实都一样，都描述了这个背包的限制。
 
-下面三种方法都需要，完全掌握
+**下面三种方法都需要，完全掌握**
 
 ---
 
@@ -233,13 +233,20 @@ int maxValue(int N, int C, vector<int>& val, vector<int>& wt) {
 }
 ```
 
-至于为什么不需要再遍历 `w - wt[i]` 的情况，想不明白啊啊啊啊啊啊
+至于为什么不需要再遍历 `w - wt[i] < 0` 的情况：
+
+「从后向前」 写的过程中，一旦 `w - wt[i]` 不满足，可以马上退出当前循环，因为后面的 w 的值肯定越来越小，没有必要继续做判断，直接进入外层循环的下一层。相当于也是一个剪枝，这一点是「从前向后」填表所不具备的。
 
 
 
+「力扣」上的 0-1 背包问题：
+
+- 第 416 题：分割等和子集（中等）；
+- 第 474 题：一和零（中等）；
+- 第 494 题：目标和（中等）；
+- 第 879 题：盈利计划（困难）；
 
 
-例题：[416. 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/)、[494. 目标和](https://leetcode-cn.com/problems/target-sum/)
 
 
 
@@ -253,9 +260,18 @@ int maxValue(int N, int C, vector<int>& val, vector<int>& wt) {
 
 - 如果组合问题需考虑元素之间的顺序，需将 target 放在外循环，将 arrs 放在内循环，且内循环正序。
 
-例题：[139. 单词拆分](./139-[完全背包-记忆化dfs]-单词拆分.md)、[279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)、[322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)、[377. 组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/)、[518. 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
 
 
+
+
+「力扣」上的 完全背包问题：
+
+- 第 139. 单词拆分（中等）；
+- 第 322 题：零钱兑换（中等）；
+- 第 518 题：零钱兑换 II（中等）；
+- 第 1449 题：数位成本和为目标值的最大数字（困难）
+
+这里要注意鉴别：「力扣」第 377 题 组合总和 Ⅳ，不是「完全背包」问题。
 
 
 
@@ -335,10 +351,6 @@ dp[0]表示如果字符串为空的话，说明出现在字典里。
 | [1995. 统计特殊四元组](https://leetcode-cn.com/problems/count-special-quadruplets/) | [LeetCode 题解链接](https://leetcode-cn.com/problems/count-special-quadruplets/solution/gong-shui-san-xie-yi-ti-si-jie-mei-ju-ha-gmhv/) | 简单 | 🤩🤩🤩🤩  |
 
 ## Reference
-
-
-
-https://leetcode.cn/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/
 
 
 
