@@ -109,7 +109,7 @@
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
-- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`  `gdb`  `gcc`
+- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `开发`  `创作`  `效率`  `文献`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker CLI`  `k8s CLI`  `ceph CLI`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)

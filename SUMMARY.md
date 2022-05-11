@@ -557,6 +557,7 @@
     * [4-vim](Skill/开发软件/4-vim.md)
     * [5-gdb](Skill/开发软件/5-gdb.md)
     * [6-gcc](Skill/开发软件/6-gcc.md)
+    * [7-tmux](Skill/开发软件/7-tmux.md)
   - [ASM](Skill/ASM/README.md)
   - [C](Skill/C/README.md)
   - C++
