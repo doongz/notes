@@ -166,22 +166,29 @@ xv6没有`ps`命令，但是如果您键入Ctrl-p，内核将打印每个进程�
 **提示：**
 
 - 在你开始编码之前，请阅读《book-riscv-rev1》的第一章
-
 - 看看其他的一些程序（如***/user/echo.c, /user/grep.c, /user/rm.c***）查看如何获取传递给程序的命令行参数
-
 - 如果用户忘记传递参数，`sleep`应该打印一条错误信息
-
 - 命令行参数作为字符串传递; 您可以使用`atoi`将其转换为数字（详见***/user/ulib.c***）
-
 - 使用系统调用`sleep`
-
 - 请参阅***kernel/sysproc.c***以获取实现`sleep`系统调用的xv6内核代码（查找`sys_sleep`），***user/user.h***提供了`sleep`的声明以便其他程序调用，用汇编程序编写的***user/usys.S***可以帮助`sleep`从用户区跳转到内核区。
-
 - 确保`main`函数调用`exit()`以退出程序。
-
 - 将你的`sleep`程序添加到***Makefile***中的`UPROGS`中；完成之后，`make qemu`将编译您的程序，并且您可以从xv6的shell运行它。
-
 - 看看Kernighan和Ritchie编著的《C程序设计语言》（第二版）来了解C语言。
+
+```c
+#include "kernel/types.h"
+#include "user/user.h"
+
+int main(int argc, char const *argv[])
+{
+  if (argc != 2) { //参数错误
+    fprintf(2, "usage: sleep <time>\n");
+    exit(1);
+  }
+  sleep(atoi(argv[1]));
+  exit(0);
+}
+```
 
 从xv6 shell运行程序：
 
