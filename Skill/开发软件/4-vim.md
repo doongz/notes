@@ -1,6 +1,27 @@
 # Vim
 
-[精通 VIM ，此文就够了](https://zhuanlan.zhihu.com/p/68111471)
+~/.vimrc
+
+```
+syntax on	    " 自动语法高亮
+set number      " 显示行号
+set cindent
+set smartindent " 开启新行时使用智能自动缩进
+set showmatch   " 插入括号时，短暂地跳转到匹配的对应括号
+set ruler       " 打开状态栏标尺
+set mouse=a     "在vim所有模式下开鼠标，复制文档就可以不包含行号了
+
+if has("autocmd") " 重新打开光标调到上次退出的地方
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+set ts=4        " tab 为4个空格
+set expandtab    " 换行保持当前缩进
+set autoindent
+
+set hlsearch        " 查找结果 高亮显示
+colorscheme desert  " 配色方案
+```
 
 ![vim](./doc/vim.png)
 
@@ -212,14 +233,15 @@ vi] 操作将会选中如下的区域，没有包含 []：
 
 ## 五、命令模式
 
-| 快捷键      | 说明                    |
-| ----------- | ----------------------- |
-| :set nu     | 显示行数                |
-| :set nonu   | 会取消行号              |
-| :n          | 定位到 n 行             |
-| /<查找内容> | 查找，回车，n下一个     |
-| :set ic     | 不会区分大小写,影响查询 |
-| :set noic   | 用来区分大小写的查询。  |
+| 快捷键      | 说明                                            |
+| ----------- | ----------------------------------------------- |
+| :set nu     | 显示行数                                        |
+| :set nonu   | 会取消行号                                      |
+| :n          | 定位到 n 行                                     |
+| /<查找内容> | 查找，回车，n下一个                             |
+| :set ic     | 不会区分大小写,影响查询                         |
+| :set noic   | 用来区分大小写的查询。                          |
+| :set paste  | 解决粘贴后，换行乱问题；恢复命令   :set nopaste |
 
 ## 六、退出
 
@@ -236,3 +258,14 @@ vi] 操作将会选中如下的区域，没有包含 []：
 | :e!          | 放弃对文件的所有修改，恢复文件到上次保存的位置。             |
 | :saveas file | 另存为 file。                                                |
 | :bn 和 :bp   | 当打开多个文件的时候可以输入 `:bn` 和 `:bp` 进行上一个文件或者下一个文件的切换。 |
+
+## 七、vimdiff
+
+```
+vimdiff file1 file2
+vim -d file1 file2
+```
+
+
+
+参考：[精通 VIM ，此文就够了](https://zhuanlan.zhihu.com/p/68111471)

@@ -249,6 +249,92 @@ $
 
 如果您的程序在两个进程之间交换一个字节并产生如上所示的输出，那么您的解决方案是正确的。
 
+> fork() 返回值：
+>
+> - 负数：如果出错，则fork()返回-1,此时没有创建新的进程。最初的进程仍然运行。
+> - 零：在子进程中，fork()返回0
+> - 正数：在父进程中，fork()返回正的子进程的PID
+>
+> 一旦调用了 fork()，系统就用父进程的代码段产生一个子进程，父子进程是公用同一个代码段
+>
+>  显然，**在 fork() 调用的时候，fork() 函数本身，也将出现在两个进程中，但 fork() 在子进程中返回 0**，在子进程中返回子进程的id,父子进程虽然公用代码段，但不公用数据段，所以 pid = fork() 分别在父子进程执行以后，各自的pid变量是不同的。  
+>
+>  所以读取pid的值就可以判断代码段当前处于哪个进程中
+
+使用两个管道进行父子进程通信，需要注意的是如果管道的写端没有`close`，那么管道中数据为空时对管道的读取将会阻塞。因此对于不需要的管道描述符，要尽可能早的关闭。
+
+```c
+#include "kernel/types.h"
+#include "user/user.h"
+
+#define RD 0  // pipe的read端
+#define WR 1  // pipe的write端
+
+int main() {
+    char buf = 'P';  // 用于传输的字节
+
+    int fd_p2c[2];  // 父进程 -> 子进程
+    int fd_c2p[2];  // 子进程 -> 父进程
+    pipe(fd_p2c);
+    pipe(fd_c2p);
+
+    int pid = fork();
+    int exit_status = 0;
+
+    if (pid < 0) {
+        fprintf(2, "fork() error!\n");
+        close(fd_p2c[RD]);
+        close(fd_p2c[WR]);
+        close(fd_c2p[RD]);
+        close(fd_c2p[WR]);
+        exit(1);
+    } else if (pid > 0) {
+        close(fd_p2c[RD]);
+        close(fd_c2p[WR]);
+
+        if (write(fd_p2c[WR], &buf, sizeof(char)) != sizeof(char)) {
+            fprintf(2, "parent write() error!\n");
+            exit_status = 1;
+        }
+
+        if (read(fd_c2p[RD], &buf, sizeof(char)) != sizeof(char)) {
+            fprintf(2, "parent write() error!\n");
+            exit_status = 1;
+        } else {
+            fprintf(1, "%d: received pong\n", getpid());
+        }
+        close(fd_p2c[WR]);
+        close(fd_c2p[RD]);
+        exit(exit_status);
+    } else if (pid == 0) {  // child
+        close(fd_p2c[WR]);
+        close(fd_c2p[RD]);
+
+        if (read(fd_p2c[RD], &buf, sizeof(char)) != sizeof(char)) {
+            fprintf(2, "child read() error!\n");
+            exit_status = 1;
+        } else {
+            fprintf(1, "%d: received ping\n", getpid());
+        }
+
+        if (write(fd_c2p[WR], &buf, sizeof(char)) != sizeof(char)) {
+            fprintf(2, "child write() error!\n");
+            exit_status = 1;
+        }
+
+        close(fd_p2c[RD]);
+        close(fd_c2p[WR]);
+        exit(exit_status);
+    }
+    return 0;
+}
+
+```
+
+
+
+
+
 ## Primes(素数，难度：Moderate/Hard)
 
 > [!TIP|label:YOUR JOB]
@@ -258,16 +344,13 @@ $
 **提示：**
 
 - 请仔细关闭进程不需要的文件描述符，否则您的程序将在第一个进程达到35之前就会导致xv6系统资源不足。
-
 - 一旦第一个进程达到35，它应该使用`wait`等待整个管道终止，包括所有子孙进程等等。因此，主`primes`进程应该只在打印完所有输出之后，并且在所有其他`primes`进程退出之后退出。
-
 - 提示：当管道的`write`端关闭时，`read`返回零。
-
 - 最简单的方法是直接将32位（4字节）int写入管道，而不是使用格式化的ASCII I/O。
-
 - 您应该仅在需要时在管线中创建进程。
-
 - 将程序添加到***Makefile***中的`UPROGS`
+
+> wait() 是等待，等待前面的所有子进程全部执行完才继续，写这个的目的是避免上面的还没执行完就开始执行后续的程序了。
 
 如果您的解决方案实现了基于管道的筛选并产生以下输出，则是正确的：
 
@@ -290,8 +373,6 @@ prime 31
 $
 ```
 
-
-
 **参考资料翻译：**
 
 > 考虑所有小于1000的素数的生成。Eratosthenes的筛选法可以通过执行以下伪代码的进程管线来模拟：
@@ -310,9 +391,99 @@ loop:
         将n发送给右邻居
 ```
 
-![img](images/p1.png)
-
 > 生成进程可以将数字2、3、4、…、1000输入管道的左端：行中的第一个进程消除2的倍数，第二个进程消除3的倍数，第三个进程消除5的倍数，依此类推。
+这个感觉还是有些难度的，它的思想是多进程版本的递归，不断地将左邻居管道中的数据筛选后传送给右邻居，每次传送的第一个数据都将是一个素数。
+
+具体还是看代码吧，里面注释应该还是比较清楚的
+
+```c
+#include "kernel/types.h"
+#include "user/user.h"
+
+#define RD 0
+#define WR 1
+
+const uint INT_LEN = sizeof(int);
+
+/**
+ * @brief 读取左邻居的第一个数据
+ * @param lpipe 左邻居的管道符
+ * @param pfirst 用于存储第一个数据的地址
+ * @return 如果没有数据返回-1,有数据返回0
+ */
+int lpipe_first_data(int lpipe[2], int *dst)
+{
+  if (read(lpipe[RD], dst, sizeof(int)) == sizeof(int)) {
+    printf("prime %d\n", *dst);
+    return 0;
+  }
+  return -1;
+}
+
+/**
+ * @brief 读取左邻居的数据，将不能被first整除的写入右邻居
+ * @param lpipe 左邻居的管道符
+ * @param rpipe 右邻居的管道符
+ * @param first 左邻居的第一个数据
+ */
+void transmit_data(int lpipe[2], int rpipe[2], int first)
+{
+  int data;
+  // 从左管道读取数据
+  while (read(lpipe[RD], &data, sizeof(int)) == sizeof(int)) {
+    // 将无法整除的数据传递入右管道
+    if (data % first)
+      write(rpipe[WR], &data, sizeof(int));
+  }
+  close(lpipe[RD]);
+  close(rpipe[WR]);
+}
+
+/**
+ * @brief 寻找素数
+ * @param lpipe 左邻居管道
+ */
+void primes(int lpipe[2])
+{
+  close(lpipe[WR]);
+  int first;
+  if (lpipe_first_data(lpipe, &first) == 0) {
+    int p[2];
+    pipe(p); // 当前的管道
+    transmit_data(lpipe, p, first);
+
+    if (fork() == 0) {
+      primes(p);    // 递归的思想，但这将在一个新的进程中调用
+    } else {
+      close(p[RD]);
+      wait(0);
+    }
+  }
+  exit(0);
+}
+
+int main(int argc, char const *argv[])
+{
+  int p[2];
+  pipe(p);
+
+  for (int i = 2; i <= 35; ++i) //写入初始数据
+    write(p[WR], &i, INT_LEN);
+
+  if (fork() == 0) {
+    primes(p);
+  } else {
+    close(p[WR]);
+    close(p[RD]);
+    wait(0);
+  }
+
+  exit(0);
+}
+```
+
+
+
 ## find（难度：Moderate）
 
 > [!TIP|label:YOUR JOB]
@@ -341,6 +512,96 @@ $ find . b
 ./a/b
 $ 
 ```
+
+感觉没什么好说的0.0，代码基本上都是COPY的*ls.c*中的内容
+
+> open() 函数用来打开或创建一个文件，若成功返回文件描述符，否则返回-1
+>
+> fstat() 由文件描述符取得文件的状态
+>
+> dirent 为了获取某文件夹目录内容，所使用的结构体
+>
+> `char *strcpy(char* dest, const char *src);`
+>
+> 功能：把从src地址开始且含有NULL结束符的字符串复制到以dest开始的地址空间
+>
+> 说明：src和dest所指内存区域不可以重叠且dest必须有足够的空间来容纳src的字符串。
+>
+> 返回指向dest的指针
+
+```c++
+#include "kernel/types.h"
+
+#include "kernel/fs.h"
+#include "kernel/stat.h"
+#include "user/user.h"
+
+void find(char *path, const char *filename)
+{
+  char buf[512], *p;
+  int fd;
+  struct dirent de;
+  struct stat st;
+
+  if ((fd = open(path, 0)) < 0) {
+    fprintf(2, "find: cannot open %s\n", path);
+    return;
+  }
+
+  if (fstat(fd, &st) < 0) {
+    fprintf(2, "find: cannot fstat %s\n", path);
+    close(fd);
+    return;
+  }
+
+  //参数错误，find的第一个参数必须是目录
+  if (st.type != T_DIR) {
+    fprintf(2, "usage: find <DIRECTORY> <filename>\n");
+    return;
+  }
+
+  if (strlen(path) + 1 + DIRSIZ + 1 > sizeof buf) {
+    fprintf(2, "find: path too long\n");
+    return;
+  }
+  strcpy(buf, path);
+  p = buf + strlen(buf);
+  *p++ = '/'; //p指向最后一个'/'之后
+  // 读取当前目录下的文件或目录
+  // 如果是目录往下递归，如果是文件则检查是否为target
+  while (read(fd, &de, sizeof de) == sizeof de) {
+    if (de.inum == 0)
+      continue;
+    memmove(p, de.name, DIRSIZ); //添加路径名称
+    p[DIRSIZ] = 0;               //字符串结束标志
+    if (stat(buf, &st) < 0) {
+      fprintf(2, "find: cannot stat %s\n", buf);
+      continue;
+    }
+    //不要在“.”和“..”目录中递归
+    if (st.type == T_DIR && strcmp(p, ".") != 0 && strcmp(p, "..") != 0) {
+      find(buf, filename);
+    } else if (strcmp(filename, p) == 0)
+      printf("%s\n", buf);
+  }
+
+  close(fd);
+}
+
+int main(int argc, char *argv[])
+{
+  if (argc != 3) {
+    fprintf(2, "usage: find <directory> <filename>\n");
+    exit(1);
+  }
+  find(argv[1], argv[2]);
+  exit(0);
+}
+```
+
+
+
+
 
 ## xargs（难度：Moderate）
 
