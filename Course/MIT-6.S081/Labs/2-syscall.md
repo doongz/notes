@@ -12,7 +12,7 @@
 要开始本章实验，请将代码切换到**syscall**分支：
 
 ```bash
-$ git fetch
+$ gitfetch
 $ git checkout syscall
 $ make clean
 ```
@@ -213,6 +213,135 @@ int sysinfo(struct sysinfo *);
 - `sysinfo`需要将一个`struct sysinfo`复制回用户空间；请参阅`sys_fstat()`(***kernel/sysfile.c***)和`filestat()`(***kernel/file.c***)以获取如何使用`copyout()`执行此操作的示例。
 - 要获取空闲内存量，请在***kernel/kalloc.c***中添加一个函数
 - 要获取进程数，请在***kernel/proc.c***中添加一个函数
+
+
+
+```c
+// Makefile
+$U/_sysinfotest
+//...
+
+
+// user/user.h
+struct sysinfo;
+int sysinfo(struct sysinfo *);
+```
+
+* 在*kernel/kalloc.c*中添加一个函数用于获取空闲内存量
+
+```c
+struct run {
+  struct run *next;
+};
+
+struct {
+  struct spinlock lock;
+  struct run *freelist;
+} kmem;
+```
+
+内存是使用链表进行管理的，因此遍历`kmem`中的空闲链表就能够获取所有的空闲内存，如下
+
+```c
+// kernel/kalloc.c
+void
+freebytes(uint64 *dst)
+{
+  *dst = 0;
+  struct run *p = kmem.freelist; // 用于遍历
+
+  acquire(&kmem.lock);
+  while (p) {
+    *dst += PGSIZE;
+    p = p->next;
+  }
+  release(&kmem.lock);
+}
+```
+
+* 在*kernel/proc.c*中添加一个函数获取进程数
+
+遍历`proc`数组，统计处于活动状态的进程即可，循环的写法参考`scheduler`函数
+
+```c
+// kernel/proc.c
+void
+procnum(uint64 *dst)
+{
+  *dst = 0;
+  struct proc *p;
+  for (p = proc; p < &proc[NPROC]; p++) {
+    if (p->state != UNUSED)
+      (*dst)++;
+  }
+}
+```
+
+注册下函数
+
+```c
+// kernel/defs.h
+
+void freebytes(uint64 *);
+void procnum(uint64 *);
+```
+
+
+
+* 实现`sys_sysinfo`，将数据写入结构体并传递到用户空间
+
+```c
+// kernel/sysinfo.c
+#include "types.h"
+#include "riscv.h"
+#include "defs.h"
+#include "param.h"
+#include "spinlock.h"
+#include "proc.c"
+#include "sysinfo.h"
+#include "kalloc.c"
+
+uint64
+sys_sysinfo(void)
+{
+  struct sysinfo info;
+  freebytes(&info.freemem);
+  procnum(&info.nproc);
+
+  // 获取虚拟地址
+  uint64 dstaddr;
+  argaddr(0, &dstaddr);
+
+  // 从内核空间拷贝数据到用户空间
+  if (copyout(myproc()->pagetable, dstaddr, (char *)&info, sizeof info) < 0)
+    return -1;
+
+  return 0;
+}
+```
+
+```c
+// kernel/syscall.c
+extern uint64 sys_sysinfo(void);
+
+static uint64 (*syscalls[])(void) = {
+// ...
+[SYS_sysinfo]   sys_sysinfo,
+};
+
+static char *syscall_name[] = {
+// ...
+[SYS_sysinfo]  "sys_sysinfo",
+}
+
+// kernel/syscall.h
+#define SYS_sysinfo 23
+
+// user/usys.pl
+entry("sysinfo");
+```
+
+
 
 
 

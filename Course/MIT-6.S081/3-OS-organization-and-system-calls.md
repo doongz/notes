@@ -314,3 +314,532 @@ QEMU表现的就像一个真正的计算机一样。当你想到QEMU时，你不
 ## **3.9 XV6 启动过程**
 
 [操作过程](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/lec03-os-organization-and-system-calls/3.9-xv6-qi-dong-guo-cheng)
+
+首先，我会启动QEMU，并打开gdb。本质上来说QEMU内部有一个gdb server，当我们启动之后，QEMU会等待gdb客户端连接。
+
+```shell
+$ make CPUS=1 qemu-gdb
+sed "s/:1234/:25501/" < .gdbinit.tmpl-riscv > .gdbinit
+*** Now run 'gdb' in another window.
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 1 -nographic -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0 -S -gdb tcp::25501
+```
+
+我会在我的计算机上再启动一个gdb客户端，这里是一个RISC-V 64位Linux的gdb，有些同学的电脑可能是multi-arch或者其他版本的的gdb，但是基本上来说，这里的gdb是为RISC-V 64位处理器编译的。
+
+```shell
+$ riscv64-unknown-elf-gdb
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "--host=x86_64-apple-darwin21.4.0 --target=riscv64-unknown-elf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) 
+```
+
+注意：有时候会出现个提示，按照要求把内容添加进去
+
+```shell
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+"/Users/xxx/pj/xv6-labs-2020/xv6.out": not in executable format: file format not recognized
+warning: File "/Users/xxx/pj/xv6-labs-2020/.gdbinit" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /Users/xxx/pj/xv6-labs-2020/.gdbinit
+line to your configuration file "/Users/xxx/.gdbinit".
+```
+
+正确的样子应该是这样，会有 `0x0000000000001000 in ?? ()`
+
+```shell
+$ riscv64-unknown-elf-gdb
+GNU gdb (GDB) 8.3.0.20190516-git
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "--host=x86_64-apple-darwin21.4.0 --target=riscv64-unknown-elf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+The target architecture is assumed to be riscv:rv64
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x0000000000001000 in ?? ()
+```
+
+在连接上之后，我会在程序的入口处设置一个端点，因为我们知道这是QEMU会跳转到的第一个指令。
+
+```shell
+(gdb) b _entry
+Breakpoint 1 at 0x8000000a
+```
+
+设置完断点之后，我运行程序，可以发现代码并没有停在0x8000000（见3.7 kernel.asm中，0x80000000是程序的起始位置），而是停在了0x8000000a。
+
+```shell
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x000000008000000a in _entry ()
+=> 0x000000008000000a <_entry+10>:	f3 25 40 f1	csrr	a1,mhartid
+```
+
+如果我们查看kernel的汇编文件，
+
+```shell
+$ cat kernel/kernel.asm
+kernel/kernel：     文件格式 elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000080000000 <_entry>:
+    80000000:	0000a117          	auipc	sp,0xa
+    80000004:	83010113          	addi	sp,sp,-2000 # 80009830 <stack0>
+    80000008:	6505                lui	a0,0x1
+    8000000a:	f14025f3          	csrr	a1,mhartid
+    8000000e:	0585                addi	a1,a1,1
+    80000010:	02b50533          	mul	a0,a0,a1
+    80000014:	912a                add	sp,sp,a0
+    80000016:	070000ef          	jal	ra,80000086 <start>
+
+000000008000001a <spin>:
+    8000001a:	a001                	j	8000001a <spin>
+
+```
+
+我们可以看到，在地址0x8000000a读取了控制系统寄存器（Control System Register）mhartid，并将结果加载到了a1寄存器。所以QEMU会模拟执行这条指令，之后执行下一条指令。
+
+地址0x80000000是一个被QEMU认可的地址。也就是说如果你想使用QEMU，那么第一个指令地址必须是它。所以，我们会让内核加载器从那个位置开始加载内核。如果我们查看kernel.ld，
+
+```shell
+$ cat kernel/kernel.ld
+OUTPUT_ARCH( "riscv" )
+ENTRY( _entry )
+
+SECTIONS
+{
+  /*
+   * ensure that entry.S / _entry is at 0x80000000,
+   * where qemu's -kernel jumps.
+   */
+  . = 0x80000000;
+
+  .text : {
+    *(.text .text.*)
+    . = ALIGN(0x1000);
+    _trampoline = .;
+    *(trampsec)
+    . = ALIGN(0x1000);
+    ASSERT(. - _trampoline == 0x1000, "error: trampoline larger than one page");
+    PROVIDE(etext = .);
+  }
+
+  .rodata : {
+    . = ALIGN(16);
+    *(.srodata .srodata.*) /* do not need to distinguish this from .rodata */
+    . = ALIGN(16);
+    *(.rodata .rodata.*)
+  }
+
+  .data : {
+    . = ALIGN(16);
+    *(.sdata .sdata.*) /* do not need to distinguish this from .data */
+    . = ALIGN(16);
+    *(.data .data.*)
+  }
+
+  .bss : {
+    . = ALIGN(16);
+    *(.sbss .sbss.*) /* do not need to distinguish this from .bss */
+    . = ALIGN(16);
+    *(.bss .bss.*)
+  }
+
+  PROVIDE(end = .);
+}
+```
+
+我们可以看到，这个文件定义了内核是如何被加载的，从这里也可以看到，内核使用的起始地址就是QEMU指定的0x80000000这个地址。这就是我们操作系统最初运行的步骤。
+
+回到gdb，我们可以看到gdb也显示了指令的二进制编码
+
+```shell
+Breakpoint 1, 0x000000008000000a in _entry ()
+=> 0x000000008000000a <_entry+10>:	f3 25 40 f1	csrr	a1,mhartid
+(gdb) si
+0x000000008000000e in _entry ()
+=> 0x000000008000000e <_entry+14>:	85 05	addi	a1,a1,1
+```
+
+可以看出，csrr是一个4字节的指令，而addi是一个2字节的指令。
+
+我们这里可以看到，XV6从entry.s开始启动，这个时候没有内存分页，没有隔离性，并且运行在M-mode（machine mode）。XV6会尽可能快的跳转到kernel mode或者说是supervisor mode。我们在main函数设置一个断点，main函数已经运行在supervisor mode了。接下来我运行程序，代码会在断点，也就是main函数的第一条指令停住。
+
+```shell
+(gdb) b main
+Breakpoint 2 at 0x80000f18: file kernel/main.c, line 13.
+(gdb) c
+Continuing.
+
+Breakpoint 2, main () at kernel/main.c:13
+13	  if(cpuid() == 0){
+```
+
+上面gdb的断点显示，下面main函数的源码。
+
+```c
+#include "types.h"
+#include "param.h"
+#include "memlayout.h"
+#include "riscv.h"
+#include "defs.h"
+
+volatile static int started = 0;
+
+// start() jumps here in supervisor mode on all CPUs.
+void
+main()
+{
+  if(cpuid() == 0){
+    consoleinit();
+    printfinit();
+    printf("\n");
+    printf("xv6 kernel is booting\n");
+    printf("\n");
+    kinit();         // physical page allocator
+    kvminit();       // create kernel page table
+    kvminithart();   // turn on paging
+    procinit();      // process table
+    trapinit();      // trap vectors
+    trapinithart();  // install kernel trap vector
+    plicinit();      // set up interrupt controller
+    plicinithart();  // ask PLIC for device interrupts
+    binit();         // buffer cache
+    iinit();         // inode cache
+    fileinit();      // file table
+    virtio_disk_init(); // emulated hard disk
+    userinit();      // first user process
+    __sync_synchronize();
+    started = 1;
+  } else {
+    while(started == 0)
+      ;
+    __sync_synchronize();
+    printf("hart %d starting\n", cpuid());
+    kvminithart();    // turn on paging
+    trapinithart();   // install kernel trap vector
+    plicinithart();   // ask PLIC for device interrupts
+  }
+
+  scheduler();        
+}
+
+```
+
+接下来，我想运行在gdb的layout split模式：
+
+```
+(gdb) layout split
+```
+
+![Snipaste_2022-05-15_01-00-22](./doc/Snipaste_2022-05-15_01-00-22.png)
+
+从这个视图可以看出gdb要执行的下一条指令是什么，断点具体在什么位置。
+
+这里我只在一个CPU上运行QEMU（见最初的make参数），这样会使得gdb调试更加简单。因为现在只指定了一个CPU核，QEMU只会仿真一个核，我可以单步执行程序（因为在单核或者单线程场景下，单个断点就可以停止整个程序的运行）。
+
+通过在gdb中输入n，可以挑到下一条指令。这里调用了一个名为consoleinit的函数，它的工作与你想象的完全一样，也就是设置好console。一旦console设置好了，接下来可以向console打印输出（代码16、17行）。执行完16、17行之后，我们可以在QEMU看到相应的输出。
+
+![Snipaste_2022-05-15_01-06-55](./doc/Snipaste_2022-05-15_01-06-55.png)
+
+除了console之外，还有许多代码来做初始化。
+
+kinit：设置好页表分配器（page allocator）
+
+kvminit：设置好虚拟内存，这是下节课的内容
+
+kvminithart：打开页表，也是下节课的内容
+
+processinit：设置好初始进程或者说设置好进程表单
+
+trapinit/trapinithart：设置好user/kernel mode转换代码
+
+plicinit/plicinithart：设置好中断控制器PLIC（Platform Level Interrupt Controller），我们后面在介绍中断的时候会详细的介绍这部分，这是我们用来与磁盘和console交互方式
+
+binit：分配buffer cache
+
+iinit：初始化inode缓存
+
+fileinit：初始化文件系统
+
+virtio_disk_init：初始化磁盘
+
+userinit：最后当所有的设置都完成了，操作系统也运行起来了，会通过userinit运行第一个进程，这里有点意思，接下来我们看一下userinit
+
+> 在继续之前，这里有什么问题吗？
+>
+> 学生提问：这里的初始化函数的调用顺序重要吗？
+>
+> Frans教授：重要，哈哈。一些函数必须在另一些函数之后运行，某几个函数的顺序可能不重要，但是对它们又需要在其他的一些函数之后运行。
+
+指到 `userinit();   // first user process` 这行的时候，可以通过gdb的s指令，跳到userinit内部。
+
+![Snipaste_2022-05-15_01-16-45](./doc/Snipaste_2022-05-15_01-16-45.png)
+
+```c
+210 // Set up first user process.
+211 void
+212 userinit(void)
+213 {
+214   struct proc *p;
+215 
+216   p = allocproc();
+217   initproc = p;
+218 
+219   // allocate one user page and copy init's instructions
+220   // and data into it.
+221   uvminit(p->pagetable, initcode, sizeof(initcode));
+222   p->sz = PGSIZE;
+223 
+224   // prepare for the very first "return" from kernel to user.
+225   p->trapframe->epc = 0;      // user program counter
+226   p->trapframe->sp = PGSIZE;  // user stack pointer
+227 
+228   safestrcpy(p->name, "initcode", sizeof(p->name));
+229   p->cwd = namei("/");
+230 
+231   p->state = RUNNABLE;
+232 
+233   release(&p->lock);
+234 }
+```
+
+上图是userinit函数，右边是源码，左边是gdb视图。userinit有点像是胶水代码/Glue code（胶水代码不实现具体的功能，只是为了适配不同的部分而存在），它利用了XV6的特性，并启动了第一个进程。我们总是需要有一个用户进程在运行，这样才能实现与操作系统的交互，所以这里需要一个小程序来初始化第一个用户进程。这个小程序定义在initcode中。
+
+```c
+198 // a user program that calls exec("/init")
+199 // od -t xC initcode
+200 uchar initcode[] = {
+201   0x17, 0x05, 0x00, 0x00, 0x13, 0x05, 0x45, 0x02,
+202   0x97, 0x05, 0x00, 0x00, 0x93, 0x85, 0x35, 0x02,
+203   0x93, 0x08, 0x70, 0x00, 0x73, 0x00, 0x00, 0x00,
+204   0x93, 0x08, 0x20, 0x00, 0x73, 0x00, 0x00, 0x00,
+205   0xef, 0xf0, 0x9f, 0xff, 0x2f, 0x69, 0x6e, 0x69,
+206   0x74, 0x00, 0x00, 0x24, 0x00, 0x00, 0x00, 0x00,
+207   0x00, 0x00, 0x00, 0x00
+208 };
+```
+
+这里直接是程序的二进制形式，它会链接或者在内核中直接静态定义。实际上，这段代码对应了下面的汇编程序。
+
+```assembly
+$ cat user/initcode.S 
+# Initial process that execs /init.
+# This code runs in user space.
+
+#include "syscall.h"
+
+# exec(init, argv)
+.globl start
+start:
+        la a0, init
+        la a1, argv
+        li a7, SYS_exec
+        ecall
+
+# for(;;) exit();
+exit:
+        li a7, SYS_exit
+        ecall
+        jal exit
+
+# char init[] = "/init\0";
+init:
+  .string "/init\0"
+
+# char *argv[] = { init, 0 };
+.p2align 2
+argv:
+  .long init
+  .long 0
+
+```
+
+这个汇编程序中，它首先将init中的地址加载到a0（la a0, init），argv中的地址加载到a1（la a1, argv），exec系统调用对应的数字加载到a7（li a7, SYS_exec），最后调用ECALL。所以这里执行了3条指令，之后在第4条指令将控制权交给了操作系统。
+
+如果我在syscall中设置一个断点，
+
+```shell
+(gdb) b syscall
+Breakpoint 3 at 0x80002b92: file kernel/syscall.c, line 164.
+```
+
+并让程序运行起来。userinit会创建初始进程，返回到用户空间，执行刚刚介绍的3条指令，再回到内核空间。这里是任何XV6用户会使用到的第一个系统调用。让我们来看一下会发生什么。通过在gdb中执行c，让程序运行起来，我们现在进入到了syscall函数。
+
+![Snipaste_2022-05-15_01-34-22](./doc/Snipaste_2022-05-15_01-34-22.png)
+
+我们可以查看syscall的代码，
+
+![Snipaste_2022-05-15_01-36-09](./doc/Snipaste_2022-05-15_01-36-09.png)
+
+*num = p->trapframe->a7* 会读取使用的系统调用对应的整数。当代码执行完这一行之后，我们可以在gdb中打印num，可以看到是7。
+
+如果我们查看syscall.h，可以看到7对应的是exec系统调用。
+
+```shell
+$ cat kernel/syscall.h 
+// ...
+#define SYS_exec    7
+// ...
+```
+
+所以，这里本质上是告诉内核，某个用户应用程序执行了ECALL指令，并且想要调用exec系统调用。
+
+`*p->trapframe->a0 = syscall[num]()*` 这一行是实际执行系统调用。这里可以看出，num用来索引一个数组，这个数组是一个函数指针数组，可以预期的是syscall[7]对应了exec的入口函数。我们跳到这个函数中去，可以看到，我们现在在sys_exec函数中。
+
+![Snipaste_2022-05-15_01-39-58](./doc/Snipaste_2022-05-15_01-39-58.png)
+
+
+
+```c
+$ vim kernel/sysfile.c 
+415 uint64
+416 sys_exec(void)
+417 {
+418   char path[MAXPATH], *argv[MAXARG];
+419   int i;
+420   uint64 uargv, uarg;
+421 
+422   if(argstr(0, path, MAXPATH) < 0 || argaddr(1, &uargv) < 0){
+423     return -1;
+424   }
+425   memset(argv, 0, sizeof(argv));
+426   for(i=0;; i++){
+427     if(i >= NELEM(argv)){
+428       goto bad;
+429     }
+430     if(fetchaddr(uargv+sizeof(uint64)*i, (uint64*)&uarg) < 0){
+431       goto bad;
+432     }
+433     if(uarg == 0){
+434       argv[i] = 0;
+435       break;
+436     }
+437     argv[i] = kalloc();
+438     if(argv[i] == 0)
+439       goto bad;
+440     if(fetchstr(uarg, argv[i], PGSIZE) < 0)
+441       goto bad;
+442   }
+```
+
+sys_exec中的第一件事情是从用户空间读取参数，它会读取path，也就是要执行程序的文件名。这里首先会为参数分配空间，然后从用户空间将参数拷贝到内核空间。之后我们打印path，
+
+```shell
+(gdb) p path
+$2 = "/init\000\000\000\020\337\377\377?\000\000\000\060\337\377\377?\000\000\000\060\337\377\377?\000\000\000\b~\001\200\000\000\000\000\060\337\377\377?\000
+\000\000P\337\377\377?\000\000\000D\r\000\200\000\000\000\000\000~\001\200\000\000\000\000\360}\001\200\000\000\000\000p\337\377\377?\000\000\000\240\060\000\
+200\000\000\000\000\b\033\002\200\000\000\000\000\360}\001\200\000\000\000\000\220\337\377\377?\000\000\000\220\337\377\377?\000\000"
+```
+
+可以看到传入的就是init程序。所以，综合来看，initcode完成了通过exec调用init程序。让我们来看看init程序，
+
+$ cat user/init.c
+
+```c
+// init: The initial user-level program
+
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "kernel/spinlock.h"
+#include "kernel/sleeplock.h"
+#include "kernel/fs.h"
+#include "kernel/file.h"
+#include "user/user.h"
+#include "kernel/fcntl.h"
+
+char *argv[] = { "sh", 0 };
+
+int
+main(void)
+{
+  int pid, wpid;
+
+  if(open("console", O_RDWR) < 0){
+    mknod("console", CONSOLE, 0);
+    open("console", O_RDWR);
+  }
+  dup(0);  // stdout
+  dup(0);  // stderr
+
+  for(;;){
+    printf("init: starting sh\n");
+    pid = fork();
+    if(pid < 0){
+      printf("init: fork failed\n");
+      exit(1);
+    }
+    if(pid == 0){
+      exec("sh", argv);
+      printf("init: exec sh failed\n");
+      exit(1);
+    }
+
+    for(;;){
+      // this call to wait() returns if the shell exits,
+      // or if a parentless process exits.
+      wpid = wait((int *) 0);
+      if(wpid == pid){
+        // the shell exited; restart it.
+        break;
+      } else if(wpid < 0){
+        printf("init: wait returned an error\n");
+        exit(1);
+      } else {
+        // it was a parentless process; do nothing.
+      }
+    }
+  }
+}
+
+```
+
+init会为用户空间设置好一些东西，比如配置好console，调用fork，并在fork出的子进程中执行shell。
+
+最终的效果就是Shell运行起来了。如果我再次运行代码，我还会陷入到syscall中的断点，并且同样也是调用exec系统调用，只是这次是通过exec运行Shell。当Shell运行起来之后，我们可以从QEMU看到Shell。
+
+```shell
+$ make CPUS=1 qemu-gdb
+sed "s/:1234/:25501/" < .gdbinit.tmpl-riscv > .gdbinit
+*** Now run 'gdb' in another window.
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 1 -nographic -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0 -S -gdb tcp::25501
+
+xv6 kernel is booting
+
+init: start
+
+```
+
+这里简单的介绍了一下XV6是如何从0开始直到第一个Shell程序运行起来。并且我们也看了一下第一个系统调用是在什么时候发生的。我们并没有看系统调用背后的具体机制，这个在后面会介绍。但是目前来说，这些对于你们完成这周的syscall lab是足够了。这些就是你们在实验中会用到的部分。这里有什么问题吗？
+
+> 学生提问：我们会处理网络吗，比如说网络相关的实验？
+>
+> Frans教授：是的，最后一个lab中你们会实现一个网络驱动。你们会写代码与硬件交互，操纵连接在RISC-V主板上网卡的驱动，以及寄存器，再向以太网发送一些网络报文。
+
+好的，最后让我总结一下。因为没有涉及到太多的细节，我认为syscall lab可能会比上一个utils lab简单些，但是下一个实验会更加的复杂。要想做好实验总是会比较难，别总是拖到最后才完成实验，这样有什么奇怪的问题我们还能帮帮你。好了就这样，我退了，下节课再见~
