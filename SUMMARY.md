@@ -268,7 +268,7 @@
       * [322-[完全背包-经典题]-零钱兑换](Algorithm/3-动态规划/例题-背包DP/322-[完全背包-经典题]-零钱兑换.md)
       * [416-[01背包-经典题]-分割等和子集](Algorithm/3-动态规划/例题-背包DP/416-[01背包-经典题]-分割等和子集.md)
       * [494-[未完工-记忆化dfs-01背包]-目标和](Algorithm/3-动态规划/例题-背包DP/494-[未完工-记忆化dfs-01背包]-目标和.md)
-      * [518-[完全背包]-零钱兑换II](Algorithm/3-动态规划/例题-背包DP/518-[完全背包]-零钱兑换II.md)
+      * [518-[完全背包-经典题]-零钱兑换II](Algorithm/3-动态规划/例题-背包DP/518-[完全背包-经典题]-零钱兑换II.md)
     - 例题-记忆化搜索
       * [115-[经典题-dfs-记忆化-dp]-不同的子序列](Algorithm/3-动态规划/例题-记忆化搜索/115-[经典题-dfs-记忆化-dp]-不同的子序列.md)
       * [140-[模版题-记忆化dfs]-单词拆分II](Algorithm/3-动态规划/例题-记忆化搜索/140-[模版题-记忆化dfs]-单词拆分II.md)
@@ -429,7 +429,8 @@
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
     - Labs
       * [0-实验代码使用](Course/MIT-6.S081/Labs/0-实验代码使用.md)
-      * [1-Lab-util](Course/MIT-6.S081/Labs/1-Lab-util.md)
+      * [1-util](Course/MIT-6.S081/Labs/1-util.md)
+      * [2-syscall](Course/MIT-6.S081/Labs/2-syscall.md)
     * [1-Introduction-and-Examples](Course/MIT-6.S081/1-Introduction-and-Examples.md)
     * [10-Multiprocessors-and-locking](Course/MIT-6.S081/10-Multiprocessors-and-locking.md)
     * [11-Thread-switching](Course/MIT-6.S081/11-Thread-switching.md)
