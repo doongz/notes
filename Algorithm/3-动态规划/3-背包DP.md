@@ -1,12 +1,12 @@
 # 背包问题概述
 
-参考 1：[宫水三叶 背包问题合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4NDE3MTEyMA==&action=getalbum&album_id=1751702161341628417#wechat_redirect)
+来源：[宫水三叶 背包问题合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4NDE3MTEyMA==&action=getalbum&album_id=1751702161341628417#wechat_redirect)
 
-参考 2：[oi-wiki 背包dp](https://oi-wiki.org/dp/knapsack/)
+参考 1：[oi-wiki 背包dp](https://oi-wiki.org/dp/knapsack/)
 
-参考 3：[【深度好文】详解背包问题：每五道动态规划就有一道是背包模型 ](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247484403&idx=3&sn=5c0ed0793daee7a6d36e3557535a0630&chksm=fd9ca8eccaeb21fa769268082f08507e92ab63736aa829801253365676ee90ff8c2d41f32716&scene=178&cur_album_id=1748759632187047943#rd)
+参考 2：[【深度好文】详解背包问题：每五道动态规划就有一道是背包模型 ](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247484403&idx=3&sn=5c0ed0793daee7a6d36e3557535a0630&chksm=fd9ca8eccaeb21fa769268082f08507e92ab63736aa829801253365676ee90ff8c2d41f32716&scene=178&cur_album_id=1748759632187047943#rd)
 
-参考 4：[组合优化算法](https://baike.baidu.com/item/组合优化算法/20837241?fr=aladdin)
+参考 3：[组合优化算法](https://baike.baidu.com/item/组合优化算法/20837241?fr=aladdin)
 
 ## 前置知识：组合优化算法
 
@@ -490,9 +490,468 @@ int maxValue(int N, int C, vector<int>& worth, vector<int>& volume) {
 
 这里要注意鉴别：「力扣」第 377 题 组合总和 Ⅳ，不是「完全背包」问题。
 
-
-
 ## 三、多重背包
+
+有 N 种物品和一个容量为 C 的背包，每种物品「**数量有限**」
+
+第 i 件物品的体积是 volume[i]，价值是 worth[i]，数量为 amount[i]
+
+问选择哪些物品，每件物品选择多少件，可使得总价值最大。
+
+其实就是在 0-1 背包问题的基础上，增加了每件物品可以选择「有限次数」的特点（在容量允许的情况下）。
+
+```
+输入: N = 2, C = 5, v = [1,2], w = [1,2], s = [2,1]   
+输出: 4
+解释: 选两件物品 1，再选一件物品 2，可使价值最大。
+```
+
+### 1、常规 `dp[N][C+1]` 解法
+
+**在之前的章节我们说过，几乎所有的「背包问题」都是基于「01 背包」演变而来**。
+
+因此，当我们确定一个问题是背包问题之后，可以根据其物品的「数量限制」来判别是何种背包问题，然后套用「01 背包」的思路来求解。
+
+具体的，我们可以套用「01 背包」的「状态定义」来进行分析：
+
+**1. 定义状态**
+
+`dp[i][c]`  表示在 [0, i] 范围内的物品，当前背包的容量为`c`，这种情况下可以装的最大价值是`dp[i][c]`
+
+**2. 状态转移方程**
+
+由于每件物品可以被选择「有限次」，因此对于某个 `dp[i][c]` 而言，其值应该为以下所有可能方案中的最大值：
+
+- 选择 0 件物品 i 的最大价值，即 `dp[i-1][c]`
+- 选择 1 件物品 i 的最大价值，即 `dp[i-1][c - volume[i]] + worth[i]`
+- 选择 2 件物品 i 的最大价值，即 `dp[i-1][c - 2*volume[i]] + 2 * worth[i]`
+- ...
+- 选择 k 件物品 i 的最大价值，即 `dp[i-1][c - k*volume[i]] + k * worth[i]`
+
+可以发现其状态转移方程的过程与 「完全背包」 完全一致，**只是多了`k <= amount[i]` 的条件**。
+
+也好理解，毕竟「完全背包」不限制物品数量，「多重背包」限制物品数量。
+
+**3. 初始化**
+
+先处理第一件物品
+
+显然当只有一件物品的时候，在容量允许的情况下，能选多少件就选多少件（不超过限制数量）
+
+**4. 输出**
+
+`dp[N-1][C]`
+
+**复杂度分析**
+
+时间复杂度：`O(N*C*A)`
+
+空间复杂度：`O(N*C)`
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    vector<vector<int>> dp(N, vector<int>(C + 1, 0));
+
+    // 预处理第一件物品
+    for (int c = 0; c < C; c++) {
+        int maxk = min(c / volume[0], amount[0]);
+        dp[0][c] = maxk * worth[0];
+    }
+
+    for (int i = 1; i < N; i++) {
+        for (int c = 0; c <= C; c++) {
+            int no = dp[i - 1][c];  // 不选
+            int yes = 0;            // 选
+            for (int k = 1; c - k * volume[i] >= 0; k++) {
+                if (k <= amount[i]) {
+                    yes = max(yes, dp[i - 1][c - k * volume[i]] + k * worth[i]);
+                }
+            }
+            dp[i][c] = max(no, yes);
+        }
+    }
+    return dp[N - 1][C];
+}
+```
+
+### 2、滚动数组 `dp[2][C+1]` 解法
+
+时间复杂度：`O(N*C*A)`
+
+空间复杂度：`O(C)`
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    vector<vector<int>> dp(2, vector<int>(C + 1, 0));
+
+    // 预处理第一件物品
+    for (int c = 0; c < C; c++) {
+        int maxk = min(c / volume[0], amount[0]);
+        dp[0][c] = maxk * worth[0];
+    }
+
+    for (int i = 1; i < N; i++) {
+        for (int c = 0; c <= C; c++) {
+            int no = dp[(i - 1) & 1][c];  // 不选
+            int yes = 0;                  // 选
+            for (int k = 1; c - k * volume[i] >= 0; k++) {
+                if (k <= amount[i]) {
+                    yes = max(yes, dp[(i - 1) & 1][c - k * volume[i]] + k * worth[i]);
+                }
+            }
+            dp[i & 1][c] = max(no, yes);
+        }
+    }
+    return dp[(N - 1) & 1][C];
+}
+```
+
+### 3、一维空间 `dp[C+1]` 解法
+
+在之前的「01 背包」和「完全背包」都可以进行「一维空间优化」，其中「完全背包」的「一维空间优化」还能有效降低时间复杂度。
+
+那么「多重背包」是否也能通过「一维空间优化」来降低时间复杂度呢？
+
+**可以优化空间，但是不能降低时间复杂度**，因为当我们像「完全背包」那样只保留「容量维度」，并且「从小到大」遍历容量的话，我们在转移 `dp[c]` 时是**无法直接知道 `dp[c - volume[i]]` 所依赖的到底使用了多少件物品 i 的**。
+
+这个问题在「完全背包」里面无须关心，因为每件物品可以被选择无限次，而在「多重背包」则是不能忽略，否则可能会违背物品件数有限的条件。
+
+写法上和「01 背包」类似，容量维度「从大到小遍历」
+
+时间复杂度：`O(N*C*A)`
+
+空间复杂度：`O(C)`
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    vector<int> dp(C + 1, 0);
+
+    // 预处理第一件物品
+    for (int c = 0; c < C; c++) {
+        int maxk = min(c / volume[0], amount[0]);
+        dp[c] = maxk * worth[0];
+    }
+
+    for (int i = 1; i < N; i++) {
+        for (int c = C; c - volume[i] >= 0; c--) {  // 这里也可以写 c>=0
+            for (int k = 0; k <= amount[i]; k++) {
+                if (c - k * volume[i] >= 0) {
+                    dp[c] = max(dp[c], dp[c - k * volume[i]] + k * worth[i]);
+                }
+            }
+        }
+    }
+    return dp[C];
+}
+```
+
+### 4、与其他背包的内在关系
+
+我们发现，只有「完全背包」的「一维空间优化」是存在数学意义上的优化（能够有效降低算法时间复杂度）。
+
+「01 背包」和「多重背包」的「一维空间优化」其实只是基于「朴素二维」解法做单纯的「滚动」操作而已（利用状态之间的依赖关系，配合遍历顺序，使得不再需要参与转移的空间能够被重新利用）。
+
+因此，一定程度上，可以将「多重背包」看做是一种特殊的「01 背包」。
+
+对「01 背包」中具有相同的价值 & 成本的物品进行计数，就成了对应物品的「限制件数」，「01 背包」也就转换成了「多重背包」。
+
+同理，将「多重背包」的多件物品进行「**扁平化展开**」，就转换成了「01 背包」。
+
+扁平化需要遍历所有物品，枚举每件物品的数量，将其添加到一个新的物品列表里。再套用「01 背包」的解决方案。
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    // 将多件数量的同一物品进行「扁平化」展开，以 [volume[i], worth[i]] 形式存储
+    vector<vector<int>> arr;
+    for (int i = 0; i < N; i++) {
+        int cnt = amount[i];
+        while (cnt > 0) {
+            arr.push_back({volume[i], worth[i]});
+            cnt--;
+        }
+    }
+    // 使用「01 背包」进行求解
+    vector<int> dp(C + 1, 0);
+    for (int i = 0; i < arr.size(); i++) {
+        int vi = arr[i][0], wi = arr[i][1];
+        for (int c = C; c - vi >= 0; c--) {
+            dp[c] = max(dp[c], dp[c - vi] + wi);
+        }
+    }
+    return dp[C];
+}
+```
+
+可以发现，转换成「01 背包」之后，时间复杂度并没有发生变化。因此将「多重背包」简单的转换成「01 背包」并不能带来效率的提升
+
+这意味着我们只能解决 10^2 数量级的「多重背包」问题
+
+### 5、二进制优化
+
+二进制优化可以使得我们能解决的多重背包问题数量级从 10^2 上升为 10^3
+
+**所谓的「二进制优化」其实是指，我们如何将一个多重背包问题彻底转化为 0-1 背包问题，同时降低其复杂度**。
+
+在上一节我们的扁平化方式是直接展开，一个数量为 10 的物品等效于 [1,1,1,1,1,1,1,1,1,1]。
+
+**这样并没有减少运算量，但是如果我们能将 10 变成小于 10 个数，那么这样的「扁平化」就是有意义的**。
+
+#### 如何进行有意义的压缩
+
+学过 Linux 的都知道文件权限最高是 7，代表拥有读、写、执行的权限，但其实这个 7 是对应了 1、2、4 三个数字的，也就是 `r:1`、`w:2`、`x:4` ，三种权限的组合共有 8 种可能性。
+
+```
+___:0
+r__:1
+_w_:2
+rw_:3
+__x:4
+r_x:5
+_wx:6
+rwx:7
+```
+
+这里就采用了 3 个数来对应 8 种情况的“压缩”方法。
+
+我们也可以借鉴这样的思路：**将原本为 n 的物品用 ceil(log(n)) 个数来代替，从而降低算法复杂度**。
+
+7 可以用 `1、2、4` 来代替，像刚刚提到的 10 ，我们可以使用 `1、2、4、3` 来代替，你可能会有疑问，为什么是 `1、2、4、3`，而不是 `1、2、4、6` 或者 `1、2、4、8` 呢？
+
+其实把他们几个数加起来就知道了，`1、2、4、6` 可以表达的范围是 0~13，而 `1、2、4、8` 可以表达的范围是 0~15，而我们要求的是表达 10，大于 10 的范围是不能被选择的。
+
+所以我们可以在 `1、2、4` （表达的范围是 0~7）的基础上，增加一个数 3（由 10 - 7 而来），这样就能满足我们需要表达的范围 0~10。
+
+> 通过 r w x 可以组成 0-7 任意一个数，在状态转移的过程中，包含了这些可能的情况
+
+进行扁平化：如果一件物品规定的使用次数为 7 次，我们将其扁平化为三件物品：1重量&1价值、2重量&2价值、4重量&4价值
+
+三件物品都不选对应了我们使用该物品 0 次的情况、只选择第一件扁平物品对应使用该物品 1 次的情况、只选择第二件扁平物品对应使用该物品 2 次的情况，只选择第一件和第二件扁平物品对应了使用该物品 3 次的情况 ...
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    // 1、扁平化
+    vector<int> new_worth;
+    vector<int> new_volume;
+    // 我们希望每件物品都进行扁平化，所以首先遍历所有的物品
+    for (int i = 0; i < N; i++) {
+        int cnt = amount[i];
+        for (int k = 1; k <= cnt; k *= 2) {
+            new_worth.push_back(k * worth[i]);
+            new_volume.push_back(k * volume[i]);
+            cnt -= k;
+        }
+        if (cnt > 0) {
+            new_worth.push_back(cnt * worth[i]);
+            new_volume.push_back(cnt * volume[i]);
+        }
+    }
+
+    // 2、使用「01 背包」进行求解
+    int n = new_worth.size();
+    vector<int> dp(C + 1, 0);
+    for (int i = 0; i < n; i++) {
+        for (int c = C; c - new_volume[i] >= 0; c--) {
+            dp[c] = max(dp[c], dp[c - new_volume[i]] + new_worth[i]);
+        }
+    }
+    return dp[C];
+}
+```
+
+时间复杂度：$\sum^{n-1}_{i=0}log\ s[i]*C$
+
+空间复杂度：$\sum^{n-1}_{i=0}log\ s[i]+C$
+
+二进制优化可以「**将原本数量为 s[i] 的物品拆分成 log s[i] 件**」，使得我们转化为 01 背包后的物品数量下降了一个数量级。
+
+### 6、单调队列优化
+
+来源：[多重背包の单调队列优化](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486963&idx=1&sn=51d34f0f841122ed9be2335a402041e8&chksm=fd9ca6eccaeb2ffa1abe413177be376799b427b092bfb73c13e7b77e171b460f4c24b3b7d3bc&scene=178&cur_album_id=1751702161341628417#rd)
+
+「看不懂」
+
+**单调队列优化，某种程度上也是利用「分类」实现优化。只不过不再是针对「物品」做分类，而是针对「状态」做分类**
+
+首先，我们还是使用一维空间优化的定义： **dp[c] 代表容量不超过 c 时的最大价值**
+
+当遍历完所有的物品后，dp[C]  就是最优解。
+
+在朴素的多重背包解决方案中，当我们在处理某一个物品从 `dp[0]` 到 `dp[C]` 的状态时，每次都是通过遍历当前容量 `c` 能够装多少件该物品，然后从所有遍历结果中取最优。
+
+但事实上，**转移只会发生在「对当前物品体积取余相同」的状态之间**。
+
+假设当前我们处理到的物品体积和价值均为 2，数量为 3，而我们背包容量为 10
+
+那么我们转移 dp[0] 到 dp[10] 时，其实存在如下规律：
+
+- dp[10] 只能由 dp[8]、dp[6]、dp[4] 转移而来
+- dp[9] 只能由 dp[7]、dp[5]、dp[3] 转移而来
+- ......
+- dp[5] 只能由 dp[3]、dp[1] 转移而来
+- dp[4] 只能由 dp[2]、dp[0] 转移而来
+- dp[3] 只能由 dp[1] 转移而来
+- dp[2] 只能由 dp[0] 转移而来
+
+**即某个状态 `dp[c]` 只能由 `volume[i] mod c` 相同（volume[i] 为当前物品体积，c 为当前背包容量），并且比 c 小，数量不超过「物品个数」的状态值所更新**。
+
+因此这其实是一个「滑动窗口求最值」问题。
+
+**如果我们能够在转移 dp[c] 时，以 O(1) 或者均摊 O(1) 的复杂度从「能够参与转移的状态」中找到最大值，我们就能省掉「朴素多重背包」解决方案中最内层的“决策”循环，从而将整体复杂度降低到 O(N*C)** 
+
+具体的，我们定义一个 数组 g，用来记录上一次物品的转移结果；定义一个 q 数组来充当队列，队列中存放本次转移的结果。
+
+由于我们希望在 O(1) 复杂度内取得「能够参与转移的状态」中的最大值，自然期望能够在对队列头部或者尾部直接取得目标值来更新 dp[c]。
+
+我们发现如果希望始终从队头取值更新的话，需要维持「队列元素单调」和「特定的窗口大小」
+
+```java
+class Solution {
+    public int maxValue(int N, int C, int[] s, int[] v, int[] w) {
+        int[] dp = new int[C + 1];
+        int[] g = new int[C + 1]; // 辅助队列，记录的是上一次的结果
+        int[] q = new int[C + 1]; // 主队列，记录的是本次的结果
+
+        // 枚举物品
+        for (int i = 0; i < N; i++) {
+            int vi = v[i];
+            int wi = w[i];
+            int si = s[i];
+
+            // 将上次算的结果存入辅助数组中
+            g = dp.clone();
+
+            // 枚举余数
+            for (int j = 0; j < vi; j++) {
+                // 初始化队列，head 和 tail 分别指向队列头部和尾部
+                int head = 0, tail = -1;
+                // 枚举同一余数情况下，有多少种方案。
+                // 例如余数为 1 的情况下有：1、vi + 1、2 * vi + 1、3 * vi + 1 ...
+                for (int k = j; k <= C; k+=vi) {
+                    dp[k] = g[k];
+                    // 将不在窗口范围内的值弹出
+                    if (head <= tail && q[head] < k - si * vi) head++;
+                    // 如果队列中存在元素，直接使用队头来更新
+                    if (head <= tail) dp[k] = Math.max(dp[k], g[q[head]] + (k - q[head]) / vi * wi);
+                    // 当前值比对尾值更优，队尾元素没有存在必要，队尾出队
+                    while (head <= tail && g[q[tail]] - (q[tail] - j) / vi * wi <= g[k] - (k - j) / vi * wi) tail--;
+                    // 将新下标入队 
+                    q[++tail] = k;
+                }
+            }
+        }
+        return dp[C];
+    }
+}
+```
+
+- 时间复杂度：`O(N*C)`
+- 空间复杂度：`O(C)`
+
+## 四、混合背包
+
+### 三种传统背包问题回顾
+
+这里再回顾一下三种传统背包：
+
+- [01 背包](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247485638&idx=1&sn=d7468955c5b121664031fd5c1b5a6f10&scene=21#wechat_redirect)：强调每件物品**「只能选择一次」**。对其进行「一维空间优化」并不能降低时间复杂度，进行「一维空间优化」时要求**「容量维度“从大到小”进行遍历」**。
+- [完全背包](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486107&idx=1&sn=e5fa523008fc5588737b7ed801caf4c3&chksm=fd9ca184caeb28926959c0987208a3932ed9c965267ed366b5b82a6fc16d42f1ff40c29db5f1&token=990510480&lang=zh_CN&scene=21#wechat_redirect)：强调每件物品**「可以选择无限次」**。对其进行「一维空间优化」具有数学意义，可以将时间复杂度从 `O(N*N*C)` 降低到 `O(N*C)`，进行「一维空间优化」时要求**「容量维度“从小到大”进行遍历」**。
+- [多重背包](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486649&idx=1&sn=ba09ee2d78377c2ddbb9e43622880133&chksm=fd9ca7a6caeb2eb0db61b7604a4aaa8d3ca90d6bc05eb6f50aaab415c4bd7f0047c1ca591018&token=1008907671&lang=zh_CN&scene=21#wechat_redirect)：强调每件物品**「只能选择有限次」**。对其无论是进行「一维空间优化」还是「普通扁平化」都不能降低时间复杂度，要应用额外的优化手段：[二进制优化](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486796&idx=1&sn=a382b38f8aed295410550bb1767437bd&chksm=fd9ca653caeb2f456262bbf70ffe1eeda8758b426a901a6ac15be184e7017870020e456c6fa2&token=1821593597&lang=zh_CN&scene=21#wechat_redirect) 或 [单调队列优化](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486963&idx=1&sn=51d34f0f841122ed9be2335a402041e8&chksm=fd9ca6eccaeb2ffa1abe413177be376799b427b092bfb73c13e7b77e171b460f4c24b3b7d3bc&token=496118769&lang=zh_CN&scene=21#wechat_redirect) 。
+
+三种背包问题的**「难易程度」**是**「递增」**，但**「重要程度」**则是**「递减」** 的。
+
+虽然「多重背包」的 [二进制优化](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486796&idx=1&sn=a382b38f8aed295410550bb1767437bd&chksm=fd9ca653caeb2f456262bbf70ffe1eeda8758b426a901a6ac15be184e7017870020e456c6fa2&token=1821593597&lang=zh_CN&scene=21#wechat_redirect) 和 [单调队列优化](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247486963&idx=1&sn=51d34f0f841122ed9be2335a402041e8&chksm=fd9ca6eccaeb2ffa1abe413177be376799b427b092bfb73c13e7b77e171b460f4c24b3b7d3bc&token=496118769&lang=zh_CN&scene=21#wechat_redirect) 都比较 trick。
+
+但其实「多重背包」并没有这么常见，以至于在 LeetCode 上我都没找到与「多重背包」相关的题目。
+
+同时三种背包问题都有「**不超过**」和「**恰好**」两种状态定义。**这两种状态定义只在「初始化」上有区别**
+
+至于该如何初始化则要抓住 **什么样的状态是合法的** ：
+
+- 对于「不超过」的状态定义： `dp[0][c]` 均为合法值 0。
+
+  代表不考虑任何物品，背包容量「不超过 」的所取得的最大价值为 0。
+
+- 对于「恰好」的状态定义：`dp[0][c]` 中只有 `dp[0][0]` 为合法值 0，其他值均为“无效值”。
+
+  代表不考虑任何物品，只有背包容量「恰好为 0」时所取得的最大价值为 ；其他容量「恰好为非 0」是无法取得有效价值的（因为不考虑任何物品）。
+
+总的来说，三种背包问题都很经典（本质上都是组合优化问题），以至于「背包问题」直接成为了一类的动态规划模型。
+
+**我的建议是三种背包都需要掌握。但如果实在要分侧重点的话，我更愿意你将大多数时间花在「01 背包」和「完全背包」上**。
+
+---
+
+给定物品数量 N 和背包容量 C。第 i 件物品的体积是 volume[i]，价值是 worth[i]，可用数量为 amount[i]：
+
+- 当 amount[i] 为 -1 代表是该物品只能用一次
+- 当 amount[i] 为 0 代表该物品可以使用无限次
+- 当 amount[i] 为任意正整数则代表可用 amount[i] 次
+
+求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大。
+
+---
+
+**基本分析**
+
+混合背包其实就是综合了「01 背包」、「完全背包」和「多重背包」三种传统背包问题。
+
+我们知道在一维空间优化方式中「01 背包」将当前容量 c 按照“从大到小”进行遍历，而「完全背包」则是将当前容量 c 按照“从小到大”进行遍历。
+
+同时「多重背包」可以通过「二进制优化」彻底转移成「01 背包」。
+
+所以我们只需要**根据第 i 个物品是「01 背包」物品还是「完全背包」物品，选择不同的遍历顺序即可**。
+
+```c++
+int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>& amount) {
+    // 构造出物品的「价值」和「体积」列表
+    vector<int> new_worth;
+    vector<int> new_volume;
+    // 我们希望每件物品都进行扁平化，所以首先遍历所有的物品
+    for (int i = 0; i < N; i++) {
+        int cnt = amount[i];
+
+        // 多重背包：应用「二进制优化」转换为 0-1 背包问题
+        if (cnt > 0) {
+            for (int k = 1; k <= cnt; k *= 2) {
+                new_worth.push_back(k * worth[i]);
+                new_volume.push_back(k * volume[i]);
+                cnt -= k;
+            }
+            if (cnt > 0) {
+                new_worth.push_back(cnt * worth[i]);
+                new_volume.push_back(cnt * volume[i]);
+            }
+        } else if (cnt == -1) {  // 01 背包：直接添加
+            new_worth.push_back(worth[i]);
+            new_volume.push_back(volume[i]);
+        } else if (cnt == 0) {  // 完全背包：对 worth 做翻转进行标记
+            new_worth.push_back(-worth[i]);
+            new_volume.push_back(volume[i]);
+        }
+    }
+
+    // 使用「一维空间优化」方式求解三种背包问题
+    int n = new_worth.size();
+    vector<int> dp(C + 1, 0);
+    for (int i = 0; i < n; i++) {
+        int wor = new_worth[i];
+        int vol = new_volume[i];
+        // 完全背包：容量「从小到大」进行遍历
+        if (wor < 0) {
+            for (int c = vol; c <= C; c++) {
+                dp[c] = max(dp[c], dp[c - vol] - wor);  // 同时记得将 worth 重新翻转为正整数
+            }
+        } else {
+            // 01 背包：包括「原本的 01 背包」和「经过二进制优化的完全背包」
+            // 容量「从大到小」进行遍历
+            for (int c = C; c - vol >= 0; c--) {
+                dp[c] = max(dp[c], dp[c - vol] + wor);
+            }
+        }
+    }
+    return dp[C];
+}
+```
 
 
 
