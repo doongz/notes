@@ -1,5 +1,17 @@
 # tmux
 
+鼠标可以做很多操作，
+
+可以上下拖动，查看结果，并且可以选择windows，选择pane，调整pane大小，都可以使用鼠标或者trackpad
+
+```shell
+$ vim ~/.tmux.conf
+set-option -g mouse on
+$ tmux source ~/.tmux.conf
+```
+
+
+
 参考：[tmux基本操作](https://blog.csdn.net/sui_152/article/details/121650341)
 
 Tmux 窗口有大量的快捷键。所有快捷键都要通过前缀键唤起。默认的前缀键是Ctrl+b，即先按下Ctrl+b，快捷键才会生效。
@@ -21,7 +33,7 @@ Tmux 窗口有大量的快捷键。所有快捷键都要通过前缀键唤起。
 | Ctrl+b Ctrl+<arrow key> | 按箭头方向调整窗格大小                       |
 | Ctrl+b !                | 将当前窗格拆分为一个独立窗口。               |
 | Ctrl+b z                | 当前窗格全屏显示，再使用一次会变回原来大小。 |
-| Ctrl+b q                | 显示窗格编号                                 |
+| Ctrl+b q + 数字         | 显示窗格编号，快速按数字键可跳转窗口         |
 |                         |                                              |
 | Ctrl+b {                | 当前窗格与上一个窗格交换位置                 |
 | Ctrl+b }                | 当前窗格与下一个窗格交换位置                 |

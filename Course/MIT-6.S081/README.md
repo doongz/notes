@@ -14,7 +14,9 @@ https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/
 
 
 
-建议直接刷「课程翻译」，然后把「实验做完」
+1. 建议先刷「课程翻译」
+2. 再看「视频」
+3. 最后把「实验」做完
 
 
 

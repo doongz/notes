@@ -164,7 +164,7 @@
 
 - [MIT-6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
 - [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
-- [MIT-6.828「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.828)
+- [MIT-6.828 Research In Operating Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.828)
 - [课表推荐](./Course/课表推荐.md)  `Stanford`  `MIT`  `南京大学`
 
 ### Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)
