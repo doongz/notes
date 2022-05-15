@@ -425,7 +425,7 @@
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
   - [南京大学-操作系统](Course/南京大学-操作系统/README.md)
-  - [MIT-6.828](Course/MIT-6.828/README.md)
+  - [MIT-6.824](Course/MIT-6.824/README.md)
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
     - Labs
       * [0-实验代码使用](Course/MIT-6.S081/Labs/0-实验代码使用.md)
@@ -454,7 +454,7 @@
     * [7-Q&A-labs](Course/MIT-6.S081/7-Q&A-labs.md)
     * [8-Page-faults](Course/MIT-6.S081/8-Page-faults.md)
     * [9-Interrupts](Course/MIT-6.S081/9-Interrupts.md)
-  * [课表推荐](Course/课表推荐.md)
+  * [Stanford课表推荐](Course/Stanford课表推荐.md)
 - Interview
   - 1-找工作经验
     * [1-字节跳动](Interview/1-找工作经验/1-字节跳动.md)

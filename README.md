@@ -98,7 +98,6 @@
 - [Assembly Language「未完工」](https://dowalle.gitbook.io/algo/skill/asm)
 - [C「未完工」](https://dowalle.gitbook.io/algo/skill/c)
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
-
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
   - [面向对象](https://dowalle.gitbook.io/algo/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `多态与虚函数`  `运算符重载`  `模版和范型`
@@ -163,9 +162,9 @@
 ### Chapter-4 [Course](https://dowalle.gitbook.io/algo/course)
 
 - [MIT-6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
+- [MIT-6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.828)
 - [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
-- [MIT-6.828 Research In Operating Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.828)
-- [课表推荐](./Course/课表推荐.md)  `Stanford`  `MIT`  `南京大学`
+- [Stanford 课表推荐](./Course/Stanford课表推荐.md)
 
 ### Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)
 

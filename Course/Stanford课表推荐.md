@@ -28,9 +28,5 @@
 | CS149 平行计算           | https://gfxcourses.stanford.edu/cs149/fall21                 | 选修   |
 | CS154 自动机和计算复杂性 | https://omereingold.wordpress.com/cs-154-introduction-to-automata-and-complexity-theory/ | 必修   |
 
-## MIT
 
-MIT-6.S081 Introduction to Operating Systems https://pdos.csail.mit.edu/6.828/2020/index.html
-
-MIT-6.828 research in operating systems https://abelay.github.io/6828seminar/index.html
 

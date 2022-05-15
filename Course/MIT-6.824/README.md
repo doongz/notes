@@ -1,6 +1,24 @@
+# MIT-6.824 
+
+课程链接： https://pdos.csail.mit.edu/6.824/
+
+课表：https://pdos.csail.mit.edu/6.824/schedule.html
+
+视频：https://www.bilibili.com/video/BV16f4y1z7kn?spm_id_from=333.999.0.0
+
+课程翻译：https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/
+
+实验记录：
 
 
-简介
+
+1. 建议先刷「课程翻译」
+2. 再看「视频」
+3. 最后把「实验」做完
+
+
+
+## 简介
 
 一直在断断续续的学习mit 6.824 分布式系统这门课程。分布式系统是现在计算机软件系统中不可避免的一种架构，了解分布式系统对于构建任何大型分布式应用，对于理解分布式程序的运行，对于优化分布式程序的运行环境都有一定的帮助。
 
