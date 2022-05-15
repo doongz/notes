@@ -93,7 +93,15 @@
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 - **系列题目**   [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/5-xi-lie-ti-mu)  `括号问题`  `接雨水问题`
 
-### Chapter-2 [Skill](https://dowalle.gitbook.io/algo/skill)
+### Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)
+
+- [MIT-6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
+- [MIT-6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
+- [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
+- [MIT 课程推荐](./Course/MIT课程推荐.md)
+- [Stanford 课程推荐](./Course/Stanford课程推荐.md)
+
+### Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)
 
 - [Assembly Language「未完工」](https://dowalle.gitbook.io/algo/skill/asm)
 - [C「未完工」](https://dowalle.gitbook.io/algo/skill/c)
@@ -117,7 +125,7 @@
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 
-### Chapter-3 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
+### Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
 
 > *A systematic understanding of a subject is more conducive to generating interest and fostering creativity*
 
@@ -159,13 +167,6 @@
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
 - [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
-### Chapter-4 [Course](https://dowalle.gitbook.io/algo/course)
-
-- [MIT-6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
-- [MIT-6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.828)
-- [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
-- [Stanford 课表推荐](./Course/Stanford课表推荐.md)
-
 ### Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)
 
 > *Manuscript written in 2016, opened again in 2022*
@@ -192,20 +193,20 @@ book sm
 
 ## Statement
 
-> *Learning can only rely on your own accumulation and summary*  
->
-> > *All other materials and solutions are just for reference*  
-> >
-> > > *This repository is only used as its own summary*
+> *Learning only rely on your own accumulation and summary. All other materials or solutions are just for reference.*
+> 
+> *This repository is just used as my own summary.*
 
-`Publish`  [Gitbook](https://dowalle.gitbook.io/algo/)
+`Publish`  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
+
+`Reference`  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode)
 
 `License`  [CC-BY-SA-4.0 License](https://github.com/dowalle/algo/blob/main/LICENSE)
 
 <p>
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </p>
-`Reference`  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode)
+---
 
-`Thanks`  Your Star
+***Thanks Your Star***
 

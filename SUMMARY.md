@@ -454,7 +454,8 @@
     * [7-Q&A-labs](Course/MIT-6.S081/7-Q&A-labs.md)
     * [8-Page-faults](Course/MIT-6.S081/8-Page-faults.md)
     * [9-Interrupts](Course/MIT-6.S081/9-Interrupts.md)
-  * [Stanford课表推荐](Course/Stanford课表推荐.md)
+  * [MIT课程推荐](Course/MIT课程推荐.md)
+  * [Stanford课程推荐](Course/Stanford课程推荐.md)
 - Interview
   - 1-找工作经验
     * [1-字节跳动](Interview/1-找工作经验/1-字节跳动.md)
