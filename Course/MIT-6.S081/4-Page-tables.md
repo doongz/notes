@@ -1,5 +1,11 @@
 # [Page tables](https://pdos.csail.mit.edu/6.828/2020/lec/l-vm.txt)
 
+Directory中的一个条目被称为PTE
+
+内存管理单元（MMU，Memory Management Unit）
+
+CPU中需要有一些寄存器（SATP）用来存放表单在物理内存中的地址
+
 ## 4.1 课程内容简介
 
 今天的主题是虚拟内存（Virtual Memory）。具体来说，我们会介绍页表（page tables）。在后面的课程中，我们还会介绍虚拟内存相关的其他内容。
@@ -168,7 +174,7 @@
 
 我们之前提到的虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成（L2，L1，L0）。前9个bit被用来索引最高级的page directory（注：通常page directory是用来索引page table或者其他page directory物理地址的表单，但是在课程中，page table，page directory， page directory table区分并不明显，可以都认为是有相同结构的地址对应表单）。
 
-一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。
+一个directory是4096Bytes，就跟page的大小是一样的。**Directory中的一个条目被称为PTE**（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。
 
 所以实际上，SATP寄存器会指向最高一级的page directory的物理内存地址，之后我们用虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory。
 
@@ -369,45 +375,47 @@
 
 ## 4.6 kvminit 函数
 
+kvminit 函数的作用：设置内核地址空间
+
 接下来，让我们看一看代码，我认为很多东西都会因此变得更加清晰。
 
 首先，我们来做一个的常规操作，启动我们的XV6，这里QEMU实现了主板，同时我们打开gdb。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjLcF6o4ufpR5OzzYJ%2Fimage.png?alt=media&token=e5d42221-bdd8-4eeb-adb8-9198c4a1cfc2)
+![img](./doc/6s081-24.png)
 
 上一次我们看了boot的流程，我们跟到了main函数。main函数中调用的一个函数是kvminit（3.9），这个函数会设置好kernel的地址空间。kvminit的代码如下图所示：
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjcMW3TzZ3kdPwse0X%2Fimage.png?alt=media&token=080b793a-f859-479b-aa53-20dec81d4e88)
+![img](./doc/6s081-25.png)
 
 我们在前一部分看了kernel的地址空间长成什么样，这里我们来看一下代码是如何将它设置好的。首先在kvminit中设置一个断点，之后运行代码到断点位置。在gdb中执行layout split，可以看到（从上面的代码也可以看出）函数的第一步是为最高一级page directory分配物理page（注，调用kalloc就是分配物理page）。下一行将这段内存初始化为0。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjPnUXQpkVeqUpxKel%2Fimage.png?alt=media&token=23dd9a99-c0c5-40d1-932e-b3b312da8dbf)
+![img](./doc/6s081-26.png)
 
 之后，通过kvmmap函数，将每一个I/O设备映射到内核。例如，下图中高亮的行将UART0映射到内核的地址空间。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjRektDaeGzfk110hO%2Fimage.png?alt=media&token=95110bfc-81f8-49eb-bd06-c515c75a2e97)
+![img](./doc/6s081-27.png)
 
 我们可以查看一个文件叫做memlayout.h，它将4.5中的文档翻译成了一堆常量。在这个文件里面可以看到，UART0对应了地址0x10000000（注，4.5中的文档是真正SiFive RISC-V的文档，而下图是QEMU的地址，所以4.5中的文档地址与这里的不符）。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjUMl7fC1PZPtdo9UW%2Fimage.png?alt=media&token=556e83d5-cecc-43c0-8b25-7af2c7837297)
+![img](./doc/6s081-28.png)
 
-所以，通过kvmmap可以将物理地址映射到相同的虚拟地址（注，因为kvmmap的前两个参数一致）。
+所以，**通过kvmmap可以将物理地址映射到相同的虚拟地址**（注，因为kvmmap的前两个参数一致）。
 
 在page table实验中，第一个练习是实现vmprint，这个函数会打印当前的kernel page table。我们现在跳过这个函数，看一下执行完第一个kvmmap时的kernel page table。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjW0riMeQYsQz76yZu%2Fimage.png?alt=media&token=5efebad5-ab9a-4c19-9073-80b9f0539332)
+![img](./doc/6s081-29.png)
 
 我们来看一下这里的输出。第一行是最高一级page directory的地址，这就是存在SATP或者将会存在SATP中的地址。第二行可以看到最高一级page directory只有一条PTE序号为0，它包含了中间级page directory的物理地址。第三行可以看到中间级的page directory只有一条PTE序号为128，它指向了最低级page directory的物理地址。第四行可以看到最低级的page directory包含了PTE指向物理地址。你们可以看到最低一级 page directory中PTE的物理地址就是0x10000000，对应了UART0。
 
 前面是物理地址，我们可以从虚拟地址的角度来验证这里符合预期。我们将地址0x10000000向右移位12bit，这样可以得到虚拟地址的高27bit（index部分）。之后我们再对这部分右移位9bit，并打印成10进制数，可以得到128，这就是中间级page directory中PTE的序号。这与之前（4.4）介绍的内容是符合的。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKoqX3juAGIEtw1zvSN%2F-MKwkdhVQHoP9SPCHfEW%2Fimage.png?alt=media&token=d336e447-71f3-4ff1-bd56-0dc900390d8e)
+![img](./doc/6s081-30.png)
 
 从标志位来看（fl部分），最低一级page directory中的PTE有读写标志位，并且Valid标志位也设置了（4.3底部有标志位的介绍）。
 
 内核会持续的按照这种方式，调用kvmmap来设置地址空间。之后会对VIRTIO0、CLINT、PLIC、kernel text、kernel data、最后是TRAMPOLINE进行地址映射。最后我们还会调用vmprint打印完整的kernel page directory，可以看出已经设置了很多PTE。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjdk9613l99xINOywP%2Fimage.png?alt=media&token=9370aef4-86ae-42b8-a687-649170b099db)
+![img](./doc/6s081-31.png)
 
 这里就不过细节了，但是这些PTE构成了我们在4.5中看到的地址空间对应关系。
 
@@ -415,7 +423,7 @@
 
 > 学生：下面这两行内存不会越界吗？
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKoqX3juAGIEtw1zvSN%2F-MKwKP7Z063SggHz4lMz%2Fimage.png?alt=media&token=bcc6e605-b9ba-4d4f-a35b-f164f4c524f9)
+![img](./doc/6s081-32.png)
 
 > Frans：不会。这里KERNBASE是0x80000000，这是内存开始的地址。kvmmap的第三个参数是size，etext是kernel text的最后一个地址，etext - KERNBASE会返回kernel text的字节数，我不确定这块有多大，大概是60-90个page，这部分是kernel的text部分。PHYSTOP是物理内存的最大位置，PHYSTOP-text是kernel的data部分。会有足够的DRAM来完成这里的映射。
 
@@ -423,7 +431,7 @@
 
 之后，kvminit函数返回了，在main函数中，我们运行到了kvminithart函数。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKgiYv2CppKnuZEsKO3%2F-MKjffmTgmjxQO-BCcin%2Fimage.png?alt=media&token=050d4673-2526-43c7-83aa-6b623e840074)
+![img](./doc/6s081-33.png)
 
 这个函数首先设置了SATP寄存器，kernel_pagetable变量来自于kvminit第一行。所以这里实际上是内核告诉MMU来使用刚刚设置好的page table。当这里这条指令执行之后，下一个指令的地址会发生什么？
 
@@ -433,7 +441,7 @@
 
 这里能正常工作的原因是值得注意的。因为前一条指令还是在物理内存中，而后一条指令已经在虚拟内存中了。比如，下一条指令地址是0x80001110就是一个虚拟内存地址。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKlmAaMCuundOeRCH3F%2F-MKlq_20wJR-qcEYSVzE%2Fimage.png?alt=media&token=56a44d30-52dd-4244-99f5-5fa193ce32e5)
+![img](./doc/6s081-34.png)
 
 为什么这里能正常工作呢？因为kernel page的映射关系中，虚拟地址到物理地址是完全相等的。所以，在我们打开虚拟地址翻译硬件之后，地址翻译硬件会将一个虚拟地址翻译到相同的物理地址。所以实际上，我们最终还是能通过内存地址执行到正确的指令，因为经过地址翻译0x80001110还是对应0x80001110。
 
@@ -449,15 +457,15 @@
 
 > 学生提问：我对于walk函数有个问题，从代码看它返回了最高级page table的PTE，但是它是怎么工作的呢？（注，应该是学生理解有误，walk函数模拟了MMU，返回的是va对应的最低级page table的PTE）
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKlssQnZeSx7lgksqSn%2F-MKobARkVH8RO-KqKFAY%2Fimage.png?alt=media&token=a3e94560-8c29-452d-8545-d193c1cc3110)
+![img](./doc/6s081-35.png)
 
 > Frans教授：这个函数会返回page table的PTE，而内核可以读写PTE。我来画个图，首先我们有一个page directory，这个page directory 有512个PTE。最下面是0，最上面是511。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKlssQnZeSx7lgksqSn%2F-MKoc0cBkLRLrjnh7STD%2Fimage.png?alt=media&token=6eec7448-4215-4a80-9f01-37c45ef7ba46)
+![img](./doc/6s081-36.png)
 
 > 这个函数的作用是返回某一个PTE的指针。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKlssQnZeSx7lgksqSn%2F-MKocAls4NJRDhJ5zMRk%2Fimage.png?alt=media&token=c2b90fd1-36c8-4c97-8b97-377882385ec3)
+![img](./doc/6s081-37.png)
 
 > 这是个虚拟地址，它指向了这个PTE。之后内核可以通过向这个地址写数据来操纵这条PTE执行的物理page。当page table被加载到SATP寄存器，这里的更改就会生效。
 >
@@ -477,7 +485,7 @@
 >
 > Frans：每个CPU核只有一个SATP寄存器，但是在每个proc结构体，如果你查看proc.h，里面有一个指向page table的指针，这对应了进程的根page table物理内存地址。
 
-![img](https://906337931-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MKoqX3juAGIEtw1zvSN%2F-MKwGQTlJunKQ_2CI-P3%2Fimage.png?alt=media&token=2ea975e8-66b4-463e-b866-4e05c5c63a34)
+![img](./doc/6s081-38.png)
 
 > 学生提问：为什么通过3级page table会比一个超大的page table更好呢？
 >

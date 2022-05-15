@@ -562,7 +562,8 @@
     * [5-gdb](Skill/开发软件/5-gdb.md)
     * [6-gcc](Skill/开发软件/6-gcc.md)
     * [7-tmux](Skill/开发软件/7-tmux.md)
-  - [ASM](Skill/ASM/README.md)
+  - ASM
+    * [0-基本概念](Skill/ASM/0-基本概念.md)
   - [C](Skill/C/README.md)
     - C语言内存
       * [1-程序在计算机中如何运行](Skill/C/C语言内存/1-程序在计算机中如何运行.md)
