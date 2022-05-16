@@ -849,8 +849,6 @@ class Solution {
 
 ## 四、混合背包
 
-### 三种传统背包问题回顾
-
 这里再回顾一下三种传统背包：
 
 - [01 背包](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247485638&idx=1&sn=d7468955c5b121664031fd5c1b5a6f10&scene=21#wechat_redirect)：强调每件物品**「只能选择一次」**。对其进行「一维空间优化」并不能降低时间复杂度，进行「一维空间优化」时要求**「容量维度“从大到小”进行遍历」**。
@@ -953,15 +951,519 @@ int maxValue(int N, int C, vector<int>& worth, vector<int>& volume, vector<int>&
 }
 ```
 
+## 五、分组背包
+
+给定 **N 个物品组**，和容量为 C 的背包。
+
+第 i 个物品组共有 amount[i] 件物品（每件各不相同），其中第 i 组的第 j 件物品的成本为 `volume[i][j]`，价值为 `worth[i][j]`。
+
+每组有若干个物品，同一组内的物品最多只能选一个。
+
+求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大。
+
+示例：
+
+```
+输入：N = 2, C = 9, amount = [2, 3], volume = [[1,2,-1],[1,2,3]], worth = [[2,4,-1],[1,3,6]]
+输出：10
+```
+
+- 0 < N, C, amount[i] < 100
+
+---
+
+### 1、常规解法
+
+**1. 定义状态**
+
+`dp[i][c]` 为考虑前 i 个物品组，背包容量不超过 c 的最大价值
+
+**2. 状态转移方程**
+
+由于每组有若干个物品，且每组「最多」选择一件物品。即对于第 i 组而言，可决策的方案如下：
+
+- 不选择该组的任何物品：`dp[i][c] = dp[i-1][c]`
+- 选该组的第一件物品：`dp[i][c] = dp[i-1][c-volume[i][0]] + worth[i][0]`
+- 选该组的第二件物品：`dp[i][c] = dp[i-1][c-volume[i][1]] + worth[i][1]`
+- ...
+- 选该组的最后一件物品：`dp[i][c] = dp[i-1][c-volume[i][amount[i-1]]] + worth[i][amount[i-1]]`
+
+显然最终的 `dp[i][c]` 应该是从所有方案里取最大值
+
+**复杂度分析**
+
+时间复杂度：`O(N*C)`，N 为所有物品
+
+空间复杂度：`O(N*C)`
+
+```c++
+int maxValue(int N, int C, vector<vector<int>>& worth, vector<vector<int>>& volume, vector<int>& amount) {
+    vector<vector<int>> dp(N + 1, vector<int>(C + 1, 0));
+    for (int i = 1; i <= N; i++) {
+        vector<int> vi = volume[i - 1];
+        vector<int> wi = worth[i - 1];
+        int kmax = amount[i - 1];
+        for (int c = 0; c <= C; c++) {
+            dp[i][c] = dp[i - 1][c];
+            for (int k = 0; k < kmax; k++) {
+                if (c - vi[k] >= 0) {
+                    dp[i][c] = max(dp[i][c], dp[i - 1][c - vi[k]] + wi[k]);
+                }
+            }
+        }
+    }
+    return dp[N][C];
+}
+```
+
+### 2、滚动数组
+
+```c++
+int maxValue(int N, int C, vector<vector<int>>& worth, vector<vector<int>>& volume, vector<int>& amount) {
+    vector<vector<int>> dp(2, vector<int>(C + 1, 0));
+    for (int i = 1; i <= N; i++) {
+        vector<int> vi = volume[i - 1];
+        vector<int> wi = worth[i - 1];
+        int kmax = amount[i - 1];
+        for (int c = 0; c <= C; c++) {
+            dp[i & 1][c] = dp[(i - 1) & 1][c];
+            for (int k = 0; k < kmax; k++) {
+                if (c - vi[k] >= 0) {
+                    dp[i & 1][c] = max(dp[i & 1][c], dp[(i - 1) & 1][c - vi[k]] + wi[k]);
+                }
+            }
+        }
+    }
+    return dp[N & 1][C];
+}
+```
+
+### 3、一维空间
+
+进一步，我们可以用「01 背包」类似的思路，进行一维空间优化：
+
+1. 取消物品维度；
+2. 将容量维度的遍历顺序修改为「从大到小」（确保所依赖的值不会被覆盖）。
+
+时间复杂度没降
+
+```c++
+int maxValue(int N, int C, vector<vector<int>>& worth, vector<vector<int>>& volume, vector<int>& amount) {
+    vector<int> dp(C + 1, 0);
+    for (int i = 1; i <= N; i++) {
+        vector<int> vi = volume[i - 1];
+        vector<int> wi = worth[i - 1];
+        int kmax = amount[i - 1];
+        for (int c = C; c >= 0; c--) {
+            // 此处内涵了不选的情况，dp[c]=dp[c]
+            for (int k = 0; k < kmax; k++) {
+                if (c - vi[k] >= 0) {
+                    dp[c] = max(dp[c], dp[c - vi[k]] + wi[k]);
+                }
+            }
+        }
+    }
+    return dp[C];
+}
+```
+
+## 六、多维背包
+
+这是 LeetCode 上的「474. 一和零」，难度为 Medium
+
+给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
+
+请你找出并返回 strs 的最大子集的长度，该子集中 最多 有 m 个 0 和 n 个 1 。
+
+如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
+
+```
+输入：strs = ["10", "0001", "111001", "1", "0"], m = 5, n = 3
+输出：4
+解释：最多有 5 个 0 和 3 个 1 的最大子集是 {"10","0001","1","0"} ，因此答案是 4 。
+其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。
+
+输入：strs = ["10", "0", "1"], m = 1, n = 1
+输出：2
+解释：最大的子集是 {"0", "1"} ，所以答案是 2 。
+```
+
+- 1 <= strs.length <= 600
+- 1 <= strs[i].length <= 100
+- strs[i] 仅由 '0' 和 '1' 组成
+- 1 <= m, n <= 100
+
+---
+
+### 基本分析
+
+通常与「背包问题」相关的题考察的是**将原问题转换为「背包问题」的能力**。
+
+要将原问题转换为「背包问题」，往往需要从题目中抽象出「价值」与「成本」的概念。
+
+这道题如果抽象成「背包问题」的话，应该是：
+
+**每个字符串的价值都是 1（对答案的贡献都是 1），选择的成本是该字符串中 1 的数量和 0 的数量**
+
+问我们在 1 的数量不超过 m，0 的数量不超过 n 的条件下，最大价值是多少。
+
+由于每个字符串只能被选一次，且每个字符串的选与否对应了「价值」和「成本」，求解的问题也是「最大价值」是多少。
+
+### 1、（多维）01 背包
+
+有了基本分析，我们可以直接套用 01 背包的「状态定义」来做：
+
+**1. 定义状态**
+
+`dp[i][c0][c1]` 表示 [0, i] 范围内的物品，数字 0 的容量不超过 c0，在数字 1 的容量不超过 c1，的条件下的「最大价值」
+
+每个字符串的价值为 1
+
+**2. 状态转移方程**
+$$
+dp[i][c0][c1] = max\{ dp[i-1][c0][c1], \ dp[i-1][c0-cnt[i][0]][c1-cnt[i][1]]+1\}
+$$
+其中 cnt 数组记录的是字符串中出现的 0、1 数量。
+
+**3. 初始化**
+
+预处理第一个物品的情况
+
+**4. 输出**
+
+`dp[k-1][m][n]`
+
+**复杂度分析**
+
+时间复杂度：$O(k*m*n + \sum^{k-1}_{i=0}len(strs[i]))$
+
+空间复杂度：`O(k*m*n)`
+
+```c++
+class Solution {
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        int sz = strs.size();
+        vector<vector<vector<int>>> dp(sz, vector<vector<int>>(m + 1, vector<int>(n + 1, 0)));
+
+        // 计算每一个字符包含 0 和 1 的数量
+        vector<vector<int>> cnt;
+        for (string str : strs) {
+            int zero = 0, one = 0;
+            for (char c : str) {
+                if (c == '0') {
+                    zero++;
+                } else if (c == '1') {
+                    one++;
+                }
+            }
+            cnt.push_back({zero, one});
+        }
+
+        // 预处理第一物品
+        for (int c0 = 0; c0 <= m; c0++) {
+            for (int c1 = 0; c1 <= n; c1++) {
+                if (cnt[0][0] <= c0 && cnt[0][1] <= c1) {
+                    dp[0][c0][c1] = 1;
+                } else {
+                    dp[0][c0][c1] = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < sz; i++) {
+            int zero = cnt[i][0];
+            int one = cnt[i][1];
+            for (int c0 = 0; c0 <= m; c0++) {
+                for (int c1 = 0; c1 <= n; c1++) {
+                    // 不选择第 i 件物品
+                    int no = dp[i - 1][c0][c1];
+                    // 选择第 i 件物品
+                    int yes = 0;
+                    if (c0 - zero >= 0 && c1 - one >= 0) {
+                        yes = dp[i - 1][c0 - zero][c1 - one] + 1;
+                    }
+                    dp[i][c0][c1] = max(no, yes);
+                }
+            }
+        }
+        return dp[sz - 1][m][n];
+    }
+};
+```
+
+换下定义的方式，可简化下代码
+
+`dp[i][c0][c1]` 表示前 i 件物品，数字 0 的容量不超过 c0，在数字 1 的容量不超过 c1，的条件下的「最大价值」
+
+```c++
+class Solution {
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        int sz = strs.size();
+        vector<vector<vector<int>>> dp(sz + 1, vector<vector<int>>(m + 1, vector<int>(n + 1, 0)));
+
+        // 计算每一个字符包含 0 和 1 的数量
+        vector<vector<int>> cnt;
+        for (string str : strs) {
+            int zero = 0, one = 0;
+            for (char c : str) {
+                if (c == '0') {
+                    zero++;
+                } else if (c == '1') {
+                    one++;
+                }
+            }
+            cnt.push_back({zero, one});
+        }
+
+        for (int i = 1; i <= sz; i++) {
+            int zero = cnt[i - 1][0];
+            int one = cnt[i - 1][1];
+            for (int c0 = 0; c0 <= m; c0++) {
+                for (int c1 = 0; c1 <= n; c1++) {
+                    // 不选择第 i 件物品
+                    int no = dp[i - 1][c0][c1];
+                    // 选择第 i 件物品
+                    int yes = 0;
+                    if (c0 - zero >= 0 && c1 - one >= 0) {
+                        yes = dp[i - 1][c0 - zero][c1 - one] + 1;
+                    }
+                    dp[i][c0][c1] = max(no, yes);
+                }
+            }
+        }
+        return dp[sz][m][n];
+    }
+};
+```
+
+### 2、滚动数组
+
+`dp[i][c0][c1]` 表示前 i 件物品，数字 0 的容量不超过 c0，在数字 1 的容量不超过 c1，的条件下的「最大价值」
+
+```c++
+class Solution {
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        int sz = strs.size();
+        vector<vector<vector<int>>> dp(2, vector<vector<int>>(m + 1, vector<int>(n + 1, 0)));
+
+        // 计算每一个字符包含 0 和 1 的数量
+        vector<vector<int>> cnt;
+        for (string str : strs) {
+            int zero = 0, one = 0;
+            for (char c : str) {
+                if (c == '0') {
+                    zero++;
+                } else if (c == '1') {
+                    one++;
+                }
+            }
+            cnt.push_back({zero, one});
+        }
+
+        for (int i = 1; i <= sz; i++) {
+            int zero = cnt[i - 1][0];
+            int one = cnt[i - 1][1];
+            for (int c0 = 0; c0 <= m; c0++) {
+                for (int c1 = 0; c1 <= n; c1++) {
+                    // 不选择第 i 件物品
+                    int no = dp[(i - 1) & 1][c0][c1];
+                    // 选择第 i 件物品
+                    int yes = 0;
+                    if (c0 - zero >= 0 && c1 - one >= 0) {
+                        yes = dp[(i - 1) & 1][c0 - zero][c1 - one] + 1;
+                    }
+                    dp[i & 1][c0][c1] = max(no, yes);
+                }
+            }
+        }
+        return dp[sz & 1][m][n];
+    }
+};
+```
+
+### 3、一维空间
+
+```c++
+class Solution {
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        int sz = strs.size();
+
+        // 计算每一个字符包含 0 和 1 的数量
+        vector<vector<int>> cnt;
+        for (string str : strs) {
+            int zero = 0, one = 0;
+            for (char c : str) {
+                if (c == '0') {
+                    zero++;
+                } else if (c == '1') {
+                    one++;
+                }
+            }
+            cnt.push_back({zero, one});
+        }
+
+        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+
+        for (int i = 0; i < sz; i++) {
+            int zero = cnt[i][0];
+            int one = cnt[i][1];
+            for (int c0 = m; c0 >= 0; c0--) {
+                for (int c1 = n; c1 >= 0; c1--) {
+                    // 此时内涵了不选当前的情况 dp[i] = dp[i]
+                    if (c0 - zero >= 0 && c1 - one >= 0) {
+                        dp[c0][c1] = max(dp[c0][c1], dp[c0 - zero][c1 - one] + 1);
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+};
+```
+
+## 七、树形背包
+
+有 N 个物品和一个容量为 C 的背包，物品编号为 0 - N-1。
+
+物品之间具有依赖关系，且依赖关系组成一棵树的形状。
+
+如下图所示：
+
+![dp-8](./doc/dp-8.png)
 
 
 
+如果选择一个物品，则必须选择它的父节点。
 
+第 i 件物品的体积为 `volume[i]`，价值为 `worth[i]`，其父节点物品编号为 `parent[i]`，其中根节点 `parent[i]=-1`
 
+求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。
 
+提示：0 < N, C < 100
 
+---
 
+树形背包又称为 **树上背包** 或是 **有依赖的背包问题**，其是「树形 DP」与「分组背包」的结合。
 
+在常规的「分组背包」问题中，我们采用的状态定义为：
+
+`f[i][j]` 为考虑前 i 个物品组，背包容量不超过 j 的最大价值
+
+从状态定义我们发现，常规的分组背包问题对物品组的考虑是“线性“的（从前往后考虑每个物品组）。
+
+然后在状态转移时，由于物品组之间没有依赖关系，限制只发生在”组内“（每组「最多」选择一件物品）。
+
+所以常规分组背包问题只需要采取「**枚举物品组 - 枚举背包容量 - 枚举组内物品（决策）**」的方式进行求解即可。
+
+**1. 定义状态**
+
+而在树形背包问题中，每个物品的决策与其父节点存在依赖关系，因此我们将”线性“的状态定义调整为”树形“的：
+
+`f[u][j]` 为考虑以 `u` 为根的子数，背包容量不超过 `j` 的最大价值
+
+**2. 状态转移方程**
+
+首先，根据树形背包的题目限制，对于以 `u` 为根的子树，无论选择哪个节点，都需要先把父节点选上。
+
+在此前提下，我们不失一般性的考虑 `f[u][j]` 该如何转移：
+
+如果从选择节点 `u` 的哪些子树入手的话，我们发现节点 `u` 最坏情况下会有 100 个子节点，而每个子节点都有选和不选两种决策，因此总的方案数为 `2^100`，这显然是不可枚举的。
+
+**这时候可以从”已有维度“的层面上对方案进行划分，而不是单纯的处理每一个具体方案**。
+
+我们知道最终这 `2^100` 个方案的最大价值会用于更新 。
+
+我们可以根据「容量」这个维度对这 `2^100` 个方案进行划分：
+
+- 消耗容量为 0 的方案数的最大价值；
+- 消耗容量为 1 的方案数的最大价值；
+- ...
+- 消耗容量为 `j-volume[u]` 的方案数的最大价值；
+
+消耗的容量的范围为 `[0, j-volume[u]]`，是因为需要预留 `volume[u]` 的容量选择当前的根节点 `u`。
+
+综上，最终的状态转移方程为（`x` 为节点 `u` 的子节点）：
+$$
+f[u][j] = max\{f[u][j], \ f[u][j-k]+f[x][k] \} \quad 0 \leq k \leq j-volume[u]
+$$
+从状态转移方式发现，在计算 `f[x][j]` 时需要用到 `f[x][k]`，因此我们需要先递归处理节点 `u` 的子节点 `x` 的状态值。
+
+**3. 初始化**
+
+**4. 输出**
+
+**空间优化**
+
+**复杂度分析**
+
+- 时间复杂度：建图的复杂度为 `O(n)`；共有 `n*c` 个状态需要被计算，每个状态的计算需要遍历分配多少容量给子节点，复杂度为 `O(c)`。整体复杂度为`O(n*c*c)`
+- 空间复杂度：`O(n*c)`
+
+```java
+class Solution {
+    int N = 110, M = N * 2;
+    int[] he = new int[N], e = new int[M], ne = new int[M];
+    int[] vi, wi;
+    int n, c, idx;
+    // 定义 f[u][j] 为考虑以 u 为根的子树，背包容量不超过 j 的最大价值
+    int[][] f = new int[N][N];
+
+    // 链式向前星存图
+    void add(int a, int b) {
+        e[idx] = b;
+        ne[idx] = he[a];
+        he[a] = idx;
+        idx++;
+    }
+
+    void dfs(int u) {
+        // 节点 u 的价值和体积
+        int cw = wi[u], cv = vi[u];
+        // 要选任一节点，必须先选 u，同时也限制了至少需要 cv 的容量
+        for (int i = cv; i <= c; i++) f[u][i] += cw;
+
+        // 遍历节点 u 的所有子节点 x（分组背包遍历物品组）
+        for (int i = he[u]; i != -1; i = ne[i]) {
+            int x = e[i];
+            // 递归处理节点 x
+            dfs(x); 
+            // 从大到小遍历背包容量（分组背包遍历容量）
+            for (int j = c; j >= 0; j--) {
+                // 遍历给节点 x 分配多少背包容量（分组背包遍历决策）
+                for (int k = 0; k <= j - cv; k++) {
+                    f[u][j] = Math.max(f[u][j], f[u][j - k] + f[x][k]);        
+                }
+            }
+        }
+    }
+
+    public int maxValue(int N, int C, int[] p, int[] v, int[] w) {
+        n = N; c = C;
+        vi = v; wi = w;
+        Arrays.fill(he, -1);
+        int root = -1;
+        for (int i = 0; i < n; i++) {
+            if (p[i] == -1) {
+                root = i;
+            } else {
+                add(p[i], i);
+            }
+        }
+        dfs(root);
+        return f[root][c];
+    }
+}
+```
+
+### 例题
+
+[【动态规划/背包问题】树形背包问题练习篇](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247488337&idx=1&sn=016e65bdff75841c9041a14adeb24f64&chksm=fd9cb84ecaeb315881676b5a5f72e5fa29073a316157f9175473852557ef2eeac33510ca66b5&scene=178&cur_album_id=1751702161341628417#rd)
+
+[【动态规划/背包问题】树形背包问题练习篇（二进制枚举）](https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&mid=2247488400&idx=1&sn=7ec15fd8dbb8d85fb9a895a7073157ce&chksm=fd9cb88fcaeb3199af0f638e39829591a9aef2210bb2254852e91c4b2d1003c5161a68944fe5&scene=178&cur_album_id=1751702161341628417#rd)
 
 
 
