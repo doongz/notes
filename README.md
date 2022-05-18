@@ -193,11 +193,9 @@ book sm
 
 ## Statement
 
-> *Learning only rely on your own accumulation and summary.*
+> 学习只能依靠自己的积累，其他所有的材料都只是参考。此仓库，也仅作为自己的积累。
 >
-> *All other materials or solutions are just for reference.*
->
-> *This repository is just used as my own summary.*
+> 如果涉及到任何版权行为，请联系我，我将删除内容。
 
 `Publish`  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
