@@ -144,3 +144,16 @@ GDB帮助命令，提供对GDB名种命令的解释说明。 如果指定了“�
 
 
 
+
+
+gdb中输入tui enable可以打开源代码展示窗口。
+
+在gdb中输入layout asm，可以在tui窗口看到所有的汇编指令。再输入layout reg可以看到所有的寄存器信息。
+
+你可以在gdb中输入info breakpoints，你可以看到所有设置了的断点。你甚至可以看到这个断点已经被命中了几次。
+
+现在我们在dummymain函数中。如果我们在gdb中输入info frame，可以看到有关当前Stack Frame许多有用的信息。
+
+输入backtrace（简写bt）可以看到从当前调用栈开始的所有Stack Frame。
+
+如果对某一个Stack Frame感兴趣，可以先定位到那个frame（frame 3）再输入info frame，假设对syscall的Stack Frame感兴趣。
