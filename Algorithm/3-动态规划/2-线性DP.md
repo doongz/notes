@@ -329,7 +329,7 @@ public:
 
 问总共有多少条不同的路径？
 
-![62](/Users/zhangdong/Desktop/algo/Algorithm/3-动态规划/doc/62.png)
+![62](./doc/62.png)
 
 - `1 <= m, n <= 100`
 - 题目数据保证答案小于等于 `2 * 10^9`
@@ -409,7 +409,7 @@ public:
 
 网格中的障碍物和空位置分别用 1 和 0 来表示。
 
-![63](/Users/zhangdong/Desktop/algo/Algorithm/3-动态规划/doc/63.png)
+![63](./doc/63.png)
 
 ```
 输入：obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
@@ -493,7 +493,7 @@ public:
 
 **说明：**每次只能向下或者向右移动一步。
 
-![64](/Users/zhangdong/Desktop/algo/Algorithm/3-动态规划/doc/64.jpeg)
+![64](/./doc/64.jpeg)
 
 ```
 输入：grid = [[1,3,1],[1,5,1],[4,2,1]]
