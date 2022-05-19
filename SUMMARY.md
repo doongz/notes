@@ -438,6 +438,7 @@
       * [1-util](Course/MIT-6.S081/Labs/1-util.md)
       * [2-syscall](Course/MIT-6.S081/Labs/2-syscall.md)
       * [4-page-tables](Course/MIT-6.S081/Labs/4-page-tables.md)
+      * [6-trap](Course/MIT-6.S081/Labs/6-trap.md)
     * [1-Introduction-and-Examples](Course/MIT-6.S081/1-Introduction-and-Examples.md)
     * [10-Multiprocessors-and-locking](Course/MIT-6.S081/10-Multiprocessors-and-locking.md)
     * [11-Thread-switching](Course/MIT-6.S081/11-Thread-switching.md)

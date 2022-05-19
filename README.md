@@ -96,6 +96,7 @@
 ### Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)
 
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
+  - `syscall`  `page table`  `trap`
 - [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
@@ -117,7 +118,7 @@
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`
-- [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker CLI`  `k8s CLI`  `ceph CLI`
+- [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
@@ -126,8 +127,6 @@
 
 
 ### Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
-
-> *A systematic understanding of a subject is more conducive to generating interest and fostering creativity*
 
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
@@ -188,12 +187,12 @@
 [Generate SUMMARY.md](https://github.com/imfly/gitbook-summary) for gitbook:
 
 ```shell
-book sm
+$ book sm
 ```
 
 ## Statement
 
-> 学习只能依靠自己的积累，其他所有的材料都只是参考。此仓库，也仅作为自己的积累。
+> 学习只能依靠自己的积累，其他所有的材料都只是参考。此仓库，也仅作为自己学习时的笔记。
 >
 > 如果涉及到任何版权行为，请联系我，我将删除内容。
 
