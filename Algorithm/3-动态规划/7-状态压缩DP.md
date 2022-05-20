@@ -2,79 +2,25 @@
 
 **使用一个二进制数记录当前哪些数已被选，哪些数未被选，目的是为了可以使用位运算进行加速**
 
-**应用：状态压缩可用在 dfs、bfs、dp 中**
+**应用：状态压缩可用在 dfs、bfs、dp 中，将状态维度从 n 维降至 1 维**
 
-**注意：num 不能太大，一般是 15 以下**
+**注意：n 不能太大，一般是 15 以下**
 
 ```
-我们可以通过一个具体的样例，来感受下「状态压缩」是什么意思：
-
 例如一串二进制数 000...01010
+
 代表值为 1 和值为 3 的数字已经被使用了，而值为 0、2 的节点尚未被使用。
 ```
 
-然后再来看看使用「状态压缩」的话，一些基本的操作该如何进行：
+「状态压缩」的一些基本的操作：有 `n` 个节点，变量 `state` 存放了「当前节点的使用情况」
 
-假设变量 `state` 存放了「当前数的使用情况」
+- 总的 state 数量：`1 << n`，一个节点对应了选或不选，所以有 2^n 种可能
+- 记录 num 用过了：`state = (1 << num) | state`
+-  判断 num 有没有用过：`((state >> num) & 1) == 0`，等于 0 没用过，大于 0 用过，`(1 << num) & state) == 0` 也行，但前者更好理解
+- 查看选择 num 之前的 state：`state & (~(1 << num))`
+- 判断当前 state 是否将所有的节点都走过：`state == (1 << n) - 1`
 
-- 利用 `((state >> num) & 1) == 0` 判断 num 有没有用过，等于 0 没用过，大于 0 用过，`(1 << num) & state) == 0` 也行，但前者更好理解
-- 利用 `(1 << num) | state` 记录 num 用过了
-- `state & (~(1 << num))` 查看选择 num 之前的 state
-
-
-
-## 一、位运算基础
-
-```c++
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
-string dec_to_bin(int dec) {
-    vector<int> binL;
-    while (dec != 0) {
-        binL.push_back(dec % 2);
-        dec = dec / 2;
-    }
-    // 结果是逆序的，需要反过来
-    reverse(binL.begin(), binL.end());
-
-    string bin;
-    for (int b : binL) {
-        bin += b + 48;
-    }
-    return bin;
-}
-
-int main() {
-    int state = 0;  // 记录用过的数，初始时为0
-
-    cout << ((1 << 3) & state) << endl;  // 0 检查 3 有没有被用过，没有
-    state = (1 << 3) | state;            // 将 3 记录在 state 这个数中，传递下去
-    cout << dec_to_bin(state) << endl;   // 1000
-
-    cout << ((1 << 3) & state) << endl;  // 8 检查 3 有没有被用过，用过
-    cout << ((1 << 4) & state) << endl;  // 0 检查 4 有没有被用过，没有
-    state = (1 << 4) | state;            // 将 4 记录在 state 这个数中，传递下去
-    cout << dec_to_bin(state) << endl;   // 11000
-
-    cout << ((1 << 3) & state) << endl;  // 8 检查 3 有没有被用过，用过
-    cout << ((1 << 4) & state) << endl;  // 16 检查 4 有没有被用过，用过
-    cout << ((1 << 6) & state) << endl;  // 0 检查 6 有没有被用过，没有
-    state = (1 << 6) | state;            // 将 6 记录在 state 这个数中，传递下去
-    cout << dec_to_bin(state) << endl;   // 1011000
-
-    int pre = state & (~(1 << 6));    // 查看选择 6 之前的 state
-    cout << dec_to_bin(pre) << endl;  // 11000
-
-    return 0;
-}
-
-```
-
-## 二、例题
+## 例题
 
 ### [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/)
 
@@ -143,3 +89,8 @@ public:
 
 
 
+未完成例题：
+
+[1994. 好子集的数目](https://leetcode.cn/problems/the-number-of-good-subsets/)
+
+[2044. 统计按位或能得到最大值的子集数目](https://leetcode.cn/problems/count-number-of-maximum-bitwise-or-subsets/)
