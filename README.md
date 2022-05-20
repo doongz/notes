@@ -77,6 +77,7 @@
   - [背包 DP](./Algorithm/3-动态规划/3-背包DP.md)  `01背包`  `完全背包`  `多重背包`  `混合背包`  `分组背包`  `多维背包`  `树形背包`  `Hard`
   - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
   - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)  `f(l,r)=max(f(l,k), f(k+1,r))+cost k in [l,r]`  `遍历方法`  `初始化(dp[i][i]=1)`  `返回(dp[0][i])`  `回文问题`  `时O(n^2)`
+  - [状态压缩 DP](./Algorithm/3-动态规划/6-状态压缩DP.md)
   - [树形 DP]()  `后序遍历`  `打家劫舍III`
   - [数位 DP「未完工」](./Algorithm/3-动态规划/8-数位DP.md)
 - **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)

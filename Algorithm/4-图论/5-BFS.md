@@ -2,55 +2,109 @@
 
 Breath First Search
 
-## 遍历
+## 框架
 
-```python
-queue = [node]
-visited = set([node])
-while queue 非空:
-    node = queue.pop(0)
-    for node 的所有相邻结点 next_node:
-        if mnext_node not in visited: # 未访问过，不走回头路
-            queue.append(next_node)
-            visited.add(next_node)
-```
-## 求最短路径
+### 1、按个遍历
 
-节点深度可以和节点值一起记录
+```c++
+bool bfs() {
+    queue<int> q;
+    vector<bool> vis(n);
 
-```python
-queue = [(node, 0)] # (节点值, 节点深度)
-visited = set([node])
-while queue 非空:
-    node, depth = queue.pop(0)
-    if node 达到终点:
-      return depth
-    for node 的所有相邻结点 next_node:
-        if m not in visited: # 未访问过，不走回头路
-            queue.append((next_node, depth+1))
-            visited.add(next_node)
-```
+    q.push(begin_node);
+    vis[begin_node] = true;
 
-其他语言不方便把不同类型的变量放到一个数组里是，可以将depth写到外面
+    while (!q.empty()) {
+        int cur = q.front();  // 弹出队头元素
+        q.pop();
 
-```python
-queue = [node]
-visited = set([node])
-depth = 0 # 记录遍历到第几层
-while queue 非空:
-    n = queue 中的元素个数
-    循环 n 次:
-        node = queue.pop()
-        if node 为 目标值:
-            return depth
-        for node 的所有相邻结点 m:
-            if m 未访问过:
-                queue.append(m)
-                visited.add(m)
-    depth++
+        if (cur == target) return ture;
+
+        action(cur);  // 有些题目需要对当前元素做处理
+
+        for (int x : cur.children) {
+            if (!vis[x]) {
+                q.push(x);
+                vis[x] = true;
+            }
+        }
+    }
+    return false;
+}
 ```
 
-## 双向bfs
+### 2、按层遍历
+
+```c++
+bool bfs() {
+    // 初始化队列及标记数组，存入起点
+    queue<int> q;
+    vector<bool> vis(n);
+
+    q.push(begin_node);  // 存入起点，标记
+    vis[begin_node] = true;
+
+    // 开始搜索
+    while (!q.empty()) {
+        int cnt = q.size();  // 本层需要扩展的节点个数
+
+        // 本层循环
+        for (int i = 0; i < n; i++) {
+            int cur = q.front();  // 弹出队头元素
+            q.pop();
+
+            // 找到答案，退出搜索
+            if (cur == target) return ture;
+
+            action(cur);  //有些题目需要对当前元素做处理
+
+            for (int x : cur.children) {
+                if (!vis[x]) {
+                    q.push(x);
+                    vis[x] = true;
+                }
+            }
+        }
+    }
+    return false;
+}
+```
+### 3、最短路径框架
+
+节点深度可以和节点值一起记录，当然也可以使用 tuple 记录更多的值
+
+```python
+int bfs() {
+    // 1.初始化队列及标记数组，存入起点
+    queue<pair<int, int>> q;
+    vector<bool> vis(n);
+
+    q.push({begin_node, 0});  // 存入起点，起始距离0，标记
+    vis[begin_node] = true;
+
+    // 2.开始搜索
+    while (!q.empty()) {
+        auto [cur, dist] = q.front();  // 弹出队头元素
+        q.pop();
+
+        // 找到答案，返回结果
+        if (cur == target) return dist;
+
+        action(cur);  //有些题目需要对当前元素做处理
+
+        for (int x : cur.children) {
+            if (!vis[x]) {
+                q.push({x, dist + 1});
+                vis[x] = true;
+            }
+        }
+    }
+
+    return -1;
+}
+```
+
+### 4、双向bfs
 
 ```python
 l_queue = [begin]
@@ -76,5 +130,39 @@ while l_queue and r_queue:
                 l_queue.append(n_node)
                 l_visited.add(n_node)
     depth += 1
+```
+
+### 5、多源bfs
+
+- BFS 起点：最开始将每个起点都存入队列，遍历的时候就相当于多起点「并排」在往前走
+- BFS 终点：并排往前走，有一个先达到终点，就返回答案
+
+```c++
+bool bfs() {
+    queue<int> q;
+    vector<bool> vis(n);
+	
+    for (int start : start_list) {
+        q.push(start);
+        vis[start] = true;
+    }
+
+    while (!q.empty()) {
+        int cur = q.front();  // 弹出队头元素
+        q.pop();
+
+        if (cur == target) return ture;
+
+        action(cur);  // 有些题目需要对当前元素做处理
+
+        for (int x : cur.children) {
+            if (!vis[x]) {
+                q.push(x);
+                vis[x] = true;
+            }
+        }
+    }
+    return false;
+}
 ```
 
