@@ -10,7 +10,7 @@
 
 https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/
 
-实验记录：https://github.com/duguosheng/6.S081-All-in-one
+实验记录 & 教材翻译：https://github.com/duguosheng/6.S081-All-in-one
 
 
 
