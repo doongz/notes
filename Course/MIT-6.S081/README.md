@@ -6,11 +6,11 @@
 
 视频：https://www.bilibili.com/video/BV19k4y1C7kA?spm_id_from=333.337.search-card.all.click
 
-课程翻译：https://github.com/huihongxiao/MIT6.S081
-
-https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/
+课程翻译：https://github.com/huihongxiao/MIT6.S081、https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/
 
 实验记录 & 教材翻译：https://github.com/duguosheng/6.S081-All-in-one
+
+实验参考：https://github.com/silvermagic/xv6-labs-2020
 
 
 
