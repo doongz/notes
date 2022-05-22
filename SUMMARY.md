@@ -487,6 +487,10 @@
     * [8-蚂蚁金服-蚂蚁三轮面经](Interview/2-面经/8-蚂蚁金服-蚂蚁三轮面经.md)
     * [9-网易互娱一面](Interview/2-面经/9-网易互娱一面.md)
 - Knowledge
+  - [0-IC](Knowledge/0-IC/0-IC.md)
+    * [1-EDA](Knowledge/0-IC/1-EDA.md)
+    * [2-FPGA](Knowledge/0-IC/2-FPGA.md)
+    * [3-Verilog](Knowledge/0-IC/3-Verilog.md)
   - 1-计算机组成
     * [0-序](Knowledge/1-计算机组成/0-序.md)
     * [1-计算机系统概述](Knowledge/1-计算机组成/1-计算机系统概述.md)
@@ -540,16 +544,6 @@
     * [4-kubernetes问题&局限性](Knowledge/5-容器技术/4-kubernetes问题&局限性.md)
     * [5-kubernetes集群联邦&资源分发](Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)
     * [6-kubernetes贡献指南](Knowledge/5-容器技术/6-kubernetes贡献指南.md)
-  - 6-设计模式
-    - 设计模式
-      * [0-原始代码](Knowledge/6-设计模式/设计模式/0-原始代码.md)
-      * [备忘录模式](Knowledge/6-设计模式/设计模式/备忘录模式.md)
-      * [材料](Knowledge/6-设计模式/设计模式/材料.md)
-      * [抽象工厂模式](Knowledge/6-设计模式/设计模式/抽象工厂模式.md)
-      * [工厂方法模式](Knowledge/6-设计模式/设计模式/工厂方法模式.md)
-      * [简单工厂模式](Knowledge/6-设计模式/设计模式/简单工厂模式.md)
-      * [生成器模式](Knowledge/6-设计模式/设计模式/生成器模式.md)
-    * [多态和多态性](Knowledge/6-设计模式/多态和多态性.md)
 - Math
   - 微积分
     * [1-极限](Math/微积分/1-极限.md)
@@ -575,6 +569,16 @@
     * [5-gdb](Skill/开发软件/5-gdb.md)
     * [6-gcc](Skill/开发软件/6-gcc.md)
     * [7-tmux](Skill/开发软件/7-tmux.md)
+  - 设计模式
+    - 设计模式
+      * [0-原始代码](Skill/设计模式/设计模式/0-原始代码.md)
+      * [备忘录模式](Skill/设计模式/设计模式/备忘录模式.md)
+      * [材料](Skill/设计模式/设计模式/材料.md)
+      * [抽象工厂模式](Skill/设计模式/设计模式/抽象工厂模式.md)
+      * [工厂方法模式](Skill/设计模式/设计模式/工厂方法模式.md)
+      * [简单工厂模式](Skill/设计模式/设计模式/简单工厂模式.md)
+      * [生成器模式](Skill/设计模式/设计模式/生成器模式.md)
+    * [多态和多态性](Skill/设计模式/多态和多态性.md)
   - ASM
     - RISC-V
       * [0-汇编语言格式及ABI](Skill/ASM/RISC-V/0-汇编语言格式及ABI.md)
@@ -588,10 +592,6 @@
       * [7-CSR读写控制](Skill/ASM/RISC-V/7-CSR读写控制.md)
       * [8-EXU模块和CPU运行](Skill/ASM/RISC-V/8-EXU模块和CPU运行.md)
       * [9-RISC-V总线和流水线](Skill/ASM/RISC-V/9-RISC-V总线和流水线.md)
-    * [EDA](Skill/ASM/EDA.md)
-    * [FPGA](Skill/ASM/FPGA.md)
-    * [IC](Skill/ASM/IC.md)
-    * [Verilog简介](Skill/ASM/Verilog简介.md)
   - [C](Skill/C/README.md)
     - C语言内存
       * [1-程序在计算机中如何运行](Skill/C/C语言内存/1-程序在计算机中如何运行.md)

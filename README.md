@@ -106,9 +106,8 @@
 
 ### Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)
 
-- [Assembly Language](https://dowalle.gitbook.io/algo/skill/asm)
+- [ASM](https://dowalle.gitbook.io/algo/skill/asm)
   - [RISC-V](./algo/Skill/ASM/RISC-V)  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
-
 - [C「未完工」](https://dowalle.gitbook.io/algo/skill/c)
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
@@ -132,6 +131,7 @@
 
 ### Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
 
+- [IC「未完工」]()  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
   - [计算机系统概述](./Knowledge/1-计算机组成/1-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
