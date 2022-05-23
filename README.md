@@ -200,11 +200,11 @@ $ book sm
 >
 > 如果涉及到任何版权行为，请联系我，我将删除内容。
 
-`Publish`  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
+**Publish**  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
-`Reference`  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode)
+**Reference**  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode)
 
-`License`  [CC-BY-SA-4.0 License](https://github.com/dowalle/algo/blob/main/LICENSE)
+**License** [CC-BY-SA-4.0 License](https://github.com/dowalle/algo/blob/main/LICENSE)
 
 <p>
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
