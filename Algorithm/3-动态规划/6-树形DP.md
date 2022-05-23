@@ -1,5 +1,9 @@
 # 树形 DP
 
+参考：https://oi-wiki.org/dp/tree/
+
+## 一、基础
+
 参考：[337题 打家劫舍 III 题解](https://leetcode-cn.com/problems/house-robber-iii/solution/shu-xing-dp-ru-men-wen-ti-by-liweiwei1419/)
 
 重点：
@@ -7,7 +11,7 @@
 - 这里最关键的是理解：在设计状态的时候，**在后面加一维，消除后效性**，打家劫舍第 1 题，股票系列问题 6 个问题，都是这样的思路；
 - 树的问题，很多时候采用 **后序遍历**（先处理左右孩子结点，再处理当前结点，整个过程看起来就像一层一层向上汇报信息）
 
-## 打家劫舍 III
+---
 
 题目：[337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
 
@@ -100,6 +104,14 @@ public:
 ```
 
 
+
+
+
+## 二、树上背包
+
+
+
+## 三、换根 DP
 
 
 
