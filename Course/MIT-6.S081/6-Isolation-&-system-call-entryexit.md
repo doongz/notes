@@ -1,5 +1,7 @@
 # [Isolation & system call entry/exit](https://pdos.csail.mit.edu/6.828/2020/lec/l-internal.txt)
 
+准备工作：阅读【1】中第4章，除了4.6；阅读RISCV.h【2】；阅读trampoline.S【3】；阅读trap.c【4】
+
 ## 总结
 
 **用户空间和内核空间的切换通常被称为 trap**
