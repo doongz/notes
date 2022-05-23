@@ -443,6 +443,7 @@
       * [2-syscall](Course/MIT-6.S081/Labs/2-syscall.md)
       * [4-page-tables](Course/MIT-6.S081/Labs/4-page-tables.md)
       * [6-traps](Course/MIT-6.S081/Labs/6-traps.md)
+      * [8-lazy-page-allocation](Course/MIT-6.S081/Labs/8-lazy-page-allocation.md)
     * [1-Introduction-and-Examples](Course/MIT-6.S081/1-Introduction-and-Examples.md)
     * [10-Multiprocessors-and-locking](Course/MIT-6.S081/10-Multiprocessors-and-locking.md)
     * [11-Thread-switching](Course/MIT-6.S081/11-Thread-switching.md)
