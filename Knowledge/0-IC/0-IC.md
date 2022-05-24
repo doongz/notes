@@ -7,11 +7,8 @@ An **integrated circuit** or **monolithic integrated circuit** (also referred to
 
 
 - 工艺
-
 - 设计
-
 - 制造
-
+- 器件
 - 封装
-
 - 类型：数字IC、模拟IC、混合IC
