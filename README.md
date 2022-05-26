@@ -74,12 +74,13 @@
   - [动态规划基础](./Algorithm/3-动态规划/0-动态规划基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./algo/Algorithm/3-动态规划/1-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
   - [线性 DP](./Algorithm/3-动态规划/2-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`  `路径问题`
-  - [背包 DP](./Algorithm/3-动态规划/3-背包DP.md)  `01背包`  `完全背包`  `多重背包`  `混合背包`  `分组背包`  `多维背包`  `树形背包`  `Hard`
+  - [背包 DP](./Algorithm/3-动态规划/3-背包DP.md)  `01背包`  `完全背包`  `多重背包`  `混合背包`  `分组背包`  `多维背包`  `树形背包`
   - [序列 DP](./Algorithm/3-动态规划/4-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
   - [区间 DP](./Algorithm/3-动态规划/5-区间DP.md)  `f(l,r)=max(f(l,k), f(k+1,r))+cost k in [l,r]`  `遍历方法`  `初始化(dp[i][i]=1)`  `返回(dp[0][i])`  `回文问题`  `时O(n^2)`
   - [树形 DP「未完工」](./Algorithm/3-动态规划/9-树形DP.md)  `后序遍历`  `打家劫舍III`
   - [状态压缩 DP](./Algorithm/3-动态规划/6-状态压缩DP.md)  `位运算`  `state = (1 << num) | state`  `((state >> num) & 1) == 0`  `n<15`
   - [数位 DP「未完工」](./Algorithm/3-动态规划/8-数位DP.md)
+  - [股票问题]()
 - **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -98,7 +99,7 @@
 ### Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)
 
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
-  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`
+  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`
 - [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
