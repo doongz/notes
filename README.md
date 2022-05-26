@@ -80,7 +80,7 @@
   - [树形 DP「hold住」](./Algorithm/3-动态规划/9-树形DP.md)  `后序遍历`  `打家劫舍III`
   - [状态压缩 DP](./Algorithm/3-动态规划/6-状态压缩DP.md)  `位运算`  `state = (1 << num) | state`  `((state >> num) & 1) == 0`  `n<15`
   - [数位 DP「hold住」](./Algorithm/3-动态规划/8-数位DP.md)
-  - [股票问题]()
+  - [股票问题](./Algorithm/3-动态规划/9-股票问题.md)
 - **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
