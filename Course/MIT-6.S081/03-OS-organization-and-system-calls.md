@@ -1,5 +1,60 @@
 # [OS organization and system calls](https://pdos.csail.mit.edu/6.828/2020/lec/l-os.txt)
 
+## 总结
+
+Isolation 隔离性是设计操作系统组织结构的驱动力。
+
+Kernel和User mode 这两种模式用来隔离操作系统内核和用户应用程序
+
+System calls 系统调用是用户态的应用程序能够转换到内核执行的基本方法
+
+#### 隔离性 Isolation
+
+场景：
+
+- 不同的应用程序之间，有强隔离性
+- 应用程序和操作系统之间有强隔离性
+- 没有隔离，应用程序会直接与硬件交互
+
+CPU角度，多进程分时复用，迫使应用程序时不时的释放CPU，切到其他程序执行，不同进程间需要隔离
+
+内存角度，不同应用程序之间的内存是隔离的，包括用户程序与系统程序
+
+操作系统防御性 Defensive，防止恶意程序突破限制
+
+#### 硬件对于强隔离的支持
+
+- user/kernel mode，指令有一位flag，代表这个指令可以被执行的模式
+
+#### 虚拟内存
+
+每一个进程都会有自己独立的page table，这样的话，每一个进程只能访问出现在自己page table中的物理内存
+
+#### User/Kernel mode切换
+
+user/kernel mode分隔用户空间和内核空间
+
+有一个专门的指令 ECALL，能够让应用程序可以将控制权转移给内核（Entering Kernel）trap
+
+ECALL 的代码是在硬件里面
+
+#### 宏内核
+
+所有的操作系统服务都在kernel mode中，这种形式被称为Monolithic Kernel Design
+
+- 任何一个操作系统的Bug都有可能成为漏洞
+- 子模块现在都位于同一个程序中，紧密的集成在一起，提供很好的性能
+
+如：linux
+
+#### 微内核
+
+减少内核中的代码，它被称为Micro Kernel Design
+
+- 性能更差
+
+如：车控os
+
 ## 3.1 讨论话题
 
 今天我们主要讨论4个话题：
