@@ -80,7 +80,7 @@
   - [树形 DP「hold住」](./Algorithm/3-动态规划/9-树形DP.md)  `后序遍历`  `打家劫舍III`
   - [状态压缩 DP](./Algorithm/3-动态规划/6-状态压缩DP.md)  `位运算`  `state = (1 << num) | state`  `((state >> num) & 1) == 0`  `n<15`
   - [数位 DP「hold住」](./Algorithm/3-动态规划/8-数位DP.md)
-  - [股票问题](./Algorithm/3-动态规划/9-股票问题.md)
+  - [股票问题](./Algorithm/3-动态规划/9-股票问题.md)  `状态机DP`
 - **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`
@@ -101,7 +101,7 @@
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
   - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`
 - [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
-- [南京大学-操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
+- [NJU 操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
 - [Stanford 课程推荐](./Course/Stanford课程推荐.md)
 
