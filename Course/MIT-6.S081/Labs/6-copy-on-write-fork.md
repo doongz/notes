@@ -115,22 +115,24 @@ kinit()
 ```c
 void
 kfree(void *pa)
-{
+{ // 释放物理地址
   struct run *r;
 
   if(((uint64)pa % PGSIZE) != 0 || (char*)pa < end || (uint64)pa >= PHYSTOP)
     panic("kfree");
 
-  // 只有当引用计数为0了才回收空间
-  // 否则只是将引用计数减1
+  // 引用计数减1，为0才将内存真正释放
   acquire(&ref.lock);
-  if(--ref.cnt[(uint64)pa / PGSIZE] == 0) {
-    release(&ref.lock);
-
-    r = (struct run*)pa;
-
+  int idx = (uint64)pa / PGSIZE;
+  ref.cnt[idx] -= 1;
+  
+  if (ref.cnt[idx] == 0) { 
+    release(&ref.lock); // 一定要锁到取值检查后，否则这个值可能会被其他进程改掉
+    
     // Fill with junk to catch dangling refs.
     memset(pa, 1, PGSIZE);
+
+    r = (struct run*)pa;
 
     acquire(&kmem.lock);
     r->next = kmem.freelist;
@@ -140,9 +142,10 @@ kfree(void *pa)
     release(&ref.lock);
   }
 }
+
 void *
 kalloc(void)
-{
+{ // 申请物理地址
   struct run *r;
 
   acquire(&kmem.lock);
@@ -150,7 +153,7 @@ kalloc(void)
   if(r) {
     kmem.freelist = r->next;
     acquire(&ref.lock);
-    ref.cnt[(uint64)r / PGSIZE] = 1;  // 将引用计数初始化为1
+    ref.cnt[(uint64)r / PGSIZE] = 1; // 将引用计数初始化为1
     release(&ref.lock);
   }
   release(&kmem.lock);
@@ -165,10 +168,24 @@ kalloc(void)
 
 ```c
 /**
+ * @brief kaddrefcnt 增加内存的引用计数
+ * @param pa 指定的内存地址
+ * @return 0:成功 -1:失败
+ */
+int kaddrefcnt(void* pa) {
+  if(((uint64)pa % PGSIZE) != 0 || (char*)pa < end || (uint64)pa >= PHYSTOP)
+    return -1;
+  acquire(&ref.lock);
+  ++ref.cnt[(uint64)pa / PGSIZE];
+  release(&ref.lock);
+  return 0;
+}
+
+/**
  * @brief cowpage 判断一个页面是否为COW页面
  * @param pagetable 指定查询的页表
  * @param va 虚拟地址
- * @return 0 是 -1 不是
+ * @return 1:是 0:不是 -1:报错
  */
 int cowpage(pagetable_t pagetable, uint64 va) {
   if(va >= MAXVA)
@@ -177,8 +194,8 @@ int cowpage(pagetable_t pagetable, uint64 va) {
   if(pte == 0)
     return -1;
   if((*pte & PTE_V) == 0)
-    return -1;
-  return (*pte & PTE_F ? 0 : -1);
+    return 0;
+  return (*pte & PTE_F ? 1 : 0);
 }
 
 /**
@@ -200,12 +217,12 @@ void* cowalloc(pagetable_t pagetable, uint64 va) {
   if(krefcnt((char*)pa) == 1) {
     // 只剩一个进程对此物理地址存在引用
     // 则直接修改对应的PTE即可
-    *pte |= PTE_W;
-    *pte &= ~PTE_F;
+    *pte |= PTE_W;  // 标记为可写
+    *pte &= ~PTE_F; // 移去COW标记
     return (void*)pa;
   } else {
     // 多个进程对物理内存存在引用
-    // 需要分配新的页面，并拷贝旧页面的内容
+    // 需要分配新的页面，并拷贝旧页面的内容，真正去申请物理地址
     char* mem = kalloc();
     if(mem == 0)
       return 0;
@@ -237,20 +254,6 @@ void* cowalloc(pagetable_t pagetable, uint64 va) {
 int krefcnt(void* pa) {
   return ref.cnt[(uint64)pa / PGSIZE];
 }
-
-/**
- * @brief kaddrefcnt 增加内存的引用计数
- * @param pa 指定的内存地址
- * @return 0:成功 -1:失败
- */
-int kaddrefcnt(void* pa) {
-  if(((uint64)pa % PGSIZE) != 0 || (char*)pa < end || (uint64)pa >= PHYSTOP)
-    return -1;
-  acquire(&ref.lock);
-  ++ref.cnt[(uint64)pa / PGSIZE];
-  release(&ref.lock);
-  return 0;
-}
 ```
 
 - 修改`freerange`
@@ -261,8 +264,9 @@ freerange(void *pa_start, void *pa_end)
 {
   char *p;
   p = (char*)PGROUNDUP((uint64)pa_start);
-  for(; p + PGSIZE <= (char*)pa_end; p += PGSIZE) {
+  for (; p + PGSIZE <= (char*)pa_end; p += PGSIZE) {
     // 在kfree中将会对cnt[]减1，这里要先设为1，否则就会减成负数
+    // 同时起到彻底释放的作用
     ref.cnt[(uint64)p / PGSIZE] = 1;
     kfree(p);
   }
@@ -278,14 +282,21 @@ uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
   pte_t *pte;
   uint64 pa, i;
   uint flags;
+  // char *mem;
 
   for(i = 0; i < sz; i += PGSIZE){
     if((pte = walk(old, i, 0)) == 0)
       panic("uvmcopy: pte should exist");
     if((*pte & PTE_V) == 0)
       panic("uvmcopy: page not present");
+    // 此时 pte 为父进程中pagetable的有效pte
     pa = PTE2PA(*pte);
     flags = PTE_FLAGS(*pte);
+
+    // 不要真的去申请物理内存
+    // if((mem = kalloc()) == 0)
+    //   goto err;
+    // memmove(mem, (char*)pa, PGSIZE);
 
     // 仅对可写页面设置COW标记
     if(flags & PTE_W) {
@@ -294,9 +305,10 @@ uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
       *pte = PA2PTE(pa) | flags;
     }
 
-    if(mappages(new, i, PGSIZE, pa, flags) != 0) {
+    // 直接将新的pagetable映射到物理地址上
+    if(mappages(new, i, PGSIZE, pa, flags) != 0){
+      // kfree(mem); // 如果映射错误，也不要真的释放内存
       uvmunmap(new, 0, i / PGSIZE, 1);
-      return -1;
     }
     // 增加内存的引用计数
     kaddrefcnt((char*)pa);
@@ -314,11 +326,19 @@ if(cause == 8) {
 } else if((which_dev = devintr()) != 0){
   // ok
 } else if(cause == 13 || cause == 15) {
-  uint64 fault_va = r_stval();  // 获取出错的虚拟地址
-  if(fault_va >= p->sz
-    || cowpage(p->pagetable, fault_va) != 0
-    || cowalloc(p->pagetable, PGROUNDDOWN(fault_va)) == 0)
-    p->killed = 1;
+    // 这个地方会在子进程中触发，p->pagetable 为子进程中映射在老物理地址上的pagetable
+    // 使用老的pagetable 会报page fault
+    // 进行一些判断后进行copy on write申请内存
+    uint64 fault_va = r_stval();  // 获取出错的虚拟地址
+    if (fault_va < p->sz && cowpage(p->pagetable, fault_va) == 1) {
+      // 如果这个错误的虚地址是有效的，且这个虚地址对应的pte是COW页面
+      // 进行copy on write申请内存
+      if (cowalloc(p->pagetable, PGROUNDDOWN(fault_va)) == 0) {
+        p->killed = 1;
+      }
+    } else {
+      p->killed = 1;
+    }
 } else {
   ...
 }
@@ -343,6 +363,8 @@ while(len > 0){
   ...
 }
 ```
+
+https://github.com/dowalle/xv6-labs-2020/commit/d9c8cc8fb508c1ebdfa5eceb702246f219439e15
 
 # 可选的挑战练习
 
