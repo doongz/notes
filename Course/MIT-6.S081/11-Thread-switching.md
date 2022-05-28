@@ -2,19 +2,135 @@
 
 ## 总结
 
-#### 进程的结构体
+### 1、线程概述
+
+**为什么需要多线程**：
+
+- 计算机需要执行分时复用的任务
+- 多线程可以让程序的结构变得简单
+- 多线程可以通过并行运算，在拥有多核CPU的计算机上获得更快的处理速度
+
+**线程定义**：
+
+线程是单个串行「执行代码」的单元，它只占用一个CPU并且以普通的方式一个接一个的执行指令
+
+**线程的状态包含了三个部分**：
+
+- 程序计数器，表示当前线程执行指令的位置
+- 保存变量的寄存器
+- 程序的Stack，每个线程都有属于自己的Stack，Stack记录了函数调用的记录，并反映了当前线程的执行点
+
+**多线程的并行运行策略**：
+
+- 在多核处理器上使用多个CPU，每个CPU都可以运行一个线程
+- 一个CPU在多个线程之间来回切换（本章主要讨论这种情况）
+
+**XV6 中的内核线程**：
+
+- XV6内核共享了内存，XV6支持「内核线程」的概念
+- 每个「用户进程」都有一个「内核线程」来执行来自用户进程的系统调用
+- 所有的内核线程都共享了「内核内存」
+
+**XV6 中的用户线程**：（不完善）
+
+- 每一个「用户进程」都有独立的内存地址空间，包含了一个「用户线程」
+- 「用户线程」控制了「用户进程代码指令的执行」
+- 「用户线程」之间没有共享内存
+- 「多个用户进程」对应「多个用户线程」，因此「用户进程」不会共享内存
+
+### 2、XV6线程调度
+
+**内核中线程系统的挑战**：
+
+- 线程间的切换，称为线程调度（Scheduling），每个CPU核都有一个线程调度器（Scheduler）
+- 保存并恢复线程的状态
+- 如何处理运算密集型线程
+
+**如何处理运算密集型线程**？
+
+利用定时器中断，在每个CPU核上，都存在一个硬件设备，它会定时产生中断
+
+- pre-emptive scheduling，定时器中断将CPU控制权给到内核，内核再自愿的出让CPU。即使用户代码本身没有出让CPU，定时器中断仍然会将CPU的控制权拿走，并出让给线程调度器（yield）
+- voluntary scheduling，内核中用户进程对应的内核线程会代表用户进程出让CPU
+
+**线程状态**：
+
+- RUNNING，线程当前正在某个CPU上运行
+- RUNABLE，线程还没有在某个CPU上运行，但是一旦有空闲的CPU就可以运行
+- SLEEPING，线程在等待一些I/O事件，它只会在I/O事件发生了之后运行
+
+RUNNING线程切换成RUNABLE等待运行的线程：（不完善）
+
+- RUNNING状态下的线程，它的程序计数器和寄存器位于正在运行它的CPU硬件中
+- 把位于CPU寄存器中的状态，拷贝到内存中的某个位置
+- 从CPU中的寄存器拷贝。我们需要拷贝的信息就是程序计数器（Program Counter）和寄存器
+
+### 3、XV6线程切换
+
+**场景一：同一程序的用户线程和内核线程切换**
+
+1. 每个进程都包含了一个用户程序栈（user stack）
+2. 当进程运行的时候，RISC-V处理器中会有它的程序计数器和寄存器
+3. 实际上是用户进程中的一个用户线程在运行
+4. 如果程序执行了一个系统调用或者因为响应中断走到了内核中
+5. 那么相应的用户空间状态（用户的程序计数器，寄存器）会被保存在程序的trapframe中
+6. 同时属于这个用户程序的内核线程被激活
+7. 在处理完成之后，如果需要返回到用户空间，trapframe中保存的用户进程状态会被恢复
+
+**场景二：不同程序的内核线程和内核线程切换**
+
+1. 首先，XV6会将CC程序的内核线程的内核寄存器保存在一个context对象中
+2. 如果要切换到LS程序的内核线程，那么LS程序现在的状态必然是RUNABLE，表明LS程序之前运行了一半，LS程序的用户空间状态已经保存在了对应的trapframe中，LS程序的内核线程对应的内核寄存器也已经保存在对应的context对象中
+3. 接下来，XV6会恢复LS程序的内核线程的context对象，也就是恢复内核线程的寄存器
+4. LS会继续在它的内核线程栈上，完成它的中断处理程序
+5. 然后通过恢复LS程序的trapframe中的用户进程状态，返回到用户空间的LS程序中
+6. 最后恢复执行LS
+
+总结：从一个用户进程切换到另一个用户进程
+
+1. 都需要从第一个用户进程接入到内核中，保存用户进程的状态并运行第一个用户进程的内核线程。
+2. 再从第一个用户进程的内核线程切换到第二个用户进程的内核线程。
+3. 之后，第二个用户进程的内核线程暂停自己，并恢复第二个用户进程的用户寄存器。
+4. 最后返回到第二个用户进程继续执行。
+
+**实际场景 story**：
+
+我们从一个正在运行的用户空间进程切换到另一个RUNABLE但是还没有运行的用户空间进程
+
+1. 「定时器」中断强迫CPU从「用户空间」进程切换到「内核」，trampoline代码将用户寄存器保存于用户进程对应的trapframe对象中
+2. 在内核中运行usertrap，来实际执行相应的中断处理程序，此时CPU正在进程P1的内核线程和内核栈上，执行内核中普通的C代码
+3. 进程P1对应的内核线程决定它想出让CPU，会调用swtch函数
+4. swtch函数会保存用户进程P1对应内核线程的寄存器至context对象
+
+实际上swtch函数并不是直接从一个内核线程切换到另一个内核线程，而是「内核线程->调度器线程->另一个内核线程」
+
+5. 一个CPU上运行的「内核线程」可以直接切换到的是这个CPU对应的「调度器线程」
+6. 在schedulder函数中会做一些清理工作，例如将进程P1设置成RUNABLE状态
+7. 再通过进程表单找到下一个RUNABLE进程P2
+8. schedulder函数会再次调用swtch函数
+   1. 先保存调度器线程的寄存器到调度器线程的context对象
+   2. 找到进程P2之前保存的context，恢复其中的寄存器
+9. 之前的P2的swtch函数会被恢复，返回到进程P2所在的系统调用或者中断处理程序中
+10. 当P2内核程序执行完成之后，trapframe中的用户寄存器会被恢复
+11. 最后用户进程P2就恢复运行
+
+**一些特性**：
+
+- 每一个CPU核在一个时间只会做一件事情，每个CPU核在一个时间只会运行一个线程
+- 要么是运行用户进程的线程，要么是运行内核线程，要么是运行这个CPU核对应的调度器线程
+- 在XV6的代码中，context对象总是由swtch函数产生
+- 所以context总是保存了内核线程在执行swtch函数时的状态
+- 当我们在恢复一个内核线程时，对于刚恢复的线程所做的第一件事情就是从之前的swtch函数中返回
+
+### 4、xv6 进程、cpu 结构体相关代码
+
+整套 xv6 代码，没有 thread 相关的结构体，而是用 CPU PROC 抽象出 thread 这个执行但愿
+
+线程是一个相当抽象的概念，有了CPU、寄存器和时间，就可以执行操作，这个就是线程
+
+**进程的结构体**
 
 ```c
-extern struct cpu cpus[NCPU];
-
-// Per-CPU state.
-struct cpu {
-  struct proc *proc;          // The process running on this cpu, or null.
-  struct context context;     // swtch() here to enter scheduler().
-  int noff;                   // Depth of push_off() nesting.
-  int intena;                 // Were interrupts enabled before push_off()?
-};
-
 // Per-process state
 struct proc {
   struct spinlock lock;
@@ -39,7 +155,27 @@ struct proc {
 };
 ```
 
+- trapframe，保存了用户空间线程寄存器
+- context，保存了内核线程寄存器
+- kstack，当前进程的内核栈，进程在内核中执行时，保存函数调用的位置
+- state字段保存了当前进程状态，RUNNING、RUNABLE、SLEEPING
+- lock字段保护了，state字段的更新等
 
+**cpu的结构体**
+
+```c
+extern struct cpu cpus[NCPU];
+
+// Per-CPU state.
+struct cpu {
+  struct proc *proc;          // The process running on this cpu, or null.
+  struct context context;     // swtch() here to enter scheduler().
+  int noff;                   // Depth of push_off() nesting.
+  int intena;                 // Were interrupts enabled before push_off()?
+};
+```
+
+**调用 cpu 和 proc**
 
 ```c
 // Return this CPU's cpu struct.
@@ -62,56 +198,168 @@ myproc(void) {
 }
 ```
 
-#### fork 进程
+### 5、线程切换第一步，yield/sched函数
+
+「yield函数」是整个「线程切换」的第一步
 
 ```c
-// Create a new process, copying the parent.
-// Sets up child kernel stack to return as if from fork() system call.
-int
-fork(void)
+// Give up the CPU for one scheduling round.
+void
+yield(void)
 {
-  int i, pid;
-  struct proc *np;
   struct proc *p = myproc();
-
-  // Allocate process.
-  if((np = allocproc()) == 0){
-    return -1;
-  }
-
-  // Copy user memory from parent to child.
-  if(uvmcopy(p->pagetable, np->pagetable, p->sz) < 0){
-    freeproc(np);
-    release(&np->lock);
-    return -1;
-  }
-  np->sz = p->sz;
-
-  np->parent = p;
-
-  // copy saved user registers.
-  *(np->trapframe) = *(p->trapframe);
-
-  // Cause fork to return 0 in the child.
-  np->trapframe->a0 = 0;
-
-  // increment reference counts on open file descriptors.
-  for(i = 0; i < NOFILE; i++)
-    if(p->ofile[i])
-      np->ofile[i] = filedup(p->ofile[i]);
-  np->cwd = idup(p->cwd);
-
-  safestrcpy(np->name, p->name, sizeof(p->name));
-
-  pid = np->pid;
-
-  np->state = RUNNABLE;
-
-  release(&np->lock);
-
-  return pid;
+  acquire(&p->lock);
+  p->state = RUNNABLE;
+  sched();
+  release(&p->lock);
 }
 ```
+
+1. 首先获取了进程的锁（目的：即使进程的状态改为了RUNABLE，其他的CPU核的调度器线程也不可能看到进程的状态为RUNABLE，并尝试运行它）
+2. 将进程的状态改为RUNABLE
+3. 调用了位于proc.c文件中的sched函数
+
+```c
+// Switch to scheduler.  Must hold only p->lock
+// and have changed proc->state. Saves and restores
+// intena because intena is a property of this
+// kernel thread, not this CPU. It should
+// be proc->intena and proc->noff, but that would
+// break in the few places where a lock is held but
+// there's no process.
+void
+sched(void)
+{
+  int intena;
+  struct proc *p = myproc();
+
+  if(!holding(&p->lock))
+    panic("sched p->lock");
+  if(mycpu()->noff != 1)
+    panic("sched locks");
+  if(p->state == RUNNING)
+    panic("sched running");
+  if(intr_get())
+    panic("sched interruptible");
+
+  intena = mycpu()->intena;
+  swtch(&p->context, &mycpu()->context);
+  mycpu()->intena = intena;
+}
+```
+
+4. 做了一些合理性检查，如果发现异常就panic
+5. 执行swtch函数
+
+### 6、线程切换第二步，switch函数（核心）
+
+调用
+
+```c
+swtch(&p->context, &mycpu()->context);
+```
+
+- 第一个参数：当前的内核线程的寄存器需要保存的位置，swtch函数会将当前的内核线程的寄存器保存到p->context中
+
+- 第二个参数：需要切换的寄存器，c->context。CPU结构体中的context保存了当前CPU核的「调度器线程」的寄存器
+
+实现：
+
+```assembly
+// swtch.S
+void            swtch(struct context*, struct context*);
+```
+
+汇编代码主要有两段（这里寄存器中值的转移看的很懵）
+
+- 上半部分是将当前的寄存器保存在当前线程对应的context对象中，
+- 函数的下半部分是将调度器线程的寄存器，也就是我们将要切换到的线程的寄存器恢复到CPU的寄存器中
+
+现在指向了scheduler函数，因为 `swtch.S` 恢复了「调度器线程」的context对象中的内容。
+
+### 7、线程切换第三步，scheduler函数
+
+```c
+// Per-CPU process scheduler.
+// Each CPU calls scheduler() after setting itself up.
+// Scheduler never returns.  It loops, doing:
+//  - choose a process to run.
+//  - swtch to start running that process.
+//  - eventually that process transfers control
+//    via swtch back to the scheduler.
+void
+scheduler(void)
+{
+  struct proc *p;
+  struct cpu *c = mycpu();
+  
+  c->proc = 0;
+  for(;;){
+    // Avoid deadlock by ensuring that devices can interrupt.
+    intr_on();
+    
+    int nproc = 0;
+    for(p = proc; p < &proc[NPROC]; p++) {
+      acquire(&p->lock);
+      if(p->state != UNUSED) {
+        nproc++;
+      }
+      if(p->state == RUNNABLE) {
+        // Switch to chosen process.  It is the process's job
+        // to release its lock and then reacquire it
+        // before jumping back to us.
+        p->state = RUNNING;
+        c->proc = p;
+        swtch(&c->context, &p->context);
+
+        // Process is done running for now.
+        // It should have changed its p->state before coming back.
+        c->proc = 0;
+      }
+      release(&p->lock);
+    }
+    if(nproc <= 2) {   // only init and sh exist
+      intr_on();
+      asm volatile("wfi");
+    }
+  }
+}
+```
+
+- 现在正运行在CPU拥有的调度器线程中
+- `mycpu()` 返回的是之前调度器线程对于swtch函数的调用
+- 在scheduler函数的循环中，代码会检查所有的进程并找到一个来运行
+- 找到的RUNABLE进程记录为当前CPU执行的进程
+- 又调用了swtch函数，恢复的是目标进程的内核线程
+
+**swtch函数是线程切换的核心**
+
+- swtch函数中只有保存寄存器，再加载寄存器的操作
+- 没有改变线程的任何栈或者堆数据
+- 线程切换的过程中，处理器中的寄存器是唯一的不稳定状态，且需要保存并恢复
+- 而所有其他在内存中的数据会保存在内存中不被改变，所以不用特意保存并恢复
+
+寄存器的切换足够完成线程的切换
+
+### 8、Linux 的进程、线程
+
+Linux是支持一个进程包含多个线程，Linux的实现比较复杂
+
+简单的解释方式是：几乎可以认为Linux中的每个线程都是一个完整的进程。
+
+**Linux中，我们平常说一个进程中的多个线程，本质上是共享同一块内存的多个独立进程**。
+
+一个进程的多个线程仍然是通过一个内存地址空间执行代码
+
+如果你在一个进程创建了2个线程，那基本上是2个进程共享一个地址空间
+
+之后，调度就与XV6是一致的，也就是针对每个进程进行调度
+
+一个进程中的多个线程会有相同的page table，但是不确定它们是不是共享同一个的page table，还是说它们是不同的page table
+
+
+
+
 
 
 
@@ -200,7 +448,7 @@ fork(void)
 
 今天这节课，我们主要关注RUNNING和RUNABLE这两类线程。前面介绍的定时器中断或者说pre-emptive scheduling，实际上就是将一个RUNNING线程转换成一个RUNABLE线程。通过出让CPU，pre-emptive scheduling将一个正在运行的线程转换成了一个当前不在运行但随时可以再运行的线程。因为当定时器中断触发时，这个线程还在好好的运行着。
 
-对于RUNNING状态下的线程，它的程序计数器和寄存器位于正在运行它的CPU硬件中。而RUNABLE线程，因为并没有CPU与之关联，所以对于每一个RUNABLE线程，当我们将它从RUNNING转变成RUNABLE时，我们需要将它还在RUNNING时位于CPU的状态拷贝到内存中的某个位置，注意这里不是从内存中的某处进行拷贝，而是从CPU中的寄存器拷贝。我们需要拷贝的信息就是程序计数器（Program Counter）和寄存器。
+**对于RUNNING状态下的线程，它的程序计数器和寄存器位于正在运行它的CPU硬件中**。而RUNABLE线程，因为并没有CPU与之关联，所以**对于每一个RUNABLE线程，当我们将它从RUNNING转变成RUNABLE时**，我们需要将它还在RUNNING时**位于CPU的状态拷贝到内存中的某个位置**，注意这里不是从内存中的某处进行拷贝，而是**从CPU中的寄存器拷贝。我们需要拷贝的信息就是程序计数器（Program Counter）和寄存器**。
 
 当线程调度器决定要运行一个RUNABLE线程时，这里涉及了很多步骤，但是其中一步是将之前保存的程序计数器和寄存器拷贝回调度器对应的CPU中。
 
@@ -208,11 +456,11 @@ fork(void)
 
 接下来我将通过两张图来介绍XV6中的线程切换是如何实现的，其中一张图是简单的，另一张图包含了更多的细节，这一小节先看简单的图。
 
-我们或许会运行多个用户空间进程，例如C compiler（CC），LS，Shell，它们或许会，也或许不会想要同时运行。在用户空间，每个进程有自己的内存，对于我们这节课来说，我们更关心的是每个进程都包含了一个用户程序栈（user stack），并且当进程运行的时候，它在RISC-V处理器中会有程序计数器和寄存器。当用户程序在运行时，实际上是用户进程中的一个用户线程在运行。如果程序执行了一个系统调用或者因为响应中断走到了内核中，那么相应的用户空间状态会被保存在程序的trapframe中（注，详见lec06），同时属于这个用户程序的内核线程被激活。所以首先，用户的程序计数器，寄存器等等被保存到了trapframe中，之后CPU被切换到内核栈上运行，实际上会走到trampoline和usertrap代码中（注，详见lec06）。之后内核会运行一段时间处理系统调用或者执行中断处理程序。在处理完成之后，如果需要返回到用户空间，trapframe中保存的用户进程状态会被恢复。
+我们或许会运行多个用户空间进程，例如C compiler（CC），LS，Shell，它们或许会，也或许不会想要同时运行。在用户空间，每个进程有自己的内存，对于我们这节课来说，我们更关心的是**每个进程都包含了一个用户程序栈（user stack）**，并且**当进程运行的时候，它在RISC-V处理器中会有程序计数器和寄存器**。当**用户程序在运行时，实际上是用户进程中的一个用户线程在运行**。**如果程序执行了一个系统调用或者因为响应中断走到了内核中，那么相应的用户空间状态会被保存在程序的trapframe中（注，详见lec06），同时属于这个用户程序的内核线程被激活**。所以**首先，用户的程序计数器，寄存器等等被保存到了trapframe中，之后CPU被切换到内核栈上运行**，实际上会走到trampoline和usertrap代码中（注，详见lec06）。之后内核会运行一段时间处理系统调用或者执行中断处理程序。在处理完成之后，如果需要返回到用户空间，trapframe中保存的用户进程状态会被恢复。
 
 ![](./doc/image%20%28478%29.png)
 
-除了系统调用，用户进程也有可能是因为CPU需要响应类似于定时器中断走到了内核空间。上一节提到的pre-emptive scheduling，会通过定时器中断将CPU运行切换到另一个用户进程。在定时器中断程序中，如果XV6内核决定从一个用户进程切换到另一个用户进程，那么首先在内核中第一个进程的内核线程会被切换到第二个进程的内核线程。之后再在第二个进程的内核线程中返回到用户空间的第二个进程，这里返回也是通过恢复trapframe中保存的用户进程状态完成。
+除了系统调用，用户进程也有可能是因为CPU需要响应类似于**定时器中断走到了内核空间**。上一节提到的pre-emptive scheduling，会通过定时器中断将CPU运行切换到另一个用户进程。在定时器中断程序中，如果XV6内核决定从一个用户进程切换到另一个用户进程，**那么首先在内核中第一个进程的内核线程会被切换到第二个进程的内核线程。之后再在第二个进程的内核线程中返回到用户空间的第二个进程**，这里返回也是通过恢复trapframe中保存的用户进程状态完成。
 
 当XV6从CC程序的内核线程切换到LS程序的内核线程时：
 
@@ -304,7 +552,7 @@ fork(void)
 
 > 学生提问：我们这里一直在说线程，但是从我看来XV6的实现中，一个进程就只有一个线程，有没有可能一个进程有多个线程？
 >
-> Robert教授：我们这里的用词的确有点让人混淆。在XV6中，一个进程要么在用户空间执行指令，要么是在内核空间执行指令，要么它的状态被保存在context和trapframe中，并且没有执行任何指令。这里该怎么称呼它呢？你可以根据自己的喜好来称呼它，对于我来说，每个进程有两个线程，一个用户空间线程，一个内核空间线程，并且存在限制使得一个进程要么运行在用户空间线程，要么为了执行系统调用或者响应中断而运行在内核空间线程 ，但是永远也不会两者同时运行。
+> Robert教授：我们这里的用词的确有点让人混淆。在XV6中，一个进程要么在用户空间执行指令，要么是在内核空间执行指令，要么它的状态被保存在context和trapframe中，并且没有执行任何指令。这里该怎么称呼它呢？你可以根据自己的喜好来称呼它，对于我来说，每个进程有两个线程，一个用户空间线程，一个内核空间线程，并且存在限制使得一个进程要么运行在用户空间线程，要么为了执行系统调用或者响应中断而运行在内核空间线程 ，但是**永远也不会两者同时运行**。
 
 ## 11.5 XV6进程切换示例程序
 
@@ -348,7 +596,7 @@ fork(void)
 
 ![](./doc/image%20%28533%29.png)
 
-在yield函数中，当前进程会出让CPU并让另一个进程运行。这个我们稍后再看。现在让我们看一下当定时器中断发生的时候，用户空间进程正在执行什么内容。我在gdb中输入print p来打印名称为p的变量。变量p包含了当前进程的proc结构体。
+**在yield函数中，当前进程会出让CPU并让另一个进程运行。这个我们稍后再看**。现在让我们看一下当定时器中断发生的时候，用户空间进程正在执行什么内容。我在gdb中输入print p来打印名称为p的变量。变量p包含了当前进程的proc结构体。
 
 > 学生提问：怎么区分不同进程的内核线程？
 >
@@ -396,11 +644,11 @@ fork(void)
 
 ![](./doc/image%20%28503%29.png)
 
-yield函数只做了几件事情，它首先获取了进程的锁。实际上，在锁释放之前，进程的状态会变得不一致，例如，yield将要将进程的状态改为RUNABLE，表明进程并没有在运行，但是实际上这个进程还在运行，代码正在当前进程的内核线程中运行。所以这里加锁的目的之一就是：即使我们将进程的状态改为了RUNABLE，其他的CPU核的调度器线程也不可能看到进程的状态为RUNABLE并尝试运行它。否则的话，进程就会在两个CPU核上运行了，而一个进程只有一个栈，这意味着两个CPU核在同一个栈上运行代码（注，因为XV6中一个用户进程只有一个用户线程）。
+**yield函数只做了几件事情，它首先获取了进程的锁**。实际上，在锁释放之前，进程的状态会变得不一致，例如，yield将要将进程的状态改为RUNABLE，表明进程并没有在运行，但是实际上这个进程还在运行，代码正在当前进程的内核线程中运行。所以这里加锁的目的之一就是：即使我们将进程的状态改为了RUNABLE，其他的CPU核的调度器线程也不可能看到进程的状态为RUNABLE并尝试运行它。否则的话，进程就会在两个CPU核上运行了，而一个进程只有一个栈，这意味着两个CPU核在同一个栈上运行代码（注，因为XV6中一个用户进程只有一个用户线程）。
 
-接下来yield函数中将进程的状态改为RUNABLE。这里的意思是，当前进程要出让CPU，并切换到调度器线程。当前进程的状态是RUNABLE意味着它还会再次运行，因为毕竟现在是一个定时器中断打断了当前正在运行的进程。
+接下来**yield函数中将进程的状态改为RUNABLE**。这里的意思是，当前进程要出让CPU，并切换到调度器线程。当前进程的状态是RUNABLE意味着它还会再次运行，因为毕竟现在是一个定时器中断打断了当前正在运行的进程。
 
-之后yield函数中调用了位于proc.c文件中的sched函数。我们进入到sched函数中，
+**之后yield函数中调用了位于proc.c文件中的sched函数**。我们进入到sched函数中，
 
 ![](./doc/image%20%28516%29%20%282%29%20%282%29.png)
 
@@ -410,7 +658,7 @@ yield函数只做了几件事情，它首先获取了进程的锁。实际上，
 
 ![](./doc/image%20%28516%29%20%282%29%20%282%29%20%281%29.png)
 
-swtch函数会将当前的内核线程的寄存器保存到p-&gt;context中。swtch函数的另一个参数c-&gt;context，c表示当前CPU的结构体。CPU结构体中的context保存了当前CPU核的调度器线程的寄存器。所以swtch函数在保存完当前内核线程的内核寄存器之后，就会恢复当前CPU核的调度器线程的寄存器，并继续执行当前CPU核的调度器线程。
+swtch函数会将当前的内核线程的寄存器保存到p-&gt;context中。**swtch函数的另一个参数c-&gt;context，c表示当前CPU的结构体。CPU结构体中的context保存了当前CPU核的调度器线程的寄存器**。所以swtch函数在保存完当前内核线程的内核寄存器之后，就会恢复当前CPU核的调度器线程的寄存器，并继续执行当前CPU核的调度器线程。
 
 接下来，我们快速的看一下我们将要切换到的context（注，也就是调度器线程的context）。因为我们只有一个CPU核，这里我在gdb中print cpus\[0\].context
 
