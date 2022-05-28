@@ -4,17 +4,20 @@
 
 课表：https://pdos.csail.mit.edu/6.824/schedule.html
 
-视频：https://www.bilibili.com/video/BV16f4y1z7kn?spm_id_from=333.999.0.0
+视频 6.824 / 2020：https://www.bilibili.com/video/BV1R7411t71W?p=1
 
-课程翻译：https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/
+视频 6.824 / Spring 2021：https://www.bilibili.com/video/BV16f4y1z7kn?p=16
 
-实验记录：
+课程翻译 2020：https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/
+
+中文学习资料+2021版本代码：https://github.com/chaozh/MIT-6.824
+
+2021版本实验记录：https://github.com/OneSizeFitsQuorum/MIT6.824-2021
 
 
 
-1. 建议先刷「课程翻译」
-2. 再看「视频」
-3. 最后把「实验」做完
+1. 「视频」看 2020，听 Robert Morris 讲课，太享受了
+2. 「实验」做 2021
 
 
 
