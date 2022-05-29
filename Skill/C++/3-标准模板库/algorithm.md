@@ -2,7 +2,7 @@
 
 来源：[http://c.biancheng.net/stl/](http://c.biancheng.net/stl/)
 
-## 比较
+## 其他
 
 ### 1、`*min_element()` 和 `*max_element`
 

@@ -58,12 +58,23 @@ $
 
 - `thread_switch`只需要保存/还原被调用方保存的寄存器（callee-save register，参见LEC5使用的文档《Calling Convention》）。为什么？
 - 您可以在***user/uthread.asm***中看到`uthread`的汇编代码，这对于调试可能很方便。
-- 这可能对于测试你的代码很有用，使用`riscv64-linux-gnu-gdb`的单步调试通过你的`thread_switch`，你可以按这种方法开始：
+- 这可能对于测试你的代码很有用，使用`make qemu-gdb` `riscv64-linux-gnu-gdb`的单步调试通过你的`thread_switch`，你可以按这种方法开始：
 
 ```bash
 (gdb) file user/_uthread
 Reading symbols from user/_uthread...
 (gdb) b uthread.c:60
+(gdb) c
+Continuing. 
+```
+
+```
+xv6 kernel is booting
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ uthread
+
 ```
 
 这将在***uthread.c***的第60行设置断点。断点可能会（也可能不会）在运行`uthread`之前触发。为什么会出现这种情况？
@@ -128,6 +139,14 @@ struct thread {
 
 (3). 模仿***kernel/swtch.S，***在***kernel/uthread_switch.S***中写入如下代码
 
+首先.globl表示这是swtch函数，然后开始swtch函数的汇编实现。
+
+因为a0会被内核刷新成当前进程的结构体起始地址，所以要对a0（a0对应函数的第一个参数，也就是old）做偏移以存放13个寄存器（ra,sp和s0~s11），因为这些寄存器都是64位的，所以每次都要偏移8个字节。sd指的是将寄存器的内容存储到存储器中（如 s0 往 a0 的第16 位开始存）。
+
+ld则相反，会从存储器a1（a1对应函数的第二个参数，也就是new）中读取13个寄存器，完成进程上下文的切换。
+
+这个时候ret，因为ra已经被刷新了，所以会跳转到新进程的指定语句执行新进程。
+
 ```asm
 .text
 
@@ -191,6 +210,240 @@ t->context.ra = (uint64)func;                   // 设定函数返回地址
 t->context.sp = (uint64)t->stack + STACK_SIZE;  // 设定栈指针
 ```
 
+---
+
+user/uthread.c 详解，一个很简单的 用户态线程，但也挺重要的
+
+```c
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
+
+/* Possible states of a thread: */
+#define FREE        0x0
+#define RUNNING     0x1
+#define RUNNABLE    0x2
+
+#define STACK_SIZE  8192
+#define MAX_THREAD  4
+
+// 用户线程的上下文结构体
+struct tcontext {
+  uint64 ra;
+  uint64 sp;
+
+  // callee-saved
+  uint64 s0;
+  uint64 s1;
+  uint64 s2;
+  uint64 s3;
+  uint64 s4;
+  uint64 s5;
+  uint64 s6;
+  uint64 s7;
+  uint64 s8;
+  uint64 s9;
+  uint64 s10;
+  uint64 s11;
+};
+
+struct thread {
+  char       stack[STACK_SIZE]; /* the thread's stack */
+  int        state;             /* FREE, RUNNING, RUNNABLE */
+  char       name[16];          /* thread name (debugging) */
+  struct tcontext context;      /* 用户进程上下文 */
+};
+
+struct thread all_thread[MAX_THREAD];
+struct thread *current_thread;
+extern void thread_switch(uint64, uint64);
+
+char*
+safestrcpy(char *s, const char *t, int n)
+{
+  char *os;
+
+  os = s;
+  if(n <= 0)
+    return os;
+  while(--n > 0 && (*s++ = *t++) != 0)
+    ;
+  *s = 0;
+  return os;
+}
+       
+void 
+thread_init(void)
+{
+  // main() is thread 0, which will make the first invocation to
+  // thread_schedule().  it needs a stack so that the first thread_switch() can
+  // save thread 0's state.  thread_schedule() won't run the main thread ever
+  // again, because its state is set to RUNNING, and thread_schedule() selects
+  // a RUNNABLE thread.
+  current_thread = &all_thread[0];
+  current_thread->state = RUNNING;
+  safestrcpy(current_thread->name, "main", sizeof(current_thread->name));
+}
+
+void 
+thread_schedule(void)
+{
+  struct thread *t, *next_thread;
+
+  /* Find another runnable thread. */
+  next_thread = 0;
+  t = current_thread + 1;
+  for(int i = 0; i < MAX_THREAD; i++){
+    if(t >= all_thread + MAX_THREAD)
+      t = all_thread;
+    if(t->state == RUNNABLE) {
+      next_thread = t;
+      break;
+    }
+    t = t + 1;
+  }
+
+  // thread_a b c 函数中的内容都执行完毕后
+  // 会将 current_thread->state = FREE;
+  // 因此，thread_a b c 函数中最后一次调用thread_schedule
+  // 线程池中的线程都是free，所以 next_thread = 0
+  // 所以 最最后只会打印 一条 “thread_schedule: no runnable threads”
+  // 整个程序在main函数的thread_schedule(); 就退出了
+  // 不会走到 exit(0)
+  if (next_thread == 0) {
+    printf("thread_schedule: no runnable threads\n");
+    exit(-1);
+  }
+
+  if (current_thread != next_thread) {         /* switch threads?  */
+    next_thread->state = RUNNING;
+    t = current_thread;
+    current_thread = next_thread;
+    /* YOUR CODE HERE
+     * Invoke thread_switch to switch from t to next_thread:
+     * thread_switch(??, ??);
+     */
+    thread_switch((uint64)&t->context, (uint64)&current_thread->context);
+  } else
+    next_thread = 0;
+}
+
+void 
+thread_create(void (*func)(), const char *thread_name)
+{
+  struct thread *t;
+  // 找到一个空闲的线程
+  for (t = all_thread; t < all_thread + MAX_THREAD; t++) {
+    if (t->state == FREE) break;
+  }
+  t->state = RUNNABLE;
+  // YOUR CODE HERE
+  t->context.ra = (uint64)func;                   // 设定函数返回地址
+  t->context.sp = (uint64)t->stack + STACK_SIZE;  // 设定栈指针
+  safestrcpy(t->name, thread_name, sizeof(t->name));
+}
+
+void 
+thread_yield(void)
+{
+  current_thread->state = RUNNABLE;
+  thread_schedule();
+}
+
+volatile int a_started, b_started, c_started;
+volatile int a_n, b_n, c_n;
+
+void 
+thread_a(void)
+{
+  int i;
+  printf("thread_a started\n");
+  a_started = 1;  // 标记 thread_a 已经准备好开始执行了
+  while(b_started == 0 || c_started == 0)
+    // 但是检查了下另外两个线程，还没有准备好
+    // 因此 thread_yield 把当前 thread_a 挂起，让出cpu的执行权
+    // 再进入 thread_schedule，这个时候 current_thread 还是 a
+    // 通过 t = current_thread + 1; next_thread = t;
+    // 把 线程b 作为next_thread
+    // 再之后就把就执行到 线程b里面
+    thread_yield();
+  
+  for (i = 0; i < 100; i++) {
+    printf("thread_a %d\n", i);
+    a_n += 1;
+    thread_yield();
+  }
+  printf("thread_a: exit after %d\n", a_n);
+
+  current_thread->state = FREE;
+  thread_schedule();
+}
+
+void 
+thread_b(void)
+{
+  int i;
+  printf("thread_b started\n");
+  b_started = 1;
+  while(a_started == 0 || c_started == 0)
+    // 同样的处理，转到 线程c
+    thread_yield();
+  
+  for (i = 0; i < 100; i++) {
+    printf("thread_b %d\n", i);
+    b_n += 1;
+    thread_yield();
+  }
+  printf("thread_b: exit after %d\n", b_n);
+
+  current_thread->state = FREE;
+  thread_schedule();
+}
+
+void 
+thread_c(void)
+{
+  int i;
+  printf("thread_c started\n");
+  c_started = 1;
+  while(a_started == 0 || b_started == 0)
+    thread_yield();
+  // 此时所有的线程都准备好执行，因此先打印的是 thread_c 0
+  // c_n 每增加一 就出让cpu
+  for (i = 0; i < 100; i++) {
+    printf("thread_c %d\n", i);
+    c_n += 1;
+    thread_yield();
+  }
+  printf("thread_c: exit after %d\n", c_n);
+
+  current_thread->state = FREE;
+  thread_schedule();
+}
+
+int 
+main(int argc, char *argv[]) 
+{
+  a_started = b_started = c_started = 0;
+  a_n = b_n = c_n = 0;
+  thread_init();
+  thread_create(thread_a, "thread_a");
+  thread_create(thread_b, "thread_b");
+  thread_create(thread_c, "thread_c");
+  thread_schedule();
+  /* 第一次触发 thread_schedule 时
+  会检查线程池 all_thread 中哪个线程是RUNNABLE状态
+  这时候先检查出来是 thread_a
+  把 main 线程的寄存器信息保存在 main线程的context里面
+  再把 thread_a 线程的context信息恢复到寄存器里面
+  因此开始执行 thread_a 中的内容，第一行打印的是 thread_a started
+  */
+  exit(0);
+}
+```
+
+
+
 # Using threads (moderate)
 
 在本作业中，您将探索使用哈希表的线程和锁的并行编程。您应该在具有多个内核的真实Linux或MacOS计算机（不是xv6，不是qemu）上执行此任务。最新的笔记本电脑都有多核处理器。
@@ -235,6 +488,7 @@ $ ./ph 2
 
 > [!TIP]
 > 为了避免这种事件序列，请在***notxv6/ph.c***中的`put`和`get`中插入`lock`和`unlock`语句，以便在两个线程中丢失的键数始终为0。相关的pthread调用包括：
+>
 > * `pthread_mutex_t lock;            // declare a lock`
 > * `pthread_mutex_init(&lock, NULL); // initialize the lock`
 > * `pthread_mutex_lock(&lock);       // acquire lock`
@@ -248,36 +502,6 @@ $ ./ph 2
 
 > [!TIP|label:YOUR JOB]
 > 修改代码，使某些`put`操作在保持正确性的同时并行运行。当`make grade`说你的代码通过了`ph_safe`和`ph_fast`测试时，你就完成了。`ph_fast`测试要求两个线程每秒产生的`put`数至少是一个线程的1.25倍。
-
-来看一下程序的运行过程：设定了五个散列桶，根据键除以5的余数决定插入到哪一个散列桶中，插入方法是头插法，下面是图示
-
-不支持在 Docs 外粘贴 block
-
-这个实验比较简单，首先是问为什么为造成数据丢失：
-
-> 假设现在有两个线程T1和T2，两个线程都走到put函数，且假设两个线程中key%NBUCKET相等，即要插入同一个散列桶中。两个线程同时调用insert(key, value, &table[i], table[i])，insert是通过头插法实现的。如果先insert的线程还未返回另一个线程就开始insert，那么前面的数据会被覆盖
-
-因此只需要对插入操作上锁即可
-
-(1). 为每个散列桶定义一个锁，将五个锁放在一个数组中，并进行初始化
-
-```c
-pthread_mutex_t lock[NBUCKET] = { PTHREAD_MUTEX_INITIALIZER }; // 每个散列桶一把锁
-```
-
-(2). 在`put`函数中对`insert`上锁
-
-```c
-if(e){
-    // update the existing key.
-    e->value = value;
-} else {
-    pthread_mutex_lock(&lock[i]);
-    // the new is new.
-    insert(key, value, &table[i], table[i]);
-    pthread_mutex_unlock(&lock[i]);
-}
-```
 
 ---
 
@@ -311,7 +535,7 @@ if(e){
 }
 ```
 
-
+https://github.com/dowalle/xv6-labs-2020/commit/03b95a1b7a24e7bf373ff478d45e7514ef4b8232
 
 # Barrier(moderate)
 
@@ -331,6 +555,7 @@ barrier: notxv6/barrier.c:42: thread: Assertion `i == t' failed.
 
 > [!TIP|label:YOUR JOB]
 > 您的目标是实现期望的屏障行为。除了在`ph`作业中看到的lock原语外，还需要以下新的pthread原语；详情请看[这里](https://pubs.opengroup.org/onlinepubs/007908799/xsh/pthread_cond_wait.html)和[这里](https://pubs.opengroup.org/onlinepubs/007908799/xsh/pthread_cond_broadcast.html)。
+>
 > * `// 在cond上进入睡眠，释放锁mutex，在醒来时重新获取`
 > * `pthread_cond_wait(&cond, &mutex);`
 > * `// 唤醒睡在cond的所有线程`

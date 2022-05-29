@@ -599,6 +599,7 @@
       * [7-CSR读写控制](Skill/ASM/RISC-V/7-CSR读写控制.md)
       * [8-EXU模块和CPU运行](Skill/ASM/RISC-V/8-EXU模块和CPU运行.md)
       * [9-RISC-V总线和流水线](Skill/ASM/RISC-V/9-RISC-V总线和流水线.md)
+      * [riscv-asm-manual](Skill/ASM/RISC-V/riscv-asm-manual.md)
   - [C](Skill/C/README.md)
     - C语言内存
       * [1-程序在计算机中如何运行](Skill/C/C语言内存/1-程序在计算机中如何运行.md)
@@ -655,8 +656,8 @@
       * [7-set](Skill/C++/3-标准模板库/7-set.md)
       * [8-unordered_map](Skill/C++/3-标准模板库/8-unordered_map.md)
       * [9-unordered_set](Skill/C++/3-标准模板库/9-unordered_set.md)
+      * [algorithm](Skill/C++/3-标准模板库/algorithm.md)
     * [常用函数](Skill/C++/常用函数.md)
-    * [algorithm](Skill/C++/algorithm.md)
   - Golang
     - 1-基础知识
       * [1-条件判断](Skill/Golang/1-基础知识/1-条件判断.md)

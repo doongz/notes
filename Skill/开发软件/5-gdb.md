@@ -1,6 +1,8 @@
 # GDB
 
-文档：[http://sourceware.org/gdb/documentation/](http://sourceware.org/gdb/documentation/)
+官网：[http://sourceware.org/gdb/documentation/](http://sourceware.org/gdb/documentation/)
+
+文档：https://sourceware.org/gdb/current/onlinedocs/gdb/
 
 gdb命令包含在GNU的gcc开发套件中，是功能强大的程序调试器。GDB中的命令固然很多，但我们只需掌握其中十个左右的命令，就大致可以完成日常的基本的程序调试工作。
 
@@ -88,6 +90,8 @@ si命令类似于s命令，ni命令类似于n命令。
 
 ### 6、打印变量
 
+Print的简写，显示指定变量（临时变量或全局变量）的值。
+
 ```
 p <变量名称>
 
@@ -95,7 +99,22 @@ p <变量名称>
 (gdb) p nGlobalVar
 ```
 
-Print的简写，显示指定变量（临时变量或全局变量）的值。
+以 `all_thread` 数组为例
+
+打印 16 进制信息
+
+```
+p/x *all_thread
+```
+
+打印前4个元素，打印下标从m开始的n个元素：
+
+```
+p/x *all_thread@4
+p/x *all_thread[m]@n
+```
+
+
 
 ### 7、设置中断后显示
 

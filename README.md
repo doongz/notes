@@ -1,4 +1,4 @@
-# 今天学习的人
+# *《学》*
 
 ***今天学习的人***  
 
@@ -39,9 +39,9 @@
     </a>
 </p>
 
-## Contents
+## *Contents*
 
-### Chapter-1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)
+### *Chapter-1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)*
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
 - **数据结构**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
@@ -96,7 +96,7 @@
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 - **系列题目**   [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/5-xi-lie-ti-mu)  `括号问题`  `接雨水问题`
 
-### Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)
+### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
 
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
   - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`
@@ -105,10 +105,10 @@
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
 - [Stanford 课程推荐](./Course/Stanford课程推荐.md)
 
-### Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)
+### *Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)*
 
 - [ASM](https://dowalle.gitbook.io/algo/skill/asm)
-  - [RISC-V](./algo/Skill/ASM/RISC-V)  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
+  - [RISC-V](./algo/Skill/ASM/RISC-V)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
 - [C「未完工」](https://dowalle.gitbook.io/algo/skill/c)
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
@@ -130,7 +130,7 @@
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 
-### Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)
+### *Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)*
 
 - [IC「未完工」]()  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
@@ -169,9 +169,8 @@
   - [kubernetes 问题 & 局限性](./Knowledge/5-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
   - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
-- [设计模式](https://dowalle.gitbook.io/algo/knowledge/6-she-ji-mo-shi)  `多态和多态性`  `工厂模式`
 
-### Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)
+### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
 
 > *Manuscript written in 2016, opened again in 2022*
 
@@ -187,7 +186,7 @@
   - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
   - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
-## Usage
+## *Usage*
 
 [Generate SUMMARY.md](https://github.com/imfly/gitbook-summary) for gitbook:
 
@@ -195,7 +194,7 @@
 $ book sm
 ```
 
-## Statement
+## *Statement*
 
 > 学习只能依靠自己的积累，其他所有的材料都只是参考。此仓库，也仅作为自己学习时的笔记。
 >
