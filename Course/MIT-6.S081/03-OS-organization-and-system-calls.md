@@ -1,6 +1,6 @@
 # [OS organization and system calls](https://pdos.csail.mit.edu/6.828/2020/lec/l-os.txt)
 
-## 总结
+## 笔记
 
 Isolation 隔离性是设计操作系统组织结构的驱动力。
 

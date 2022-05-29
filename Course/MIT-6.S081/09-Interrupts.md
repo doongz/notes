@@ -1,6 +1,6 @@
 #  [Interrupts](https://pdos.csail.mit.edu/6.828/2020/lec/l-interrupt.txt)
 
-## 总结
+## 笔记
 
 学完这一章，一定要理解，
 

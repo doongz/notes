@@ -1,6 +1,6 @@
 #  [Page faults](https://pdos.csail.mit.edu/6.828/2020/lec/l-pgfaults.txt)
 
-## 总结
+## 笔记
 
 #### Page Fault
 
