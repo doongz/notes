@@ -1,5 +1,231 @@
 # [sleep&wakeup](https://pdos.csail.mit.edu/6.828/2020/lec/l-coordination.txt)
 
+## 总结
+
+### 1、线程切换过程中的锁
+
+**为什么需要锁**？
+
+阻止其他CPU核的调度器线程在当前进程完成切换前，发现进程是RUNNABLE的状态并尝试运行它
+
+在进程切换的最开始，进程先获取自己的锁，调度器线程会在进程的线程完全停止使用自己的栈之后，再释放进程的锁
+
+**锁的限制**？
+
+- 不允许进程在执行switch函数的过程中，持有任何其他的锁。因为P1进程的锁会锁住已经申请的如磁盘，UART等设备的锁，而P2进程又不停的自旋等待磁盘这些锁。这是一种死锁
+- acquire函数在等待锁之前会关闭中断，否则的话可能会引起死锁，所以我们不能在等待锁的时候处理中断
+
+### 2、Sleep&Wakeup 条件锁
+
+**怎么能让进程或者线程等待一些特定的事件呢**？
+
+- 通过循环实现busy-wait。
+
+假设从一个Pipe读取数据，就写一个循环一直等待Pipe的buffer不为空，`while (pipe_buf is empty) {}`，最多在循环里面加点时间延迟，非常丑陋，CPU也还占着
+
+- Sleep&Wakeup，通过 switch函数调用的方式出让CPU，并在我们关心的事件发生时重新获取CPU
+
+当shell需要输出时会调用write系统调用最终走到uartwrite函数中
+
+uartwrite函数将buf中的字符一个一个的向UART硬件写入
+
+```c
+void uartwrite(char buf[], int n) {
+    acquire(&uart_tx_lock);
+    
+    int i = 0;
+    while (i < n) {
+        while (tx_done == 0) {
+            // UART is busy sending a character.
+            // wait for it to interrupt
+            sleep(&tx_chan, &uart_tx_lock);
+        }
+        WriteReg(THR, buf[i]);
+        i += 1;
+        tx_done = 0;
+    }
+	release(&uart_tx_lock);
+}
+```
+
+UART硬件会在完成传输一个字符后，触发一个中断处理程序 uartintr，开始读取
+
+```c
+void uartintr(void) {
+    acquire(&uart_tx_lock);
+    if (ReadReg(LSR) & LSR_TX_IDLE) {
+        // UART finished transmitting; wake up any sending thread.
+        tx_done = 1;
+        wakeup(&tx_chan);
+    }
+    release(&uart_tx_lock);
+    
+    // read and process incoming characters
+    ......
+}
+```
+
+代码会将tx\_done设置为1，调用wakeup函数，使得uartwrite中的sleep函数恢复执行
+
+sleep函数和wakeup函数都带有一个叫做sleep channel的参数（无所谓数值是什么，传入相同的数值来表明想唤醒哪个线程）
+
+需要将一个锁作为第二个参数传入（big story）
+
+Sleep&wakeup的一个优点是可以很灵活，它们不关心代码正在执行什么操作，你不用告诉sleep函数你在等待什么事件，你也不用告诉wakeup函数发生了什么事件，你只需要匹配好64bit的sleep channel就行
+
+一个通用的sleep函数很难实现，几乎所有的Coordination机制都需要处理lost wakeup的问题
+
+### 3、lost wakeup
+
+```c
+release(&uart_tx_lock);
+/* 出问题的地方 */
+sleep(&tx_chan, &uart_tx_lock);
+acquire(&uart_tx_lock);
+```
+
+- 现在写线程还在执行并位于release和broken_sleep之间，锁已经释放了
+- uartintr 中的acquire(&uart_tx_lock); 抢到锁
+- 写线程还没有进入SLEEPING状态（sleep中完成），所以中断处理程序中的wakeup并没有唤醒任何进程，因为还没有任何进程在tx_chan上睡眠
+- 写线程会继续运行，调用broken_sleep，将进程状态设置为SLEEPING，保存sleep channel
+- 但是中断已经发生了，wakeup也已经被调用了
+- 所以这次的broken\_sleep，没有人会唤醒它，因为wakeup已经发生过了
+
+### 4、避免Lost wakeup
+
+proc.c中的wakeup函数
+
+```c
+// Wake up all processes sleeping on chan.
+// Must be called without any p->lock.
+void
+wakeup(void *chan)
+{
+  struct proc *p;
+
+  for(p = proc; p < &proc[NPROC]; p++) {
+    acquire(&p->lock);
+    if(p->state == SLEEPING && p->chan == chan) {
+      p->state = RUNNABLE;
+    }
+    release(&p->lock);
+  }
+}
+```
+
+- 对于每个进程首先加锁，读写一致
+- 当前是SLEEPING并且进程的channel与wakeup传入的channel相同，将进程的状态设置为RUNNABLE
+- 最后再释放进程的锁
+
+带有锁作为参数的sleep函数
+
+```c
+// Atomically release lock and sleep on chan.
+// Reacquires lock when awakened.
+void
+sleep(void *chan, struct spinlock *lk)
+{
+  struct proc *p = myproc();
+  
+  // Must acquire p->lock in order to
+  // change p->state and then call sched.
+  // Once we hold p->lock, we can be
+  // guaranteed that we won't miss any wakeup
+  // (wakeup locks p->lock),
+  // so it's okay to release lk.
+  if(lk != &p->lock){  //DOC: sleeplock0
+    acquire(&p->lock);  //DOC: sleeplock1
+    release(lk); // 要把设备的锁释放掉，中断程序才能正确执行
+  }
+
+  // Go to sleep.
+  p->chan = chan;
+  p->state = SLEEPING;
+
+  sched();
+
+  // Tidy up.
+  p->chan = 0;
+
+  // Reacquire original lock.
+  if(lk != &p->lock){
+    release(&p->lock);
+    acquire(lk);
+  }
+}
+
+```
+
+-  不能让wakeup在release锁之后，sched()之前执行（wakeup背后一直在轮循，就可能在提前触发）
+- 因此，在release(lk);前，把这个进程锁住acquire(&p->lock);
+- 进入sched()，中断程序的第一步获取 acquire(&uart_tx_lock);
+- 但是sleep中还占有着，中断程序在acquire 自旋，并执行到这个进程
+- sleep 这个时候释放掉进程锁，中断程序 就可以获得进程锁了
+- 往下执行读数据，并wakeup sleep的线程
+- sleep 最后的acquire(lk); 是为了对应 uartwrite 中最后的 release
+
+### 5、Pipe中的sleep和wakeup
+
+没听懂
+
+### 6、exit系统调用
+
+XV6有两个函数与关闭线程进程相关。第一个是exit，第二个是kill
+
+一个进程退出的清理步骤：释放用户内存，释放page table，释放trapframe对象等
+
+会出现的问题：
+
+- 不能直接单方面的摧毁另一个线程
+- 即使一个线程调用了exit系统调用，自己决定要退出。当它还在执行代码，它就不能释放正在使用的资源
+
+exit系统调用的内容：
+
+1. 关闭了所有已打开的文件
+2. 如果有自己的子进程，会为即将exit进程的子进程重新指定父进程为init进程，也就是PID为1的进程
+3. 调用wakeup函数唤醒当前进程的父进程，当前进程的父进程或许正在等待当前进程退出
+4. 进程的状态被设置为ZOMBIE，此时进程还没有完全释放它的资源
+5. 通过调用sched函数进入到调度器线程，去运行其他线程
+6. 到目前位置，进程不会再运行，同时进程资源也并没有完全释放
+7. 父进程的 freeproc 会真正的释放进程的所有资源（往下看wait）
+
+### 7、wait系统调用
+
+如果一个进程exit了，且它的父进程调用了wait系统调用，那么父进程的wait会返回
+
+wait函数的返回表明当前进程的一个子进程退出了（父亲进程知道子进程退出了）
+
+步骤：
+
+1. 会扫描进程表单，找到父进程是自己且状态是ZOMBIE的进程（找到自己的僵尸子进程）
+2. 由父进程调用的freeproc函数，来完成释放进程资源的最后几个步骤
+3. 父进程完成了清理进程的所有资源，子进程的状态会被设置成UNUSED
+4. 之后，fork系统调用才能重用进程在进程表单的位置
+
+wait实际上也是进程退出的一个重要组成部分
+
+- 在Unix中，对于每一个退出的进程，都需要有一个对应的wait系统调用
+- 当一个进程退出时，它的子进程需要变成init进程的子进程
+- init进程的工作就是在一个循环中不停调用wait，因为每个进程都需要对应一个wait，这样它的父进程才能调用freeproc函数，并清理进程的资源
+
+### 8、kill系统调用
+
+Unix中的一个进程可以将另一个进程的ID传递给kill系统调用，并让另一个进程停止运行
+
+但是，kill一个还在内核执行代码的进程，还在更新一些数据，kill系统调用不能就直接停止目标进程的运行
+
+实际上，在XV6和其他的Unix系统中，kill系统调用基本上不做任何事情。
+
+- 只是将进程的proc结构体中killed标志位设置为1
+
+目标进程运行到内核代码中能安全停止运行的位置时，会检查自己的killed标志位，如果设置为1，目标进程会自愿的执行exit系统调用（在trap.c中）
+
+所以kill系统调用并不是真正的立即停止进程的运行
+
+- 如果进程在用户空间，那么下一次它执行系统调用它就会退出
+- 目标进程正在执行用户代码，当时下一次定时器中断或者其他中断触发了，进程才会退出
+- 如果目标进程是SLEEPING状态，kill函数会将其状态设置为RUNNABLE，下次执行的时候会把进程杀掉
+
 ## 13.1 线程切换过程中锁的限制
 
 今天这节课中，首先我们会花几分钟来重温一下上节课，也就是线程切换的内容，因为有些内容对于这节课来说还挺重要的。之后我们大部分时间都会讨论coordination，XV6通过Sleep&Wakeup实现了coordination。最后我们会讨论lost wake-up的问题。
@@ -352,11 +578,7 @@ wait不仅是为了父进程方便的知道子进程退出，wait实际上也是
 
 你可以看到如果目标进程是SLEEPING状态，kill函数会将其状态设置为RUNNABLE，这意味着，即使进程之前调用了sleep并进入到SLEEPING状态，调度器现在会重新运行进程，并且进程会从sleep中返回。让我们来查看一下这在哪生效的。在pipe.c的piperead函数中，
 
-![](https://gblobscdn.gitbook.com/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MREXI7Fb4If89pSv86q%2F-MREc1EZoPXGPt9wrkbT%2Fimage.png?alt=media&token=08006b4e-3466-4451-bd39-2fe310c5a145)
-
 如果一个进程正在sleep状态等待从pipe中读取数据，然后它被kill了。kill函数会将其设置为RUNNABLE，之后进程会从sleep中返回，返回到循环的最开始。pipe中大概率还是没有数据，之后在piperead中，会判断进程是否被kill了（注，if\(pr-&gt;killed\)）。如果进程被kill了，那么接下来piperead会返回-1，并且返回到usertrap函数的syscall位置，因为piperead就是一种系统调用的实现。
-
-![](https://gblobscdn.gitbook.com/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MRKwJwSQOULTxQNadvq%2F-MRNDod-w1OvPTWwuj9m%2Fimage.png?alt=media&token=3b9f19fd-394f-453c-a90d-e435df41776f)
 
 之后在usertrap函数中会检查p-&gt;killed，并调用exit。
 

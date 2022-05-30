@@ -450,6 +450,7 @@
       * [5-lazy-page-allocation](Course/MIT-6.S081/Labs/5-lazy-page-allocation.md)
       * [6-copy-on-write-fork](Course/MIT-6.S081/Labs/6-copy-on-write-fork.md)
       * [7-multithreading](Course/MIT-6.S081/Labs/7-multithreading.md)
+      * [8-lock](Course/MIT-6.S081/Labs/8-lock.md)
     * [01-Introduction-and-Examples](Course/MIT-6.S081/01-Introduction-and-Examples.md)
     * [02-C-and-gdb](Course/MIT-6.S081/02-C-and-gdb.md)
     * [03-OS-organization-and-system-calls](Course/MIT-6.S081/03-OS-organization-and-system-calls.md)
