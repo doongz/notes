@@ -82,6 +82,74 @@ write和read都没有针对文件的offset参数，文件描述符必然自己�
 - bitmap block，这是我们构建文件系统的默认方法，它只占据一个block，记录了数据block是否空闲
 - 之后就全是数据block了，数据block存储了文件的内容和目录的内容。
 
+### 4、inode
+
+inode 一个64字节的数据结构
+
+- 有一个type字段，表明inode是文件还是目录
+- nlink字段，也就是link计数器
+- size字段，表明了文件数据有多少个字节
+- direct block number，XV6的inode中总共有12个block编号，指向了构成文件的前12个block
+- indirect block number，对应了磁盘上一个block，包含了256个block number
+
+xv6 最大文件尺寸：(256 + 12) * 1024 = 268KB
+
+可以使用类似page table的树状结构，实现双重indirect block number来支持更大的文件
+
+- 这个双重indirect block number将会指向一个包含了256个indirect block number的block
+- 其中的每一个indirect block number再指向一个包含了256个block number的block
+
+例如：读取文件的第8000个字节，8000/1024 = 7 第7个block + 8000%1024 偏移量
+
+目录（directory），每一个目录包含了directory entries（16个字节）
+
+- 前2个字节包含了目录中文件或者子目录的inode编号
+- 接下来的14个字节包含了文件或者子目录名
+
+### 5、File system工作示例
+
+请直接看下面原文，是文件系统的组织结构的核心
+
+### 6、XV6创建inode
+
+请直接看下面原文
+
+### 7、Sleep Lock
+
+```c
+void
+acquiresleep(struct sleeplock *lk)
+{
+  acquire(&lk->lk);
+  while (lk->locked) {
+    sleep(lk, &lk->lk);
+  }
+  lk->locked = 1;
+  lk->pid = myproc()->pid;
+  release(&lk->lk);
+}
+```
+
+- 函数里首先获取了一个普通的spinlock，是与sleep lock关联在一起的一个锁
+- 之后，如果sleep lock被持有，那么就进入sleep状态，并将自己从当前CPU调度开
+- 直到 wakeup
+
+sleep lock是基于spinlock实现的，为什么不使用 spinlock
+
+- spinlock有很多限制，其中之一是加锁时中断必须要关闭
+- sleep lock的优势就是，我们可以在持有锁的时候不关闭中断
+- 在磁盘操作的过程中持有锁，我们也可以长时间持有锁
+- 当我们在等待sleep lock的时候，我们并没有让CPU一直空转，我们通过sleep将CPU出让出去了
+
+### 8、block cache
+
+代码的介绍
+
+- 首先在内存中，对于一个block只能有一份缓存
+- 使用了与之前的spinlock略微不同的sleep lock，在I/O操作的过程中持有sleep lock
+- 它采用了LRU作为cache替换策略
+- 它有两层锁。第一层锁用来保护buffer cache的内部数据；第二层锁也就是sleep lock用来保护单个block的cache
+
 ## 14.1 Why Interesting
 
 今天介绍的是文件系统。实际上我们会花三节课的时间来学习文件系统。前两节课基于XV6来做介绍，第三节课基于Linux来做介绍。实际上，这将是有关XV6的最后一个话题，在这周之后我们就讲完了XV6。
@@ -362,35 +430,35 @@ XV6总是会打印文件系统的一些信息，所以从指令的下方可以�
 
 让我们一个阶段一个阶段的看echo的执行过程，并理解对于文件系统发生了什么。相比看代码，这里直接看磁盘的分布图更方便：
 
-![](https://gblobscdn.gitbook.com/assets%2F-MHZoT2b_bcLghjAOPsJ%2F-MRhzbAZwhuzp63wWdRE%2F-MRielGcbrHOzPCrxHcO%2Fimage.png?alt=media&token=f685aafe-7c22-4965-9936-d811b090023d)
+![](./doc/image-999.png)
 
 你们觉得的write 33代表了什么？我们正在创建文件，所以我们期望文件系统干什么呢？
 
 > 学生回答：这是在写inode。
 
-是的，看起来给我们分配的inode位于block 33。之所以有两个write 33，第一个是为了标记inode将要被使用。在XV6中，我记得是使用inode中的type字段来标识inode是否空闲，这个字段同时也会用来表示inode是一个文件还是一个目录。所以这里将inode的type从空闲改成了文件，并写入磁盘表示这个inode已经被使用了。第二个write 33就是实际的写入inode的内容。inode的内容会包含linkcount为1以及其他内容。
+是的，看起来给我们分配的inode位于block 33。之所以有两个write 33，**第一个write 33是为了标记inode将要被使用**。在XV6中，我记得是使用inode中的type字段来标识inode是否空闲，这个字段同时也会用来表示inode是一个文件还是一个目录。所以这里将inode的type从空闲改成了文件，并写入磁盘表示这个inode已经被使用了。**第二个write 33就是实际的写入inode的内容**。inode的内容会包含linkcount为1以及其他内容。
 
-write 46是向第一个data block写数据，那么这个data block属于谁呢？
+**write 46是向第一个data block写数据（属于根目录）**，那么这个data block属于谁呢？
 
 > 学生回答：属于根目录。
 
 是的，block 46是根目录的第一个block。为什么它需要被写入数据呢？
 
-> 学生回答：因为我们正在向根目录创建一个新文件。
+> 学生回答：**因为我们正在向根目录创建一个新文件**。
 
 是的，这里我们向根目录增加了一个新的entry，其中包含了文件名x，以及我们刚刚分配的inode编号。
 
-接下来的write 32又是什么意思呢？block 32保存的仍然是inode，那么inode中的什么发生了变化使得需要将更新后的inode写入磁盘？是的，根目录的大小变了，因为我们刚刚添加了16个字节的entry来代表文件x的信息。
+接下来的write 32又是什么意思呢？**block 32保存的仍然是inode**，那么inode中的什么发生了变化使得**需要将更新后的inode写入磁盘**？是的，**根目录的大小变了**，因为我们刚刚添加了16个字节的entry来代表文件x的信息。
 
 最后又有一次write 33，我在稍后会介绍这次写入的内容，这里我们再次更新了文件x的inode， 尽管我们又还没有写入任何数据。
 
 以上就是第一阶段创建文件的过程。第二阶段是向文件写入“hi”。
 
-首先是write 45，这是更新bitmap。文件系统首先会扫描bitmap来找到一个还没有使用的data block，未被使用的data block对应bit 0。找到之后，文件系统需要将该bit设置为1，表示对应的data block已经被使用了。所以更新block 45是为了更新bitmap。
+**首先是write 45，这是更新bitmap。文件系统首先会扫描bitmap来找到一个还没有使用的data block**，未被使用的data block对应bit 0。找到之后，文件系统需要将该bit设置为1，表示对应的data block已经被使用了。所以更新block 45是为了更新bitmap。
 
-接下来的两次write 595表明，文件系统挑选了data block 595。所以在文件x的inode中，第一个direct block number是595。因为写入了两个字符，所以write 595被调用了两次。
+**接下来的两次write 595表明，文件系统挑选了data block 595**。所以在文件x的inode中，第一个direct block number是595。**因为写入了两个字符，所以write 595被调用了两次**。
 
-第二阶段最后的write 33是更新文件x对应的inode中的size字段，因为现在文件x中有了两个字符。
+第二阶段**最后的write 33是更新文件x对应的inode中的size字段**，因为现在文件x中有了两个字符。
 
 > 学生提问：block 595看起来在磁盘中很靠后了，是因为前面的block已经被系统内核占用了吗？
 >
@@ -416,7 +484,7 @@ create函数中首先会解析路径名并找到最后一个目录，之后会�
 
 ![](./doc/image%20%28619%29.png)
 
-以上就是ialloc函数，与XV6中的大部分函数一样，它很简单，但是又不是很高效。它会遍历所有可能的inode编号，找到inode所在的block，再看位于block中的inode数据的type字段。如果这是一个空闲的inode，那么将其type字段设置为文件，这会将inode标记为已被分配。函数中的log\_write就是我们之前看到在console中有关写block的输出。这里的log\_write是我们看到的整个输出的第一个。
+以上就是ialloc函数，与XV6中的大部分函数一样，它很简单，但是又不是很高效。它**会遍历所有可能的inode编号，找到inode所在的block**，再看位于block中的inode数据的type字段。如果这是一个空闲的inode，那么将其type字段设置为文件，这会将inode标记为已被分配。函数中的log\_write就是我们之前看到在console中有关写block的输出。这里的log\_write是我们看到的整个输出的第一个。
 
 以上就是第一次写磁盘涉及到的函数调用。这里有个有趣的问题，如果有多个进程同时调用create函数会发生什么？对于一个多核的计算机，进程可能并行运行，两个进程可能同时会调用到ialloc函数，然后进而调用bread（block read）函数。所以必须要有一些机制确保这两个进程不会互相影响。
 
@@ -434,13 +502,13 @@ bread函数首先会调用bget函数，bget会为我们从buffer cache中找到b
 
 是的，我们这里看一下block 33的cache是否存在，如果存在的话，将block对象的引用计数（refcnt）加1，之后再释放bcache锁，因为现在我们已经完成了对于cache的检查并找到了block cache。之后，代码会尝试获取block cache的锁。
 
-所以，如果有多个进程同时调用bget的话，其中一个可以获取bcache的锁并扫描buffer cache。此时，其他进程是没有办法修改buffer cache的（注，因为bacche的锁被占住了）。之后，进程会查找block number是否在cache中，如果在的话将block cache的引用计数加1，表明当前进程对block cache有引用，之后再释放bcache的锁。如果有第二个进程也想扫描buffer cache，那么这时它就可以获取bcache的锁。假设第二个进程也要获取block 33的cache，那么它也会对相应的block cache的引用计数加1。最后这两个进程都会尝试对block 33的block cache调用acquiresleep函数。
+所以，**如果有多个进程同时调用bget的话，其中一个可以获取bcache的锁并扫描buffer cache。此时，其他进程是没有办法修改buffer cache的**（注，因为bacche的锁被占住了）。之后，进程会查找block number是否在cache中，如果在的话将block cache的引用计数加1，表明当前进程对block cache有引用，之后再释放bcache的锁。如果有第二个进程也想扫描buffer cache，那么这时它就可以获取bcache的锁。假设第二个进程也要获取block 33的cache，那么它也会对相应的block cache的引用计数加1。最后这两个进程都会尝试对block 33的block cache调用acquiresleep函数。
 
 acquiresleep是另一种锁，我们称之为sleep lock，本质上来说它获取block 33 cache的锁。其中一个进程获取锁之后函数返回。在ialloc函数中会扫描block 33中是否有一个空闲的inode。而另一个进程会在acquiresleep中等待第一个进程释放锁。
 
 > 学生提问：当一个block cache的refcnt不为0时，可以更新block cache吗？因为释放锁之后，可能会修改block cache。
 >
-> Frans教授：这里我想说几点；首先XV6中对bcache做任何修改的话，都必须持有bcache的锁；其次对block 33的cache做任何修改你需要持有block 33的sleep lock。所以在任何时候，release\(&bcache.lock\)之后，b-&gt;refcnt都大于0。block的cache只会在refcnt为0的时候才会被驱逐，任何时候refcnt大于0都不会驱逐block cache。所以当b-&gt;refcnt大于0的时候，block cache本身不会被buffer cache修改。这里的第二个锁，也就是block cache的sleep lock，是用来保护block cache的内容的。它确保了任何时候只有一个进程可以读写block cache。
+> Frans教授：这里我想说几点；首先XV6中对bcache做任何修改的话，都必须持有bcache的锁；其次对block 33的cache做任何修改你需要持有block 33的sleep lock。所以在任何时候，release\(&bcache.lock\)之后，b-&gt;refcnt都大于0。block的cache只会在refcnt为0的时候才会被驱逐，任何时候refcnt大于0都不会驱逐block cache。所以**当b-&gt;refcnt大于0的时候，block cache本身不会被buffer cache修改**。这里的第二个锁，也就是block cache的sleep lock，是用来保护block cache的内容的。它确保了任何时候只有一个进程可以读写block cache。
 
 如果buffer cache中有两份block 33的cache将会出现问题。假设一个进程要更新inode19，另一个进程要更新inode20。如果它们都在处理block 33的cache，并且cache有两份，那么第一个进程可能持有一份cache并先将inode19写回到磁盘中，而另一个进程持有另一份cache会将inode20写回到磁盘中，并将inode19的更新覆盖掉。所以一个block只能在buffer cache中出现一次。你们在完成File system lab时，必须要维持buffer cache的这个属性。
 
@@ -474,7 +542,7 @@ block cache使用的是sleep lock。sleep lock区别于一个常规的spinlock�
 
 ![](./doc/image%20%28613%29%20%281%29.png)
 
-brelease函数中首先释放了sleep lock；之后获取了bcache的锁；之后减少了block cache的引用计数，表明一个进程不再对block cache感兴趣；最后如果引用计数为0，那么它会修改buffer cache的linked-list，将block cache移到linked-list的头部，这样表示这个block cache是最近使用过的block cache。这一点很重要，当我们在bget函数中不能找到block cache时，我们需要在buffer cache中腾出空间来存放新的block cache，这时会使用LRU（Least Recent Used）算法找出最不常使用的block cache，并撤回它（注，而将刚刚使用过的block cache放在linked-list的头部就可以直接更新linked-list的tail来完成LRU操作）。为什么这是一个好的策略呢？因为通常系统都遵循temporal locality策略，也就是说如果一个block cache最近被使用过，那么很有可能它很快会再被使用，所以最好不要撤回这样的block cache。
+**brelse函数中首先释放了sleep lock**；之后获取了bcache的锁；**之后减少了block cache的引用计数，表明一个进程不再对block cache感兴趣**；最后如果引用计数为0，那么它会修改buffer cache的linked-list，将block cache移到linked-list的头部，这样表示这个block cache是最近使用过的block cache。这一点很重要，当我们在bget函数中不能找到block cache时，我们需要在buffer cache中腾出空间来存放新的block cache，这时会**使用LRU（Least Recent Used）算法找出最不常使用的block cache，并撤回它**（注，而将刚刚使用过的block cache放在linked-list的头部就可以直接更新linked-list的tail来完成LRU操作）。为什么这是一个好的策略呢？因为通常系统都遵循temporal locality策略，也就是说**如果一个block cache最近被使用过，那么很有可能它很快会再被使用，所以最好不要撤回这样的block cache**。
 
 以上就是对于block cache代码的介绍。这里有几件事情需要注意：
 
@@ -488,7 +556,7 @@ brelease函数中首先释放了sleep lock；之后获取了bcache的锁；之�
 最后让我们来总结一下，并把剩下的内容留到下节课。
 
 * 首先，文件系统是一个位于磁盘的数据结构。我们今天的主要时间都用来介绍这个位于磁盘的数据结构的内容。XV6的这个数据结构实现的很简单，但是你可以实现一个更加复杂的数据结构。
-* 其次，我们花了一些时间来看block cache的实现，这对于性能来说是至关重要的，因为读写磁盘是代价较高的操作，可能要消耗数百毫秒，而block cache确保了如果我们最近从磁盘读取了一个block，那么我们将不会再从磁盘读取相同的block。
+* 其次，**我们花了一些时间来看block cache的实现，这对于性能来说是至关重要的**，因为读写磁盘是代价较高的操作，可能要消耗数百毫秒，而block cache确保了如果我们最近从磁盘读取了一个block，那么我们将不会再从磁盘读取相同的block。
 
 ![](./doc/image%20%28591%29.png)
 
