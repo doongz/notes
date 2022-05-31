@@ -448,6 +448,8 @@
     - Labs
       * [0-实验代码使用](Course/MIT-6.S081/Labs/0-实验代码使用.md)
       * [1-util](Course/MIT-6.S081/Labs/1-util.md)
+      * [10-mmap](Course/MIT-6.S081/Labs/10-mmap.md)
+      * [11-network](Course/MIT-6.S081/Labs/11-network.md)
       * [2-syscall](Course/MIT-6.S081/Labs/2-syscall.md)
       * [3-page-tables](Course/MIT-6.S081/Labs/3-page-tables.md)
       * [4-traps](Course/MIT-6.S081/Labs/4-traps.md)
@@ -455,6 +457,7 @@
       * [6-copy-on-write-fork](Course/MIT-6.S081/Labs/6-copy-on-write-fork.md)
       * [7-multithreading](Course/MIT-6.S081/Labs/7-multithreading.md)
       * [8-lock](Course/MIT-6.S081/Labs/8-lock.md)
+      * [9-file-system](Course/MIT-6.S081/Labs/9-file-system.md)
     * [01-Introduction-and-Examples](Course/MIT-6.S081/01-Introduction-and-Examples.md)
     * [02-C-and-gdb](Course/MIT-6.S081/02-C-and-gdb.md)
     * [03-OS-organization-and-system-calls](Course/MIT-6.S081/03-OS-organization-and-system-calls.md)
