@@ -99,7 +99,7 @@
 ### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
 
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
-  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`
+  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`
 - [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [NJU 操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
