@@ -1,5 +1,77 @@
 # [Calling conventions and stack frames RISC-V](https://pdos.csail.mit.edu/6.828/2020/lec/l-riscv.txt)
 
+## 笔记
+
+### 1、C程序到汇编程序
+
+trapframe：XV6中用来实现trap的一个内存page
+
+处理器并不能理解C语言，处理器能够理解的是「二进制编码」之后的汇编代码
+
+- 任何一个处理器都有一个关联的ISA（Instruction Sets Architecture），ISA就是处理器能够理解的指令集
+
+- 每一条指令都有一个对应的二进制编码或者一个Opcode
+
+- 当处理器在运行时，如果看见了这些编码，那么处理器就知道该做什么样的操作
+
+### 2、RISC-V vs x86
+
+汇编语言有很多种
+
+不同的处理器指令集不一样，而汇编语言中都是一条条指令，所以不同处理器对应的汇编语言必然不一样
+
+- RISC-V中的RISC是精简指令集（Reduced Instruction Set Computer）
+- x86通常被称为CISC，复杂指令集（Complex Instruction Set Computer）
+
+两者之间有一些关键的区别：
+
+- 指令的数量
+- RISC-V指令也更加简单，趋向于完成更简单的工作，相应的也消耗更少的CPU执行时间
+- RISC是开源的
+- x86通常来说对于一个场景都会有一个完美的指令，它的执行效率要高于RISC-V中的同等指令
+
+### 3、汇编代码执行
+
+当将C代码编译成汇编代码时，现代的编译器会执行各种各样的优化，所以编译得到的汇编代码可能看起来是不一样的
+
+### 4、RISC-V寄存器
+
+寄存器是CPU或者处理器上，预先定义的可以用来存储数据的位置
+
+寄存器之所以重要是因为汇编代码并不是在内存上执行，而是在寄存器上执行
+
+### 5、Stack
+
+栈之所以很重要的原因是，它使得我们的函数变得有组织，且能够正常返回
+
+每执行一次函数调用就会产生一个Stack Frame，并且只给自己用。函数通过移动Stack Pointer来完成Stack Frame的空间分配。
+
+**对于Stack来说，是从高地址开始向低地址使用**。所以栈总是向下增长
+
+一个函数的Stack Frame包含了保存的寄存器，本地变量
+
+- Return address总是会出现在Stack Frame的第一位
+- 指向前一个Stack Frame的指针也会出现在栈中的固定位置
+
+Stack Frame中有两个重要的寄存器
+
+- SP（Stack Pointer）指向Stack的底部并代表了当前Stack Frame的位置
+- FP（Frame Pointer）当前Stack Frame的顶部，因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据
+
+当前函数返回时，我们可以将前一个Frame Pointer存储到FP寄存器中
+
+Stack Frame必须要被汇编代码创建
+
+在gdb中输入info frame，可以看到有关当前Stack Frame许多有用的信息
+
+### 6、Struct
+
+struct在内存中是一段连续的地址
+
+创建这样一个struct时，内存中相应的字段会彼此相邻
+
+struct像是一个数组，但是里面的不同字段的类型可以不一样
+
 ## 5.1 C程序到汇编程序的转换
 
 （00:00 - 05:25 在讨论syscall lab，没有什么实质内容故跳过）
