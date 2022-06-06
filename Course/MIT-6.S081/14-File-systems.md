@@ -1,6 +1,6 @@
 # [File systems](https://pdos.csail.mit.edu/6.828/2020/lec/l-fs.txt)
 
-## 总结
+## 笔记
 
 ### 1、文件系统特性
 

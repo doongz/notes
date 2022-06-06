@@ -1,6 +1,6 @@
 # [Crash recovery](https://pdos.csail.mit.edu/6.828/2020/lec/l-crash.txt)
 
-## 总结
+## 笔记
 
 本节课讨论的是，使用logging来解决crash safety或者说多个步骤的文件系统操作的安全性
 

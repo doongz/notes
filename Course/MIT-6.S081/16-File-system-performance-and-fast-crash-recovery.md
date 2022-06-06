@@ -1,6 +1,6 @@
 # [File system performance and fast crash recovery](https://pdos.csail.mit.edu/6.828/2020/lec/l-journal.txt)
 
-## 总结
+## 笔记
 
 由于时间原因和个人能力，并没有把文件系统学习到位，文件系统的复杂度个人感觉要高于内存
 

@@ -1,6 +1,6 @@
 # [sleep&wakeup](https://pdos.csail.mit.edu/6.828/2020/lec/l-coordination.txt)
 
-## 总结
+## 笔记
 
 ### 1、线程切换过程中的锁
 
