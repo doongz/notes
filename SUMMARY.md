@@ -701,6 +701,7 @@
     - 3-进阶知识
       * [1-垃圾回收](Skill/Golang/3-进阶知识/1-垃圾回收.md)
       * [2-go-tool](Skill/Golang/3-进阶知识/2-go-tool.md)
+      * [3-runtime](Skill/Golang/3-进阶知识/3-runtime.md)
     - 4-实用函数
       * [1-计时器](Skill/Golang/4-实用函数/1-计时器.md)
   - LaTeX
