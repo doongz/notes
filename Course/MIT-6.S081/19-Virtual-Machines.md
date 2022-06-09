@@ -1,5 +1,88 @@
 # [Virtual Machines](https://pdos.csail.mit.edu/6.828/2020/lec/l-vmm.txt)
 
+## 笔记
+
+### 1、什么是虚拟机
+
+对于计算机的一种模拟，这种模拟足够能运行一个操作系统
+
+在架构的最底层，位于硬件之上存在一个Virtual Machine Monitor（VMM）
+
+- 上面是Guest空间，会有一个或者多个Guest操作系统内核，为Guest Supervisor Mode；也有Guest User Mode
+- 下面是Host空间，运行的是VMM
+
+### 2、Trap
+
+如何构建我们自己的VMM呢？
+
+- 完全通过软件来实现，读取包含了XV6内核指令的文件，查看每一条指令并模拟RISC-V的状态。应用不广泛，因为慢
+- 在真实的CPU上运行Guest指令，将XV6的指令加载到内存中，之后再跳转到XV6的第一条指令。但这要求计算机的cpu是RISC-V
+- 在硬件上启动Linux，Linux自带一个VMM，将VMM加载至Linux内核中，这样VMM可以在Linux内核中以Supervisor mode运行，不可信赖的Guest kernel运行在User mode，过一系列的处理使得Guest kernel看起来好像自己是运行在Supervisor mode
+
+在RISC-V上，如果在User mode尝试运行任何一个需要Supervisor权限的指令都会触发trap。
+
+每当Guest操作系统尝试执行类似于读取SCAUSE寄存器，读写STVEC寄存器，都会触发一个trap，
+
+并走到VMM，之后我们就可以获得控制权
+
+### 3、Emulate
+
+- VMM会为每一个Guest维护一套虚拟状态信息，会维护虚拟的STVEC寄存器，虚拟的SEPC寄存器以及其他所有的privileged寄存器
+- 当Guest操作系统运行指令需要读取某个privileged寄存器时，首先会通过trap走到VMM
+- VMM会检查这条指令并发现这是一个比如说读取SEPC寄存器的指令
+- VMM会模拟这条指令，并将自己维护的虚拟SEPC寄存器
+- 拷贝到trapframe的用户寄存器中
+- VMM会将trapframe中保存的用户寄存器拷贝回真正的用户寄存器
+- 通过sret指令，使得Guest从trap中返回
+- 这时，用户寄存器a0里面保存的就是SEPC寄存器的值了，之后Guest操作系统会继续执行指令
+
+Guest整个运行在用户空间，任何时候它想要执行需要privilege权限的指令时，会通过trap走到VMM，VMM可以模拟这些指令。这种实现风格叫做Trap and Emulate
+
+实际中，在不同类型的CPU上实现Trap and Emulate虚拟机会有不同的难度。
+
+Guest中的用户代码，如果是普通的指令，就直接在硬件上执行。
+
+### 4、Page Table
+
+Page Table包含了两个部分
+
+- 当Guest设置SATP寄存器时，真实的过程是，我们不能直接使用Guest操作系统的Page Table，VMM会生成一个新的Page Table来模拟Guest操作系统想要的Page Table
+- Guest kernel包含了Page Table，将Guest中的虚拟内存地址映射到了Guest的物理内存地址（也是虚的）
+- VMM会为每个虚拟机维护一个映射表，将Guest物理内存地址映射到真实的物理内存地址
+- Guest kernel认为自己使用的是一个正常的Page Table，可以阻止Guest从被允许使用的内存中逃逸
+
+Shadow Page Table只能包含VMM分配给虚拟机的主机物理内存地址。Guest不能向Page Table写入任何VMM未分配给Guest的内存地址。这是VMM实现隔离的一个关键部分。
+
+### 5、Devices
+
+虚拟机的外部设备
+
+- 第一种方式：模拟一些需要用到的并且使用非常广泛的设备，例如磁盘，VMM使得与Guest交互的磁盘看起来好像真的存在一样
+- 第二种方式：提供虚拟设备，而不是模拟一个真实的设备
+- 第二种方式：对于真实设备的pass-through
+
+在实现一个VMM时，主要的困难就在于构建外部设备和设备驱动，并使得它们能正确的与Guest操作系统配合工作。
+
+### 6、硬件对虚拟机的支持
+
+硬件对于虚拟机的支持，这里特指的就是Intel的VT-x
+
+硬件上的支持，是为了让人们能够更容易地构建运行更快的虚拟机
+
+有一个VMM在内核空间，并且Guest运行在用户空间：
+
+- 当我们使用这种新的硬件支持的方案时，我们的VMM会使用真实的控制寄存器
+- 当VMM通知硬件切换到Guest mode时，硬件里还会有一套完全独立，专门为Guest mode下使用的虚拟控制寄存器
+- 在Guest mode下可以直接读写控制寄存器，但是读写的是寄存器保存在硬件中的拷贝，而不是真实的寄存器
+- 现在，当我们运行在Guest kernel时，可以在不触发任何trap的前提下执行任何privileged指令
+
+**因此，通过硬件的支持，Guest现在可以在不触发trap的前提下，直接执行普通的privileged指令**。
+
+VT-x机制中的另外一大部分是对于Page Table的支持
+
+- VT-x使得Guest可以加载任何想要的值到CR3寄存器
+- 现在Guest kernel可以在不用通过trap走到VMM再来加载Page Table
+
 # 19.1 Why Virtual Machine?
 
 今天讨论的话题是虚拟机。今天的内容包含三个部分:
