@@ -59,6 +59,7 @@
     - [哈夫曼树「未完工」](./Algorithm/1-数据结构/5-哈夫曼树.md)
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
+  - [设计数据结构](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou/she-ji-shu-ju-jie-gou)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
 - **算法基础**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)`  `外部排序「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
@@ -99,7 +100,7 @@
 ### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
 
 - [MIT 6.S081 Operating Systems Engineering「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.s081)
-  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`
+  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`
 - [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [NJU 操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
 - [MIT 课程推荐](./Course/MIT课程推荐.md)
