@@ -122,3 +122,133 @@ all tests passed.
 - 在某刻，曾经到达的数据包总数将超过环大小（16）；确保你的代码可以处理这个问题。
 
 您将需要锁来应对xv6可能从多个进程使用E1000，或者在中断到达时在内核线程中使用E1000的可能性。
+
+---
+
+这个实验呢，虽然说实验指导里列了一大堆参考资料（E1000 的开发者手册），但是其实跟着下面的提示走，不是很难做的。别被它吓到了。
+
+我们先来看一看这个实验要让我们做些什么。指导书里说，当定义在 net.c 中的网络栈想要发送数据包 (packet) 时，会调用 e1000_transmit() 函数。它的参数是指向要发送的数据包的指针；对应到代码中，就是指向 mbuf 结构的指针。这个 transmit 函数，会首先缓存这个指针，之后根据其中的内容，设置描述符中对应的字段。之后，网络栈会通知硬件开始传输这个描述符。数据包可以由一个描述符组成，也可以由多个描述符组成。
+
+接受数据包的过程也类似。类似的描述符会被缓存到“接收环”中，之后 e1000_recv 函数扫描整个接收环，调用 net_rx 函数把新收到的数据包传送给网络栈。
+
+现在我们来看 e1000.c 中的内容。最值得我们关注的是开头定义的四个全局变量：
+
+```c
+#define TX_RING_SIZE 16
+static struct tx_desc tx_ring[TX_RING_SIZE] __attribute__((aligned(16)));
+static struct mbuf *tx_mbufs[TX_RING_SIZE];
+
+#define RX_RING_SIZE 16
+static struct rx_desc rx_ring[RX_RING_SIZE] __attribute__((aligned(16)));
+static struct mbuf *rx_mbufs[RX_RING_SIZE];
+```
+
+第一个 tx_ring 数组中存储的是传输时用的描述符；下面定义的 rx_ring 数组同理。而其中的 tx_mbufs 和 rx_mbufs 则是缓存指针用的。
+
+接下来是用来初始化 e1000 用的 e1000_init 函数。这个函数之后是需要我们实现的 e1000_transmit:
+
+```c
+int
+e1000_transmit(struct mbuf *m)
+{
+  //
+  // Your code here.
+  //
+  // the mbuf contains an ethernet frame; program it into
+  // the TX descriptor ring so that the e1000 sends it. Stash
+  // a pointer so that it can be freed after sending.
+  //
+
+  // 先加锁；这个 transmit 函数可以同时被不同的进程调用。
+  acquire(&e1000_lock);
+
+  // e1000 的各个寄存器中的值是映射到 xv6 系统的内存中的。
+  // regs 是它们的基址。
+  // E1000_TDT 会被替换为从那个基址算起的偏移量，
+  // 它对应的寄存器中存储的是现在要发送的数据包，
+  // 在“传输环”中对应的偏移量。
+  uint64 offset = regs[E1000_TDT];
+
+  // 检查 offset 是不是太大
+  if (offset > TX_RING_SIZE)
+    return -1;
+
+  // 这个是要传输的描述符
+  struct tx_desc* nextpacket = tx_ring + offset;
+
+  // status 字段存储当前描述符的状态。
+  // 如果没有设置E1000_TXD_STAT_DD 这个标志位，
+  // 就说明缓冲区中的描述符还没有传输完。
+  if (!(nextpacket->status & E1000_TXD_STAT_DD))
+    return -1;
+
+  if (tx_mbufs[offset])
+    mbuffree(tx_mbufs[offset]);
+
+  // 下面是设置传输描述符的代码。
+  nextpacket->addr = (uint64)m->head;
+  nextpacket->length = m->len;
+
+  // cmd 字段怎么设置？可以参考实验指导中 E1000 手册的 3.3.3.1 节。
+  // 虽然理论上应该把那个表格里的内容全读一遍，但是，
+  // 毕竟 e1000_dev.h 中只给出了下面那两个字段……
+  // 所以偷懒一点，直接组合这两个字段就行了。
+  // EOP 的意思是这个数据包里只包含现在传输的这一个描述符。
+  // RS 的意思是，让硬件在传输完成后设置 STAT_DD 标识符。
+  nextpacket->cmd = E1000_TXD_CMD_EOP | E1000_TXD_CMD_RS;
+
+  // 缓存 m 指针，这样下次调用 e1000_transmit 函数时，
+  // 就可以释放那个 mbuf，不至于内存泄漏。
+  tx_mbufs[offset] = m;
+
+  // 把偏移量设置为下一个要传输的描述符
+  regs[E1000_TDT] = (offset + 1) % TX_RING_SIZE;
+  release(&e1000_lock);
+  return 0;
+}
+```
+
+接下来就是 recv 函数了：
+
+```c
+static void
+e1000_recv(void)
+{
+  //
+  // Your code here.
+  //
+  // Check for packets that have arrived from the e1000
+  // Create and deliver an mbuf for each packet (using net_rx()).
+  //
+
+  // 需要注意的点是，这个函数不需要加锁。
+  // 它处于 OSI 中的数据链路层，而物理层之上、传输层之下的各层，是不考虑并发的。
+  // 参考自 https://www.cnblogs.com/YuanZiming/p/14271553.html。
+
+  // 无限循环——只要有收到的描述符，就把它往网络栈传
+  // 直到看不到新的描述符为止
+  while (1) {
+    // 和上面一样，也是先获取偏移量；
+    // 但是在上面那个函数中，
+    // 寄存器 RDT 里的值直接就是要发送的描述符的偏移量；
+    // 而这里需要先加一才能获取正确的偏移量。
+    uint64 offset = (regs[E1000_RDT] + 1) % RX_RING_SIZE;
+    struct rx_desc* rxpacket = rx_ring + offset;
+    if (!(rxpacket->status & E1000_RXD_STAT_DD))
+      break;
+
+    // 把输入缓冲区作为参数传递给 net_rx, 
+    // 让它去把接收到的数据放到缓冲区中
+    rx_mbufs[offset]->len = rxpacket->length;
+    net_rx(rx_mbufs[offset]);
+
+    // 这时，刚才那个缓冲区的使命已经完成了，
+    // 可以生成一个新的了
+    rx_mbufs[offset] = mbufalloc(0);
+    rxpacket->addr = (uint64)rx_mbufs[offset]->head;
+    rxpacket->status = 0;
+    regs[E1000_RDT] = offset;
+  }
+}
+```
+

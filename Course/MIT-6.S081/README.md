@@ -10,7 +10,7 @@
 
 实验记录 & 教材翻译：https://github.com/duguosheng/6.S081-All-in-one
 
-实验参考：https://github.com/silvermagic/xv6-labs-2020
+实验参考：https://github.com/weijunji/xv6-6.S081
 
 
 
