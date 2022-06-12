@@ -710,7 +710,7 @@
       * [3-runtime](Skill/Golang/3-进阶知识/3-runtime.md)
     - 4-实用函数
       * [1-计时器](Skill/Golang/4-实用函数/1-计时器.md)
-  - LaTeX
+  - [LaTeX](Skill/LaTeX/README.md)
     * [1-数学符号](Skill/LaTeX/1-数学符号.md)
     * [2-公式格式](Skill/LaTeX/2-公式格式.md)
   - Linux
