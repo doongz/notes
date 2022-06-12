@@ -133,7 +133,7 @@
 
 ### *Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)*
 
-- [IC「未完工」]()  `EDA`  `FPGA`  `Verilog`
+- [IC](https://dowalle.gitbook.io/algo/knowledge/0-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
   - [计算机系统概述](./Knowledge/1-计算机组成/1-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
