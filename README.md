@@ -1,4 +1,4 @@
-# *《学》*
+# *《CS 自学主义》*
 
 ***今天学习的人***  
 
@@ -99,12 +99,11 @@
 
 ### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
 
-- [MIT 6.S081 Operating Systems Engineering](https://dowalle.gitbook.io/algo/course/mit-6.s081)
+- [MIT 6.S081: Operating Systems Engineering](https://dowalle.gitbook.io/algo/course/mit-6.s081)
   - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
-- [MIT 6.824 Distributed Systems「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
-- [NJU 操作系统：设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
-- [MIT 课程推荐](./Course/MIT课程推荐.md)
-- [Stanford 课程推荐](./Course/Stanford课程推荐.md)
+- [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
+- [NJU 操作系统: 设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nan-jing-da-xue-cao-zuo-xi-tong)
+- [CMU 15-445: Database Systems「未完工」]()
 
 ### *Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)*
 
@@ -203,7 +202,7 @@ $ book sm
 
 **Publish**  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
-**Reference**  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode)
+**Reference**  [oi-wiki](https://oi-wiki.org) | [leetcode](https://leetcode.cn/problemset/all/) | [codeforces](https://codeforces.com/) | [bilibili](https://www.bilibili.com/) |  [luogu](https://www.luogu.com.cn) | [c-biancheng](http://c.biancheng.net/) | [geeksforgeeks](https://www.geeksforgeeks.org/) | [draveness](https://draveness.me/) | [宫水三叶](https://github.com/SharingSource/LogicStack-LeetCode) | [CS自学指南](https://github.com/pkuflyingpig/cs-self-learning/)
 
 **License** [CC-BY-SA-4.0 License](https://github.com/dowalle/algo/blob/main/LICENSE)
 

@@ -456,9 +456,7 @@
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
-  - [南京大学-操作系统](Course/南京大学-操作系统/README.md)
-    * [31-Andoid系统](Course/南京大学-操作系统/31-Andoid系统.md)
-  - [CMU-15445](Course/CMU-15445/README.md)
+  - [CMU-15-445](Course/CMU-15-445/README.md)
   - [MIT-6.824](Course/MIT-6.824/README.md)
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
     - Labs
@@ -497,8 +495,10 @@
     * [21-Networking](Course/MIT-6.S081/21-Networking.md)
     * [22-Meltdown](Course/MIT-6.S081/22-Meltdown.md)
     * [23-RCU-notes](Course/MIT-6.S081/23-RCU-notes.md)
-  * [MIT课程推荐](Course/MIT课程推荐.md)
-  * [Stanford课程推荐](Course/Stanford课程推荐.md)
+  - [NJU-OS](Course/NJU-OS/README.md)
+    * [31-Andoid系统](Course/NJU-OS/31-Andoid系统.md)
+    * [32-课程总结](Course/NJU-OS/32-课程总结.md)
+  * [课程推荐](Course/课程推荐.md)
 - Interview
   - 1-找工作经验
     * [1-字节跳动](Interview/1-找工作经验/1-字节跳动.md)
