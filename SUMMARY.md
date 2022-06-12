@@ -457,6 +457,7 @@
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
   - [南京大学-操作系统](Course/南京大学-操作系统/README.md)
+    * [31-Andoid系统](Course/南京大学-操作系统/31-Andoid系统.md)
   - [CMU-15445](Course/CMU-15445/README.md)
   - [MIT-6.824](Course/MIT-6.824/README.md)
   - [MIT-6.S081](Course/MIT-6.S081/README.md)
@@ -517,10 +518,11 @@
     * [8-蚂蚁金服-蚂蚁三轮面经](Interview/2-面经/8-蚂蚁金服-蚂蚁三轮面经.md)
     * [9-网易互娱一面](Interview/2-面经/9-网易互娱一面.md)
 - Knowledge
-  - [0-IC](Knowledge/0-IC/0-IC.md)
-    * [1-EDA](Knowledge/0-IC/1-EDA.md)
-    * [2-FPGA](Knowledge/0-IC/2-FPGA.md)
-    * [3-Verilog](Knowledge/0-IC/3-Verilog.md)
+  - 0-IC
+    * [1-IC](Knowledge/0-IC/1-IC.md)
+    * [2-EDA](Knowledge/0-IC/2-EDA.md)
+    * [3-FPGA](Knowledge/0-IC/3-FPGA.md)
+    * [4-Verilog](Knowledge/0-IC/4-Verilog.md)
   - 1-计算机组成
     * [0-序](Knowledge/1-计算机组成/0-序.md)
     * [1-计算机系统概述](Knowledge/1-计算机组成/1-计算机系统概述.md)
@@ -532,6 +534,8 @@
     * [7-输入输出系统](Knowledge/1-计算机组成/7-输入输出系统.md)
     * [cs107](Knowledge/1-计算机组成/cs107.md)
   - 2-操作系统
+    - andriod
+      * [1-android系统构架](Knowledge/2-操作系统/andriod/1-android系统构架.md)
     * [1-计算机系统概述](Knowledge/2-操作系统/1-计算机系统概述.md)
     * [2-进程管理](Knowledge/2-操作系统/2-进程管理.md)
     * [3-内存管理](Knowledge/2-操作系统/3-内存管理.md)
