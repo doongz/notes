@@ -128,7 +128,7 @@ IC 可以将模拟和数字电路组合在一个芯片上，以创建模数转�
 
 整个制造过程需要时间，从开始到封装芯片准备好发货，至少需要 6 到 8 周（仅流片，不包括电路设计），并且在高度专业化的[半导体制造工厂](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_fabrication_plant)（也称为代工厂或晶圆厂）中进行。[[1\]](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_device_fabrication#cite_note-berlin-regression-methods-1)所有制造都在无尘室内进行，这是工厂的中心部分。在更先进的半导体器件中，例如现代[14](https://en.wikipedia.ahmu.cf/wiki/14_nanometer) / [10](https://en.wikipedia.ahmu.cf/wiki/10_nanometer) / [7 nm](https://en.wikipedia.ahmu.cf/wiki/7_nanometer)节点，制造可能需要长达 15 周的时间，行业平均时间为 11-13 周。[[2\]](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_device_fabrication#cite_note-2)先进制造设施的生产是完全自动化的，并在密封的氮气环境中进行，以提高产量（晶圆中正常工作的微芯片的百分比），自动化材料处理系统负责晶圆在机器之间的运输。晶圆在[FOUP](https://en.wikipedia.ahmu.cf/wiki/FOUP)内运输，特殊的密封塑料盒。所有机器和 FOUP 都包含内部氮气氛。机器和 FOUP 内的空气通常比洁净室中的周围空气更清洁。这种内部气氛被称为迷你环境。[[3\]](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_device_fabrication#cite_note-3)制造工厂需要大量的液氮来维持生产机械和 FOUP 内的气氛，而生产机械和 FOUP 会不断地用氮气吹扫。
 
-### 尺寸
+### 尺寸 / 工艺
 
 特定的**半导体工艺**对芯片每层特征的最小尺寸和间距有特定的规则。[[5\]](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_device_fabrication#cite_note-shirriff_die_shrink-5) 较新的半导体工艺通常具有更小的最小尺寸和更紧密的间距，这允许简单的[芯片缩小](https://en.wikipedia.ahmu.cf/wiki/Die_shrink)以降低成本并提高性能。[[5\]](https://en.wikipedia.ahmu.cf/wiki/Semiconductor_device_fabrication#cite_note-shirriff_die_shrink-5)部分是由于晶体管密度的增加（每平方毫米的晶体管数量）。早期的半导体工艺有任意的名称，例如[HMOS](https://en.wikipedia.ahmu.cf/wiki/HMOS) III、[CHMOS](https://en.wikipedia.ahmu.cf/wiki/CHMOS) V；后面的都是按尺寸指的，比如[90nm工艺](https://en.wikipedia.ahmu.cf/wiki/90_nm_process)。
 
@@ -141,6 +141,38 @@ IC 可以由[集成设备制造商](https://en.wikipedia.ahmu.cf/wiki/Integrated
 [半导体](https://en.wikipedia.ahmu.cf/wiki/Semiconductor)IC 采用[平面工艺](https://en.wikipedia.ahmu.cf/wiki/Planar_process)制造，包括三个关键工艺步骤—— [光刻](https://en.wikipedia.ahmu.cf/wiki/Photolithography)、沉积（如[化学气相沉积](https://en.wikipedia.ahmu.cf/wiki/Chemical_vapor_deposition)）和[蚀刻](https://en.wikipedia.ahmu.cf/wiki/Etching_(microfabrication))。主要工艺步骤辅以掺杂和清洗。从 22 nm 节点（英特尔）或 16/14 nm 节点开始，更新的或高性能 IC 可能会使用[多栅极](https://en.wikipedia.ahmu.cf/wiki/Multigate_device) [FinFET](https://en.wikipedia.ahmu.cf/wiki/FinFET)或[GAAFET晶体管而不是平面晶体管。](https://en.wikipedia.ahmu.cf/wiki/GAAFET)
 
 [大多数应用都使用单晶硅](https://en.wikipedia.ahmu.cf/wiki/Monocrystalline_silicon) [晶片](https://en.wikipedia.ahmu.cf/wiki/Wafer_(electronics))（或者对于特殊应用，使用其他半导体，例如[砷化镓](https://en.wikipedia.ahmu.cf/wiki/Gallium_arsenide)）。晶片不必完全是硅。[光刻](https://en.wikipedia.ahmu.cf/wiki/Photolithography)用于标记要[掺杂](https://en.wikipedia.ahmu.cf/wiki/Doping_(semiconductor))的衬底的不同区域或在其上沉积多晶硅、绝缘体或金属（通常是铝或铜）轨道。[掺杂剂](https://en.wikipedia.ahmu.cf/wiki/Dopant)是有意引入半导体以调节其电子特性的杂质。掺杂是将掺杂剂添加到半导体材料中的过程。
+
+在晶圆上制造芯片需要经过上百个工序，**主要的工艺步骤包括光刻、刻蚀、掺杂、薄膜沉积等**。
+
+**光刻**
+
+光刻的目的是把设计好的图形转印到晶圆上。首先我们在晶圆上层光刻胶，光刻胶(正胶)的特性是经过特定频率光线的照射后，可以溶解在显影液里。然后将设计好图形的掩膜版罩在晶圆之上，用光刻机进行曝光，有些光线透过掩膜版照射到光刻胶上，有些光线被掩膜版上的图形阻挡。曝光之后，将晶圆放在显影液里浸泡，被光线照射过的光刻胶溶解，**晶圆表面就留下了和掩膜版一样的光刻胶图形**。
+
+光刻是晶圆加工制造中最核心的工艺，晶圆加工的工艺水平主要取决于光刻的精度。通常我们说的28纳米或14纳米工艺，指的就是光刻机能够分辨的最小图形尺寸。晶圆上能够加工的图形尺寸越小，那么同样复杂度的芯片电路所占的面积就越小，一片晶圆上能够切割出来的芯片数量也就越多。由于芯片的加工步骤都是以晶圆为单位进行的，平均下来单个芯片的成本也就很低。当然，最小线宽的缩小不仅能带来芯片成本的下降，还有很多其他好处，比如功耗的降低、集成度的提高以及良品率的提升等。
+
+得到光刻图形后，就可以进行下一步的加工，比如刻蚀、掺杂或薄膜沉积等。
+
+**刻蚀**
+
+刻蚀可以**将没有被光刻胶保护的部分侵蚀掉**，一般用来在晶圆上挖槽，通常分为干法刻蚀和湿法刻蚀，前者主要采用等离子体轰击,后者一般采用溶剂浸泡溶解。刻蚀完成后，清除残余光刻胶，就得到了想要的凹槽图案。
+
+**掺杂**
+
+**为了改变半导体的电学性质**，在晶圆上形成四PN结、电阻、欧姆接触等结构，我们还需要将特定的杂质(一般是Ⅲ、Ⅳ族元素，比如磷、砷、硼等)掺入特定的区域中。小尺寸工艺条件下最主要的掺杂方法是离子注入，它直接将具有很高能量的杂质离子注入半导体衬底中，可以精确控制掺杂的深度和浓度。
+
+**退火**
+
+离子注入完成后，通常需要进行退火。退火是指将晶圆放在氮气等不活泼气体氛围中进行热处理，使不在晶格位置上的离子运动到晶格位置上，一方面可以**激活杂质，使其具有电活性**，另一方面也可以**消除离子注入带来的晶格损伤**。
+
+**沉积**
+
+薄膜沉积也是片生产过程中重要的工艺步骤,通常分为化学气相淀积( Chemical Vapor Deposition，CVD)和物理气相淀积( Physical Vapor Deposition，PVD)。CVD是指通过气态物质的化学反应，在衬底上淀积一层薄膜材料的过程。它几乎可以淀积集成电路工艺中所需要的各种薄膜，例如二氧化硅、多晶硅、非晶硅、氮化硅、金属(钨、钼)等，适用范围广、台阶覆盖性好。PVD主要包括蒸发和溅射,通常用于**淀积芯片中的电极和金属互联层**。
+
+**将前述工艺重复若干次**，就可以在晶圆上加工出设计好的芯片。通常**在进行每一道主要工艺步骤之前都需要重新进行一次光刻**，因此，也常用掩膜版的数量来衡量工艺的复杂度，现在加工出一颗CPU芯片，往往需要上百套掩膜版，数千个加工步骤。
+
+**光刻-对光刻胶处理**
+
+**刻蚀-对硅片处理**
 
 - 晶圆加工
 
