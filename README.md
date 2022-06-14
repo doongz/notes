@@ -121,7 +121,7 @@
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
-- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`
+- [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](https://dowalle.gitbook.io/algo/skill/latex)
@@ -157,6 +157,7 @@
   - [传输层](./Knowledge/3-计算机网络/5-传输层.md)  `功能(进程间通信)`  `端口`  `socket(嵌套字)`  `UDP(无连接)`  `TCP(连接)`  `报文段`  `TCP建立连接(三次挥手)`  `TCP释放连接(四次握手)`  `可靠传输`  `流量控制`  `拥塞控制`
   - [应用层](./Knowledge/3-计算机网络/6-应用层.md)  `网络应用模型(C/S、P2P)`  `DNS`  `FTP`  `电子邮件(SMTP、POP3/IMAP)`  `万维网(HTTP)`  `Cookie`
   - [5G 网络架构](./Knowledge/3-计算机网络/7-5G网络架构.md)  `场景`  `网络架构`  `接口`  `协议栈`  `核心网`  `接入网`  `组网`  `层二(mac数据面)`  `层三(mac控制面)`
+  - [socket](./Knowledge/3-计算机网络/socket.md)
 - [数据 & 存储](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu)
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
@@ -169,6 +170,9 @@
   - [kubernetes 问题 & 局限性](./Knowledge/5-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
   - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
+- [AI]()
+  - [算子开发](./Knowledge/6-AI/算子开发.md)
+  
 
 ### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
 
