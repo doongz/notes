@@ -109,7 +109,7 @@
 
 - [ASM](https://dowalle.gitbook.io/algo/skill/asm)
   - [RISC-V](./algo/Skill/ASM/RISC-V)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
-- [C「未完工」](https://dowalle.gitbook.io/algo/skill/c)
+- [C](https://dowalle.gitbook.io/algo/skill/c)
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
 - [C++](https://dowalle.gitbook.io/algo/skill/c++)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
@@ -170,7 +170,7 @@
   - [kubernetes 问题 & 局限性](./Knowledge/5-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
   - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
-- [AI]()
+- [AI](https://dowalle.gitbook.io/algo/knowledge/6-ai)
   - [算子开发](./Knowledge/6-AI/算子开发.md)
   
 
