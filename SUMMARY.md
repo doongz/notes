@@ -537,7 +537,7 @@
     * [5-中央处理器](Knowledge/1-计算机组成/5-中央处理器.md)
     * [6-总线](Knowledge/1-计算机组成/6-总线.md)
     * [7-输入输出系统](Knowledge/1-计算机组成/7-输入输出系统.md)
-    * [cs107](Knowledge/1-计算机组成/cs107.md)
+    * [8-扫盲cpu-gpu-tpu-npu](Knowledge/1-计算机组成/8-扫盲cpu-gpu-tpu-npu.md)
   - 2-操作系统
     - andriod
       * [1-android系统构架](Knowledge/2-操作系统/andriod/1-android系统构架.md)
@@ -585,7 +585,8 @@
     * [5-kubernetes集群联邦&资源分发](Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)
     * [6-kubernetes贡献指南](Knowledge/5-容器技术/6-kubernetes贡献指南.md)
   - 6-AI
-    * [算子开发](Knowledge/6-AI/算子开发.md)
+    * [01-算子开发](Knowledge/6-AI/01-算子开发.md)
+    * [02-卷积算子实现](Knowledge/6-AI/02-卷积算子实现.md)
 - Math
   - 微积分
     * [1-极限](Math/微积分/1-极限.md)

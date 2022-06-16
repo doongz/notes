@@ -142,6 +142,7 @@
   - [中央处理器](./Knowledge/1-计算机组成/5-中央处理器.md)  `CPU(运算器+控制器)`  `指令执行`  `数据通路`  `硬布线控制器`  `微程序控制器`  `指令流水线`
   - [总线](./Knowledge/1-计算机组成/6-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
   - [输入输出系统](./Knowledge/1-计算机组成/7-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
+  - [扫盲 cpu gpu tpu npc](./Knowledge/1-计算机组成/扫盲cpu-gpu-tpu-npu.md)
 - [操作系统](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong)
   - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的(管理、调度软硬资源、提供接口)`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用`
   - [进程管理](./Knowledge/2-操作系统/2-进程管理.md)  `进程(程序段、数据段、进程控制块)`  `目的(并发、共享)`  `进程通信`  `线程(ID、计数器、寄存器集合)`  `目的(减少开销)`  `实现方式(用户级、内核级)`  `处理机调度`  `进程同步`  `互斥`  `死锁`  `饥饿`
@@ -171,7 +172,8 @@
   - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
   - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
 - [AI](https://dowalle.gitbook.io/algo/knowledge/6-ai)
-  - [算子开发](./Knowledge/6-AI/算子开发.md)
+  - [算子开发](./Knowledge/6-AI/01-算子开发.md)
+  - [卷积算子实现](./Knowledge/6-AI/02-卷积算子实现.md)
   
 
 ### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
