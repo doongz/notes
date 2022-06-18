@@ -1,4 +1,92 @@
-bfs和dfs记忆化存储的数据是不一样的，
+题目：[329. 矩阵中的最长递增路径](https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/)
+
+## 方法一：记忆化 dfs
+
+dfs 返回从 [r,c] 出发的最长递增路径长度
+
+时间复杂度：`O(mn)`
+
+空间复杂度：`O(mn)`
+
+```c++
+class Solution {
+public:
+    int rows;
+    int cols;
+    vector<vector<int>> matrix;
+    vector<vector<int>> memo;
+    vector<pair<int, int>> directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
+    // 返回从 [r,c] 出发的最长递增路径长度
+    int dfs(int r, int c) {
+        if (memo[r][c] != -1) return memo[r][c];
+
+        int res = 1;
+        for (auto& [dr, dc] : directions) {
+            int nr = r + dr;
+            int nc = c + dc;
+            if (0 <= nr && nr < rows && 0 <= nc && nc < cols) {
+                if (matrix[nr][nc] > matrix[r][c]) {
+                    res = max(res, dfs(nr, nc) + 1);
+                }
+            }
+        }
+        memo[r][c] = res;
+        return memo[r][c];
+    }
+
+    int longestIncreasingPath(vector<vector<int>>& matrix) {
+        rows = matrix.size();
+        cols = matrix[0].size();
+        memo.resize(rows, vector<int>(cols, -1));
+        this->matrix = matrix;
+
+        int ans = INT_MIN;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                ans = max(ans, dfs(r, c));
+            }
+        }
+        return ans;
+    }
+};
+```
+
+
+
+```python
+class Solution:
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+
+        rows = len(matrix)
+        cols = len(matrix[0])
+        memo = [[-1 for _ in range(cols)] for _ in range(rows)]
+        # 记录从[r][c]开始走的最长距离
+        # 如果下次又走到了[r][c]，直接用它的结果
+
+        def dfs(row, col):
+            if memo[row][col] != -1:
+                return memo[row][col]
+            memo[row][col] = 1
+            for dr, dc in ((0, 1), (1, 0), (-1, 0), (0, -1)):
+                nr = row + dr
+                nc = col + dc
+                if 0<=nr<rows and 0<=nc<cols and matrix[nr][nc] > matrix[row][col]:
+                    memo[row][col] = max(memo[row][col], dfs(nr, nc)+1)
+            return memo[row][col]
+
+        ans = float("-inf")  
+        for r in range(rows):
+            for c in range(cols):
+                ans = max(ans, dfs(r, c))
+        return ans
+```
+
+## 方法二：拓扑排序
+
+
+
+
 
 **bfs memo记录 走到[r] [c]用了几步**
 
@@ -39,37 +127,7 @@ class Solution:
         return ans
 ```
 
-记忆化dfs: 268 ms 16 MB  
 
-时间复杂度：O(mn) 空间复杂度：O(mn)
-
-```python
-class Solution:
-    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
-
-        rows = len(matrix)
-        cols = len(matrix[0])
-        memo = [[-1 for _ in range(cols)] for _ in range(rows)]
-        # 记录从[r][c]开始走的最长距离
-        # 如果下次又走到了[r][c]，直接用它的结果
-
-        def dfs(row, col):
-            if memo[row][col] != -1:
-                return memo[row][col]
-            memo[row][col] = 1
-            for dr, dc in ((0, 1), (1, 0), (-1, 0), (0, -1)):
-                nr = row + dr
-                nc = col + dc
-                if 0<=nr<rows and 0<=nc<cols and matrix[nr][nc] > matrix[row][col]:
-                    memo[row][col] = max(memo[row][col], dfs(nr, nc)+1)
-            return memo[row][col]
-
-        ans = float("-inf")  
-        for r in range(rows):
-            for c in range(cols):
-                ans = max(ans, dfs(r, c))
-        return ans
-```
 
 拓扑排序：288 ms 19.6 MB
 
