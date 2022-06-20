@@ -121,6 +121,9 @@
   - [进阶知识](https://dowalle.gitbook.io/algo/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://dowalle.gitbook.io/algo/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
+- [Linux](https://dowalle.gitbook.io/algo/skill/linux)
+  - [File system](https://dowalle.gitbook.io/algo/skill/linux/filesystem)  `overlayfs`  `shared-subtrees`  `快照和备份`
+
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
@@ -150,6 +153,8 @@
   - [内存管理](./Knowledge/2-操作系统/3-内存管理.md)  `目的(并发)`  `覆盖与交换`  `连续分配`  `非连续分配(分页存储)`  `分段存储`  `虚拟内存`  `局部性原理(时间、空间)`
   - [文件管理](./Knowledge/2-操作系统/4-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
   - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
+  - [安卓系统架构](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong/andriod)
+  - [虚拟化](https://dowalle.gitbook.io/algo/knowledge/2-cao-zuo-xi-tong/xu-ni-hua)
 - [计算机网络](https://dowalle.gitbook.io/algo/knowledge/3-ji-suan-ji-wang-luo)
   - [计算机网络体系结构](./Knowledge/3-计算机网络/1-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
   - [物理层](./Knowledge/3-计算机网络/2-物理层.md)  `层一`  `传输比特流`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制PSK`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `中继器`  `集线器`
@@ -163,6 +168,7 @@
   - [设计数据密集型应用「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
   - [数据库「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
   - [消息队列「未完工」](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
+  - [ceph](https://dowalle.gitbook.io/algo/knowledge/4-shu-ju-cun-chu/ceph)
 - [容器技术](https://dowalle.gitbook.io/algo/knowledge/5-rong-qi-ji-shu)
   - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
   - [kubernetes 原理](./Knowledge/5-容器技术/2-kubernetes原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
