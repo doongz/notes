@@ -123,7 +123,6 @@
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
 - [Linux](https://dowalle.gitbook.io/algo/skill/linux)
   - [File system](https://dowalle.gitbook.io/algo/skill/linux/filesystem)  `overlayfs`  `shared-subtrees`  `快照和备份`
-
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
