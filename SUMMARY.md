@@ -524,6 +524,7 @@
     * [7-阿里字节暑期实习九面面经](Interview/2-面经/7-阿里字节暑期实习九面面经.md)
     * [8-蚂蚁金服-蚂蚁三轮面经](Interview/2-面经/8-蚂蚁金服-蚂蚁三轮面经.md)
     * [9-网易互娱一面](Interview/2-面经/9-网易互娱一面.md)
+  * [如何写好简历](Interview/如何写好简历.md)
 - Knowledge
   - 0-IC
     * [1-IC](Knowledge/0-IC/1-IC.md)
