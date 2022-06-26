@@ -183,18 +183,16 @@ Ctrl + x，再按2：双窗口模式，显示两个窗口
 
 Ctrl + x，再按a：回到传统模式，即退出layout，回到执行layout之前的调试窗口
 
+### 示例
 
+- gdb中输入 `tui enable` 可以打开源代码展示窗口。
 
-**示例**：
+- 在gdb中输入 `layout asm`，可以在tui窗口看到所有的汇编指令。再输入 `layout reg` 可以看到所有的寄存器信息。
 
-gdb中输入tui enable可以打开源代码展示窗口。
+- 你可以在gdb中输入 `info breakpoints` ，你可以看到所有设置了的断点。你甚至可以看到这个断点已经被命中了几次。
 
-在gdb中输入layout asm，可以在tui窗口看到所有的汇编指令。再输入layout reg可以看到所有的寄存器信息。
+- 现在我们在 dummymain 函数中。如果我们在gdb中输入 `info frame` ，可以看到有关当前Stack Frame许多有用的信息。
 
-你可以在gdb中输入info breakpoints，你可以看到所有设置了的断点。你甚至可以看到这个断点已经被命中了几次。
+- 输入 `backtrace`（简写 `bt` ）可以看到从当前调用栈开始的所有Stack Frame。
 
-现在我们在dummymain函数中。如果我们在gdb中输入info frame，可以看到有关当前Stack Frame许多有用的信息。
-
-输入backtrace（简写bt）可以看到从当前调用栈开始的所有Stack Frame。
-
-如果对某一个Stack Frame感兴趣，可以先定位到那个frame（frame 3）再输入info frame，假设对syscall的Stack Frame感兴趣。
+- 如果对某一个Stack Frame感兴趣，可以先定位到那个frame（ `frame 3` ）再输入`info frame` ，假设对syscall的Stack Frame感兴趣。
