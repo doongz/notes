@@ -130,6 +130,7 @@ set ts=4    " tab 为4个空格
 
 ```
 :!command
+:!command && command
 ```
 
 `:` 后面紧跟着 `!` ，`!` 后面紧跟着 linux 命令（ command 指操作 Linux 系统的一系列命令，如创建文件，新建文件夹，查询文件的属性的等），例子如下，

@@ -183,7 +183,7 @@
 
 ### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
 
-> *Manuscript written in 2016, opened again in 2022*
+> 为什么要去学微积分，因为身体里的编程力量没有觉醒，*written in 2016*
 
 - [微积分](https://dowalle.gitbook.io/algo/math/wei-ji-fen)
   - [极限](./Math/微积分/1-极限.md)
