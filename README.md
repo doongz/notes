@@ -82,7 +82,7 @@
   - [状态压缩 DP](./Algorithm/3-动态规划/6-状态压缩DP.md)  `位运算`  `state = (1 << num) | state`  `((state >> num) & 1) == 0`  `n<15`
   - [数位 DP「hold on」](./Algorithm/3-动态规划/8-数位DP.md)
   - [股票问题](./Algorithm/3-动态规划/9-股票问题.md)  `状态机DP`
-- **图论**「未完工」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
+- **图论**「学习中」  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/4-tu-lun)
   - [基本知识](./Algorithm/4-图论/1-基本知识.md)
   - [图的存储](./Algorithm/4-图论/2-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`  `链式前向星`
   - [图的种类](./Algorithm/4-图论/3-图的种类.md)  `二分图`
@@ -101,8 +101,10 @@
 
 - [MIT 6.S081: Operating Systems Engineering](https://dowalle.gitbook.io/algo/course/mit-6.s081)
   - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
+- [NJU 操作系统: 设计与实现「学习中」](https://dowalle.gitbook.io/algo/course/nju-os)
+  - `程序`
+
 - [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
-- [NJU 操作系统: 设计与实现「未完工」](https://dowalle.gitbook.io/algo/course/nju-os)
 - [CMU 15-445: Database Systems「未完工」](https://dowalle.gitbook.io/algo/course/cmu-15-445)
 
 ### *Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)*
