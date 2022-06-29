@@ -505,7 +505,7 @@
   - [NJU-OS](Course/NJU-OS/README.md)
     * [01-操作系统概述](Course/NJU-OS/01-操作系统概述.md)
     * [02-操作系统上的程序](Course/NJU-OS/02-操作系统上的程序.md)
-    * [31-Andoid系统](Course/NJU-OS/31-Andoid系统.md)
+    * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
 - Interview
@@ -544,8 +544,10 @@
     * [7-输入输出系统](Knowledge/1-计算机组成/7-输入输出系统.md)
     * [8-扫盲cpu-gpu-tpu-npu](Knowledge/1-计算机组成/8-扫盲cpu-gpu-tpu-npu.md)
   - 2-操作系统
-    - andriod
-      * [1-android系统构架](Knowledge/2-操作系统/andriod/1-android系统构架.md)
+    - Android
+      * [1-Android概述](Knowledge/2-操作系统/Android/1-Android概述.md)
+      * [2-Android构架](Knowledge/2-操作系统/Android/2-Android构架.md)
+      * [安卓-鸿蒙-AOSP-三者关系](Knowledge/2-操作系统/Android/安卓-鸿蒙-AOSP-三者关系.md)
     * [1-计算机系统概述](Knowledge/2-操作系统/1-计算机系统概述.md)
     * [2-进程管理](Knowledge/2-操作系统/2-进程管理.md)
     * [3-内存管理](Knowledge/2-操作系统/3-内存管理.md)
