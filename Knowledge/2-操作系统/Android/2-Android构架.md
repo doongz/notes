@@ -1,7 +1,5 @@
 # Android 构架
 
-# Android 架构
-
 来源：[https://source.android.com/devices/architecture](https://source.android.com/devices/architecture)
 
 ## 一、Android 系统架构
