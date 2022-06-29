@@ -103,7 +103,6 @@
   - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
 - [NJU 操作系统: 设计与实现「学习中」](https://dowalle.gitbook.io/algo/course/nju-os)
   - `程序`
-
 - [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [CMU 15-445: Database Systems「未完工」](https://dowalle.gitbook.io/algo/course/cmu-15-445)
 
