@@ -208,9 +208,8 @@ $ book sm
 
 ## *Statement*
 
-> 学习只能依靠自己的积累，其他所有的材料都只是参考。此仓库，仅作为自己学习时的笔记。
+> 此仓库，仅作为自己学习时的笔记。如果涉及到任何版权行为，请联系我，我将删除内容。
 >
-> 如果涉及到任何版权行为，请联系我，我将删除内容。
 
 **Publish**  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
