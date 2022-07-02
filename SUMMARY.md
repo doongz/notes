@@ -508,6 +508,7 @@
   - [NJU-OS](Course/NJU-OS/README.md)
     * [01-操作系统概述](Course/NJU-OS/01-操作系统概述.md)
     * [02-操作系统上的程序](Course/NJU-OS/02-操作系统上的程序.md)
+    * [03-多处理器编程-从入门到放弃](Course/NJU-OS/03-多处理器编程-从入门到放弃.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
