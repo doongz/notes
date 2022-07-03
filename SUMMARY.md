@@ -650,7 +650,12 @@
       * [8-EXU模块和CPU运行](Skill/ASM/RISC-V/8-EXU模块和CPU运行.md)
       * [9-RISC-V总线和流水线](Skill/ASM/RISC-V/9-RISC-V总线和流水线.md)
       * [riscv-asm-manual](Skill/ASM/RISC-V/riscv-asm-manual.md)
-  - [C](Skill/C/README.md)
+  - C
+    - 1-基础知识
+      * [1-数据类型](Skill/C/1-基础知识/1-数据类型.md)
+      * [2-输入输出](Skill/C/1-基础知识/2-输入输出.md)
+      * [3-条件控制和循环](Skill/C/1-基础知识/3-条件控制和循环.md)
+      * [4-数组](Skill/C/1-基础知识/4-数组.md)
     - C语言内存
       * [1-程序在计算机中如何运行](Skill/C/C语言内存/1-程序在计算机中如何运行.md)
       * [10-堆-动态内存分配](Skill/C/C语言内存/10-堆-动态内存分配.md)
