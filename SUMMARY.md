@@ -548,10 +548,6 @@
     * [7-输入输出系统](Knowledge/1-计算机组成/7-输入输出系统.md)
     * [8-扫盲cpu-gpu-tpu-npu](Knowledge/1-计算机组成/8-扫盲cpu-gpu-tpu-npu.md)
   - 2-操作系统
-    - Android
-      * [1-Android概述](Knowledge/2-操作系统/Android/1-Android概述.md)
-      * [2-Android构架](Knowledge/2-操作系统/Android/2-Android构架.md)
-      * [安卓-鸿蒙-AOSP-三者关系](Knowledge/2-操作系统/Android/安卓-鸿蒙-AOSP-三者关系.md)
     * [1-计算机系统概述](Knowledge/2-操作系统/1-计算机系统概述.md)
     * [2-进程管理](Knowledge/2-操作系统/2-进程管理.md)
     * [3-内存管理](Knowledge/2-操作系统/3-内存管理.md)
@@ -614,6 +610,16 @@
     * [4-特征与二次型](Math/线性代数/4-特征与二次型.md)
 - Skill
   - 常用CLI
+    - 待整理-linux命令
+      * [环境变量 PATH](Skill/常用CLI/待整理-linux命令/环境变量%20PATH.md)
+      * [解压命令](Skill/常用CLI/待整理-linux命令/解压命令.md)
+      * [系统指令](Skill/常用CLI/待整理-linux命令/系统指令.md)
+      * [压测命令](Skill/常用CLI/待整理-linux命令/压测命令.md)
+      * [echo](Skill/常用CLI/待整理-linux命令/echo.md)
+      * [expect __ EOF](Skill/常用CLI/待整理-linux命令/expect%20__ EOF.md)
+      * [http代理](Skill/常用CLI/待整理-linux命令/http代理.md)
+      * [ln链接](Skill/常用CLI/待整理-linux命令/ln链接.md)
+      * [sed](Skill/常用CLI/待整理-linux命令/sed.md)
     * [1-docker-CLI](Skill/常用CLI/1-docker-CLI.md)
     * [2-k8s-CLI](Skill/常用CLI/2-k8s-CLI.md)
     * [3-ceph-CLI](Skill/常用CLI/3-ceph-CLI.md)
@@ -636,6 +642,10 @@
       * [简单工厂模式](Skill/设计模式/设计模式/简单工厂模式.md)
       * [生成器模式](Skill/设计模式/设计模式/生成器模式.md)
     * [多态和多态性](Skill/设计模式/多态和多态性.md)
+  - Android
+    * [1-Android概述](Skill/Android/1-Android概述.md)
+    * [2-Android构架](Skill/Android/2-Android构架.md)
+    * [安卓-鸿蒙-AOSP-三者关系](Skill/Android/安卓-鸿蒙-AOSP-三者关系.md)
   - ASM
     - RISC-V
       * [0-汇编语言格式及ABI](Skill/ASM/RISC-V/0-汇编语言格式及ABI.md)
@@ -657,6 +667,7 @@
       * [3-条件控制和循环](Skill/C/1-基础知识/3-条件控制和循环.md)
       * [4-数组](Skill/C/1-基础知识/4-数组.md)
       * [5-函数](Skill/C/1-基础知识/5-函数.md)
+      * [6-预处理](Skill/C/1-基础知识/6-预处理.md)
     - C语言内存
       * [1-程序在计算机中如何运行](Skill/C/C语言内存/1-程序在计算机中如何运行.md)
       * [10-堆-动态内存分配](Skill/C/C语言内存/10-堆-动态内存分配.md)
@@ -749,15 +760,7 @@
       * [快照和备份](Skill/Linux/filesystem/快照和备份.md)
       * [Overlay-Filesystem](Skill/Linux/filesystem/Overlay-Filesystem.md)
       * [Shared-Subtrees](Skill/Linux/filesystem/Shared-Subtrees.md)
-    * [环境变量 PATH](Skill/Linux/环境变量%20PATH.md)
-    * [解压命令](Skill/Linux/解压命令.md)
-    * [系统指令](Skill/Linux/系统指令.md)
-    * [压测命令](Skill/Linux/压测命令.md)
-    * [echo](Skill/Linux/echo.md)
-    * [expect __ EOF](Skill/Linux/expect%20__ EOF.md)
-    * [http代理](Skill/Linux/http代理.md)
-    * [ln链接](Skill/Linux/ln链接.md)
-    * [sed](Skill/Linux/sed.md)
+    * [POSIX](Skill/Linux/POSIX.md)
   - [Markdown](Skill/Markdown/README.md)
     * [emoji](Skill/Markdown/emoji.md)
   - [Mermaid](Skill/Mermaid/README.md)
