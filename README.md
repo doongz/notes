@@ -125,7 +125,7 @@
 - [Python](https://dowalle.gitbook.io/algo/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
 - [Linux「未完工」](https://dowalle.gitbook.io/algo/skill/linux)
   - [File system](https://dowalle.gitbook.io/algo/skill/linux/filesystem)  `overlayfs`  `shared-subtrees`  `快照和备份`
-- [Android「未完工」]()
+- [Android「未完工」](https://dowalle.gitbook.io/algo/skill/android)
 - [开发软件](https://dowalle.gitbook.io/algo/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](https://dowalle.gitbook.io/algo/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
@@ -133,7 +133,6 @@
   - [数学符号](./Skill/LaTeX/1-数学符号.md)  `运算符`  `关系符`  `定界符`  `箭头`  `希腊字母`  `常用符号`  `重音符`
   - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
-
 
 ### *Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)*
 
@@ -181,7 +180,6 @@
 - [AI](https://dowalle.gitbook.io/algo/knowledge/6-ai)
   - [算子开发](./Knowledge/6-AI/01-算子开发.md)
   - [卷积算子实现](./Knowledge/6-AI/02-卷积算子实现.md)
-  
 
 ### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
 
@@ -210,7 +208,6 @@ $ book sm
 ## *Statement*
 
 > 此仓库，仅作为自己学习时的笔记。如果涉及到任何版权行为，请联系我，我将删除内容。
->
 
 **Publish**  [https://dowalle.gitbook.io/algo/](https://dowalle.gitbook.io/algo/)
 
