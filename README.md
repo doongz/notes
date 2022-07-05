@@ -100,7 +100,8 @@
 ### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
 
 - [MIT 6.S081: Operating Systems Engineering](https://dowalle.gitbook.io/algo/course/mit-6.s081)
-  - `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
+  - [课程内容](https://dowalle.gitbook.io/algo/course/mit-6.s081)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
+  - [实验记录](https://dowalle.gitbook.io/algo/course/mit-6.s081/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
 - [NJU 操作系统: 设计与实现「学习中」](https://dowalle.gitbook.io/algo/course/nju-os)
   - `程序`
 - [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
@@ -109,7 +110,7 @@
 ### *Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)*
 
 - [ASM](https://dowalle.gitbook.io/algo/skill/asm)
-  - [RISC-V](./algo/Skill/ASM/RISC-V)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
+  - [RISC-V](https://dowalle.gitbook.io/algo/skill/asm/risc-v)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
 - [C](https://dowalle.gitbook.io/algo/skill/c)
   - [基础知识](https://dowalle.gitbook.io/algo/skill/c/1-ji-chu-zhi-shi)  `数据类型`  `输入和输出`  `条件控制和循环`  `数组`  `函数`
   - [C语言内存](https://dowalle.gitbook.io/algo/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
