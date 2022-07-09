@@ -103,7 +103,7 @@
   - [课程内容](https://dowalle.gitbook.io/algo/course/mit-6.s081)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
   - [实验记录](https://dowalle.gitbook.io/algo/course/mit-6.s081/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
 - [NJU 操作系统: 设计与实现「学习中」](https://dowalle.gitbook.io/algo/course/nju-os)
-  - `程序`
+  - `状态机(超级重要)`  `程序`
 - [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [CMU 15-445: Database Systems「未完工」](https://dowalle.gitbook.io/algo/course/cmu-15-445)
 
