@@ -512,6 +512,7 @@
     * [03-多处理器编程-从入门到放弃](Course/NJU-OS/03-多处理器编程-从入门到放弃.md)
     * [04-理解并发程序执行](Course/NJU-OS/04-理解并发程序执行.md)
     * [05-并发控制-互斥](Course/NJU-OS/05-并发控制-互斥.md)
+    * [06-并发控制-同步](Course/NJU-OS/06-并发控制-同步.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
