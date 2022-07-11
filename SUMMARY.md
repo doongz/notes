@@ -513,6 +513,7 @@
     * [04-理解并发程序执行](Course/NJU-OS/04-理解并发程序执行.md)
     * [05-并发控制-互斥](Course/NJU-OS/05-并发控制-互斥.md)
     * [06-并发控制-同步](Course/NJU-OS/06-并发控制-同步.md)
+    * [07-真实世界的并发编程](Course/NJU-OS/07-真实世界的并发编程.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
