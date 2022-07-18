@@ -520,6 +520,7 @@
     * [07-真实世界的并发编程](Course/NJU-OS/07-真实世界的并发编程.md)
     * [08-并发Bug和应对](Course/NJU-OS/08-并发Bug和应对.md)
     * [09-操作系统的状态机模型](Course/NJU-OS/09-操作系统的状态机模型.md)
+    * [10-状态机模型的应用](Course/NJU-OS/10-状态机模型的应用.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
     * [收获技巧](Course/NJU-OS/收获技巧.md)
