@@ -523,6 +523,7 @@
     * [10-状态机模型的应用](Course/NJU-OS/10-状态机模型的应用.md)
     * [11-操作系统上的进程](Course/NJU-OS/11-操作系统上的进程.md)
     * [12-进程的地址空间](Course/NJU-OS/12-进程的地址空间.md)
+    * [13-系统调用和-UNIX-Shell](Course/NJU-OS/13-系统调用和-UNIX-Shell.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
     * [收获技巧](Course/NJU-OS/收获技巧.md)
