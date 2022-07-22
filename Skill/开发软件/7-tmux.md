@@ -1,5 +1,7 @@
 # tmux
 
+![img](./doc/tmux-cheatsheet.png)
+
 鼠标可以做很多操作，
 
 可以上下拖动，查看结果，并且可以选择windows，选择pane，调整pane大小，都可以使用鼠标或者trackpad
