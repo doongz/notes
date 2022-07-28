@@ -529,6 +529,7 @@
     * [15-A-fork()-in-the-Road](Course/NJU-OS/15-A-fork()-in-the-Road.md)
     * [16-可执行文件](Course/NJU-OS/16-可执行文件.md)
     * [17-可执行文件的加载](Course/NJU-OS/17-可执行文件的加载.md)
+    * [18-xv6代码导读](Course/NJU-OS/18-xv6代码导读.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
     * [收获技巧](Course/NJU-OS/收获技巧.md)
