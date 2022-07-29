@@ -530,6 +530,7 @@
     * [16-可执行文件](Course/NJU-OS/16-可执行文件.md)
     * [17-可执行文件的加载](Course/NJU-OS/17-可执行文件的加载.md)
     * [18-xv6代码导读](Course/NJU-OS/18-xv6代码导读.md)
+    * [19-Xv6上下文切换](Course/NJU-OS/19-Xv6上下文切换.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
     * [收获技巧](Course/NJU-OS/收获技巧.md)
@@ -598,7 +599,9 @@
     - 3-消息队列
       * [1-消息队列](Knowledge/4-数据存储/3-消息队列/1-消息队列.md)
       * [2-Kafka](Knowledge/4-数据存储/3-消息队列/2-Kafka.md)
-    * [ceph](Knowledge/4-数据存储/ceph.md)
+    - 4-分布式存储
+      * [ceph](Knowledge/4-数据存储/4-分布式存储/ceph.md)
+      * [Ceph是如何使用RBD的](Knowledge/4-数据存储/4-分布式存储/Ceph是如何使用RBD的.md)
   - 5-容器技术
     - kubernetes对象详解
       * [1-pod](Knowledge/5-容器技术/kubernetes对象详解/1-pod.md)
