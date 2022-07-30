@@ -82,10 +82,17 @@ git pull 相当于：
 
 
 
-修改最近一次的commit信息
+#### 修改最近一次的commit信息
 
 1. git commit --amend
 
 2. 进入vim操作界面之后, 点击字母键 i 然后进入INSERT模式，然后对commit信息进行修改，然后ESC 然后 :wq 保存退出
 
 3. 然后执行 git log 会发现最近的一次commit信息被修改成功了
+
+#### 更改仓名或用户名后，要更新本地url
+
+```
+git remote set-url origin <url>
+```
+

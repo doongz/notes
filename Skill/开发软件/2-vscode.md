@@ -2,12 +2,17 @@
 
 ## 一、快捷键
 
-| 用途               | mac按键         | win按键 |
-| ------------------ | --------------- | ------- |
-| 选中的每行加上光标 | shift+option+i  |         |
-| 打开新窗口         | shift+command+n |         |
-|                    |                 |         |
-|                    |                 |         |
+| 用途               | mac按键         | win按键                |
+| ------------------ | --------------- | ---------------------- |
+| 选中的每行加上光标 | shift+option+i  |                        |
+| 打开新窗口         | shift+command+n |                        |
+| 进行代码页面切换   |                 | alt + 1 2 3            |
+| ctrl + 反引号      |                 | 打开终端               |
+| ctrl + 1           |                 | 返回当前代码页面       |
+| ctrl + shift + e   |                 | 目录页面和代码页面切换 |
+|                    |                 |                        |
+|                    |                 |                        |
+|                    |                 |                        |
 
 ## 二、代码格式化
 
@@ -22,7 +27,7 @@
 ### c
 
 ```json
-{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, NamespaceIndentation: All, FixNamespaceComments: false}
+{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 2, NamespaceIndentation: All, FixNamespaceComments: false}
 ```
 
 
