@@ -1,10 +1,12 @@
 # NOTES
 
-> 此仓库，仅作为自己学习时的「笔记」，如果涉及到任何版权行为，请联系我，我将删除内容；
+> *此仓库，仅作为自己学习时的「笔记」；*
 >
-> 其中的内容，不涉及「从前」「现在」以及「未来」个人从事的工作；
+> *所有的写作和整理工作，于家中并「空闲时间」独自完成，未曾产生收益，也不谋求收益；*
 >
-> 以及该仓库所有的维护工作是在家中的「空闲时间」独自完成，未曾产生收益，也不谋求收益；
+> *其中的内容，与个人「从前」「现在」以及「未来」所从事的工作「无关」；*
+>
+> *如果涉及到任何版权等法律行为，请联系我，我将删除内容；*
 
 <p>
     <a>
@@ -32,7 +34,7 @@
 
 ## *Contents*
 
-### *Chapter-1 [Algorithm](https://dowalle.gitbook.io/algo/algorithm)*
+### *Chapter-1 [问题求解](https://dowalle.gitbook.io/algo/algorithm)*
 
 - [前述](https://dowalle.gitbook.io/algo/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
 - **数据结构**  [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/1-shu-ju-jie-gou)
@@ -88,7 +90,7 @@
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
 - **系列题目**   [🧾例题清单](https://dowalle.gitbook.io/algo/algorithm/5-xi-lie-ti-mu)  `括号问题`  `接雨水问题`
 
-### *Chapter-2 [Course](https://dowalle.gitbook.io/algo/course)*
+### *Chapter-2 [课程](https://dowalle.gitbook.io/algo/course)*
 
 - [MIT 6.S081: Operating Systems Engineering](https://dowalle.gitbook.io/algo/course/mit-6.s081)
   - [课程内容](https://dowalle.gitbook.io/algo/course/mit-6.s081)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
@@ -98,7 +100,7 @@
 - [MIT 6.824: Distributed System「未完工」](https://dowalle.gitbook.io/algo/course/mit-6.824)
 - [CMU 15-445: Database Systems「未完工」](https://dowalle.gitbook.io/algo/course/cmu-15-445)
 
-### *Chapter-3 [Skill](https://dowalle.gitbook.io/algo/skill)*
+### *Chapter-3 [技能](https://dowalle.gitbook.io/algo/skill)*
 
 - [ASM](https://dowalle.gitbook.io/algo/skill/asm)
   - [RISC-V](https://dowalle.gitbook.io/algo/skill/asm/risc-v)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
@@ -126,7 +128,7 @@
   - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
-### *Chapter-4 [Knowledge](https://dowalle.gitbook.io/algo/knowledge)*
+### *Chapter-4 [知识库](https://dowalle.gitbook.io/algo/knowledge)*
 
 - [IC](https://dowalle.gitbook.io/algo/knowledge/0-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://dowalle.gitbook.io/algo/knowledge/1-ji-suan-ji-zu-cheng)
@@ -174,7 +176,7 @@
   - [算子开发](./Knowledge/6-AI/01-算子开发.md)
   - [卷积算子实现](./Knowledge/6-AI/02-卷积算子实现.md)
 
-### *Chapter-5 [Math](https://dowalle.gitbook.io/algo/math)*
+### *Chapter-5 [数学](https://dowalle.gitbook.io/algo/math)*
 
 > 为什么要去学微积分，因为身体里的编程力量没有觉醒，*written in 2016*
 
