@@ -2,7 +2,11 @@
 
 参考：[精通 VIM ，此文就够了](https://zhuanlan.zhihu.com/p/68111471)
 
-~/.vimrc
+![vim](./doc/vim.png)
+
+## 一、配置文件
+
+vim ~/.vimrc
 
 ```shell
 syntax on	    " 自动语法高亮
@@ -23,30 +27,6 @@ set autoindent
 
 set hlsearch        " 查找结果 高亮显示
 colorscheme desert  " 配色方案
-```
-
-![vim](./doc/vim.png)
-
-## 一、配置文件
-
-vim ~/.vimrc
-
-```shell
-syntax on	" 自动语法高亮
-set number " 显示行号
-set cindent
-set smartindent " 开启新行时使用智能自动缩进
-set showmatch " 插入括号时，短暂地跳转到匹配的对应括号
-set ruler " 打开状态栏标尺
-:set mouse=a "在vim所有模式下开鼠标，复制文档就可以不包含行号了
-
-if has("autocmd") " 重新打开光标调到上次退出的地方
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-set ts=4    " tab 为4个空格
-"set expandtab    " 换行保持当前缩进
-"set autoindent
-
 ```
 
 ## 二、快捷键
