@@ -134,51 +134,51 @@
 
 > 本章大多数知识来源教科书，都是些夸夸其谈、假的，老旧的东西，从今天的角度来看，应该拥有自己的思考方式。
 
-- [IC](https://doongz.gitbook.io/notes/knowledge/0-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
-- [计算机组成](https://doongz.gitbook.io/notes/knowledge/1-ji-suan-ji-zu-cheng)
-  - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
-  - [计算机系统概述](./Knowledge/1-计算机组成/1-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
-  - [数据的表示和运算](./Knowledge/1-计算机组成/2-数据的表示和运算.md)  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
-  - [存储系统](./Knowledge/1-计算机组成/3-存储系统.md)  `分类`  `性能指标`  `层次化结构`  `SRAM(cache)`  `DRAM(内存)`  `ROM(闪存、固态)`  `MM组成和使用`  `Cache`  `虚拟存储器`
-  - [指令系统](./Knowledge/1-计算机组成/4-指令系统.md)  `指令(操作码+地址码)`  `指令寻址`  `数据寻址`  `指令集`  `CISC`  `RISC`
-  - [中央处理器](./Knowledge/1-计算机组成/5-中央处理器.md)  `CPU(运算器+控制器)`  `指令执行`  `数据通路`  `硬布线控制器`  `微程序控制器`  `指令流水线`
-  - [总线](./Knowledge/1-计算机组成/6-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
-  - [输入输出系统](./Knowledge/1-计算机组成/7-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
-  - [扫盲 cpu gpu tpu npc](./Knowledge/1-计算机组成/扫盲cpu-gpu-tpu-npu.md)
-  - [X86 体系结构](./Knowledge/1-计算机组成/09-X86体系结构.md)
-- [操作系统](https://doongz.gitbook.io/notes/knowledge/2-cao-zuo-xi-tong)
-  - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的(管理、调度软硬资源、提供接口)`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用`
-  - [进程管理](./Knowledge/2-操作系统/2-进程管理.md)  `进程(程序段、数据段、进程控制块)`  `目的(并发、共享)`  `进程通信`  `线程(ID、计数器、寄存器集合)`  `目的(减少开销)`  `实现方式(用户级、内核级)`  `处理机调度`  `进程同步`  `互斥`  `死锁`  `饥饿`
-  - [进程 & 线程 & 协程](./Knowledge/2-操作系统/进程&线程&协程.md)  `时间角度`  `资源角度`
-  - [内存管理](./Knowledge/2-操作系统/3-内存管理.md)  `目的(并发)`  `覆盖与交换`  `连续分配`  `非连续分配(分页存储)`  `分段存储`  `虚拟内存`  `局部性原理(时间、空间)`
-  - [文件管理](./Knowledge/2-操作系统/4-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
-  - [输入输出管理](./Knowledge/2-操作系统/5-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
-  - [虚拟化](https://doongz.gitbook.io/notes/knowledge/2-cao-zuo-xi-tong/6-xu-ni-hua)
-- [计算机网络](https://doongz.gitbook.io/notes/knowledge/3-ji-suan-ji-wang-luo)
-  - [计算机网络体系结构](./Knowledge/3-计算机网络/1-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
-  - [物理层](./Knowledge/3-计算机网络/2-物理层.md)  `层一`  `传输比特流`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制PSK`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `中继器`  `集线器`
-  - [数据链路层](./Knowledge/3-计算机网络/3-数据链路层.md)  `层二(mac层)`  `数据逻辑上无差错`  `链路管理`  `组帧`  `差错控制`  `流量控制(滑窗)`  `介质访问控制(多路复用、随机访问CSMA)`  `局域网(以太网)`  `IEEE 802.3/11`  `网卡(MAC地址)`  `广域网(交换机+链路)`  `网桥`  `以太网交换机`
-  - [网络层](./Knowledge/3-计算机网络/4-网络层.md)  `层三(IP层)`  `功能(异构互联、分组转发、拥塞控制)`  `路由算法`  `IPv4`  `IP数据报`  `IP地址`  `子网`  `IPv6`  `路由协议`  `IP组播`  `移动IP`  `路由器`
-  - [传输层](./Knowledge/3-计算机网络/5-传输层.md)  `功能(进程间通信)`  `端口`  `socket(嵌套字)`  `UDP(无连接)`  `TCP(连接)`  `报文段`  `TCP建立连接(三次挥手)`  `TCP释放连接(四次握手)`  `可靠传输`  `流量控制`  `拥塞控制`
-  - [应用层](./Knowledge/3-计算机网络/6-应用层.md)  `网络应用模型(C/S、P2P)`  `DNS`  `FTP`  `电子邮件(SMTP、POP3/IMAP)`  `万维网(HTTP)`  `Cookie`
-  - [5G 网络架构](./Knowledge/3-计算机网络/7-5G网络架构.md)  `场景`  `网络架构`  `接口`  `协议栈`  `核心网`  `接入网`  `组网`  `层二(mac数据面)`  `层三(mac控制面)`
-  - [socket](./Knowledge/3-计算机网络/socket.md)
-- [数据 & 存储](https://doongz.gitbook.io/notes/knowledge/4-shu-ju-cun-chu)
-  - [设计数据密集型应用「未完工」](https://doongz.gitbook.io/notes/knowledge/4-shu-ju-cun-chu/1-she-ji-shu-ju-mi-ji-xing-ying-yong)
-  - [数据库「未完工」](https://doongz.gitbook.io/notes/knowledge/4-shu-ju-cun-chu/2-shu-ju-ku)  `关系型数据库`  `NoSQL`
-  - [消息队列「未完工」](https://doongz.gitbook.io/notes/knowledge/4-shu-ju-cun-chu/3-xiao-xi-dui-lie)
-  - [ceph](https://doongz.gitbook.io/notes/knowledge/4-shu-ju-cun-chu/ceph)
-- [容器技术](https://doongz.gitbook.io/notes/knowledge/5-rong-qi-ji-shu)
-  - [docker 原理](./Knowledge/5-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
-  - [kubernetes 原理](./Knowledge/5-容器技术/2-kubernetes原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
-  - [kubernetes 对象详解](https://doongz.gitbook.io/notes/knowledge/5-rong-qi-ji-shu/kubernetes-dui-xiang-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
-  - [kubernetes 定制特性](./Knowledge/5-容器技术/3-kubernetes定制特性.md)  `扩展接口`  `容器接口(网络插件、存储插件、运行时接口)`  `设备插件`  `调度框架`
-  - [kubernetes 问题 & 局限性](./Knowledge/5-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
-  - [kubernetes 集群联邦 & 资源分发](./Knowledge/5-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
-  - [kubernetes 贡献指南](./Knowledge/5-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
-- [AI](https://doongz.gitbook.io/notes/knowledge/6-ai)
-  - [算子开发](./Knowledge/6-AI/01-算子开发.md)
-  - [卷积算子实现](./Knowledge/6-AI/02-卷积算子实现.md)
+- [IC](https://doongz.gitbook.io/notes/knowledge/01-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
+- [计算机组成](https://doongz.gitbook.io/notes/knowledge/02-ji-suan-ji-zu-cheng)
+  - [序](./Knowledge/02-计算机组成/README.md)  `大纲`  `程序是如何在计算机里跑起来的`
+  - [计算机系统概述](./Knowledge/02-计算机组成/01-计算机系统概述.md)  `软硬件分类及发展`  `冯•诺依曼结构`  `工作过程`  `性能指标`
+  - [数据的表示和运算](./Knowledge/02-计算机组成/02-数据的表示和运算.md)  `数制`  `定点数`  `浮点数`  `算术逻辑单元`
+  - [存储系统](./Knowledge/02-计算机组成/03-存储系统.md)  `分类`  `性能指标`  `层次化结构`  `SRAM(cache)`  `DRAM(内存)`  `ROM(闪存、固态)`  `MM组成和使用`  `Cache`  `虚拟存储器`
+  - [指令系统](./Knowledge/02-计算机组成/04-指令系统.md)  `指令(操作码+地址码)`  `指令寻址`  `数据寻址`  `指令集`  `CISC`  `RISC`
+  - [中央处理器](./Knowledge/02-计算机组成/05-中央处理器.md)  `CPU(运算器+控制器)`  `指令执行`  `数据通路`  `硬布线控制器`  `微程序控制器`  `指令流水线`
+  - [总线](./Knowledge/02-计算机组成/06-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
+  - [输入输出系统](./Knowledge/02-计算机组成/07-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
+  - [扫盲 cpu gpu tpu npc](./Knowledge/02-计算机组成/08-扫盲cpu-gpu-tpu-npu.md)
+  - [X86 体系结构](./Knowledge/02-计算机组成/09-X86体系结构.md)
+- [操作系统](https://doongz.gitbook.io/notes/knowledge/03-cao-zuo-xi-tong)
+  - [计算机系统概述](./Knowledge/03-操作系统/01-计算机系统概述.md)  `目的(管理、调度软硬资源、提供接口)`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用`
+  - [进程管理](./Knowledge/03-操作系统/02-进程管理.md)  `进程(程序段、数据段、进程控制块)`  `目的(并发、共享)`  `进程通信`  `线程(ID、计数器、寄存器集合)`  `目的(减少开销)`  `实现方式(用户级、内核级)`  `处理机调度`  `进程同步`  `互斥`  `死锁`  `饥饿`
+  - [进程 & 线程 & 协程](./Knowledge/03-操作系统/进程&线程&协程.md)  `时间角度`  `资源角度`
+  - [内存管理](./Knowledge/03-操作系统/03-内存管理.md)  `目的(并发)`  `覆盖与交换`  `连续分配`  `非连续分配(分页存储)`  `分段存储`  `虚拟内存`  `局部性原理(时间、空间)`
+  - [文件管理](./Knowledge/03-操作系统/04-文件管理.md)  `文件结构`  `目录结构`  `共享`  `保护`  `文件系统结构`  `目录实现`  `文件实现`  `磁盘(结构、调度、管理)`
+  - [输入输出管理](./Knowledge/03-操作系统/05-输入输出管理.md)  `IO设备`  `IO控制方式`  `IO层次`  `设备分配、回收`  `Cache(缓存)`  `Buffer(缓冲区)`
+  - [虚拟化](./Knowledge/03-操作系统/06-虚拟化.md)
+- [计算机网络](https://doongz.gitbook.io/notes/knowledge/04-ji-suan-ji-wang-luo)
+  - [计算机网络体系结构](./Knowledge/04-计算机网络/01-计算机网络体系结构.md)  `组成`  `功能`  `分类`  `性能指标`  `OSI模型(7层)`  `TCP/IP模型(4层)`  `5层协议体系`  `报文、包、帧等概念`
+  - [物理层](./Knowledge/04-计算机网络/02-物理层.md)  `层一`  `传输比特流`  `数字信道(基带信号)`  `模拟信道(宽带信号)`  `奈奎斯特定理(码元极限传输速率)`  `香农定理(数据极限传输速率)`  `编码与调制PSK`  `电路、报文、分组交换`  `数据报、虚电路服务`  `传输介质`  `中继器`  `集线器`
+  - [数据链路层](./Knowledge/04-计算机网络/03-数据链路层.md)  `层二(mac层)`  `数据逻辑上无差错`  `链路管理`  `组帧`  `差错控制`  `流量控制(滑窗)`  `介质访问控制(多路复用、随机访问CSMA)`  `局域网(以太网)`  `IEEE 802.3/11`  `网卡(MAC地址)`  `广域网(交换机+链路)`  `网桥`  `以太网交换机`
+  - [网络层](./Knowledge/04-计算机网络/04-网络层.md)  `层三(IP层)`  `功能(异构互联、分组转发、拥塞控制)`  `路由算法`  `IPv4`  `IP数据报`  `IP地址`  `子网`  `IPv6`  `路由协议`  `IP组播`  `移动IP`  `路由器`
+  - [传输层](./Knowledge/04-计算机网络/05-传输层.md)  `功能(进程间通信)`  `端口`  `socket(嵌套字)`  `UDP(无连接)`  `TCP(连接)`  `报文段`  `TCP建立连接(三次挥手)`  `TCP释放连接(四次握手)`  `可靠传输`  `流量控制`  `拥塞控制`
+  - [应用层](./Knowledge/04-计算机网络/06-应用层.md)  `网络应用模型(C/S、P2P)`  `DNS`  `FTP`  `电子邮件(SMTP、POP3/IMAP)`  `万维网(HTTP)`  `Cookie`
+  - [5G 网络架构](./Knowledge/04-计算机网络/07-5G网络架构.md)  `场景`  `网络架构`  `接口`  `协议栈`  `核心网`  `接入网`  `组网`  `层二(mac数据面)`  `层三(mac控制面)`
+  - [socket](./Knowledge/04-计算机网络/08-socket.md)
+- [容器技术](https://doongz.gitbook.io/notes/knowledge/05-rong-qi-ji-shu)
+  - [docker 原理](./Knowledge/05-容器技术/1-docker原理.md)  `Namespace(进程、网络、存储)`  `CGgroups`  `UnionFS`
+  - [kubernetes 原理](./Knowledge/05-容器技术/2-kubernetes原理.md)  `介绍`  `设计`  `架构(master、worker)`  `重要概念(对象、Spec、Status)`
+  - [kubernetes 对象详解](https://doongz.gitbook.io/notes/knowledge/05-rong-qi-ji-shu/kubernetes-dui-xiang-xiang-jie)  `pod`  `service`  `volume`  `replicaSet`  `garbage collector`  `deployment`  `statefulSet`  `daemonSet`  `job&cronJob`
+  - [kubernetes 定制特性](./Knowledge/05-容器技术/3-kubernetes定制特性.md)  `扩展接口`  `容器接口(网络插件、存储插件、运行时接口)`  `设备插件`  `调度框架`
+  - [kubernetes 问题 & 局限性](./Knowledge/05-容器技术/4-kubernetes问题&局限性.md)  `集群管理(水平扩展性、多集群管理)`  `应用场景(应用分发、批处理调度、硬多租户)`
+  - [kubernetes 集群联邦 & 资源分发](./Knowledge/05-容器技术/5-kubernetes集群联邦&资源分发.md)  `kubefed`  `karmada`
+  - [kubernetes 贡献指南](./Knowledge/05-容器技术/6-kubernetes贡献指南.md)  `SIG`  `KEP`  `期望(项目设计、分布式协作、影响力)`  `操作指南(阅读源码、静态检查、项目管理)`
+- [数据 & 存储「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu)
+  - [设计数据密集型应用「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/01-she-ji-shu-ju-mi-ji-xing-ying-yong)
+  - [数据库「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/02-shu-ju-ku)  `关系型数据库`  `NoSQL`
+  - [消息队列「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/03-xiao-xi-dui-lie)
+  - [分布式存储「未完工」]()  `ceph`
+- [AI「hold on」](https://doongz.gitbook.io/notes/knowledge/07-ai)
+  - [算子开发](./Knowledge/07-AI/01-算子开发.md)
+  - [卷积算子实现](./Knowledge/07-AI/02-卷积算子实现.md)
 
 ### *Chapter-5 [数学](https://doongz.gitbook.io/notes/math)*
 
