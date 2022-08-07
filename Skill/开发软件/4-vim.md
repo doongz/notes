@@ -160,6 +160,17 @@ vi] 操作将会选中如下的区域，没有包含 []：
 
 “hello world [***VIM is so strong\***],{we all can master vim skill}“
 
+### 输出管道给 vim 实例
+
+```bash
+$ strace -T ./a.out |& vim -
+```
+
+- 编辑器里还可以 `%!grep` (细节/技巧)，如 `:%! grep execve` 对 vim 的 buffer 执行命令行，然后替换 buffer
+- `:set nowrap`，设置不自动换行，只看到几个 `execve`
+- `:%! grep -v ENOENT `，将不想看到的行删掉
+- `:%s/, /\r /g`，把逗号+空格，换成换行符
+
 ## 三、光标移动
 
 简单移动：`h,j,k,l`这四个字母移动效果和方向键一样，只不过离手指更近，用起来更方便。其中 `j` 和

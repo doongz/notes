@@ -533,6 +533,7 @@
     * [18-xv6代码导读](Course/NJU-OS/18-xv6代码导读.md)
     * [19-Xv6上下文切换](Course/NJU-OS/19-Xv6上下文切换.md)
     * [20-处理器调度](Course/NJU-OS/20-处理器调度.md)
+    * [21-操作系统设计](Course/NJU-OS/21-操作系统设计.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
