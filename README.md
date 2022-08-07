@@ -132,6 +132,8 @@
 
 ### *Chapter-4 [知识库](https://doongz.gitbook.io/notes/knowledge)*
 
+> 本章大多数知识来源教科书，都是些夸夸其谈、假的，老旧的东西，从今天的角度来看，应该拥有自己的思考方式。
+
 - [IC](https://doongz.gitbook.io/notes/knowledge/0-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://doongz.gitbook.io/notes/knowledge/1-ji-suan-ji-zu-cheng)
   - [序](./Knowledge/1-计算机组成/0-序.md)  `大纲`  `程序是如何在计算机里跑起来的`
@@ -143,7 +145,7 @@
   - [总线](./Knowledge/1-计算机组成/6-总线.md)  `片内、系统、通信总线`  `性能指标`  `总线仲裁`  `传输和定时`  `总线标准`
   - [输入输出系统](./Knowledge/1-计算机组成/7-输入输出系统.md)  `外部设备`  `IO接口`  `IO方式(查询、中断、DMA)`
   - [扫盲 cpu gpu tpu npc](./Knowledge/1-计算机组成/扫盲cpu-gpu-tpu-npu.md)
-  - [CPU 调度「未完工」]()
+  - [X86 体系结构](./Knowledge/1-计算机组成/09-X86体系结构.md)
 - [操作系统](https://doongz.gitbook.io/notes/knowledge/2-cao-zuo-xi-tong)
   - [计算机系统概述](./Knowledge/2-操作系统/1-计算机系统概述.md)  `目的(管理、调度软硬资源、提供接口)`  `特征(并发、共享、虚拟、异步)`  `分类`  `运行环境(内核态、用户态)`  `中断`  `系统调用`
   - [进程管理](./Knowledge/2-操作系统/2-进程管理.md)  `进程(程序段、数据段、进程控制块)`  `目的(并发、共享)`  `进程通信`  `线程(ID、计数器、寄存器集合)`  `目的(减少开销)`  `实现方式(用户级、内核级)`  `处理机调度`  `进程同步`  `互斥`  `死锁`  `饥饿`
