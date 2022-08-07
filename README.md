@@ -84,6 +84,8 @@
   - [拓扑排序](./Algorithm/4-图论/6-拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
   - [最短路径](./Algorithm/4-图论/7-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
   - [欧拉图](./Algorithm/4-图论/8-欧拉图.md)  `一笔画完整个图`
+  - [A* 算法](./Algorithm/4-图论/09-A*算法.md)  `来源 bfs dijkstra`  `启发函数`
+  - [内向基环树](./Algorithm/4-图论/10-内向基环树.md)  `从 i 向 arr[i] 连边`  `拓扑排序后，入度为1，为基环`  `求基环长度`
 - **数学**「未完工」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-shu-xue)  `倍增`  `快速幂`  `求余`
   - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
