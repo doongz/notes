@@ -14,7 +14,6 @@ s1 -> 最大ascii公共子串 -> s2
 
 初始化：当i或j为0时，没有公共子串，此时状态为0
 
-状态更新：使用LCS的更新方法，可以看看我的[笔记](https://dowalle.gitbook.io/algo/algorithm/3-dong-tai-gui-hua/4-xu-lie-dp)
 
 ```c++
 class Solution {

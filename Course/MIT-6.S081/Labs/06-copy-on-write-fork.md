@@ -364,7 +364,7 @@ while(len > 0){
 }
 ```
 
-https://github.com/dowalle/xv6-labs-2020/commit/d9c8cc8fb508c1ebdfa5eceb702246f219439e15
+https://github.com/doongz/xv6-labs-2020/commit/d9c8cc8fb508c1ebdfa5eceb702246f219439e15
 
 # 可选的挑战练习
 

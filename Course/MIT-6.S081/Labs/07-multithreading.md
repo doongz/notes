@@ -535,7 +535,7 @@ if(e){
 }
 ```
 
-https://github.com/dowalle/xv6-labs-2020/commit/03b95a1b7a24e7bf373ff478d45e7514ef4b8232
+https://github.com/doongz/xv6-labs-2020/commit/03b95a1b7a24e7bf373ff478d45e7514ef4b8232
 
 # Barrier(moderate)
 

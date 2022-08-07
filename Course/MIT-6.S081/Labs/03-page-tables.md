@@ -121,7 +121,7 @@ Xv6有一个单独的用于在内核中执行程序时的内核页表。内核�
 - 修改XV6本来的函数或新增函数都是允许的；你或许至少需要在***kernel/vm.c***和***kernel/proc.c***中这样做（但不要修改***kernel/vmcopyin.c***, ***kernel/stats.c***, ***user/usertests.c***, 和***user/stats.c***）
 - 页表映射丢失很可能导致内核遭遇页面错误。这将导致打印一段包含`sepc=0x00000000XXXXXXXX`的错误提示。你可以在***kernel/kernel.asm***通过查询`XXXXXXXX`来定位错误。
 
-https://github.com/dowalle/xv6-labs-2020/commit/963b447439e35033304098f215afc7c486fbe91e
+https://github.com/doongz/xv6-labs-2020/commit/963b447439e35033304098f215afc7c486fbe91e
 
 # Simplify `copyin`/`copyinstr`（hard）
 
@@ -155,7 +155,7 @@ Linux使用的技术与您已经实现的技术类似。直到几年前，许多
 > [!NOTE|label:QUESTION]
 > 解释为什么在`copyin_new()`中需要第三个测试`srcva + len < srcva`：给出`srcva`和`len`值的例子，这样的值将使前两个测试为假（即它们不会导致返回-1），但是第三个测试为真 （导致返回-1）。
 
-https://github.com/dowalle/xv6-labs-2020/commit/b1f95fa3ea482bbf96ae57a6de0a536aab704d65
+https://github.com/doongz/xv6-labs-2020/commit/b1f95fa3ea482bbf96ae57a6de0a536aab704d65
 
 # 可选的挑战练习
 
