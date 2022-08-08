@@ -44,7 +44,9 @@
 
 ## 三、配置文件
 
-### 1、setting.json
+### Mac
+
+#### setting.json
 
 vscode 本身和一些插件的配置文件
 
@@ -63,14 +65,13 @@ vscode 本身和一些插件的配置文件
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "latex-workshop.view.pdf.viewer": "tab",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0, NamespaceIndentation: All}"
 }
 ```
 
-### 2、tasks.json
+#### tasks.json
 
 tasks.json 用于编译的配置文件，可配置 GCC 编译参数
 
@@ -110,7 +111,7 @@ tasks.json 用于编译的配置文件，可配置 GCC 编译参数
 }
 ```
 
-### 3、launch.json
+#### launch.json
 
 launch.json 用来执行编译后二进制的配置文件
 
@@ -140,7 +141,7 @@ launch.json 用来执行编译后二进制的配置文件
 }
 ```
 
-### 4、c_cpp_properties.json
+#### c_cpp_properties.json
 
 用于配置编译器环境的，包括启动器代号、位数（这些是自定义的）、编译选项、启动设置、编译模式等
 
@@ -168,3 +169,4 @@ launch.json 用来执行编译后二进制的配置文件
 }
 ```
 
+### Windows
