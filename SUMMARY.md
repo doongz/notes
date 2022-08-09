@@ -535,6 +535,7 @@
     * [20-处理器调度](Course/NJU-OS/20-处理器调度.md)
     * [21-操作系统设计](Course/NJU-OS/21-操作系统设计.md)
     * [23-存储设备原理](Course/NJU-OS/23-存储设备原理.md)
+    * [24-输入输出设备](Course/NJU-OS/24-输入输出设备.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
