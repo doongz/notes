@@ -542,6 +542,7 @@
     * [24-输入输出设备](Course/NJU-OS/24-输入输出设备.md)
     * [25-设备驱动程序](Course/NJU-OS/25-设备驱动程序.md)
     * [26-文件系统API](Course/NJU-OS/26-文件系统API.md)
+    * [27-FAT和UNIX文件系统](Course/NJU-OS/27-FAT和UNIX文件系统.md)
     * [31-Android系统](Course/NJU-OS/31-Android系统.md)
     * [32-课程总结](Course/NJU-OS/32-课程总结.md)
   * [课程推荐](Course/课程推荐.md)
