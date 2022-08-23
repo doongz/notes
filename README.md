@@ -36,23 +36,24 @@
 
 ### *Chapter-1 [问题求解](https://doongz.gitbook.io/notes/algorithm)*
 
-- [前述](https://doongz.gitbook.io/notes/algorithm/0-qian-shu)  `刷题经验`  `C++调试模版`  `常见报错`
+- [前述](https://doongz.gitbook.io/notes/algorithm/0-qian-shu)  `C++调试模版`  `常见报错`
 - **数据结构**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/1-shu-ju-jie-gou)
-  - [概述](./Algorithm/1-数据结构/0-概述.md)  `基本概念`  `算法评价`
+  - [概述](./Algorithm/1-数据结构/README.md)  `基本概念`  `算法评价`
   - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
   - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `表达式求值`  `递归`  `移除问题`   `Medium`
   - [队列](./Algorithm/1-数据结构/3-队列.md)  `顺序、链式、双端`  `单调队列`  `层遍历`  `Medium`
   - [字符串「未完工」](./Algorithm/1-数据结构/4-字符串.md)  `顺序、堆分配、块链存储`  `KMP算法`
-  - [树 & 二叉树](./Algorithm/1-数据结构/5-树和二叉树.md)  `树的种类`  `二叉树遍历(前序、中序、后序、层)`  `二叉树构造「未完工」`   `线索二叉树`  `Easy`
-    - [排序树 & 平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/5-排序树&平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
-    - [B树 & B+树「未完工」](./Algorithm/1-数据结构/5-B树&B+树.md)
-    - [并查集](./Algorithm/1-数据结构/5-并查集.md)  `连通`  `连通分量`  `连通性判断`  `添加、连通、查找O(logn)`  `Medium`
-    - [树状数组 & 线段树](./Algorithm/1-数据结构/5-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard+`
-    - [字典树](./Algorithm/1-数据结构/5-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
-    - [哈夫曼树「未完工」](./Algorithm/1-数据结构/5-哈夫曼树.md)
+  - 树
+    - [树 & 二叉树](./Algorithm/1-数据结构/5-1-树和二叉树.md)  `树的种类`  `二叉树遍历(前序、中序、后序、层)`  `二叉树构造「未完工」`   `线索二叉树`  `Easy`
+    - [排序树 & 平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/5-2-排序树&平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
+    - [并查集](./Algorithm/1-数据结构/5-3-并查集.md)  `连通`  `连通分量`  `连通性判断`  `添加、连通、查找O(logn)`  `Medium`
+    - [树状数组 & 线段树](./Algorithm/1-数据结构/5-4-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard+`
+    - [字典树](./Algorithm/1-数据结构/5-5-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
+    - [哈夫曼树「未完工」](./Algorithm/1-数据结构/5-6-哈夫曼树.md)
+    - B树 & B+树「未完工」
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
-  - [设计数据结构](https://doongz.gitbook.io/notes/algorithm/1-shu-ju-jie-gou/she-ji-shu-ju-jie-gou)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
+  - [设计数据结构](./Algorithm/1-数据结构/8-自定义排序合集.md)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
 - **算法基础**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/1-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)`  `外部排序「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/2-二分法.md)  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
@@ -106,9 +107,10 @@
 
 - [ASM](https://doongz.gitbook.io/notes/skill/asm)
   - [RISC-V](https://doongz.gitbook.io/notes/skill/asm/risc-v)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
+  - [x86-64](https://doongz.gitbook.io/notes/skill/asm/x86)  `汇编`  `指令集`
 - [C](https://doongz.gitbook.io/notes/skill/c)
   - [基础知识](https://doongz.gitbook.io/notes/skill/c/1-ji-chu-zhi-shi)  `数据类型`  `输入和输出`  `条件控制和循环`  `数组`  `函数`  `预处理`  `指针`  `结构体`  `文件操作`  `头文件`
-  - [C语言内存](https://doongz.gitbook.io/notes/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`
+  - [C语言内存](https://doongz.gitbook.io/notes/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`  `函数调用`
 - [C++](https://doongz.gitbook.io/notes/skill/c++)
   - [基础知识](https://doongz.gitbook.io/notes/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
   - [面向对象](https://doongz.gitbook.io/notes/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `多态与虚函数`  `运算符重载`  `模版和范型`
