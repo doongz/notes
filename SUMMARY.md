@@ -681,6 +681,9 @@
       * [8-EXU模块和CPU运行](Skill/ASM/RISC-V/8-EXU模块和CPU运行.md)
       * [9-RISC-V总线和流水线](Skill/ASM/RISC-V/9-RISC-V总线和流水线.md)
       * [riscv-asm-manual](Skill/ASM/RISC-V/riscv-asm-manual.md)
+    - x86
+      * [1-X86-64汇编](Skill/ASM/x86/1-X86-64汇编.md)
+      * [2-指令集](Skill/ASM/x86/2-指令集.md)
   - C
     - 1-基础知识
       * [01-数据类型](Skill/C/1-基础知识/01-数据类型.md)
