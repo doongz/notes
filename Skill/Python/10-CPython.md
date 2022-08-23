@@ -6,7 +6,7 @@ CPython 是 Python 语言的官方解释器，其核心 思想类似于 Java 和
 
 在最高层次上，CPython 的整体架构可以分为三个主要部分
 
-<img src="./doc/cpython-1.png" alt="cpython-1" style="zoom:50%;" />
+![](./doc/cpython-1.png)
 
 在图 2.3的左边是 CPython 提供的大量的模块、库以及用户自定义的模型。比如，在执行 import os 时，这个 os 就是 CPython 内建的模块。用户还可以通过自定义模块来扩展 CPython 系统。
 
@@ -34,7 +34,7 @@ CPython 的虚拟机会从编译得到 的 PyCodeObject 对象中一次读入每
 
 CPython 虚拟机的核心实现在文件 ceval.c 中，如下代码展示了虚拟机执行字节码指令的整体架构。
 
-<img src="./doc/cpython-2.png" alt="cpython-2" style="zoom:50%;" />
+![](./doc/cpython-2.png)
 
 - CPython 在获得一条字节码指令和需要的指令参数后，会对字节码指令利用 switch 进行判断，根据字节码指令的不同类型找到对应的 case 语句块。每个字节码指令都会对应一个 case 语句，**在 case 语句块中就是 CPython 对字节码指令的实现**。
 

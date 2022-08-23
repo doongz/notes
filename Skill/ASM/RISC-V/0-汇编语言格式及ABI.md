@@ -92,11 +92,11 @@ ABI中寄存器的名称
 
 ### 1、寄存器
 
-<img src="./doc/Snipaste_2022-05-22_18-49-20.jpeg" alt="Snipaste_2022-05-22_18-49-20" style="zoom:50%;" />
+![](./doc/Snipaste_2022-05-22_18-49-20.jpeg)
 
 ### 2、C数据类型和对齐
 
-<img src="./doc/Snipaste_2022-05-22_19-16-14.jpeg" alt="Snipaste_2022-05-22_19-16-14" style="zoom:50%;" />
+![](./doc/Snipaste_2022-05-22_19-16-14.jpeg)
 
 ### 2、运算指令
 
@@ -273,4 +273,4 @@ Loop:
 
 ### 7、伪指令
 
-<img src="./doc/Snipaste_2022-05-22_18-49-44.jpeg" alt="Snipaste_2022-05-22_18-49-44" style="zoom:70%;" />
+![](./doc/Snipaste_2022-05-22_18-49-44.jpeg)

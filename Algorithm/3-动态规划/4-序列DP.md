@@ -745,7 +745,7 @@ public:
 - 第 2 部分：子区间 [mid + 1, right]；
 -  第 3 部分：包含子区间 [mid , mid + 1] 的子区间，即 nums[mid] 与 nums[mid + 1] 一定会被选取。
 
-<img src="./doc/53.png" alt="53" style="zoom:50%;" />
+![](./doc/53.png)
 
 考虑第 3 部分跨越两个区间的连续子数组的时候，由于 nums[mid] 与 nums[mid + 1] 一定会被选取，可以从中间向两边扩散，扩散到底 选出最大值
 
