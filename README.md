@@ -77,7 +77,7 @@
   - [数位 DP「hold on」](./Algorithm/3-动态规划/08-数位DP.md)
   - [股票问题](./Algorithm/3-动态规划/09-股票问题.md)  `状态机DP`
 - **图论**「学习中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/4-tu-lun)
-  - [基本知识](./Algorithm/4-图论/01-理论基础.md)
+  - [理论基础](./Algorithm/4-图论/01-理论基础.md)
   - [图的存储](./Algorithm/4-图论/02-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`  `链式前向星`
   - [DFS](./Algorithm/4-图论/03-DFS.md)  `回溯`
   - [BFS](./Algorithm/4-图论/04-BFS.md)  `逐个遍历`  `逐层遍历`  `最短路径`  `双向bfs`  `多源bfs`
@@ -132,9 +132,9 @@
   - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
-### *Chapter-4 [知识库](https://doongz.gitbook.io/notes/knowledge)*
+### *Chapter-4 [体系知识](https://doongz.gitbook.io/notes/knowledge)*
 
-> 本章大多数知识来源教科书，都是些夸夸其谈、假的，老旧的东西，从今天的角度来看，应该拥有自己的思考方式。
+> 本章大多数知识来源教科书，都是些夸夸其谈、假的、老旧的东西，从今天的角度来看，应该拥有自己的思考方式。
 
 - [IC](https://doongz.gitbook.io/notes/knowledge/01-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://doongz.gitbook.io/notes/knowledge/02-ji-suan-ji-zu-cheng)
@@ -184,7 +184,7 @@
 
 ### *Chapter-5 [数学](https://doongz.gitbook.io/notes/math)*
 
-> 为什么要去学微积分，因为身体里的编程力量没有觉醒，*written in 2016*
+> 为什么要去学微积分，因为在 2016 年，身体里的编程力量没有觉醒。
 
 - [微积分](https://doongz.gitbook.io/notes/math/wei-ji-fen)
   - [极限](./Math/微积分/1-极限.md)
