@@ -16,15 +16,18 @@ DFS 最显著的特征在于其 **递归调用自身**。同时与 BFS 类似，
 
 具体地说，DFS 大致结构如下：
 
-```
-DFS(v) // v 可以是图中的一个顶点，也可以是抽象的概念，如 dp 状态等。
-  在 v 上打访问标记
-  for u in v 的相邻节点
-    if u 没有打过访问标记 then
-      DFS(u)
-    end
-  end
-end
+```c++
+void dfs(int cur) {
+  	if (到达终点) {
+      	if (可以采集答案) 采集答案;
+      	return;
+  	}
+  	vis[u] = 1;
+  	for (auto next : 待选列表) {
+ 		if (next 节点无效) continue;
+  		if (vis[next] 节点走过) continue;
+    	dfs(v);
+}
 ```
 
 以上代码只包含了 DFS 必需的主要结构。实际的 DFS 会在以上代码基础上加入一些代码，利用 DFS 性质进行其他操作。
@@ -67,11 +70,26 @@ def backtrack(路径, 选择列表):
         撤销选择
 ```
 
+找到答案就返回写法：
 
+```python
+ans = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        ans.add(路径)
+        return True
 
-https://leetcode-cn.com/problems/increasing-subsequences/solution/491-di-zeng-zi-xu-lie-shen-sou-hui-su-xiang-jie-by/
+    for 选择 in 选择列表:
+        做选择
+        if (backtrack(路径, 选择列表)) return True;
+        撤销选择
+    return False
+        
+res = backtrack()
+return ans if res else []
+```
 
-
+有一个坑：在回溯解法中，如果回溯的时候把`visited`数组设为`false`，会超时。而`visited`不设成`false`，会大大提高速度，最终可以通过。
 
 ## 三、一些应用
 
