@@ -42,15 +42,15 @@
   - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
   - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `表达式求值`  `递归`  `移除问题`   `Medium`
   - [队列](./Algorithm/1-数据结构/3-队列.md)  `顺序、链式、双端`  `单调队列`  `层遍历`  `Medium`
-  - [字符串「未完工」](./Algorithm/1-数据结构/4-字符串.md)  `顺序、堆分配、块链存储`  `KMP算法`
+  - [字符串「挖坑」](./Algorithm/1-数据结构/4-字符串.md)  `顺序、堆分配、块链存储`  `KMP算法`
   - 树
     - [树 & 二叉树](./Algorithm/1-数据结构/5-1-树和二叉树.md)  `树的种类`  `二叉树遍历(前序、中序、后序、层)`  `二叉树构造「未完工」`   `线索二叉树`  `Easy`
     - [排序树 & 平衡树 & 搜索树「未完工」](./Algorithm/1-数据结构/5-2-排序树&平衡树&搜索树.md)  `AVL树`  `红黑树`  `查找、插入、删除 O(logn)`
     - [并查集](./Algorithm/1-数据结构/5-3-并查集.md)  `连通`  `连通分量`  `连通性判断`  `添加、连通、查找O(logn)`  `Medium`
     - [树状数组 & 线段树](./Algorithm/1-数据结构/5-4-树状数组&线段树.md)  `维护区间信息`  `单点更新O(logn)`  `区间查询O(logn)`  `Hard+`
     - [字典树](./Algorithm/1-数据结构/5-5-字典树.md)  `前缀树`  `字符串/字符前缀是否存在`  `dfs`  `Hard`
-    - [哈夫曼树「未完工」](./Algorithm/1-数据结构/5-6-哈夫曼树.md)
-    - B树 & B+树「未完工」
+    - [哈夫曼树「挖坑」](./Algorithm/1-数据结构/5-6-哈夫曼树.md)
+    - B树 & B+树「挖坑」
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
   - [设计数据结构](./Algorithm/1-数据结构/8-自定义排序合集.md)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
@@ -76,7 +76,7 @@
   - [状态压缩 DP](./Algorithm/3-动态规划/07-状态压缩DP.md)  `位运算`  `state = (1 << num) | state`  `((state >> num) & 1) == 0`  `n<15`
   - [数位 DP「hold on」](./Algorithm/3-动态规划/08-数位DP.md)
   - [股票问题](./Algorithm/3-动态规划/09-股票问题.md)  `状态机DP`
-- **图论**「学习中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/4-tu-lun)
+- **图论**「填坑中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/4-tu-lun)
   - [理论基础](./Algorithm/4-图论/01-理论基础.md)
   - [图的存储](./Algorithm/4-图论/02-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`  `链式前向星`
   - [DFS](./Algorithm/4-图论/03-DFS.md)  `回溯`
@@ -98,11 +98,11 @@
 - [MIT 6.S081: Operating Systems Engineering](https://doongz.gitbook.io/notes/course/mit-6.s081)
   - [课程内容](https://doongz.gitbook.io/notes/course/mit-6.s081)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
   - [实验记录](https://doongz.gitbook.io/notes/course/mit-6.s081/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
-- [NJU 操作系统: 设计与实现「学习中」](https://doongz.gitbook.io/notes/course/nju-os)
+- [NJU 操作系统: 设计与实现](https://doongz.gitbook.io/notes/course/nju-os)
   - `状态机(超级重要)`  `程序`
-- [CMU 15-213「未完工」]()
-- [MIT 6.824: Distributed System「未完工」](https://doongz.gitbook.io/notes/course/mit-6.824)
-- [CMU 15-445: Database Systems「未完工」](https://doongz.gitbook.io/notes/course/cmu-15-445)
+- [CMU 15-213「挖坑」](https://doongz.gitbook.io/notes/course/cmu-15-213)
+- [MIT 6.824: Distributed System「挖坑」](https://doongz.gitbook.io/notes/course/mit-6.824)
+- [CMU 15-445: Database Systems「挖坑」](https://doongz.gitbook.io/notes/course/cmu-15-445)
 
 ### *Chapter-3 [技能](https://doongz.gitbook.io/notes/skill)*
 
@@ -122,9 +122,9 @@
   - [进阶知识](https://doongz.gitbook.io/notes/skill/golang/3-jin-jie-zhi-shi)  `常见GC算法`  `Go GC`  `观察GC`  `内存泄漏`  `GC调优`
   - [实用函数](https://doongz.gitbook.io/notes/skill/golang/4-shi-yong-han-shu)  `计时器`
 - [Python](https://doongz.gitbook.io/notes/skill/python)  `str`  `list`  `set`  `tuple`  `dict`  `defaultdict`  `deque`  `bisect`  `heapq`  `SortedList`  `__lt__`  `CPython架构`  `python为什么慢`
-- [Linux「未完工」](https://doongz.gitbook.io/notes/skill/linux)
+- [Linux「挖坑」](https://doongz.gitbook.io/notes/skill/linux)
   - [File system](https://doongz.gitbook.io/notes/skill/linux/filesystem)  `overlayfs`  `shared-subtrees`  `快照和备份`
-- [Android「未完工」](https://doongz.gitbook.io/notes/skill/android)
+- [Android「挖坑」](https://doongz.gitbook.io/notes/skill/android)
 - [开发软件](https://doongz.gitbook.io/notes/skill/kai-fa-ruan-jian)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](https://doongz.gitbook.io/notes/skill/chang-yong-cli)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
