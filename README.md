@@ -100,6 +100,7 @@
   - [实验记录](https://doongz.gitbook.io/notes/course/mit-6.s081/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
 - [NJU 操作系统: 设计与实现「学习中」](https://doongz.gitbook.io/notes/course/nju-os)
   - `状态机(超级重要)`  `程序`
+- [CMU 15-213「未完工」]()
 - [MIT 6.824: Distributed System「未完工」](https://doongz.gitbook.io/notes/course/mit-6.824)
 - [CMU 15-445: Database Systems「未完工」](https://doongz.gitbook.io/notes/course/cmu-15-445)
 
