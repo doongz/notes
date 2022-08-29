@@ -106,3 +106,19 @@ for (auto it = ums.begin(); it != ums.end(); it++) {
 }  // a c b b
 ```
 
+## 四、元素为 pair
+
+```c++
+struct pair_hash {
+    template <class T1, class T2>
+    std::size_t operator()(std::pair<T1, T2> const &pair) const {
+        std::size_t h1 = std::hash<T1>()(pair.first);
+        std::size_t h2 = std::hash<T2>()(pair.second);
+
+        return h1 ^ h2;
+    }
+};
+
+unordered_set<pair<int, int>, pair_hash> vis;
+```
+
