@@ -79,7 +79,7 @@
 - **图论**「填坑中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/4-tu-lun)
   - [理论基础](./Algorithm/4-图论/01-理论基础.md)
   - [图的存储](./Algorithm/4-图论/02-图的存储.md)  `邻接表`  `邻接矩阵`  `类边`  `一维数组`  `链式前向星`
-  - [DFS](./Algorithm/4-图论/03-DFS.md)  `回溯`
+  - [DFS](./Algorithm/4-图论/03-DFS.md)  `回溯`  `剪枝`  `组合总和问题`  `子集划分问题`
   - [BFS](./Algorithm/4-图论/04-BFS.md)  `逐个遍历`  `逐层遍历`  `最短路径`  `双向bfs`  `多源bfs`
   - [拓扑排序](./Algorithm/4-图论/05-拓扑排序.md)  `有向无环图`  `学完a课才能学b课`
   - [最短路径](./Algorithm/4-图论/06-最短路径.md)  `Dijkstra、非负权、O(nlogn)`  `Floyd、多源、O(n^3)`  `Bellman-Ford、负环、O(n^2)`
