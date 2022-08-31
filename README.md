@@ -91,7 +91,10 @@
   - [计算机算法](./Algorithm/5-数学/计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
   - [数学算法](./Algorithm/5-数学/数学算法.md)  `高斯求和`  `蓄水池抽样算法`  `洗牌算法`
   - [余数相关性质](./Algorithm/5-数学/余数相关性质.md)  `同余定理`  `加`  `减`  `乘`  `乘方`
-- **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)  `括号问题`  `接雨水问题`
+- **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)
+    - [括号问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/01-kuo-hao-wen-ti)  `栈`  `递归剪枝`  `dp`  `bfs`  `贪心`
+    - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
+
 
 ### *Chapter-2 [课程](https://doongz.gitbook.io/notes/course)*
 

@@ -91,6 +91,10 @@ return ans if res else []
 
 有一个坑：在回溯解法中，如果回溯的时候把`visited`数组设为`false`，会超时。而`visited`不设成`false`，会大大提高速度，最终可以通过。
 
+在回溯题目中，做「剪枝」和「去重」是门大学问
+
+见 [47. 全排列 II](https://leetcode.cn/problems/permutations-ii/)
+
 ## 三、一些应用
 
 ### DFS 序列
