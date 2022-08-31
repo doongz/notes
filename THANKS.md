@@ -34,6 +34,16 @@
 
 ## Records
 
+### Date : 2022-09-01 00:47:23 😭😭😭
+
+Total : 735 files,  98688 codes, 10 comments, 38078 blanks, all 136776 lines
+
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Markdown | 732 | 98,646 | 0 | 38,067 | 136,713 |
+| YAML | 2 | 33 | 10 | 11 | 54 |
+| JSON | 1 | 9 | 0 | 0 | 9 |
+
 ### Date : 2022-08-01 22:17:56 😮‍💨😮‍💨😮‍💨
 
 Total : 726 files,  93301 codes, 10 comments, 36184 blanks, all 129495 lines
