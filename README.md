@@ -183,8 +183,6 @@
   - [消息队列「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/03-xiao-xi-dui-lie)
   - [分布式存储「未完工」]()  `ceph`
 - [AI「hold on」](https://doongz.gitbook.io/notes/knowledge/07-ai)
-  - [算子开发](./Knowledge/07-AI/01-算子开发.md)
-  - [卷积算子实现](./Knowledge/07-AI/02-卷积算子实现.md)
 
 ### *Chapter-5 [数学](https://doongz.gitbook.io/notes/math)*
 
