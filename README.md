@@ -208,6 +208,14 @@
 $ book sm
 ```
 
+naming:
+
+```
+25-[技巧]-题目.md
+面试题-17-16-[技巧]-题目.md
+剑指-53-[技巧]-题目.md
+```
+
 ## *Statement*
 
 **Publish**  [https://doongz.gitbook.io/notes/](https://doongz.gitbook.io/notes/)
