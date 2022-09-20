@@ -89,8 +89,8 @@
   - [二分图](./Algorithm/4-图论/09-二分图.md)
   - [内向基环树](./Algorithm/4-图论/10-内向基环树.md)  `从 i 向 arr[i] 连边`  `拓扑排序后，入度为1，为基环`  `求基环长度`
 - **数学**「填坑中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-shu-xue)  `倍增`  `快速幂`  `求余`
-  - [常用算法]()  `num和arr互转`  `进制转换`  `向上取整`  `余数`  `高斯求和`  `快速幂`  `矩阵运算`
-  - [经典算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/jing-dian-shu-xue-suan-fa)  `蓄水池抽样算法`  `洗牌算法`  `约瑟夫环`  `投票算法`
+  - [常用算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/chang-yong-suan-fa)  `num和arr互转`  `进制转换`  `向上取整`  `余数`  `高斯求和`  `快速幂`  `矩阵运算`
+  - [经典算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/jing-dian-suan-fa)  `蓄水池抽样算法`  `洗牌算法`  `约瑟夫环`  `投票算法`
 - **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)
     - [括号问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/01-kuo-hao-wen-ti)  `栈`  `递归剪枝`  `dp`  `bfs`  `贪心`
     - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
