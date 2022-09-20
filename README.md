@@ -89,9 +89,8 @@
   - [二分图](./Algorithm/4-图论/09-二分图.md)
   - [内向基环树](./Algorithm/4-图论/10-内向基环树.md)  `从 i 向 arr[i] 连边`  `拓扑排序后，入度为1，为基环`  `求基环长度`
 - **数学**「填坑中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-shu-xue)  `倍增`  `快速幂`  `求余`
-  - [计算机算法](./Algorithm/5-数学/1-计算机算法.md)  `num->arr（短除法）`  `arr->num`  `bin_to_dec`  `dec_to_bin`  `向上取整`
-  - [矩阵运算](./Algorithm/5-数学/2-矩阵运算.md)  `矩阵快速幂`
-  - [经典数学算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/jing-dian-shu-xue-suan-fa)  `高斯求和`  `余数(同余定理、加、减、乘)`  `蓄水池抽样算法`  `洗牌算法`  `约瑟夫环`
+  - [常用算法]()  `num和arr互转`  `进制转换`  `向上取整`  `余数`  `高斯求和`  `快速幂`  `矩阵运算`
+  - [经典算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/jing-dian-shu-xue-suan-fa)  `蓄水池抽样算法`  `洗牌算法`  `约瑟夫环`  `投票算法`
 - **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)
     - [括号问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/01-kuo-hao-wen-ti)  `栈`  `递归剪枝`  `dp`  `bfs`  `贪心`
     - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
@@ -104,7 +103,7 @@
 - [NJU 操作系统: 设计与实现](https://doongz.gitbook.io/notes/course/nju-os)
   - `状态机(超级重要)`  `程序`
 - [CMU 15-213 CSAPP](https://doongz.gitbook.io/notes/course/cmu-15-213)
-- [MIT 6.824: Distributed System「挖坑」](https://doongz.gitbook.io/notes/course/mit-6.824)
+- [MIT 6.824: Distributed System「填坑中」](https://doongz.gitbook.io/notes/course/mit-6.824)
 - [CMU 15-445: Database Systems「挖坑」](https://doongz.gitbook.io/notes/course/cmu-15-445)
 
 ### *Chapter-3 [技能](https://doongz.gitbook.io/notes/skill)*
