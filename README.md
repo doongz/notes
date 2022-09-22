@@ -104,7 +104,7 @@
   - `状态机(超级重要)`  `程序`
 - [MIT 6.824: Distributed System「填坑中」](https://doongz.gitbook.io/notes/course/mit-6.824)
 - [CMU 15-213 CSAPP](https://doongz.gitbook.io/notes/course/cmu-15-213)
-- [CMU 15-445: Database Systems](https://doongz.gitbook.io/notes/course/cmu-15-445)
+- [CMU 15-445: Database Systems「挖坑」](https://doongz.gitbook.io/notes/course/cmu-15-445)
 
 ### *Chapter-3 [技能](https://doongz.gitbook.io/notes/skill)*
 
