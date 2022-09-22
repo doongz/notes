@@ -1,24 +1,22 @@
 # MIT-6.S081 Operating Systems Engineering
 
-课程链接： https://pdos.csail.mit.edu/6.828/2020/index.html
+课程链接：[https://pdos.csail.mit.edu/6.828/2020/index.html]( https://pdos.csail.mit.edu/6.828/2020/index.html)
 
-课表：https://pdos.csail.mit.edu/6.828/2020/schedule.html
+课表：[https://pdos.csail.mit.edu/6.828/2020/schedule.html](https://pdos.csail.mit.edu/6.828/2020/schedule.html)
 
-视频：https://www.bilibili.com/video/BV19k4y1C7kA
+视频：[https://www.bilibili.com/video/BV19k4y1C7kA](https://www.bilibili.com/video/BV19k4y1C7kA)
 
-课程翻译：https://github.com/huihongxiao/MIT6.S081、https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/
+课程翻译：[https://github.com/huihongxiao/MIT6.S081](https://github.com/huihongxiao/MIT6.S081)、[https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/)
 
-实验记录 & 教材翻译：https://github.com/duguosheng/6.S081-All-in-one
+实验记录 & 教材翻译：[https://github.com/duguosheng/6.S081-All-in-one](https://github.com/duguosheng/6.S081-All-in-one)
 
-实验参考：https://github.com/weijunji/xv6-6.S081
+实验参考：[https://github.com/weijunji/xv6-6.S081](https://github.com/weijunji/xv6-6.S081)
 
-
+---
 
 1. 先刷「课程翻译」，边看边写笔记
 2. 再看「视频」，修正笔记
 3. 最后把「实验」做完
-
-
 
 ## 简介
 
