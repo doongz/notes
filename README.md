@@ -97,12 +97,11 @@
 
 ### *Chapter-2 [课程](https://doongz.gitbook.io/notes/course)*
 
-- [MIT 6.S081: Operating Systems Engineering](https://doongz.gitbook.io/notes/course/mit-6.s081)
-  - [课程内容](https://doongz.gitbook.io/notes/course/mit-6.s081)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
-  - [实验记录](https://doongz.gitbook.io/notes/course/mit-6.s081/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
-- [NJU 操作系统: 设计与实现](https://doongz.gitbook.io/notes/course/nju-os)
-  - `状态机(超级重要)`  `程序`
-- [MIT 6.824: Distributed System「填坑中」](https://doongz.gitbook.io/notes/course/mit-6.824)
+- [MIT 6.S081: Operating Systems Engineering](https://github.com/doongz/mit-6.s081)
+  - [课程内容](https://github.com/doongz/mit-6.s081/tree/master/course)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
+  - [实验记录](https://github.com/doongz/mit-6.s081/tree/master/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
+- [NJU 操作系统: 设计与实现](https://github.com/doongz/os-workbench)
+- [MIT 6.824: Distributed System「填坑中」](https://github.com/doongz/mit-6.824)
 - [CMU 15-213 CSAPP](https://doongz.gitbook.io/notes/course/cmu-15-213)
 - [CMU 15-445: Database Systems「挖坑」](https://doongz.gitbook.io/notes/course/cmu-15-445)
 
