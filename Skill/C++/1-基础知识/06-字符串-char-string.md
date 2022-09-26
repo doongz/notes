@@ -196,6 +196,30 @@ string s2 = "asd";
 cout << s1.find_first_of(s2) << endl;  // 3
 ```
 
+### 9、字典序
+
+c\c++中字符串字典序比较函数的区别
+
+```c
+// c
+char* s1;
+char* s2;
+
+if (strcmp(s1, s2) < 0) {
+	// s1 的字典序大
+}
+```
+
+```c++
+// c++
+string s1;
+string s2;
+
+if (s1.compare(s2) > 0) {
+	// s2 的字典序大
+}
+```
+
 ## 三、格式转换
 
 ### 1、查看格式

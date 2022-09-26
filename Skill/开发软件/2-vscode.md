@@ -30,24 +30,27 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 
 ### 代码查找替换与格式调整
 
-| 用途                                         | win按键          | mac按键             |
-| -------------------------------------------- | ---------------- | ------------------- |
-| 查找                                         | Ctrl+F           |                     |
-| 查找替换                                     | Ctrl+H           |                     |
-| 全局查找                                     | Ctrl+Shift+F     |                     |
-| 全局查找替换                                 | Ctrl+Shift+H     |                     |
-| 依次找出文中所有的当前选中的单词             | ctrl + d         | command + d         |
-| 一次性找出文所有的当前选中的单词             | ctrl + shift + l | shift + command + l |
-| 向左缩进                                     | Ctrl+[           |                     |
-| 向右缩进                                     | Ctrl+]           |                     |
-| 向上移动当前行                               | Alt+Up           |                     |
-| 向下移动当前行                               | Alt+Down         |                     |
-| 向上复制当前行                               | Shift+Alt+Up     |                     |
-| 向下复制当前行                               | Shift+Alt+Down   |                     |
-| 在当前行下方插入空行（光标位置可以不在行尾） | Ctrl+Enter       |                     |
-| 在当前行上方插入空行（光标位置可以不在行尾） | Ctrl+Shift+Enter |                     |
-| 切换内容是否自动换行（底部显示/隐藏滚动条）  | Alt+Z            |                     |
-| 格式化文档                                   |                  | shift + option + f  |
+| 用途                                         | win按键                      | mac按键             |
+| -------------------------------------------- | ---------------------------- | ------------------- |
+| 查找                                         | Ctrl+F                       |                     |
+| 查找替换                                     | Ctrl+H                       |                     |
+| 全局查找                                     | Ctrl+Shift+F                 |                     |
+| 全局查找替换                                 | Ctrl+Shift+H                 |                     |
+| 依次找出文中所有的当前选中的单词             | ctrl + d                     | command + d         |
+| 一次性找出文所有的当前选中的单词             | ctrl + shift + l             | shift + command + l |
+| 向左缩进                                     | Ctrl+[                       |                     |
+| 向右缩进                                     | Ctrl+]                       |                     |
+| 向上移动当前行                               | Alt+Up                       |                     |
+| 向下移动当前行                               | Alt+Down                     |                     |
+| 向上复制当前行                               | Shift+Alt+Up                 |                     |
+| 向下复制当前行                               | Shift+Alt+Down               |                     |
+| 在当前行下方插入空行（光标位置可以不在行尾） | Ctrl+Enter                   |                     |
+| 在当前行上方插入空行（光标位置可以不在行尾） | Ctrl+Shift+Enter             |                     |
+| 切换内容是否自动换行（底部显示/隐藏滚动条）  | Alt+Z                        |                     |
+| 格式化文档                                   |                              | shift + option + f  |
+| 折叠所有函数                                 | Ctrl + K, Ctrl + 0           |                     |
+| 折叠到某一级的函数                           | Ctrl + K， Ctrl + n(1,2,3..) |                     |
+| 展开所有函数                                 | Ctrl + K, Ctrl + J           |                     |
 
 ### 编辑器与窗口管理
 
