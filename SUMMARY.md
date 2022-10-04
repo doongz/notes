@@ -403,7 +403,7 @@
       * [978-[子数组问题]-最长湍流子数组](Algorithm/3-动态规划/例题-序列DP/978-[子数组问题]-最长湍流子数组.md)
     - 例题-状态压缩DP
       * [526-[dfs-状态压缩]-优美的排列](Algorithm/3-动态规划/例题-状态压缩DP/526-[dfs-状态压缩]-优美的排列.md)
-    * [00-动态规划基础](Algorithm/3-动态规划/00-动态规划基础.md)
+    * [00-基础](Algorithm/3-动态规划/00-基础.md)
     * [01-记忆化搜索](Algorithm/3-动态规划/01-记忆化搜索.md)
     * [02-线性DP](Algorithm/3-动态规划/02-线性DP.md)
     * [03-背包DP](Algorithm/3-动态规划/03-背包DP.md)
@@ -554,9 +554,9 @@
   * [leetcode-双周赛](Competition/leetcode-双周赛.md)
   * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
-  - [CMU-15-213](Course/CMU-15-213/README.md)
-  - [CMU-15-445](Course/CMU-15-445/README.md)
   * [课程推荐](Course/课程推荐.md)
+  * [CMU-15-213](Course/CMU-15-213.md)
+  * [CMU-15-445](Course/CMU-15-445.md)
 - Knowledge
   - 01-IC
     * [1-IC](Knowledge/01-IC/1-IC.md)

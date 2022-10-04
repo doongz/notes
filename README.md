@@ -36,9 +36,9 @@
 
 ### *Chapter-1 [问题求解](https://doongz.gitbook.io/notes/algorithm)*
 
-- [前述](https://doongz.gitbook.io/notes/algorithm/0-qian-shu)  `C++调试模版`  `常见报错`
+- [前述](https://doongz.gitbook.io/notes/algorithm/0-qian-shu)  `C++调试模版`  `常见报错`  `自定义排序合集`
 - **数据结构**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/1-shu-ju-jie-gou)
-  - [概述](./Algorithm/1-数据结构/README.md)  `基本概念`  `算法评价`
+  - [基本概念](./Algorithm/1-数据结构/0-基本概念.md)  `基本概念`  `算法评价`
   - [线性表](./Algorithm/1-数据结构/1-线性表.md)  `顺序存储(数组)`  `环状数组`  `链式存储(链表)`  `哨兵`  `多画`  `舍得变量`  `双指针`  `环状链表`  `Medium`
   - [栈](./Algorithm/1-数据结构/2-栈.md)  `顺序、链式存储`  `单调栈`  `表达式求值`  `递归`  `移除问题`   `Medium`
   - [队列](./Algorithm/1-数据结构/3-队列.md)  `顺序、链式、双端`  `单调队列`  `层遍历`  `Medium`
@@ -54,7 +54,7 @@
     - B树 & B+树「挖坑」
   - [散列表](./Algorithm/1-数据结构/6-散列表.md)  `哈希表`  `本质-数组`  `核心-散列函数`  `哈希冲突`  `扩容`  `查找`
   - [堆](./Algorithm/1-数据结构/7-堆.md)  `优先队列`  `大/小根堆`  `TopK`  `多路归并`  `中位数`  `插入O(logn)`  `查找O(1)`  `删除O(logn)`  `Hard`
-  - [设计数据结构](./Algorithm/1-数据结构/8-自定义排序合集.md)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
+  - [设计数据结构](https://doongz.gitbook.io/notes/algorithm/1-shu-ju-jie-gou/she-ji-shu-ju-jie-gou)  `哈希集合/表`  `队列<->栈`  `LRU`  `LFU`
 - **算法基础**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/2-suan-fa-ji-chu)
   - [排序](./Algorithm/2-算法基础/01-排序.md)  `选择O(n^2)`  `冒泡O(n^2)`  `插入O(n^2)`  `计数O(n)`  `桶O(n)`  `快速O(nlogn)「未完工」`  `归并O(nlogn)`  `外部排序「未完工」`  `Hard`
   - [二分法](./Algorithm/2-算法基础/02-二分法.md)  `不可套模版`  `二段性`  `寻找一个数`  `lower_bound`  `upper_bound`  `O(logn)`  `三分`  `Hard+`
@@ -67,8 +67,8 @@
   - [分治](./Algorithm/2-算法基础/09-分治.md)  `分解 -> 解决 -> 合并`
   - [模拟](https://doongz.gitbook.io/notes/algorithm/2-suan-fa-ji-chu/li-ti-mo-ni)
 - **动态规划**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/3-dong-tai-gui-hua)
-  - [动态规划基础](./Algorithm/3-动态规划/README.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
-  - [记忆化搜索](./notes/Algorithm/3-动态规划/01-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
+  - [基础](./Algorithm/3-动态规划/00-基础)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
+  - [记忆化搜索](./Algorithm/3-动态规划/01-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
   - [线性 DP](./Algorithm/3-动态规划/02-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`  `路径问题`
   - [背包 DP](./Algorithm/3-动态规划/03-背包DP.md)  `01背包`  `完全背包`  `多重背包`  `混合背包`  `分组背包`  `多维背包`  `树形背包`
   - [序列 DP](./Algorithm/3-动态规划/04-序列DP.md)  `无后效性`  `最长上升子序列(LIS)`  `最长公共子序列(LCS)`  `最大子数组和`  `LCS和LIS相互转化`
@@ -106,8 +106,8 @@
 
 ---
 
-- [CMU 15-213 Computer Systems: A Programmer's Perspective, 3/E](https://doongz.gitbook.io/notes/course/cmu-15-213)
-- [CMU 15-445: Database Systems](https://doongz.gitbook.io/notes/course/cmu-15-445)
+- [CMU 15-213 Computer Systems: A Programmer's Perspective, 3/E](./Course/CMU-15-213.md)
+- [CMU 15-445: Database Systems](./Course/CMU-15-445.md)
 
 ### *Chapter-3 [技能](https://doongz.gitbook.io/notes/skill)*
 
@@ -116,7 +116,7 @@
   - [x86-64](https://doongz.gitbook.io/notes/skill/asm/x86)  `汇编`  `指令集`
 - [C](https://doongz.gitbook.io/notes/skill/c)
   - [基础知识](https://doongz.gitbook.io/notes/skill/c/1-ji-chu-zhi-shi)  `数据类型`  `输入和输出`  `条件控制和循环`  `数组`  `函数`  `预处理`  `指针`  `结构体`  `文件操作`  `头文件`
-  - [C语言内存](https://doongz.gitbook.io/notes/skill/c/c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`  `函数调用`
+  - [C语言内存](https://doongz.gitbook.io/notes/skill/c/2c-yu-yan-nei-cun)  `虚拟内存`  `内存对齐`  `内存分页`  `MMU`  `内存模型`  `内核模式`  `用户模式`  `栈`  `堆`  `动态内存分配`  `内存池`  `野指针`  `内存泄漏`  `函数调用`
 - [C++](https://doongz.gitbook.io/notes/skill/c++)
   - [基础知识](https://doongz.gitbook.io/notes/skill/c++/1-ji-chu-zhi-shi)  `GCC`  `数据类型`  `条件`  `循环`  `运算符`  `函数`  `char`  `string`  `数组`  `指针`  `shared_ptr`  `引用`  `struct`  `namespace`  `头文件`  `链接库`  `异常处理`  `输入输出流`  `文件操作`  `多文件编程`
   - [面向对象](https://doongz.gitbook.io/notes/skill/c++/2-mian-xiang-dui-xiang)  `类和对象`  `继承和派生`  `多态与虚函数`  `运算符重载`  `模版和范型`
@@ -188,7 +188,7 @@
 
 ### *Chapter-5 [数学](https://doongz.gitbook.io/notes/math)*
 
-> 为什么要去学微积分，因为在 2016 年，身体里的编程力量没有觉醒。
+> 为什么要去学微积分，因为在 2016 年，身体里的编程力量没有觉醒。~~其实是为了考研，令人欣慰的是考了满分~~
 
 - [微积分](https://doongz.gitbook.io/notes/math/wei-ji-fen)
   - [极限](./Math/微积分/1-极限.md)
@@ -210,12 +210,12 @@
 $ book sm
 ```
 
-naming:
+naming rule:
 
 ```
 25-[技巧]-题目.md
 面试题-17-16-[技巧]-题目.md
-剑指Offer-09-题目.md
+剑指Offer-09-[技巧]-题目.md
 ```
 
 ## *Statement*
