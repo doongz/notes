@@ -95,7 +95,7 @@
 - **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)
     - [括号问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/01-kuo-hao-wen-ti)  `栈`  `递归剪枝`  `dp`  `bfs`  `贪心`
     - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
-    - [算术问题]()
+    - [算术问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/03-suan-shu-wen-ti)  `加法`  `除法`
 
 ### *Chapter-2 [课程](https://doongz.gitbook.io/notes/course)*
 
