@@ -104,7 +104,7 @@
   - [实验记录](https://github.com/doongz/mit-6.s081/tree/master/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
 - [NJU 操作系统: 设计与实现](https://github.com/doongz/os-workbench)
 - [MIT 6.824: Distributed System「挖坑」](https://github.com/doongz/mit-6.824)
-- [Harvard CS50’s: Introduction to Artificial Intelligence with Python](https://github.com/doongz/cs50s)
+- [Harvard CS50’s: Introduction to Artificial Intelligence with Python](https://github.com/doongz/cs50-ai)
 
 ---
 
