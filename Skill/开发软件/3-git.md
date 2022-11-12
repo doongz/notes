@@ -96,3 +96,10 @@ git pull 相当于：
 git remote set-url origin <url>
 ```
 
+#### 删除 commit
+
+```
+git reset --hard commit_id
+```
+
+进行版本回溯。那么，在该commit_id后更新的版本包括此版本都一并删除，工作区也将回溯到HEAD-1的版本，且无法恢复
