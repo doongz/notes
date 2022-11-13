@@ -34,7 +34,7 @@
 
 ## *Contents*
 
-### *Chapter-1 [问题求解](https://doongz.gitbook.io/notes/algorithm)*
+### *Chapter-1 [Problem Solving](https://doongz.gitbook.io/notes/algorithm)*
 
 - [前述](https://doongz.gitbook.io/notes/algorithm/0-qian-shu)  `C++调试模版`  `常见报错`  `自定义排序合集`
 - **数据结构**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/1-shu-ju-jie-gou)
@@ -98,21 +98,7 @@
     - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
     - [算术问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/03-suan-shu-wen-ti)  `加法`  `除法`
 
-### *Chapter-2 [课程](https://doongz.gitbook.io/notes/course)*
-
-- [MIT 6.S081: Operating Systems Engineering](https://github.com/doongz/mit-6.s081)
-  - [课程内容](https://github.com/doongz/mit-6.s081/tree/master/course)  `syscall`  `page table`  `trap`  `page fault`  `interrupt`  `lock`  `Thread switching`  `sleep&wakeup`  `file system`  `inode`  `log`  `Monolithic/Micro kernel`  `Virtual Machine`  `HLL kernel`  `Networking`  `Meltdown`  `RCU`
-  - [实验记录](https://github.com/doongz/mit-6.s081/tree/master/labs)  `pingpong`  `Primes`  `find`  `sys_trace()`  `sysinfo()`  `Print a page table`  `Backtrace`  `Alarm`  `sbrk()`  `Lazy allocation`  `Copy-on-Write Fork`  `switching between threads`  `Using threads`  `Barrier`  `locks`  `Memory allocator`  `Buffer cache`  `Large files`  `Symbolic links`  `mmap()`  `E1000`
-- [NJU 操作系统: 设计与实现](https://github.com/doongz/os-workbench)
-- [MIT 6.824: Distributed System「挖坑」](https://github.com/doongz/mit-6.824)
-- [Harvard CS50’s: Introduction to Artificial Intelligence with Python](https://github.com/doongz/cs50-ai)
-
----
-
-- [CMU 15-213 Computer Systems: A Programmer's Perspective, 3/E](./Course/CMU-15-213.md)
-- [CMU 15-445: Database Systems](./Course/CMU-15-445.md)
-
-### *Chapter-3 [技能](https://doongz.gitbook.io/notes/skill)*
+### *Chapter-2 [Skill](https://doongz.gitbook.io/notes/skill)*
 
 - [ASM](https://doongz.gitbook.io/notes/skill/asm)
   - [RISC-V](https://doongz.gitbook.io/notes/skill/asm/risc-v)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
@@ -141,9 +127,25 @@
   - [公式格式](./Skill/LaTeX/2-公式格式.md)  `求和`  `分数`  `大括号`  `等号对齐`
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
-### *Chapter-4 [体系知识](https://doongz.gitbook.io/notes/knowledge)*
+### *Chapter-3 [Math](https://doongz.gitbook.io/notes/math)*
 
-> 本章大多数知识来源教科书，都是些夸夸其谈、假的、老旧的东西，从今天的角度来看，应该拥有自己的思考方式。
+> 为什么要去学微积分？因为在 2016 年，身体里的编程力量没有觉醒。~~其实是为了考研，令人欣慰的是考了满分~~
+
+- [微积分](https://doongz.gitbook.io/notes/math/wei-ji-fen)
+  - [极限](./Math/微积分/1-极限.md)
+  - [一元函数微积分](./Math/微积分/2-一元函数微积分.md)
+  - [多元函数微分学](./Math/微积分/3-多元函数微分学.md)
+  - [二重积分](./Math/微积分/4-二重积分.md)
+  - [微分方程](./Math/微积分/5-微分方程.md)
+- [线性代数](https://doongz.gitbook.io/notes/math/xian-xing-dai-shu)
+  - [行列式](./Math/线性代数/1-行列式.md)
+  - [矩阵](./Math/线性代数/2-矩阵.md)
+  - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
+  - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
+
+### *Chapter-4 [Knowledge](https://doongz.gitbook.io/notes/knowledge)*
+
+> 下述大多来源教科书，~~都是些夸夸其谈、老旧的、假的知识~~。
 
 - [IC](https://doongz.gitbook.io/notes/knowledge/01-ic)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](https://doongz.gitbook.io/notes/knowledge/02-ji-suan-ji-zu-cheng)
@@ -187,23 +189,6 @@
   - [数据库「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/02-shu-ju-ku)  `关系型数据库`  `NoSQL`
   - [消息队列「未完工」](https://doongz.gitbook.io/notes/knowledge/06-shu-ju-cun-chu/03-xiao-xi-dui-lie)
   - [分布式存储「未完工」]()  `ceph`
-- [AI「hold on」](https://doongz.gitbook.io/notes/knowledge/07-ai)
-
-### *Chapter-5 [数学](https://doongz.gitbook.io/notes/math)*
-
-> 为什么要去学微积分，因为在 2016 年，身体里的编程力量没有觉醒。~~其实是为了考研，令人欣慰的是考了满分~~
-
-- [微积分](https://doongz.gitbook.io/notes/math/wei-ji-fen)
-  - [极限](./Math/微积分/1-极限.md)
-  - [一元函数微积分](./Math/微积分/2-一元函数微积分.md)
-  - [多元函数微分学](./Math/微积分/3-多元函数微分学.md)
-  - [二重积分](./Math/微积分/4-二重积分.md)
-  - [微分方程](./Math/微积分/5-微分方程.md)
-- [线性代数](https://doongz.gitbook.io/notes/math/xian-xing-dai-shu)
-  - [行列式](./Math/线性代数/1-行列式.md)
-  - [矩阵](./Math/线性代数/2-矩阵.md)
-  - [向量组与方程组](./Math/线性代数/3-向量组与方程组.md)
-  - [特征与二次型](./Math/线性代数/4-特征与二次型.md)
 
 ## *Usage*
 
