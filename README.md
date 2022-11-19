@@ -69,7 +69,7 @@
   - [分治](./Algorithm/2-算法基础/09-分治.md)  `分解 -> 解决 -> 合并`
   - [模拟](https://doongz.gitbook.io/notes/algorithm/2-suan-fa-ji-chu/li-ti-mo-ni)
 - **动态规划**  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/3-dong-tai-gui-hua)
-  - [基础](./Algorithm/3-动态规划/00-基础)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
+  - [基础](./Algorithm/3-动态规划/00-基础.md)  `三要素(重复子问题、最优子结构、动态转移方程)`  `斐波那契数列`  `凑零钱问题`
   - [记忆化搜索](./Algorithm/3-动态规划/01-记忆化搜索.md)  `具备最优子结构`  `具备重叠子问题`  `memo记录子问题`  `子问题构成`
   - [线性 DP](./Algorithm/3-动态规划/02-线性DP.md)  `以i结尾的方案数`  `[0,1]范围内的最优解`  `打家劫舍`  `路径问题`
   - [背包 DP](./Algorithm/3-动态规划/03-背包DP.md)  `01背包`  `完全背包`  `多重背包`  `混合背包`  `分组背包`  `多维背包`  `树形背包`
@@ -93,10 +93,12 @@
 - **数学**「填坑中」  [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-shu-xue)  `倍增`  `快速幂`  `求余`
   - [常用算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/chang-yong-suan-fa)  `num和arr互转`  `进制转换`  `向上取整`  `余数`  `高斯求和`  `快速幂`  `矩阵运算`  `最大公约数`  `最小公倍数`  `中位数`
   - [经典算法](https://doongz.gitbook.io/notes/algorithm/5-shu-xue/jing-dian-suan-fa)  `蓄水池抽样算法`  `洗牌算法`  `约瑟夫环`  `投票算法`
-- **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/5-xi-lie-ti-mu)
+- **系列题目**   [🧾例题清单](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu)
     - [括号问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/01-kuo-hao-wen-ti)  `栈`  `递归剪枝`  `dp`  `bfs`  `贪心`
     - [组合问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/02-zu-he-wen-ti)  `回溯`  `递归剪枝`  `去重`  `记忆化dfs`  `dp`
     - [算术问题](https://doongz.gitbook.io/notes/algorithm/6-xi-lie-ti-mu/03-suan-shu-wen-ti)  `加法`  `除法`
+    - [回文问题](./Algorithm/6-系列题目/04-回文问题)  `左右双指针`  `中心扩散`
+    - [子数组问题](./Algorithm/6-系列题目/05-子数组问题)
 
 ### *Chapter-2 [Skill](https://doongz.gitbook.io/notes/skill)*
 

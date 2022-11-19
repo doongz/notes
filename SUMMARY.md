@@ -626,9 +626,8 @@
       * [42-[暴力-动规-双指针-单调栈]-接雨水](Algorithm/6-系列题目/接雨水/42-[暴力-动规-双指针-单调栈]-接雨水.md)
     * [区间&时间调度问题](Algorithm/6-系列题目/区间&时间调度问题.md)
 - Competition
+  * [比赛](Competition/比赛.md)
   * [竞赛心得](Competition/竞赛心得.md)
-  * [leetcode-双周赛](Competition/leetcode-双周赛.md)
-  * [leetcode-周赛](Competition/leetcode-周赛.md)
 - Course
   * [课程推荐](Course/课程推荐.md)
   * [CMU-15-213](Course/CMU-15-213.md)
