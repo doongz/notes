@@ -298,3 +298,11 @@ string b = to_string(a);
 cout << b << endl;  // "123"
 ```
 
+### 6、类似 python ord() 实现
+
+```c++
+string s = "";
+s += 'a' + 2;
+cout << s << endl; // c
+```
+

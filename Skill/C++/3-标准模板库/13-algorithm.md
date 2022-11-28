@@ -42,7 +42,124 @@ int main() {
 }
 ```
 
-## 一、排序
+## 一、二分查找
+
+在有序序列中查
+
+### 1、lower_bound()
+
+`lower_bound()` 函数用于在指定区域内查找 **大于等于 目标值的第一个（最小）元素**
+
+```c++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 3, 4};
+
+    int *p = lower_bound(arr, arr + 5, 3);
+    cout << "idx: " << p - arr << " val: " << *p << endl;
+    // idx: 2 val: 3
+
+    vector<int> vec1 = {1, 2, 3, 3, 4};
+    auto res1 = lower_bound(vec1.begin(), vec1.end(), 3);
+    cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
+    // idx: 2 val: 3
+
+    vector<int> vec2 = {1, 2, 4, 4, 4};
+    auto res2 = lower_bound(vec2.begin(), vec2.end(), 3);
+    cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
+    // idx: 2 val: 4
+  
+  	// b 为 大于等于 目标值的第一个（最小）元素
+  	res.push_back(INT_MIN); // 首位添加个元素，防止越界
+  	res.push_back(所有元素);
+  	res.push_back(INT_MAX);
+  	auto it = lower_bound(res.begin(), res.end(), q);
+  	int b;
+    if (it-res.begin() == n-1) {
+      b = -1; // 没找到
+    } else {
+      b = *it; // 找到了
+    }
+  
+    return 0;
+}
+```
+
+
+
+### 2、upper_bound()
+
+`upper_bound()` 函数用于在指定范围内查找 **大于目标值的第一个（最小）元素**
+
+`upper_bound() -1` 函数用于在指定范围内查找 **小于等于 目标值的最后一个（最大）元素**
+
+```c++
+int arr[5] = {1, 2, 3, 3, 4};
+
+int *p = upper_bound(arr, arr + 5, 3);
+cout << "idx: " << p - arr << " val: " << *p << endl;
+// idx: 4 val: 4
+
+vector<int> vec1 = {1, 2, 3, 3, 4};
+auto res1 = upper_bound(vec1.begin(), vec1.end(), 3);
+cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
+// idx: 4 val: 4
+
+vector<int> vec2 = {1, 2, 4, 4, 4};
+auto res2 = upper_bound(vec2.begin(), vec2.end(), 3);
+cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
+// idx: 2 val: 4
+
+// a 为 小于等于 目标值的最后一个（最大）元素
+res.push_back(INT_MIN); // 首位添加个元素，防止越界
+res.push_back(所有元素);
+res.push_back(INT_MAX);
+auto it = upper_bound(res.begin(), res.end(), q);
+int a;
+if (it-1-res.begin() == 0) {
+  a = -1;
+} else {
+  a = *(it-1);
+}
+```
+
+### 3、equel_range()
+
+equel_range() 函数用于在指定范围内查找 **等于目标值的所有元素**
+
+```c++
+int arr[6] = {1, 2, 3, 3, 3, 4};
+pair<int*, int*> range1 = equal_range(arr, arr + 6, 3);
+cout << "first: " << range1.first - arr
+        << " second: " << range1.second - arr << endl;
+// first: 2 second: 5
+
+vector<int> vec = {1, 2, 3, 3, 3, 4};
+pair<vector<int>::iterator, vector<int>::iterator> range2;
+range2 = equal_range(vec.begin(), vec.end(), 3);
+cout << "first: " << range2.first - vec.begin()
+        << " second: " << range2.second - vec.begin() << endl;
+// first: 2 second: 5
+```
+
+### 4、binary_search()
+
+binary_search() 用于查找指定区域内是否包含某个目标元素
+
+```c++
+vector<int> vec = {1, 2, 3, 3, 3, 4};
+bool res1 = binary_search(vec.begin(), vec.end(), 3);
+cout << res1 << endl;  // 1
+
+bool res2 = binary_search(vec.begin(), vec.end(), 5);
+cout << res2 << endl;  // 0
+```
+
+## 二、排序
 
 | 函数名                                                     | 用法                                                         |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
@@ -385,7 +502,7 @@ for (int i = 0; i < vec.size(); i++) {
 
 
 
-## 二、查找
+## 三、查找
 
 在无序序列中查
 
@@ -605,95 +722,7 @@ if (it != vec.end()) {
 // idx: 3
 ```
 
-## 四、二分查找
-
-在有序序列中查
-
-### 1、lower_bound()
-
-lower_bound() 函数用于在指定区域内查找 **等于或大于目标值的第一个元素**
-
-```c++
-#include <algorithm>
-#include <iostream>
-#include <vector>
-using namespace std;
-
-int main() {
-    int arr[5] = {1, 2, 3, 3, 4};
-
-    int *p = lower_bound(arr, arr + 5, 3);
-    cout << "idx: " << p - arr << " val: " << *p << endl;
-    // idx: 2 val: 3
-
-    vector<int> vec1 = {1, 2, 3, 3, 4};
-    auto res1 = lower_bound(vec1.begin(), vec1.end(), 3);
-    cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
-    // idx: 2 val: 3
-
-    vector<int> vec2 = {1, 2, 4, 4, 4};
-    auto res2 = lower_bound(vec2.begin(), vec2.end(), 3);
-    cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
-    // idx: 2 val: 4
-    return 0;
-}
-```
-
-### 2、upper_bound()
-
-upper_bound() 函数用于在指定范围内查找 **大于目标值的第一个元素**
-
-```c++
-int arr[5] = {1, 2, 3, 3, 4};
-
-int *p = upper_bound(arr, arr + 5, 3);
-cout << "idx: " << p - arr << " val: " << *p << endl;
-// idx: 4 val: 4
-
-vector<int> vec1 = {1, 2, 3, 3, 4};
-auto res1 = upper_bound(vec1.begin(), vec1.end(), 3);
-cout << "idx: " << res1 - vec1.begin() << " val: " << *res1 << endl;
-// idx: 4 val: 4
-
-vector<int> vec2 = {1, 2, 4, 4, 4};
-auto res2 = upper_bound(vec2.begin(), vec2.end(), 3);
-cout << "idx: " << res2 - vec2.begin() << " val: " << *res2 << endl;
-// idx: 2 val: 4
-```
-
-### 3、equel_range()
-
-equel_range() 函数用于在指定范围内查找 **等于目标值的所有元素**
-
-```c++
-int arr[6] = {1, 2, 3, 3, 3, 4};
-pair<int*, int*> range1 = equal_range(arr, arr + 6, 3);
-cout << "first: " << range1.first - arr
-        << " second: " << range1.second - arr << endl;
-// first: 2 second: 5
-
-vector<int> vec = {1, 2, 3, 3, 3, 4};
-pair<vector<int>::iterator, vector<int>::iterator> range2;
-range2 = equal_range(vec.begin(), vec.end(), 3);
-cout << "first: " << range2.first - vec.begin()
-        << " second: " << range2.second - vec.begin() << endl;
-// first: 2 second: 5
-```
-
-### 4、binary_search()
-
-binary_search() 用于查找指定区域内是否包含某个目标元素
-
-```c++
-vector<int> vec = {1, 2, 3, 3, 3, 4};
-bool res1 = binary_search(vec.begin(), vec.end(), 3);
-cout << res1 << endl;  // 1
-
-bool res2 = binary_search(vec.begin(), vec.end(), 5);
-cout << res2 << endl;  // 0
-```
-
-## 五、分组
+## 四、分组
 
 ### 1、partition()
 
@@ -791,7 +820,7 @@ int main() {
 
 partition_point() 函数在已分好组的数据中找到分界位置
 
-## 六、判断
+## 五、判断
 
 ### 1、all_of()
 
@@ -878,7 +907,7 @@ bool res = lexicographical_compare(begin(phrase1), end(phrase1),
 cout << res << endl;  // 0 因为 tigers 大于 horses
 ```
 
-## 七、改变
+## 六、改变
 
 ### 1、unique()
 
