@@ -769,15 +769,15 @@
     * [1-docker-CLI](Skill/常用CLI/1-docker-CLI.md)
     * [2-k8s-CLI](Skill/常用CLI/2-k8s-CLI.md)
     * [3-ceph-CLI](Skill/常用CLI/3-ceph-CLI.md)
-  - 开发软件
-    * [1-工具&网站](Skill/开发软件/1-工具&网站.md)
-    * [2-vscode](Skill/开发软件/2-vscode.md)
-    * [3-git](Skill/开发软件/3-git.md)
-    * [4-vim](Skill/开发软件/4-vim.md)
-    * [5-gdb](Skill/开发软件/5-gdb.md)
-    * [6-gcc](Skill/开发软件/6-gcc.md)
-    * [7-tmux](Skill/开发软件/7-tmux.md)
-    * [8-make](Skill/开发软件/8-make.md)
+  - 工具链
+    * [1-工具&网站](Skill/工具链/1-工具&网站.md)
+    * [2-vscode](Skill/工具链/2-vscode.md)
+    * [3-git](Skill/工具链/3-git.md)
+    * [4-vim](Skill/工具链/4-vim.md)
+    * [5-gdb](Skill/工具链/5-gdb.md)
+    * [6-gcc](Skill/工具链/6-gcc.md)
+    * [7-tmux](Skill/工具链/7-tmux.md)
+    * [8-make](Skill/工具链/8-make.md)
   - 设计模式
     - 设计模式
       * [0-原始代码](Skill/设计模式/设计模式/0-原始代码.md)

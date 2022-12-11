@@ -126,7 +126,7 @@
 - [Linux「挖坑」](./Skill/Linux)
   - [File system](./Skill/Linux/filesystem)  `overlayfs`  `shared-subtrees`  `快照和备份`
 - [Android「挖坑」](./Skill/Android)
-- [开发软件](./Skill/开发软件)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
+- [工具链](./Skill/工具链)  `工具`  `网站`  `vscode`  `git`  `vim`  `gdb`  `gcc`  `tmux`  `make`
 - [常用 CLI](./Skill/常用CLI)  `docker`  `k8s`  `ceph`
 - [Markdown](./Skill/Markdown/README.md)
 - [LaTeX](./Skill/LaTeX)
