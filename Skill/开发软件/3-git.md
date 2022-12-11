@@ -43,14 +43,14 @@
 
 * 一般形式：git push <远程主机名> <本地分支名> <远程分支名>
 * 例如 git push origin master：refs/for/master ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名。第一个master是本地分支名，第二个master是远程分支名。
-* - **git push origin master**
-        如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
-    * git push origin ：refs/for/master
-        如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 git push origin –delete master
-    * git push origin
-        如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支
-    * git push
-        如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用git branch -r ，查看远程的分支名
+* **git push origin master**
+      如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
+  * git push origin ：refs/for/master
+      如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 git push origin –delete master
+  * git push origin
+      如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支
+  * git push
+      如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用git branch -r ，查看远程的分支名
 
 **git fetch**
 
@@ -80,9 +80,9 @@ git pull 相当于：
 * git fetch origin master  # 冲远程主机的master分支拉取最新内容
 * git merge FETCH_HEAD # 将拉取下来的最新内容合并到当前所在分支中
 
+### 常见问题
 
-
-#### 修改最近一次的commit信息
+#### 1、修改最近一次的commit信息
 
 1. git commit --amend
 
@@ -90,16 +90,41 @@ git pull 相当于：
 
 3. 然后执行 git log 会发现最近的一次commit信息被修改成功了
 
-#### 更改仓名或用户名后，要更新本地url
+#### 2、更改仓名或用户名后，要更新本地url
 
 ```
 git remote set-url origin <url>
 ```
 
-#### 删除 commit
+#### 3、删除 commit
 
 ```
 git reset --hard commit_id
 ```
 
 进行版本回溯。那么，在该commit_id后更新的版本包括此版本都一并删除，工作区也将回溯到HEAD-1的版本，且无法恢复
+
+#### 4、git commit错了，多commit了文件，怎么排除掉不想要的文件？
+
+假如基础commit是A，修改了文件foo.txt和bar.txt以后生成commit B。
+
+**如果还没push**，这时发现bar.txt的修改是不需要commit进去的，那么可以用以下命令把bar.txt从commit B里面去掉：
+
+```bash
+git reset HEAD^ -- bar.txt
+git commit --amend --no-edit
+```
+
+第一个命令把index中的bar.txt回退到commit A的版本，这样下一次commit的时候，bar.txt的版本还是commit A里的。但是查看仓库里也就是work tree里的bar.txt，是修改过后的版本。
+
+第二个命令再次commit。如果不加--amend，会在commit B的基础上生成一个commit C。这样做虽然C里bar.txt的版本是和A的一样（相当于没修改）而且foo.txt的版本是B里的版本（是修改过的），但是commit C显得累赘，目的只是要修改并commit foo.txt而已，现在搞了2个commit出来。所以可以加上--amend，这样会在commit A的基础上重新commit一次，会生成一个新的commit B'，相当于编辑了commit B。commit B'里只包含了foo.txt的修改。B'会默认使用B的commit message，如果不需要编辑的话，可以加上--no-edit。
+
+**如果已经push了**，并且这个仓库允许force push，那可以先按照上面的方法修改以后再force push。如果不允许force push，那可以用不加--amend的版本，然后再push。
+
+```bash
+git reset HEAD^ -- bar.txt
+git commit
+git push
+```
+
+不允许force push的情况下，已经push的历史不能“篡改”，那只能在后面做出新的commit来修正。
