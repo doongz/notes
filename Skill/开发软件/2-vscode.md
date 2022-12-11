@@ -11,22 +11,23 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 
 ### 光标操作
 
-| 用途                       | win按键         | mac按键            |
-| -------------------------- | --------------- | ------------------ |
-| 光标移动到行首             | Home            | command + ⬅️        |
-| 光标移动到行尾             | End             | command + ➡️        |
-| 光标移动到文件开头（左上） | Ctrl+Home       |                    |
-| 光标移动到文件结尾（右下） | Ctrl+End        |                    |
-| 选择从光标到行首的内容     | Shift+Home      |                    |
-| 选择从光标到行尾的内容     | Shift+End       |                    |
-| 扩大选中范围               | Shift+Alt+Right |                    |
-| 缩小选中范围               | Shift+Alt+Left  |                    |
-| 向上复制光标               | Ctrl+Alt+Up     |                    |
-| 向下复制光标               | Ctrl+Alt+Down   |                    |
-| 选中的每行加上光标         |                 | shift + option + i |
-| 转到定义处                 | F12             | F12                |
-| 查看定义处缩略图           | Alt+F12         |                    |
-| 回退到上一个光标处         | Ctrl+U          |                    |
+| 用途                          | win按键         | mac按键            |
+| ----------------------------- | --------------- | ------------------ |
+| 光标移动到行首                | Home            | command + ⬅️        |
+| 光标移动到行尾                | End             | command + ➡️        |
+| 光标移动到文件开头（左上）    | Ctrl+Home       |                    |
+| 光标移动到文件结尾（右下）    | Ctrl+End        |                    |
+| 选择从光标到行首的内容        | Shift+Home      |                    |
+| 选择从光标到行尾的内容        | Shift+End       |                    |
+| 扩大选中范围                  | Shift+Alt+Right |                    |
+| 缩小选中范围                  | Shift+Alt+Left  |                    |
+| 向上复制光标                  | Ctrl+Alt+Up     |                    |
+| 向下复制光标                  | Ctrl+Alt+Down   |                    |
+| 选中的每行加上光标            | shift + alt + i | shift + option + i |
+| 再按上下键 每一列上都出现光标 | ctrl + alt      |                    |
+| 转到定义处                    | F12             | F12                |
+| 查看定义处缩略图              | Alt+F12         |                    |
+| 回退到上一个光标处            | Ctrl+U          |                    |
 
 ### 代码查找替换与格式调整
 
@@ -51,6 +52,8 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 | 折叠所有函数                                 | Ctrl + K, Ctrl + 0           |                     |
 | 折叠到某一级的函数                           | Ctrl + K， Ctrl + n(1,2,3..) |                     |
 | 展开所有函数                                 | Ctrl + K, Ctrl + J           |                     |
+| 仅折叠光标所在代码块处代码                   | ctrl + shift + [             |                     |
+| 仅展开光标所在代码块处代码                   | ctrl + shift + ]             |                     |
 
 ### 编辑器与窗口管理
 
@@ -73,7 +76,7 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 | 全屏显示                                             | F11              |                     |
 | git管理窗口（Source Control）                        | Ctrl+Shift+G     |                     |
 | 扩展（插件）管理窗口（Extentions）                   | Ctrl+Shift+X     |                     |
-| 新建窗口显示代码                                     |                  |                     |
+|                                                      |                  |                     |
 
 ## 二、代码格式化
 
