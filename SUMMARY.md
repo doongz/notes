@@ -739,6 +739,7 @@
       * [ceph](Knowledge/06-数据存储/04-分布式存储/ceph.md)
       * [Ceph是如何使用RBD的](Knowledge/06-数据存储/04-分布式存储/Ceph是如何使用RBD的.md)
   - 07-AI
+    * [00-Tensor](Knowledge/07-AI/00-Tensor.md)
     * [01-算子开发](Knowledge/07-AI/01-算子开发.md)
     * [02-卷积算子实现](Knowledge/07-AI/02-卷积算子实现.md)
     * [03-深度学习模型编译技术](Knowledge/07-AI/03-深度学习模型编译技术.md)
@@ -860,8 +861,6 @@
       * [15-输入输出流](Skill/C++/1-基础知识/15-输入输出流.md)
       * [16-文件操作](Skill/C++/1-基础知识/16-文件操作.md)
       * [17-多文件编程](Skill/C++/1-基础知识/17-多文件编程.md)
-      * [18-符号Symbol](Skill/C++/1-基础知识/18-符号Symbol.md)
-      * [19-uint8_t](Skill/C++/1-基础知识/19-uint8_t.md)
       * [GCC](Skill/C++/1-基础知识/GCC.md)
     - 2-面向对象
       * [1-类和对象](Skill/C++/2-面向对象/1-类和对象.md)
@@ -884,6 +883,12 @@
       * [11-queue](Skill/C++/3-标准模板库/11-queue.md)
       * [12-priority_queue](Skill/C++/3-标准模板库/12-priority_queue.md)
       * [13-algorithm](Skill/C++/3-标准模板库/13-algorithm.md)
+    - 4-扩充知识
+      * [01-符号Symbol](Skill/C++/4-扩充知识/01-符号Symbol.md)
+      * [02-uint8_t](Skill/C++/4-扩充知识/02-uint8_t.md)
+      * [03-右值引用和std::move](Skill/C++/4-扩充知识/03-右值引用和std::move.md)
+      * [04-IR](Skill/C++/4-扩充知识/04-IR.md)
+      * [05-so动态库](Skill/C++/4-扩充知识/05-so动态库.md)
     * [常用函数](Skill/C++/常用函数.md)
   - Golang
     - 1-基础知识
