@@ -341,7 +341,7 @@ std::unique_ptr<A> ptr_b = ptr_a; // 编译不通过
 
 与move相比，forward更强大，move只能转出来右值，forward都可以。
 
-> std::forward<T>(u)有两个参数：T与 u。 a. 当T为左值引用类型时，u将被转换为T类型的左值； b. 否则u将被转换为T类型右值。
+> `std::forward<T>(u)` 有两个参数：T与 u。 a. 当T为左值引用类型时，u将被转换为T类型的左值； b. 否则u将被转换为T类型右值。
 
 举个例子，有main，A，B三个函数，调用关系为：`main->A->B`，建议先看懂*2.3节对左右值引用本身是左值还是右值的讨论*再看这里：
 

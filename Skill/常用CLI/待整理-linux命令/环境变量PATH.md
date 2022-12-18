@@ -1,10 +1,10 @@
 设置环境变量
 
-export http_proxy=ip
+`export http_proxy=ip`
 
-export -p     列出所有环境变量
+`export -p`     列出所有环境变量
 
-export -n <变量名>  删除指定变量
+`export -n <变量名>`  删除指定变量
 
 
 

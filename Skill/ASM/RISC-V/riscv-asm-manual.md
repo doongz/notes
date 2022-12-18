@@ -186,7 +186,7 @@ The following table lists assembler directives:
 | .zero        | integer                                      | zero bytes                                                   |
 | .variant_cc  | symbol_name                                  | annotate the symbol with variant calling convention          |
 
-### <a name=.option></a> `.option`
+### `<a name=.option></a>.option`
 
 #### `rvc`/`norvc`
 
@@ -596,7 +596,7 @@ fail_msg:
         .string "FAIL\n"
 ```
 
-## <a name=pseudoinstructions></a> A listing of standard RISC-V pseudoinstructions
+## `<a name=pseudoinstructions></a>` A listing of standard RISC-V pseudoinstructions
 
 | Pseudoinstruction            | Base Instruction(s)                                          | Meaning                         | Comment                                                      |
 | :--------------------------- | :----------------------------------------------------------- | :------------------------------ | :----------------------------------------------------------- |
