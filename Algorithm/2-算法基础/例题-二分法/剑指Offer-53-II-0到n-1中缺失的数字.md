@@ -24,7 +24,7 @@
 
 ---
 
-```c++
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -45,7 +45,7 @@ public:
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {

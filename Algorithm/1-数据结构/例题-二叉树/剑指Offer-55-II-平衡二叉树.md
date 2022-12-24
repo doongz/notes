@@ -63,7 +63,7 @@ isBalanced(root) 函数：
 时间复杂度 O(N)： N 为树的节点数；最差情况下，需要递归遍历树的所有节点。
 空间复杂度 O(N)： 最差情况下（树退化为链表时），系统递归需要使用 O(N) 的栈空间。
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -101,7 +101,7 @@ public:
 - 时间复杂度：O(n^2)
 - 空间复杂度：O(n)
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

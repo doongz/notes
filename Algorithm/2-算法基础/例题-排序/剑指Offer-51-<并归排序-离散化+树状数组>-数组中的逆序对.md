@@ -26,31 +26,31 @@
 
 如下图所示，为数组 [7, 3, 2, 6, 0, 1, 5, 4] 的归并排序过程。
 
-![](../doc/jz-51-1.png)
+![](../../img/jz-51-1.png)
 
 **「合并阶段」本质上是「合并两个排序数组」的过程，而每当遇到「左子数组当前元素 > 右子数组当前元素」时，意味着「左子数组当前元素 至 末尾元素」与「右子数组当前元素」构成了若干「逆序对」**
 
-![](../doc/jz-51-2.png)
+![](../../img/jz-51-2.png)
 
-![](../doc/jz-51-3.png)
+![](../../img/jz-51-3.png)
 
-![](../doc/jz-51-4.png)
+![](../../img/jz-51-4.png)
 
-![](../doc/jz-51-5.png)
+![](../../img/jz-51-5.png)
 
-![](../doc/jz-51-6.png)
+![](../../img/jz-51-6.png)
 
-![](../doc/jz-51-7.png)
+![](../../img/jz-51-7.png)
 
-![](../doc/jz-51-8.png)
+![](../../img/jz-51-8.png)
 
-![](../doc/jz-51-9.png)
+![](../../img/jz-51-9.png)
 
-![](../doc/jz-51-10.png)
+![](../../img/jz-51-10.png)
 
 如下图所示，为数组 [7, 3, 2, 6, 0, 1, 5, 4] 的归并排序与逆序对统计过程。
 
-![](../doc/jz-51-11.png)
+![](../../img/jz-51-11.png)
 
 算法实现上对模版进行几处更改：
 
@@ -63,7 +63,7 @@
 - 若两指针相等「右指针」移动，会导致右边数组的 1 被空过去，左边的更大值无法与它比较
 - 若两指针相等「左指针」移动，因为 1 就是左边最小的，不会错过答案
 
-```c++
+```cpp
 class MergeSort {
 private:
     vector<int> tmp;  // 用于辅助合并有序数组
@@ -123,7 +123,7 @@ public:
 
 与 [315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/solution/shu-zhuang-shu-zu-c-python-by-dodo_1202-igmr/) 一摸一样
 
-```c++
+```cpp
 class FenwickTree {
 public:
     int size;

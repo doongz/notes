@@ -8,7 +8,7 @@
 
 例如，给定如下二叉树: root = [3,5,1,6,2,0,8,null,null,7,4]
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/15/binarytree.png)
+![img](../../img/binarytree.png)
 
 ```
 示例 1:
@@ -31,7 +31,7 @@
 
 注意：本题与主站 236 题相同：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
-![Picture2.png](../doc/1599885247-mgYjRv-Picture2.png)
+![Picture2.png](../../img/1599885247-mgYjRv-Picture2.png)
 
 考虑通过递归对二叉树进行先序遍历，当遇到节点 p 或 q 时返回。从底至顶回溯，当节点 p, q 在节点 root 的异侧时，节点 root 即为最近公共祖先，则向上返回 root 。
 
@@ -59,7 +59,7 @@
     - p,q 两节点都在 root 的 右子树 中，此时的 right 指向 最近公共祖先节点 ；
 - 当 left 不为空 ， right 为空 ：与情况 3. 同理；
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

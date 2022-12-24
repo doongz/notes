@@ -25,7 +25,7 @@
 
 注意：本题与主站 560 题相同： https://leetcode-cn.com/problems/subarray-sum-equals-k/
 
-```c++
+```cpp
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {

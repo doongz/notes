@@ -81,7 +81,7 @@
 
 本题可以建立如下图所示的自动机：
 
-![fig1](../doc/fig1-dfa.png)
+![fig1](../../img/fig1-dfa.png)
 
 我们也可以用下面的表格来表示这个自动机：
 
@@ -96,7 +96,7 @@
 
 另外自动机也需要记录当前已经输入的数字，只要在 `s'` 为 `in_number` 时，更新我们输入的数字，即可最终得到输入的数字。
 
-```c++
+```cpp
 class Automaton {
     string state = "start";
     unordered_map<string, vector<string>> table = {

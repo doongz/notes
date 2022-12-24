@@ -24,7 +24,7 @@
 
 使用哈希表的空间复杂度为 O(n)
 
-```c++
+```cpp
 class Solution {
 public:
     int findRepeatNumber(vector<int>& nums) {
@@ -44,7 +44,7 @@ public:
 
 因此，可遍历数组并通过交换操作，使元素的 **索引** 与 **值** 一一对应（即 nums[i] = i）。因而，就能通过索引映射对应的值，起到与字典等价的作用。
 
-![Picture0.png](../doc/1618146573-bOieFQ-Picture0.png)
+![Picture0.png](../../img/1618146573-bOieFQ-Picture0.png)
 
 遍历中，第一次遇到数字 x 时，将其交换至索引 x 处；而当第二次遇到数字 x 时，一定有 nums[x] = x ，此时即可得到一组重复数字。
 
@@ -61,7 +61,7 @@ public:
 - 时间复杂度 O(N)： 遍历数组使用 O(N)，每轮遍历的判断和交换操作使用 O(1)。
 - 空间复杂度 O(1)： 使用常数复杂度的额外空间。
 
-```c++
+```cpp
 class Solution {
 public:
     int findRepeatNumber(vector<int>& nums) {

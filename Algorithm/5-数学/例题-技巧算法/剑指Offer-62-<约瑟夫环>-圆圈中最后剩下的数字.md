@@ -27,7 +27,7 @@
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     int f(int n, int m) {

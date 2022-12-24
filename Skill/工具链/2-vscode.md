@@ -201,7 +201,7 @@ launch.json 用来执行编译后二进制的配置文件
 
 "cppStandard": "c++17" 这个涉及静态检查
 
-```c++
+```cpp
 {
     "configurations": [
         {

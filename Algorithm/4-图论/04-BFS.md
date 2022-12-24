@@ -6,7 +6,7 @@ Breath First Search
 
 ### 1、逐个遍历
 
-```c++
+```cpp
 bool bfs() {
     queue<int> q;
     vector<bool> vis(n);
@@ -35,7 +35,7 @@ bool bfs() {
 
 ### 2、逐层遍历
 
-```c++
+```cpp
 bool bfs() {
     // 初始化队列及标记数组，存入起点
     queue<int> q;
@@ -112,7 +112,7 @@ int bfs() {
 
 通常用来解决「搜索空间爆炸问题」
 
-![双向bfs](./doc/双向bfs.png)
+![双向bfs](../img/双向bfs.png)
 
 一定要注意：转向问题，即
 
@@ -149,7 +149,7 @@ while l_queue and r_queue:
 - BFS 起点：最开始将每个起点都存入队列，遍历的时候就相当于多起点「并排」在往前走
 - BFS 终点：并排往前走，有一个先达到终点，就返回答案
 
-```c++
+```cpp
 bool bfs() {
     queue<int> q;
     vector<bool> vis(n);

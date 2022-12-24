@@ -4,7 +4,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg)
+![img](../../img/remove_ex1.jpg)
 
 ```
 输入：head = [1,2,3,4,5], n = 2
@@ -37,7 +37,7 @@
 
 注意：本题与主站 19 题相同： https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {

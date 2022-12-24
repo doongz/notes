@@ -36,7 +36,7 @@ insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
 
 ## c++
 
-```c++
+```cpp
 class Trie {
 private:
     Trie* son[26];  // 存放当前字符之后的字符

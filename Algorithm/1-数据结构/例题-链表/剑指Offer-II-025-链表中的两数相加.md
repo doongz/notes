@@ -6,7 +6,7 @@
 
 **示例1：**
 
-![img](https://pic.leetcode-cn.com/1626420025-fZfzMX-image.png)
+![img](../../img/1626420025-fZfzMX-image.png)
 
 ```
 输入：l1 = [7,2,4,3], l2 = [5,6,4]
@@ -43,7 +43,7 @@
 
 用 stack 保存链表，再从 stack 中取出来，就是数字从低位到高位访问了。
 
-```C++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -93,7 +93,7 @@ public:
 
 ## 恢复成 arr 做法
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {

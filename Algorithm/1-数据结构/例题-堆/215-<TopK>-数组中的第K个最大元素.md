@@ -35,7 +35,7 @@
 
 内存消耗：9.6 MB, 在所有 C++ 提交中击败了94.42%的用户
 
-```c++
+```cpp
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
@@ -63,7 +63,7 @@ public:
 
 内存消耗：15.1 MB, 在所有 C++ 提交中击败了5.03%的用户
 
-```c++
+```cpp
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {

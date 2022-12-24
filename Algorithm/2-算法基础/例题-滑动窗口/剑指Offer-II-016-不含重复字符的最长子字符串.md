@@ -35,7 +35,7 @@
 
 注意：本题与主站 3 题相同： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 
-```c++
+```cpp
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {

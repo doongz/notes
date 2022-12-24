@@ -10,7 +10,7 @@ unordered_set 容器具有以下几个特性：
 
 ## 一、创建
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 #include <vector>
@@ -72,7 +72,7 @@ int main() {
 | reserve()          | 将存储桶的数量（也就是 bucket_count() 方法的返回值）设置为至少容纳count个元（不超过最大负载因子）所需的数量，并重新整理容器。 |
 | hash_function()    | 返回当前容器使用的哈希函数对象。                             |
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 #include <unordered_set>
@@ -98,7 +98,7 @@ unordered_multiset 除了能存储相同值的元素外，它和 unordered_set �
 
 unordered_multiset 容器可以同时存储多个值相同的元素，且这些元素会存储到哈希表中同一个桶（本质就是链表）上。
 
-```c++
+```cpp
 unordered_multiset<string> ums{"b", "a", "b", "c"};
 
 for (auto it = ums.begin(); it != ums.end(); it++) {
@@ -108,7 +108,7 @@ for (auto it = ums.begin(); it != ums.end(); it++) {
 
 ## 四、元素为 pair
 
-```c++
+```cpp
 struct pair_hash {
     template <class T1, class T2>
     std::size_t operator()(std::pair<T1, T2> const &pair) const {

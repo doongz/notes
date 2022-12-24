@@ -12,7 +12,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/09/01/e1.jpg)
+![img](../../img/e1.jpg)
 
 ```
 输入：n = 4, edges = [[1,0],[1,2],[1,3]]
@@ -22,7 +22,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode.com/uploads/2020/09/01/e2.jpg)
+![img](../../img/e2.jpg)
 
 ```
 输入：n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]
@@ -54,7 +54,7 @@ ai != bi
 
 我们从边缘开始，先找到所有度为 1 的节点，然后把所有度为 1 的节点进队列，然后不断地 bfs，最后找到的就是两边同时向中间靠近的节点，那么这个中间节点就相当于把整个距离二分了，那么它当然就是到两边距离最小的点啦，也就是到其他叶子节点最近的节点了。
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
@@ -120,7 +120,7 @@ https://leetcode.cn/problems/minimum-height-trees/solution/by-ac_oier-7xio/
 
 首先考虑换根到与 `r` 相邻的节点。设某个与 `r` 相邻的节点为 `u`，与 `r` 相邻的节点中，除 `u` 外还有 `a_i,i=1,2,...`；与 `u` 相邻的节点中，除 `r` 还有 `b_i,i=1,2,...`
 
-![310](../doc/310.png)
+![310](../../img/310.png)
 
 可以发现，在这种相邻的换根中，以 `a_i` 或 `b_i` 为根的子树高度是没有变化的，即 `height_r(a_i) == height_u(a_i)`、`height_r(b_i) == height_u(b_i)`，这意味着计算以 `u` 为根的树高时，大部分子树高没有变化，只需要重新计算以 r 为根的子树高，而这个子树高 height_u(r) 有
 $$
@@ -142,7 +142,7 @@ $$
 
 换根动态规划在 [834. 树中距离之和](https://leetcode-cn.com/problems/sum-of-distances-in-tree/) 中也有应用
 
-```c++
+```cpp
 // height0 表示子树高
 // height 表示树高
 

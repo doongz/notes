@@ -33,7 +33,7 @@
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
@@ -65,7 +65,7 @@ public:
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {

@@ -6,7 +6,7 @@ vector 常被称为向量容器，因为该容器在尾部插入或删除元素�
 
 ## 一、创建 vector
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -63,7 +63,7 @@ vector 模板类中还提供了 rbegin() 和 rend() 成员函数，分别表示�
 
 cbegin()/cend() 成员函数返回的是 const 类型的正向迭代器，这就意味着，由 cbegin() 和 cend() 成员函数返回的迭代器，可以用来遍历容器内的元素，但是不能对所存储的元素进行修改。
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -99,7 +99,7 @@ int main() {
 
 2）vector 容器在申请更多内存的同时，容器中的所有元素可能会被复制或移动到新的内存地址，这会导致之前创建的迭代器失效，所以之前创建的迭代器重新初始化一遍。
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -137,7 +137,7 @@ int main() {
 - front() 和 back() 成员函数，分别返回 vector 容器中第一个和最后一个元素的「引用」，通过利用这 2 个函数返回的引用，可以访问（甚至修改）容器中的首尾元素
 - data() 成员函数，该函数的功能是返回指向容器中首个元素的「指针」
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -162,7 +162,7 @@ int main() {
 
 ### 2、访问多个元素
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -194,7 +194,7 @@ int main() {
 
 在 vector 容器尾部添加一个元素，涉及两个成员函数 push_back() emplace_back()，emplace_back是c++11新加的。
 
-```c++
+```cpp
 vector<int> values{};  // 1 2
 values.push_back(1);
 values.push_back(2);
@@ -215,7 +215,7 @@ nums.emplace_back(2);
 
 **insert() 函数是在 vector 容器的指定位置插入一个或多个元素，**常用的有下面四种用法
 
-```c++
+```cpp
 vector<int> nums{1, 2};
 //迭代器正向 idx=1 的位置上插入
 nums.insert(nums.begin() + 1, 3);  // 1 3 2
@@ -233,7 +233,7 @@ nums.insert(nums.end(), {10, 11});  // 1 3 2 5 5 7 8 9 10 11
 
 **emplace() 在 vector 容器指定位置插入一个新的元素。**是 C++11 标准新增加的成员函数
 
-```c++
+```cpp
 vector<int> nums{1, 2};
 nums.emplace(nums.begin() + 1, 3);  // 1 3 2
 ```
@@ -256,7 +256,7 @@ nums.emplace(nums.begin() + 1, 3);  // 1 3 2
 | clear()               | 删除 vector 容器中所有的元素，使其变成空的 vector 容器。该函数会改变 vector 的大小（变为 0），但不是改变其容量。 |
 | remove() 公共函数     | 删除容器中所有和指定元素值相等的元素，并返回指向最后一个元素下一个位置的迭代器。值得一提的是，调用该函数不会改变容器的大小和容量。需要导入 `<algorithm>` |
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -299,7 +299,7 @@ int main() {
 
 使用 **reserve()** ，只修改 capacity 的值；容器内的对象并没有真实的内存空间(空间是"野"的)。
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 

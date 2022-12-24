@@ -25,7 +25,7 @@ nums 是一个非递减数组
 
 注意 lower_bound 的理解
 
-```c++
+```cpp
 class Solution {
 public:
     int search(vector<int>& nums, int target) {

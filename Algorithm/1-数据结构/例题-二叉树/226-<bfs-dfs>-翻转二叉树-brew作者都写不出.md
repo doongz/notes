@@ -4,7 +4,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg)
+![img](../../img/invert1-tree.jpg)
 
 ```
 输入：root = [4,2,7,1,3,6,9]
@@ -20,7 +20,7 @@
 
 ## 方法一：bfs
 
-```c++
+```cpp
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
@@ -62,7 +62,7 @@ class Solution:
 
 ## 方法二：dfs
 
-```c++
+```cpp
 class Solution {
 public:
     void dfs(TreeNode *node) {

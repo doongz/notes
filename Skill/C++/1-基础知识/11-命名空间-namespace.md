@@ -4,7 +4,7 @@
 
 为了解决合作开发时的命名冲突问题，引入了**命名空间（Namespace）**的概念。
 
-```c++
+```cpp
 namespace name{
     //variables, functions, classes
 }
@@ -18,7 +18,7 @@ namespace name{
 
 通过 `second_space::func();` ，指定命名空间内的元素
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -45,7 +45,7 @@ int main() {
 
 using 指令也可以用来指定命名空间中的特定项目。例如，只打算使用 std 命名空间中的 cout 部分
 
-```c++
+```cpp
 #include <iostream>
 using std::cout;
 
@@ -63,7 +63,7 @@ int main() {
 
 例如下面可以将多个文件描述的命名空间 space，导入
 
-```c++
+```cpp
 #include <file1>
 #include <file2>
 #include <file3.h>
@@ -73,7 +73,7 @@ using namespace space;
 
 ## 嵌套的命名空间
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 

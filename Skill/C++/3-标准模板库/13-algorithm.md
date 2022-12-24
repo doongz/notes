@@ -6,7 +6,7 @@
 
 ### 1、`*min_element()` 和 `*max_element`
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -26,7 +26,7 @@ int main() {
 
 反转
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -50,7 +50,7 @@ int main() {
 
 `lower_bound()` 函数用于在指定区域内查找 **大于等于 目标值的第一个（最小）元素**
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -97,7 +97,7 @@ int main() {
 
 `upper_bound() -1` 函数用于在指定范围内查找 **小于等于 目标值的最后一个（最大）元素**
 
-```c++
+```cpp
 int arr[5] = {1, 2, 3, 3, 4};
 
 int *p = upper_bound(arr, arr + 5, 3);
@@ -131,7 +131,7 @@ if (it-1-res.begin() == 0) {
 
 equel_range() 函数用于在指定范围内查找 **等于目标值的所有元素**
 
-```c++
+```cpp
 int arr[6] = {1, 2, 3, 3, 3, 4};
 pair<int*, int*> range1 = equal_range(arr, arr + 6, 3);
 cout << "first: " << range1.first - arr
@@ -150,7 +150,7 @@ cout << "first: " << range2.first - vec.begin()
 
 binary_search() 用于查找指定区域内是否包含某个目标元素
 
-```c++
+```cpp
 vector<int> vec = {1, 2, 3, 3, 3, 4};
 bool res1 = binary_search(vec.begin(), vec.end(), 3);
 cout << res1 << endl;  // 1
@@ -177,7 +177,7 @@ cout << res2 << endl;  // 0
 - 只对 array、vector、deque 这 3 个容器提供支持
 - 对于指定区域内值相等的元素，sort() 函数无法保证它们的相对位置不发生改变
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -241,7 +241,7 @@ paritial_sort() 函数可以从指定区域中提取出部分数据，并对它�
 
 语法格式为：
 
-```c++
+```cpp
 //按照默认的升序排序规则，对 [first, last) 范围的数据进行筛选并排序
 void partial_sort (RandomAccessIterator first,
                    RandomAccessIterator middle,
@@ -255,7 +255,7 @@ void partial_sort (RandomAccessIterator first,
 
 partial_sort() 函数会以**交换元素存储位置的方式实现部分排序的**。将 [first, last) 范围内最小（或最大）的 middle-first 个元素移动到 [first, middle) 区域中，并对这部分元素做升序（或降序）排序。 [middle, last)范围内的元素不保证是原有的顺序
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -305,7 +305,7 @@ partial_sort_copy() 函数的功能和 partial_sort() 类似，唯一的区别�
 
 语法格式:
 
-```c++
+```cpp
 //默认以升序规则进行部分排序
 RandomAccessIterator partial_sort_copy (
                        InputIterator first,
@@ -323,7 +323,7 @@ RandomAccessIterator partial_sort_copy (
 
 partial_sort_copy() 函数会将 [first, last) 范围内最小（或最大）的 result_last-result_first 个元素复制到 [result_first, result_last) 区域中，并对该区域的元素做升序（或降序）排序。
 
-```c++
+```cpp
 vector<int> vec{3, 2, 5, 4, 1, 6, 9, 7};
 vector<int> res(5, 0);
 
@@ -337,7 +337,7 @@ th_element() 函数的功能：
 
 当采用默认的升序排序规则（`std::less<T>`）时，该函数可以从某个序列中找到第 n 小的元素 K，并将 K 移动到序列中第 n 的位置处。此时，所有位于 K 之前的元素都比 K 小，所有位于 K 之后的元素都比 K 大。
 
-```c++
+```cpp
 //排序规则采用默认的升序排序
 void nth_element (RandomAccessIterator first,
                   RandomAccessIterator nth,
@@ -349,7 +349,7 @@ void nth_element (RandomAccessIterator first,
                   Compare comp);
 ```
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -371,14 +371,14 @@ is_sorted() 函数用于判断某个序列是否为有序序列。
 
 语法格式:
 
-```c++
+```cpp
 //判断 [first, last) 区域内的数据是否符合 std::less<T> 排序规则，即是否为升序序列
 bool is_sorted (ForwardIterator first, ForwardIterator last);
 //判断 [first, last) 区域内的数据是否符合 comp 排序规则  
 bool is_sorted (ForwardIterator first, ForwardIterator last, Compare comp);
 ```
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -423,7 +423,7 @@ int main() {
 
 merge() 函数用于**将 2 个有序序列合并为 1 个有序序列**，前提是这 2 个有序序列的排序规则相同（要么都是升序，要么都是降序）。并且最终借助该函数获得的新有序序列，其排序规则也和这 2 个有序序列相同。
 
-```c++
+```cpp
 //以默认的升序排序作为排序规则
 OutputIterator merge (InputIterator1 first1, InputIterator1 last1,
                       InputIterator2 first2, InputIterator2 last2,
@@ -434,7 +434,7 @@ OutputIterator merge (InputIterator1 first1, InputIterator1 last1,
                       OutputIterator result, Compare comp);
 ```
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -463,7 +463,7 @@ int main() {
 
 当 2 个有序序列存储在同一个数组或容器中时，inplace_merge() 函数将它们合并为 1 个有序序列
 
-```c++
+```cpp
 vector<int> vec{3, 5, 7, 9, 1, 2, 4, 6, 8};
 
 inplace_merge(vec, vec + 4, vec.end());
@@ -474,7 +474,7 @@ inplace_merge(vec, vec + 4, vec.end());
 
 在容器内所有元素的排列组合中，排序为最小的一个，即升序的方式生成排列
 
-```c++
+```cpp
 vector<int> vec{5, 3, 1, 2, 4};
 
 while (next_permutation(vec.begin(), vec.end())) {
@@ -489,7 +489,7 @@ for (int i = 0; i < vec.size(); i++) {
 
 在容器内所有元素的排列组合中，排序为最大的一个，即降序的方式生成排列
 
-```c++
+```cpp
 vector<int> vec{5, 3, 1, 2, 4};
 
 while (prev_permutation(vec.begin(), vec.end())) {
@@ -514,7 +514,7 @@ find() 函数用于在指定范围内查找和目标元素值相等的第一个�
 
 find() 函数的底层实现，其实就是用`==`运算符将 val 和 [first, last) 区域内的元素逐个进行比对。这也就意味着，[first, last) 区域内的元素必须支持`==`运算符
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -540,7 +540,7 @@ find_if() 函数允许自定义查找规则，形参为返回值类型为 bool �
 
 find_if() 函数会根据指定的查找规则，在指定区域内查找第一个符合该函数要求（使函数返回 true）的元素。
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -568,7 +568,7 @@ int main() {
 
 find_if_not() 函数则用于查找第一个不符合谓词函数规则的元素
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -596,7 +596,7 @@ int main() {
 
 find_end() 函数在序列 A 中查找序列 B 最后一次出现的位置 
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -619,7 +619,7 @@ int main() {
 
 find_first_of() 函数在 A 序列中查找和 B 序列中任意元素相匹配的第一个元素
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -650,7 +650,7 @@ int main() {
 
 adjacent_find() 函数用于在指定范围内查找连续 2 个满足规则的元素，默认两个相等的元素
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -689,7 +689,7 @@ int main() {
 
 search() 函数查找序列 B 在序列 A 中第一次出现的位置
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -712,7 +712,7 @@ int main() {
 
 search_n() 函数功能与search() 函数类似，但只能查找包含多个相同元素的子序列。
 
-```c++
+```cpp
 vector<int> vec{1, 2, 3, 2, 2};
 vector<int> v{2, 2};
 vector<int>::iterator it = search_n(vec.begin(), vec.end(), v.begin(), v.end());
@@ -730,7 +730,7 @@ partition() 函数可根据用户自定义的筛选规则，重新排列指定�
 
 返回第二组的第一个边界元素
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -762,7 +762,7 @@ stable_partition() 函数可以保证对指定区域内数据完成分组的同�
 
 返回第二组的第一个边界元素
 
-```c++
+```cpp
 vector<int> vec{1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 //以 cmp 规则，对 vec  容器中的数据进行分组
@@ -784,7 +784,7 @@ partition_copy() 函数
 - 分组后不会改变各个元素的相对位置
 - 不会对原序列做修改，以复制的方式到其它的指定位置
 
-```c++
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -826,7 +826,7 @@ partition_point() 函数在已分好组的数据中找到分界位置
 
 序列中的所有元素「都满足条件时」，返回自定义的 true 结果，否则返回 false 结果
 
-```c++
+```cpp
 vector<int> ages{6, 7, 8, 9};
 int max_age = 10;
 
@@ -840,7 +840,7 @@ cout << res << endl;  // Yes
 
 序列中的元素「有一个满足条件时」，返回自定义的 true 结果，否则返回 false 结果
 
-```c++
+```cpp
 vector<int> ages{6, 7, 8, 9};
 int max_age = 7;
 
@@ -854,7 +854,7 @@ cout << res << endl;  // Yes
 
 序列中的所有元素「都不满足条件时」，返回自定义的 true 结果，否则返回 false 结果
 
-```c++
+```cpp
 vector<int> ages{6, 7, 8, 9};
 int min_age = 5;
 
@@ -868,7 +868,7 @@ cout << res << endl;  // Yes
 
 equal() 比较两个序列是否相等，包括元素值和元素排序，推荐使用接受 4 个参数的版本
 
-```c++
+```cpp
 vector<int> vec1 = {1, 2, 3, 4};
 vector<int> vec2 = {2, 3, 4, 5};
 
@@ -881,7 +881,7 @@ cout << equal(vec1.begin() + 1, vec1.end(), vec2.begin()) << endl;              
 
 is_permutation() 比较两个序列是否相等，只检查元素值，不包含元素排序
 
-```c++
+```cpp
 vector<int> vec1{5, 3, 1, 2, 4};
 vector<int> vec2{1, 2, 3, 4, 5};
 
@@ -899,7 +899,7 @@ mismatch() 也可以判断两个序列是否匹配，而且如果不匹配，返
 
 字符串字典许排序算法
 
-```c++
+```cpp
 vector<string> phrase1{"the", "tigers", "of", "wrath"};
 vector<string> phrase2{"the", "horses", "of", "instruction"};
 bool res = lexicographical_compare(begin(phrase1), end(phrase1),

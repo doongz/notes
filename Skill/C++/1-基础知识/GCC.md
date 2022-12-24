@@ -136,7 +136,7 @@ g++ main.cpp -o main -std=c++11
 
 **查看 g++ 版本**
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -165,7 +165,7 @@ int main() {
 
 g++命令行如下：
 
-```c++
+```cpp
 g++ hello.cpp -E > hello.i
 ```
 

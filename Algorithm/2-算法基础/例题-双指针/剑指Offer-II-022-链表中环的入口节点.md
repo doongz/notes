@@ -8,7 +8,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png)
+![img](../../img/circularlinkedlist.png)
 
 ```
 输入：head = [3,2,0,-4], pos = 1
@@ -18,7 +18,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png)
+![img](../../img/circularlinkedlist_test2.png)
 
 ```
 输入：head = [1,2], pos = 0
@@ -28,7 +28,7 @@
 
 **示例 3：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png)
+![img](../../img/circularlinkedlist_test3.png)
 
 ```
 输入：head = [1], pos = -1
@@ -48,7 +48,7 @@
 
 ---
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {

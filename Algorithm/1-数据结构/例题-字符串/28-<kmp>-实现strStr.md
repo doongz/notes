@@ -26,7 +26,7 @@
 
 ## 调库
 
-```c++
+```cpp
 class Solution {
 public:
     int strStr(string haystack, string needle) {
@@ -42,7 +42,7 @@ public:
 
 空间复杂度：`O(1)`
 
-```c++
+```cpp
 class Solution {
 public:
     int strStr(string haystack, string needle) {
@@ -73,7 +73,7 @@ public:
 
 空间复杂度：`O(m)`
 
-```c++
+```cpp
 class Solution {
 public:
     // KMP 算法

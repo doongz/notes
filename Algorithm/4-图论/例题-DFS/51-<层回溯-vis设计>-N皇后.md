@@ -10,7 +10,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/11/13/queens.jpg)
+![img](../../img/queens.jpg)
 
 ```
 输入：n = 4
@@ -40,7 +40,7 @@
 
 关键点在于，两条斜线怎样判断
 
-![image.png](https://pic.leetcode-cn.com/1599142979-VEuEDb-image.png)
+![image.png](../../img/1599142979-VEuEDb-image.png)
 
 这两个 vis 的个数 = 行 + 列 - 1
 
@@ -48,7 +48,7 @@
 
 副对角线的vis下标为 row + col，直接可以用
 
-```c++
+```cpp
 class Solution {
 private:
     int n;

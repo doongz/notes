@@ -145,7 +145,7 @@ STL序列式容器，其共同的特点是不会对存储的元素进行排序�
 
 ### 用法
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;

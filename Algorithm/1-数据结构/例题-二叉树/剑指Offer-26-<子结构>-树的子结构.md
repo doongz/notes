@@ -52,7 +52,7 @@ B是A的子结构， 即 A中有出现和B相同的结构和节点值。
 1. 先序遍历树 A 中的每个节点 n_A ；（对应函数 `isSubStructure(A, B)`）
 2. 判断树 A 中 **以 n_A 为根节点的子树** 是否包含树 B 。（对应函数 `isSame(A, B)`）
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

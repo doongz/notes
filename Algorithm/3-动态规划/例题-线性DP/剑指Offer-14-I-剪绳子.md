@@ -49,7 +49,7 @@
 
 - 最终得到dp[n]的值即为将长度为n的绳子拆分成至少两段绳子之后，这些绳子长度的最大乘积
 
-```c++
+```cpp
 class Solution {
 public:
     int cuttingRope(int n) {

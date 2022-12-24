@@ -14,7 +14,7 @@ list 容器具有一些其它容器（array、vector 和 deque）所不具备的
 
 ## 一、创建
 
-```c++
+```cpp
 #include <iostream>
 #include <list>
 using namespace std;
@@ -87,7 +87,7 @@ int main() {
 
 双向迭代器支持使用 ++p1、 p1++、 p1--、 p1++、 *p1、 p1==p2 以及 p1!=p2 运算符，不支持使用 <、 >、 <=、 >= 比较运算符
 
-```c++
+```cpp
 list<char> values{'a', 'b', 'c', 'd'};
 // begin() end() 顺序输出
 for (auto it = values.begin(); it != values.end(); ++it) {
@@ -107,7 +107,7 @@ list 容器在进行插入（insert()）、接合（splice()）等操作时，�
 
 通过 front() 和 back() 成员函数，可以分别获得 list 容器中第一个元素和最后一个元素的引用形式
 
-```c++
+```cpp
 list<int> values{1, 2, 3, 4};
 
 int &first = values.front();
@@ -121,7 +121,7 @@ cout << values.front() << " " << values.back() << endl;  // 10 20
 
 只能通过迭代器遍历
 
-```c++
+```cpp
 list<int> values{1, 2, 3, 4};
 
 for (auto i = values.begin(); i != values.end(); i++) {
@@ -139,7 +139,7 @@ while (first != end) {
 
 ## 五、添加（插入）元素
 
-```c++
+```cpp
 std::list<int> values{1, 2, 3};
 values.push_front(0);      //{0,1,2,3}
 values.push_back(4);       //{0,1,2,3,4}
@@ -155,7 +155,7 @@ for (auto p = values.begin(); p != values.end(); ++p) {
 
 ## 六、删除元素
 
-```c++
+```cpp
 list<int> values{1, 2, 3, 4};
 
 //删除当前容器中首个元素

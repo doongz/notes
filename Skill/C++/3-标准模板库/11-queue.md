@@ -8,7 +8,7 @@ queue 容器适配器有 2 个开口，其中一个开口专门用来输入数�
 
 ## 一、创建
 
-```c++
+```cpp
 #include <deque>
 #include <iostream>
 #include <list>
@@ -48,7 +48,7 @@ int main() {
 | **pop()**                     | **删除 queue 中的第一个元素**                                |
 | `swap(queue<T> &other_queue)` | 将两个 queue 容器适配器中的元素进行互换，需要注意的是，进行互换的 2 个 queue 容器适配器中存储的元素类型以及底层采用的基础容器类型，都必须相同。 |
 
-```c++
+```cpp
 #include <deque>
 #include <iostream>
 #include <queue>

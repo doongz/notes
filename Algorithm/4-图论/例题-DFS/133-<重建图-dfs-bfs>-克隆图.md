@@ -44,7 +44,7 @@ class Node {
 
 ## 方法一：dfs
 
-```c++
+```cpp
 class Solution {
 public:
     unordered_map<int, Node*> visited;
@@ -141,7 +141,7 @@ func cloneGraph(node *Node) *Node {
 
 **需要用 visited 保存 原图中的节点 和 克隆图中对应的节点**
 
-```c++
+```cpp
 class Solution {
 public:
     Node* cloneGraph(Node* node) {

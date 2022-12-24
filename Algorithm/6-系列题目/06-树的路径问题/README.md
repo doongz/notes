@@ -42,7 +42,7 @@
 
 ### 1、自顶向下
 
-```c++
+```cpp
 // 一般路径：
 vector<vector<int>>res;
 void dfs(TreeNode*root,vector<int>path)
@@ -111,7 +111,7 @@ void dfs(TreeNode*root, int sum, vector<int> path)
 
 接着只需要从根节点开始dfs,不断比较更新全局变量即可
 
-```c++
+```cpp
 int res=0;
 int maxPath(TreeNode *root) //以root为路径起始点的最长路径
 {
@@ -140,7 +140,7 @@ int maxPath(TreeNode *root) //以root为路径起始点的最长路径
 
 直接套用模板1即可，注意把"->"放在递归调用中
 
-```c++
+```cpp
 vector<string> res;
 vector<string> binaryTreePaths(TreeNode<T> *root)
 {
@@ -167,7 +167,7 @@ void dfs(TreeNode*root, string path)
 
 直接套用模板2
 
-```c++
+```cpp
 vector<vector<int>> res;
 vector<vector<int>> pathSum(TreeNode *root, int targetSum)
 {
@@ -198,7 +198,7 @@ void dfs(TreeNode*root, int sum, vector<int> path)
 
 套用模板2
 
-```c++
+```cpp
 int count = 0;
 int pathSum(TreeNode *root, int targetSum)
 {
@@ -226,7 +226,7 @@ void dfs(TreeNode *root, int sum)
 
 换汤不换药，套用模板1
 
-```c++
+```cpp
 vector<string> path;
 string smallestFromLeaf(TreeNode *root)
 {
@@ -257,7 +257,7 @@ void dfs(TreeNode *root, string s)
 
 /left,right分别为根节点左右子树最大路径和,注意：如果最大路径和<0,意味着该路径和对总路径和做负贡献，因此不要计入到总路径中，将它设置为0
 
-```c++
+```cpp
 int res = INT_MIN; //注意节点值可能为负数，因此要设置为最小值
 int maxPathSum(TreeNode *root)
 {
@@ -278,7 +278,7 @@ int maxPath(TreeNode *root) //以root为路径起始点的最长路径
 
 [687. 最长同值路径](https://leetcode.cn/problems/longest-univalue-path/)
 
-```c++
+```cpp
 int longestUnivaluePath(TreeNode *root)
 {
     if (!root)
@@ -308,7 +308,7 @@ int longestPath(TreeNode *root)
 
 [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)
 
-```c++
+```cpp
 int res1 = 0;  
 int diameterOfBinaryTree(TreeNode *root)
 {

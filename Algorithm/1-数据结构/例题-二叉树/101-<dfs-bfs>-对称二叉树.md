@@ -4,11 +4,11 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg)
+![img](../../img/symtree1.jpg)
 
 ## 方法一：dfs
 
-```c++
+```cpp
 class Solution {
 public:
     bool dfs(TreeNode *l, TreeNode *r) {
@@ -24,7 +24,7 @@ public:
 
 ## 方法二：bfs
 
-```c++
+```cpp
 class Solution {
 public:
     bool isSymmetric(TreeNode *root) {

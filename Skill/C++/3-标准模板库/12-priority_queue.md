@@ -6,7 +6,7 @@ priority_queue 容器适配器模拟的也是队列这种存储结构，存储�
 
 priority_queue 容器适配器模板位于`<queue>`头文件中，默认是大根堆
 
-```c++
+```cpp
 #include <array>
 #include <iostream>
 #include <queue>
@@ -52,7 +52,7 @@ int main() {
 | **pop()**                        | **移除 priority_queue 容器适配器中第一个元素**               |
 | `swap(priority_queue<T>& other)` | 将两个 priority_queue 容器适配器中的元素进行互换，需要注意的是，进行互换的 2 个 priority_queue 容器适配器中存储的元素类型以及底层采用的基础容器类型，都必须相同。 |
 
-```c++
+```cpp
 #include <iostream>
 #include <queue>
 using namespace std;

@@ -40,7 +40,7 @@
 
 ## 方法一：dfs
 
-```c++
+```cpp
 class Solution {
 public:
     int end;
@@ -82,7 +82,7 @@ public:
 
 空间复杂度：`O(n * k)`
 
-```c++
+```cpp
 class Solution {
 public:
     int end;

@@ -4,7 +4,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e1.png)
+![img](../../img/e1.png)
 
 ```
 输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
@@ -13,7 +13,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e2.png)
+![img](../../img/e2.png)
 
 ```
 输入：head = [[1,1],[2,1]]
@@ -22,7 +22,7 @@
 
 **示例 3：**
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e3.png)
+![img](../../img/e3.png)
 
 ```
 输入：head = [[3,null],[3,0],[3,null]]
@@ -48,7 +48,7 @@ Node.random 为空（null）或指向链表中的节点。
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     Node* copyRandomList(Node* head) {

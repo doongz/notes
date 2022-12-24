@@ -2,7 +2,7 @@
 
 **结构体**是 C++ 中另一种用户自定义的可用的数据类型，允许存储不同类型的数据项
 
-```c++
+```cpp
 #include <iostream>
 #include <cstring>
 
@@ -43,7 +43,7 @@ int main()
 
 ## 结构体作为入参和出参
 
-```c++
+```cpp
 #include <iostream>
 #include <cstring>
 
@@ -88,7 +88,7 @@ int main()
 
 向结构的指针访问结构的成员，必须使用 -> 运算符
 
-```c++
+```cpp
 #include <iostream>
 #include <cstring>
 

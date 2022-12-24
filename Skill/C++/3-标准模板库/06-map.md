@@ -12,7 +12,7 @@ map 容器定义在 `<map>` 头文件中，并位于 std 命名空间中。
 
 ## 一、创建
 
-```c++
+```cpp
 #include <iostream>
 #include <map>
 using namespace std;
@@ -65,7 +65,7 @@ int main() {
 
 标准库为 map 容器配备的是双向迭代器（bidirectional iterator）。这意味着，map 容器迭代器只能进行 ++p、p++、--p、p--、*p 操作，并且迭代器之间只能使用 == 或者 != 运算符进行比较。
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}, {"b", 2}, {"c", 3}};
 for (auto it = m.begin(); it != m.end(); it++) {
     cout << it->first << " : " << it->second << endl;
@@ -83,7 +83,7 @@ for (auto it = m.rbegin(); it != m.rend(); it++) {
 
 find() 成员方法，它能帮我们查找指定 key 值的键值对，如果成功找到，则返回一个指向该键值对的双向迭代器
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}, {"b", 2}, {"c", 3}};
 auto first = m.find("b");
 for (; first != m.end(); first++) {
@@ -99,7 +99,7 @@ for (; first != m.end(); first++) {
 
 1) map 类模板中对`[ ]`运算符进行了重载，通过指定的键，获取 map 容器中该键对应的值。也可向该 map 容器中增添一个键值对，但要保证新添加键值对的键和当前 map 容器中已存储的键值对的键都不一样
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}, {"b", 2}};
 cout << m["a"] << endl;  // 1
 
@@ -115,7 +115,7 @@ for (auto it = m.begin(); it != m.end(); it++) {
 
 2) 使用 at() 成员方法。如果在当前容器中查找失败，会抛出 out_of_range 异常。
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}, {"b", 2}};
 cout << m.at("a") << endl;  // 1
 // cout << m.at("c") << endl;  // 报错
@@ -123,7 +123,7 @@ cout << m.at("a") << endl;  // 1
 
 3) 遍历整个 map 容器
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}, {"b", 2}, {"c", 3}};
 for (auto it = m.begin(); it != m.end(); it++) {
     cout << it->first << " : " << it->second << endl;
@@ -135,7 +135,7 @@ for (auto it = m.begin(); it != m.end(); it++) {
 
 ## 五、插入数据
 
-```c++
+```cpp
 map<string, int> m{{"a", 1}};
 
 //获取已存储键值对中，指定键对应的值
@@ -166,7 +166,7 @@ multimap 容器具有和 map 相同的特性，也用于存储 pair<const K, T> 
 
 **和 map 容器的区别在于，multimap 容器中可以同时存储多（≥2）个键相同的键值对。**
 
-```c++
+```cpp
 #include <iostream>
 #include <map>  //map
 using namespace std;
@@ -215,7 +215,7 @@ int main() {
 
 由于 multimap 容器可存储多个具有相同键的键值对，因此表 1 中的 lower_bound()、upper_bound()、equal_range() 以及 count() 成员方法会经常用到。
 
-```c++
+```cpp
 multimap<string, int> m{
     {"a", 1},
     {"b", 2},

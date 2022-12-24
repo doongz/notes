@@ -35,7 +35,7 @@
 - **后序遍历定义：** `[ 左子树 | 右子树 | 根节点 ]` ，即遍历顺序为 “左、右、根” 。
 - **二叉搜索树定义：** 左子树中所有节点的值 << 根节点的值；右子树中所有节点的值 >> 根节点的值；其左、右子树也分别为二叉搜索树。
 
-![Picture1.png](https://pic.leetcode-cn.com/4a2780853b72a0553194773ff65c8c81ddcc4ee5d818cb3528d5f8dd5fa3b6d8-Picture1.png)
+![Picture1.png](../../img/4a2780853b72a0553194773ff65c8c81ddcc4ee5d818cb3528d5f8dd5fa3b6d8-Picture1.png)
 
 方法一：递归分治
 
@@ -59,7 +59,7 @@
 - 时间复杂度 O(N^2)
 - 空间复杂度 O(N)
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> postorder;

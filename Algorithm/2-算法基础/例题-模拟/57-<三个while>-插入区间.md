@@ -49,7 +49,7 @@ newInterval.length == 2
 2. 接着判断当前区间是否与新区间重叠，重叠的话就进行合并，直到遍历到当前区间在新区间的右边且相离，将最终合并后的新区间加入结果集；
 3. 最后将新区间右边且相离的区间加入结果集。
 
-```c++
+```cpp
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {

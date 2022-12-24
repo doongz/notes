@@ -58,7 +58,7 @@
 
 同时由于生成「扰乱字符串」时，可以选交换也可以选不交换。因此我们的 s2 会有两种可能性：
 
-![](../doc/87.png)
+![](../../img/87.png)
 
 - 对于某个确定的分割点 i，s1 固定分为两部分，分别为 [0,i) & [i, n)
 
@@ -85,7 +85,7 @@
 
 时间复杂度：O(5^n)，讲真不会分析
 
-```c++
+```cpp
 class Solution {
 public:
     int cnter1[26];
@@ -152,7 +152,7 @@ public:
 - 时间复杂度：O(n^4)，讲真不会分析
 - 空间复杂度：O(n^3)
 
-```c++
+```cpp
 class Solution {
 public:
     int n;
@@ -234,7 +234,7 @@ public:
 
 初始化：需要将长度为 1 也就是字母，字母相同的置为 1，不相同的置为 0
 
-```c++
+```cpp
 class Solution {
 public:
     bool isScramble(string s1, string s2) {

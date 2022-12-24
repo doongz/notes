@@ -36,7 +36,7 @@ k 的取值范围是 [1, 不同 words[i] 的数量]
 
 **重点学习下官方的写法**
 
-```c++
+```cpp
 class Solution {
 public:
     vector<string> topKFrequent(vector<string> &words, int k) {

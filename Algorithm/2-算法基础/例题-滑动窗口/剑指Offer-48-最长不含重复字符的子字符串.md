@@ -31,7 +31,7 @@ s.length <= 40000
 
 ---
 
-```c++
+```cpp
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {

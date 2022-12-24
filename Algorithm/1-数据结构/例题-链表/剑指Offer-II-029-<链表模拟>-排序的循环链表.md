@@ -12,7 +12,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2019/01/19/example_1_before_65p.jpg)
+![img](../../img/example_1_before_65p.jpg)
 
 ```
 输入：head = [3,4,1], insertVal = 2
@@ -65,7 +65,7 @@
 
 空间复杂度：O(1)
 
-```c++
+```cpp
 /*
 // Definition for a Node.
 class Node {

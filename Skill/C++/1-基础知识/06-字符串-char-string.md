@@ -4,7 +4,7 @@
 
 char 本质上还是 int，char 单个字符单引号，string 双引号
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -34,7 +34,7 @@ C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。
 
 字符串实际上是使用 **null** 字符 **\0** 终止的一维字符数组。由于在数组的末尾存储了空字符，所以字符数组的大小比原字符数多一个。
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -81,7 +81,7 @@ C++ 的 string 可以修改字符串中的内容，python 和 golang 不可以
 
 ### 1、初始化和赋值
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -98,7 +98,7 @@ int main() {
 
 ### 2、访问
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -114,7 +114,7 @@ int main() {
 
 ### 3、修改
 
-```c++
+```cpp
 string s = "hello";
 s[0] = 'H';
 cout << s << endl; // Hello
@@ -122,7 +122,7 @@ cout << s << endl; // Hello
 
 ### 4、拼接
 
-```c++
+```cpp
 string s1 = "hello";
 string s2 = s1 + " world";
 cout << s2 << endl;  // hello world
@@ -132,7 +132,7 @@ cout << s2 << endl;  // hello world
 
 第一个参数 为插入下标；第二个参数 为插入的字符串
 
-```c++
+```cpp
 string s1 = "aaaa";
 s1.insert(2, "bb");
 cout << s1 << endl;  // aabbaa
@@ -144,7 +144,7 @@ s3.erase(5, 2) 表示，从第 5 个位置开始删，删除两个元素停下�
 
 或者理解为，前面保留 5 个，然后删 2 个，再接上后面剩的
 
-```c++
+```cpp
 string s1, s2, s3;
 s1 = s2 = s3 = "1234567890";
 s2.erase(5);
@@ -158,7 +158,7 @@ cout << s3 << endl;  // 12345890
 
 s1.substr(5, 2) 表示，从第五个位置开始提取，提取两个元素（前面剔除 5 个，再选取 2 个）
 
-```c++
+```cpp
 string s1 = "1234567890";
 string s2 = s1.substr(5);
 string s3 = s1.substr(5, 2);
@@ -173,7 +173,7 @@ cout << s3 << endl;  // 67
 
 如果没有查找到子字符串，那么会返回个很大的数
 
-```c++
+```cpp
 string s1 = "first second third";
 cout << s1.find("second", 5) << endl;  // 6
 cout << s1.find("aaa", 5) << endl;     // 18446744073709551615
@@ -183,14 +183,14 @@ cout << s1.find("aaa", 5) << endl;     // 18446744073709551615
 
 如果到了第二个参数所指定的下标还没有找到子字符串，则返回一个无穷大值
 
-```c++
+```cpp
 string s1 = "first second third";
 cout << s1.rfind("second", 5) << endl;  // 18446744073709551615
 ```
 
 `find_first_of()` 函数用于查找 s1 和 s2 中第一次相同的 **字符** ，在 s1 中的下标
 
-```c++
+```cpp
 string s1 = "first second second third";
 string s2 = "asd";
 cout << s1.find_first_of(s2) << endl;  // 3
@@ -210,7 +210,7 @@ if (strcmp(s1, s2) < 0) {
 }
 ```
 
-```c++
+```cpp
 // c++
 string s1;
 string s2;
@@ -224,7 +224,7 @@ if (s1.compare(s2) > 0) {
 
 ### 1、查看格式
 
-```c++
+```cpp
 #include <iostream>
 #include <typeinfo>
 #include <vector>
@@ -250,12 +250,12 @@ int main() {
 
 ### 2、string -> int
 
-```c++
+```cpp
 int atoi(const char* str)  // 要先使用 str.c_str() 转化后才能使用
 int stoi(const string* str)
 ```
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 
@@ -273,7 +273,7 @@ int main() {
 
 字符串string 是由 char 组成的，所以直接去值就好
 
-```c++
+```cpp
 string str = "123";
 char c = str[0];
 ```
@@ -282,7 +282,7 @@ char c = str[0];
 
 char 就是 int
 
-```c++
+```cpp
 char a = 'a';
 int a_int = a;
 cout << a_int << endl;  // 97
@@ -292,7 +292,7 @@ cout << a_int << endl;  // 97
 
 string to_string (int val);
 
-```c++
+```cpp
 int a = 123;
 string b = to_string(a);
 cout << b << endl;  // "123"
@@ -300,7 +300,7 @@ cout << b << endl;  // "123"
 
 ### 6、类似 python ord() 实现
 
-```c++
+```cpp
 string s = "";
 s += 'a' + 2;
 cout << s << endl; // c

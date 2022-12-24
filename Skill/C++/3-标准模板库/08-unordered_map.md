@@ -70,7 +70,7 @@ int main() {
 
 unordered_map 容器迭代器的类型为前向迭代器（又称正向迭代器）。这意味着，假设 p 是一个前向迭代器，则其只能进行 *p、p++、++p 操作，且 2 个前向迭代器之间只能用 == 和 != 运算符做比较。
 
-```c++
+```cpp
 unordered_map<string, int> um{{"a", 1}, {"b", 2}, {"c", 3}};
 
 // 遍历输出 umap 容器中所有的键值对
@@ -85,7 +85,7 @@ cout << it->first << " : " << it->second << endl;  // a : 1
 
 简写遍历
 
-```c++
+```cpp
 for (int a = 0; a < 5; a++) {
     um[a] = 123123;
 }
@@ -105,7 +105,7 @@ for (auto &[k, v] : um) {
 
 如果没有存储指定的元素作为键的键值对，则此时 [ ] 运算符的功能将转变为：向当前容器中添加以目标元素为键的键值对
 
-```c++
+```cpp
 #include <iostream>
 #include <unordered_map>
 using namespace std;
@@ -147,7 +147,7 @@ insert() 方法可以将 pair 类型的键值对元素添加到 unordered_map �
 - 当 insert() 将 val 成功添加到容器中时，返回的迭代器指向新添加的键值对，bool 值为 True；
 - 当 insert() 添加键值对失败时，意味着当前容器中本就存储有和要添加键值对的键相等的键值对，这种情况下，返回的迭代器将指向这个导致插入操作失败的迭代器，bool 值为 False
 
-```c++
+```cpp
 unordered_map<string, int> um{{"a", 1}};
 
 auto res = um.insert({"b", 2});
@@ -164,7 +164,7 @@ unordered_map 容器类模板中提供了以下 2 个成员方法：
 - erase()：删除 unordered_map 容器中指定的键值对；
 - clear()：删除 unordered_map 容器中所有的键值对，即清空容器。
 
-```c++
+```cpp
 unordered_map<string, int> um{
     {"a", 1},
     {"b", 2},
@@ -188,7 +188,7 @@ unordered_multimap 容器可以存储多个键相等的键值对
 
 无序容器中存储的各个键值对，都会哈希存到各个桶（本质为链表）中。而对于 unordered_multimap 容器来说，其存储的所有键值对中，键相等的键值对会被哈希到同一个桶中存储。
 
-```c++
+```cpp
 unordered_multimap<string, int> umm{
     {"a", 1},
     {"b", 2},

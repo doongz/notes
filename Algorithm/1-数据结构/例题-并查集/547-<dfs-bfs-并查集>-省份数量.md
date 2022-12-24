@@ -10,7 +10,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/12/24/graph1.jpg)
+![img](../../img/graph1.jpg)
 
 ```
 输入：isConnected = [[1,1,0],[1,1,0],[0,0,1]]
@@ -19,7 +19,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode.com/uploads/2020/12/24/graph2.jpg)
+![img](../../img/graph2.jpg)
 
 ```
 输入：isConnected = [[1,0,0],[0,1,0],[0,0,1]]
@@ -53,7 +53,7 @@ n == isConnected[i].length
 
 空间复杂度：`O(n)`
 
-```c++
+```cpp
 class UnionFind {
 public:
     vector<int> parent;  // 下标idx为节点，parent[idx]为该节点的父亲

@@ -39,7 +39,7 @@
 
 ## 方法一：递归
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> options;
@@ -65,7 +65,7 @@ public:
 
 ## 方法二：记忆化dfs
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> options;
@@ -102,7 +102,7 @@ public:
 
 动态规划的代码如下，是从记忆化递归改造而来。
 
-```c++
+```cpp
 #define ULL unsigned long long
 
 class Solution {

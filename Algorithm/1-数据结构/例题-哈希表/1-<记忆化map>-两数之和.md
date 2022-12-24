@@ -41,7 +41,7 @@
 
 空间复杂度：`O(n)`
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {

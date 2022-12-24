@@ -16,7 +16,7 @@ DFS 最显著的特征在于其 **递归调用自身**。同时与 BFS 类似，
 
 具体地说，DFS 大致结构如下：
 
-```c++
+```cpp
 void dfs(int cur) {
   	if (到达终点) {
       	if (可以采集答案) 采集答案;
@@ -43,7 +43,7 @@ void dfs(int cur) {
 
 链式前向星遍历：
 
-```c++
+```cpp
 // C++ Version
 void dfs(int u) {
   vis[u] = 1;

@@ -42,7 +42,7 @@
 
 注意：本题与主站 724 题相同： https://leetcode-cn.com/problems/find-pivot-index/
 
-```c++
+```cpp
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {

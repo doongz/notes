@@ -34,7 +34,7 @@
 
  注意：本题与主站 76 题相似（本题答案不唯一）：https://leetcode-cn.com/problems/minimum-window-substring/
 
-```c++
+```cpp
 class Solution {
 public:
     string minWindow(string s, string t) {

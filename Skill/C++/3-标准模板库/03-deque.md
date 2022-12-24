@@ -9,7 +9,7 @@ deque 是 double-ended queue 的缩写，又称双端队列容器，当需要向
 
 ## 一、创建deque容器
 
-```c++
+```cpp
 #include <array>
 #include <deque>
 #include <iostream>
@@ -77,7 +77,7 @@ begin() 和 end() 分别用于指向「首元素」和「尾元素+1」 的位�
 
 除此之外，当向 deque 容器添加元素时，deque 容器会申请更多的内存空间，同时其包含的所有元素可能会被复制或移动到新的内存地址（原来占用的内存会释放），这会导致之前创建的迭代器失效。所以使用前一定要重新指定迭代器
 
-```c++
+```cpp
 #include <deque>
 #include <iostream>
 using namespace std;
@@ -107,7 +107,7 @@ at() 成员函数具备上述的功能，而且下标越界会报错，但是性
 
  front() 和 back() 成员函数，它们分别返回 vector 容器中第一个和最后一个元素的引用，通过利用它们的返回值，可以访问和修改容器中的首尾元素
 
-```c++
+```cpp
 deque<int> q{1, 2, 3, 4, 5};
 
 cout << q[1] << endl;  // 2
@@ -125,7 +125,7 @@ cout << q.back() << endl;   // 5
 
 begin() end() 遍历 deque 容器中指定区域元素
 
-```c++
+```cpp
 deque<int> q{1, 2, 3, 4, 5};
 
 for (auto i = q.begin() + 1; i < q.end() - 1; i++) {
@@ -146,7 +146,7 @@ cout << endl;  // 2 3 4
 
 头部、尾部处理
 
-```c++
+```cpp
 deque<int> q{1, 2, 3};
 // 尾部添加
 q.push_back(9);  // 1 2 3 9
@@ -175,7 +175,7 @@ q.erase(q.begin(), q.end());  //{}，等同于 q.clear()
 
 insert() 函数具体用法
 
-```c++
+```cpp
 std::deque<int> q{1, 2};
 
 q.insert(q.begin() + 1, 3);  // 1 3 2

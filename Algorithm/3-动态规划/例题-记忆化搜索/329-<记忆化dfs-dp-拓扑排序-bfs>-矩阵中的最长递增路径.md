@@ -8,7 +8,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2021/01/05/grid1.jpg)
+![img](../../img/grid1.jpg)
 
 ```
 输入：matrix = [[9,9,4],[6,6,8],[2,1,1]]
@@ -18,7 +18,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode.com/uploads/2021/01/27/tmp-grid.jpg)
+![img](../../img/tmp-grid.jpg)
 
 ```
 输入：matrix = [[3,4,5],[3,2,6],[2,2,1]]
@@ -52,7 +52,7 @@ dfs 返回从 [r,c] 出发的最长递增路径长度
 
 空间复杂度：`O(mn)`
 
-```c++
+```cpp
 class Solution {
 public:
     int rows;

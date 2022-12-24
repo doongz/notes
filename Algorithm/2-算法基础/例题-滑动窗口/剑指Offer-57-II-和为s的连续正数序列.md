@@ -21,7 +21,7 @@
 
 - `1 <= target <= 10^5`
 
-```c++
+```cpp
 class Solution {
 public:
     vector<vector<int>> findContinuousSequence(int target) {

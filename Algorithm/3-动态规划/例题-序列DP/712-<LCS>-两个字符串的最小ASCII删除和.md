@@ -15,7 +15,7 @@ s1 -> 最大ascii公共子串 -> s2
 初始化：当i或j为0时，没有公共子串，此时状态为0
 
 
-```c++
+```cpp
 class Solution {
 public:
     int minimumDeleteSum(string s1, string s2) {

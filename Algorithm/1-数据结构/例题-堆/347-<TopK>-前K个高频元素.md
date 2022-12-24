@@ -30,7 +30,7 @@ k 的取值范围是 [1, 数组中不相同的元素的个数]
 
 空间复杂度：`O(n)`，unordered_map 为 `O(n)`，priority_queue 为 `O(k)`
 
-```c++
+```cpp
 class Solution {
 public:
     struct cmpSmall {

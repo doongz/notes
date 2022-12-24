@@ -6,7 +6,7 @@
 
 **示例 1：**
 
-![img](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/06/28/sketch0.png)
+![img](../../img/sketch0.png)
 
 ```
 输入：root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, k = 2
@@ -43,7 +43,7 @@ dfs遍历二叉树，生成图的临接表
 
 空间复杂度：`O(n)`，dfs 和 bfs 都是`O(n)`
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

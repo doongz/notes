@@ -6,7 +6,7 @@ C++ STL 标准库提供了 pair 类模板，其专门用来将 2 个普通元素
 
 pair 类模板定义在`<utility>`头文件中
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 #include <utility>  // pair
@@ -30,7 +30,7 @@ int main() {
 
 > 注意，对于进行比较的 2 个 pair 对象，其对应的键和值的类型比较相同，否则将没有可比性，同时编译器提示没有相匹配的运算符，即找不到合适的重载运算符。
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
 #include <utility>  // pair

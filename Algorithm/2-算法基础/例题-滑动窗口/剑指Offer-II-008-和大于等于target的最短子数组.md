@@ -34,7 +34,7 @@
 
 注意：本题与主站 209 题相同：https://leetcode-cn.com/problems/minimum-size-subarray-sum/
 
-```c++
+```cpp
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {

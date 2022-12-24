@@ -6,7 +6,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/11/07/search1.jpg)
+![img](../../img/search1.jpg)
 
 ```
 输入：board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]
@@ -15,7 +15,7 @@
 
 **示例 2：**
 
-![img](https://assets.leetcode.com/uploads/2020/11/07/search2.jpg)
+![img](../../img/search2.jpg)
 
 ```
 输入：board = [["a","b"],["c","d"]], words = ["abcb"]
@@ -51,7 +51,7 @@ words 中的所有字符串互不相同
 
 内存消耗：9.8 MB, 在所有 C++ 提交中击败了94.37%的用户
 
-```c++
+```cpp
 class Solution {
 private:
     unordered_set<string> us;
@@ -121,7 +121,7 @@ public:
 
 内存消耗：12.2 MB, 在所有 C++ 提交中击败了40.29%的用户
 
-```c++
+```cpp
 class Trie {
 public:
     Trie* son[26];  // 存放当前字符之后的字符
@@ -205,7 +205,7 @@ function 写法，可见 dfs 写外面会快一些
 
 内存消耗：12.1 MB, 在所有 C++ 提交中击败了54.88%的用户
 
-```c++
+```cpp
 class Trie {
 public:
     Trie* son[26];  // 存放当前字符之后的字符

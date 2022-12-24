@@ -6,7 +6,7 @@ stack 栈适配器是一种单端开口的容器，实际上该容器模拟的�
 
 ## 一、创建
 
-```c++
+```cpp
 #include <iostream>
 #include <list>
 #include <stack>
@@ -40,7 +40,7 @@ int main() {
 | emplace(arg...)                | arg... 可以是一个参数，也可以是多个参数，但它们都只用于构造一个对象，并在栈顶直接生成该对象，作为新的栈顶元素。 |
 | `swap(stack<T> & other_stack)` | 将两个 stack 适配器中的元素进行互换，需要注意的是，进行互换的 2 个 stack 适配器中存储的元素类型以及底层采用的基础容器类型，都必须相同。 |
 
-```c++
+```cpp
 #include <iostream>
 #include <list>
 #include <stack>

@@ -12,7 +12,7 @@
 
 ---
 
-```c++
+```cpp
 class Solution:
     def translateNum(self, num: int) -> int:
         nums =[int(i) for i in str(num)]

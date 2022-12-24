@@ -2,7 +2,7 @@
 
 答案逆序数处
 
-```c++
+```cpp
 #include <algorithm>  // reverse()
 #include <iostream>
 #include <vector>
@@ -32,7 +32,7 @@ int main() {
 
 ## 2、arr->num
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 

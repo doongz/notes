@@ -6,7 +6,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2020/11/13/queens.jpg)
+![img](../../img/queens-20221221223809315.jpg)
 
 ```
 输入：n = 4
@@ -29,7 +29,7 @@
 
 把 N皇后 的path去掉即可
 
-```c++
+```cpp
 class Solution {
 private:
     int n;

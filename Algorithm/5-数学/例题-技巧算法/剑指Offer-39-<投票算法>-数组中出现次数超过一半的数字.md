@@ -25,7 +25,7 @@
 
 因为题目中已知存在一个超过一半个数的数字，因此不用判断最后剩下的那个数字是否是答案
 
-```c++
+```cpp
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {

@@ -84,7 +84,7 @@ return res[0][0]*f(1) + res[0][1]*f(0);
 
 
 
-```c++
+```cpp
 #define N 2
 class Solution {
 public:

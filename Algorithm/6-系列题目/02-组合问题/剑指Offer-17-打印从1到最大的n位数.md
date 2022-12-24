@@ -22,7 +22,7 @@
 
 - 时间复杂度：O(10 ^ n)
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> printNumbers(int n) {
@@ -41,7 +41,7 @@ public:
 
 在数字很大的情况下，哪怕long类型也无法承载，那必须要用字符串保存。
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> ans;

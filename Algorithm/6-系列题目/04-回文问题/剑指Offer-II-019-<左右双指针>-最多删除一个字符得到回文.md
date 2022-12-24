@@ -29,7 +29,7 @@
 
 
 
-```c++
+```cpp
 class Solution {
 public:
     string str;

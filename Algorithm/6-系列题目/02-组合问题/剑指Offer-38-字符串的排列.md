@@ -21,7 +21,7 @@
 
 结果中没有重复的原因在于，每层的这些递归不会重复使用 char
 
-```c++
+```cpp
 class Solution {
 public:
     int arr[26];

@@ -63,7 +63,7 @@ push(5), pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
 
 **此方法正确性的保障是：假设压入栈的所有数字均不相等**
 
-```c++
+```cpp
 class Solution {
 public:
     bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {

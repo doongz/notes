@@ -31,7 +31,7 @@
 
 所以我们要重构比较，我们组合 s1 和 s2 ，如果 s1 + s2 > s2 + s1，那么 s1 > s2
 
-```c++
+```cpp
 class Solution {
 public:
     string minNumber(vector<int> &nums) {

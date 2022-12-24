@@ -13,7 +13,7 @@
 
 **示例 1：**
 
-![img](https://assets.leetcode.com/uploads/2018/10/22/ring.jpg)
+![img](../../img/ring.jpg)
 
 ```
 输入: ring = "godding", key = "gd"
@@ -55,7 +55,7 @@ ring 和 key 只包含小写英文字母
 
 `memo[i][j]` 表示 ring 上的 i 位置，转动到 key 上的 j 位置，所需的最小步数
 
-```c++
+```cpp
 class Solution {
 public:
     int ring_sz;
@@ -101,7 +101,7 @@ public:
 
 [题解来源](https://leetcode-cn.com/problems/freedom-trail/solution/freedom-trail-by-ikaruga/)
 
-```c++
+```cpp
 class Solution {
 public:
     int findRotateSteps(string ring, string key) {

@@ -11,7 +11,7 @@
 
 **示例 1：**
 
-![img](https://pic.leetcode-cn.com/1626332422-wUpUHT-image.png)
+![img](../../img/1626332422-wUpUHT-image.png)
 
 ```
 输入: 
@@ -42,7 +42,7 @@ n == matrix[i].length
 
 
 
-```c++
+```cpp
 class NumMatrix {
 public:
     vector<vector<int>> pre_sum;

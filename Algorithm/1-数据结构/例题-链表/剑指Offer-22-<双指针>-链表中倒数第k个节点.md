@@ -18,7 +18,7 @@
 
 右指针先走 k 个
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {

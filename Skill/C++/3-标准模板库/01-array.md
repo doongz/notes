@@ -4,7 +4,7 @@ array 容器在 C++ 普通数组的基础上，添加了一些成员函数和全
 
 **array 容器的大小是固定的，无法动态的扩展或收缩**
 
-```c++
+```cpp
 #include <array>
 #include <iostream>
 using namespace std;
@@ -33,7 +33,7 @@ int main() {
 
 如下创建 array 容器的方式，可以将所有的元素初始化为 0 或者和默认元素类型等效的值：
 
-```c++
+```cpp
 std::array<double, 10> values {};
 ```
 
@@ -65,7 +65,7 @@ std::array<double, 10> values {};
 
 在实际使用时，我们可以利用它们实现初始化容器或者遍历容器中元素的操作。
 
-```c++
+```cpp
 #include <array>
 #include <iostream>
 using namespace std;
@@ -96,7 +96,7 @@ int main() {
 
 需要注意的是，在使用反向迭代器进行 ++ 或 -- 运算时，**++ 指的是迭代器向左移动一位，-- 指的是迭代器向右移动一位**，即这两个运算符的功能也“互换”了
 
-```c++
+```cpp
 #include <array>
 #include <iostream>
 using namespace std;
@@ -126,13 +126,13 @@ int main() {
 
 没有实现边界检查的功能呢？性能，如果每次访问元素，都去检查索引值，无疑会产生很多开销。**所以确定不会越界的时候使用这个方法，就能避免这种开销**。
 
-```c++
+```cpp
 values[4] = values[3] + 2.O*values[1];
 ```
 
 为了能够有效地避免越界访问的情况，可以使用 array 容器提供的 at() 成员函数
 
-```c++
+```cpp
 values.at(4) = values.at(3) + 2.O*values.at(1);
 ```
 
@@ -140,7 +140,7 @@ array 容器还提供了 `get<n>` 模板函数，它是一个辅助函数，能�
 
 需要注意的是，该模板函数中，**参数的实参必须是一个在编译时可以确定的常量表达式，不能是一个循环变量**。也就是说，它只能访问模板参数指定的元素，编译器在编译时会对它进行检查。
 
-```c++
+```cpp
 array<int, 5> values{1, 2, 3, 4, 5};
 cout << get<3>(values) << endl;  // 4
 // cout << get<9>(values) << endl;  // 越界，会发生编译错误
@@ -154,7 +154,7 @@ for (auto &i : values)
 
 for (auto i = values.begin(); i != values.end(); i++) 
 
-```c++
+```cpp
 #include <array>
 #include <iostream>
 using namespace std;

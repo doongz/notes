@@ -56,7 +56,7 @@ n == nums2.length
 
 当整个数组被处理完，maxn 存储着后半截差的最大的，此时 sum - maxn 即是其余值的 diff和 + 前半截差的最小的，就是答案
 
-```c++
+```cpp
 const int mod = 1e9 + 7;
 
 class Solution {

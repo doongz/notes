@@ -79,12 +79,12 @@ DFA 作为确定的有限状态机，比 NFA 更加实用，因为对于每一�
 | 8     | 8     | -1   | -1   | -1   | -1   | -1    |
 
 状态图：
-![DFA.jpg](../doc/DFA-2.jpg)
+![DFA.jpg](../../img/DFA-2.jpg)
 
 - 时间复杂度：O(n)，其中 n 为字符串的长度。我们需要遍历字符串的每个字符，其中状态转移所需的时间复杂度为 O(1)。
 - 空间复杂度：O(1)。只需要创建固定大小的状态转移表。
 
-```c++
+```cpp
 class Solution {
 public:
     bool isNumber(string s) {

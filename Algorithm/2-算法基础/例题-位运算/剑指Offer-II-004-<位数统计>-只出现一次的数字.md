@@ -43,7 +43,7 @@ nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 
 - 时间复杂度：O(n)
 - 空间复杂度：O(1)
 
-```c++
+```cpp
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
@@ -75,11 +75,11 @@ public:
 
 利用相同数异或为 0 的性质，可以帮助我们很好实现状态切换：
 
-![image.png](https://pic.leetcode-cn.com/1619711233-IMBWOM-image.png)
+![image.png](../../img/1619711233-IMBWOM-image.png)
 
 本题是考虑「除了某个元素只出现一次以外，其余每个元素均出现三次」的情况，那么对应了「出现 0 次」、「出现 1 次」和「出现 2 次」三种状态，意味着至少需要两位进行记录，且状态转换关系为：
 
-![image.png](https://pic.leetcode-cn.com/1619711751-eNDISi-image.png)
+![image.png](../../img/1619711751-eNDISi-image.png)
 
 那么如何将上述 DFA 用表达式表示出来呢？有以下几种方法：
 
@@ -92,7 +92,7 @@ public:
 
 空间复杂度：O(1)
 
-```c++
+```cpp
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {

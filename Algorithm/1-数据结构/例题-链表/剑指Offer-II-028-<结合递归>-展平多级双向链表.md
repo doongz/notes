@@ -12,7 +12,7 @@
 
 输入的多级列表如下图所示：
 
-![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/12/multilevellinkedlist.png)
+![](../../img/multilevellinkedlist.png)
 
 扁平化后的链表如下图：
 
@@ -46,7 +46,7 @@
 
 ## 自己写的
 
-```c++
+```cpp
 /*
 // Definition for a Node.
 class Node {
@@ -94,7 +94,7 @@ public:
 
 ## 破釜沉舟做法
 
-```c++
+```cpp
 /*
 // Definition for a Node.
 class Node {
@@ -142,7 +142,7 @@ public:
 
 ## 别人的写法
 
-```c++
+```cpp
 /*
 // Definition for a Node.
 class Node {

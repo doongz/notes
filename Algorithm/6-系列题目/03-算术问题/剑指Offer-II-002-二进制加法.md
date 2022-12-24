@@ -44,7 +44,7 @@
 
 取 digit 的时候，如果字符串 a 和 b 中有一个已经遍历完了（即 i <= 0 或者 j <= 0），则认为 a 和 b 的对应位置是 0 。
 
-```c++
+```cpp
 class Solution {
 public:
     string addBinary(string a, string b) {

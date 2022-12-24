@@ -39,7 +39,7 @@ dp 数组中的最大值
 
 下面的写法略显繁琐，但是非常明了，防止当 pre 不在 dp.keys() 中时，插入一条 dp[pre] = 0 的脏数据
 
-```c++
+```cpp
 class Solution {
 public:
     int longestSubsequence(vector<int>& arr, int difference) {

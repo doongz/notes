@@ -28,7 +28,7 @@ arr = [4,7,6,2,3,8,6,1]
 index_list = [1,0,5,4,2,0,3]
 ```
 
-```c++
+```cpp
 unordered_map<int, int> valIdx_map;
 for (int i = 0; i < n; i++) {
     valIdx_map[target[i]] = i;
@@ -69,7 +69,7 @@ for (int num : arr) {
 
 空间复杂度：`O(n)`
 
-```c++
+```cpp
 class Solution {
 public:
     int minOperations(vector<int>& target, vector<int>& arr) {

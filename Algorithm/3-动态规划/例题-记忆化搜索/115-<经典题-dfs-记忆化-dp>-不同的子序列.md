@@ -56,7 +56,7 @@ babgbag
 
 **53 / 64** 个通过测试用例
 
-```c++
+```cpp
 class Solution {
 public:
     string _s;
@@ -92,7 +92,7 @@ public:
 
 因此使用「二维数组」描述这个子问题，`memo[i][j]` 表示 `s[0:i] 匹配 t[0:j]` 的方案数
 
-```c++
+```cpp
 class Solution {
 public:
     string _s;
@@ -145,7 +145,7 @@ public:
 
 > 有个操蛋的用例，会导致中间值溢出，long long 也不行，% INT_MAX 可避免
 
-```c++
+```cpp
 class Solution {
 public:
     int numDistinct(string s, string t) {

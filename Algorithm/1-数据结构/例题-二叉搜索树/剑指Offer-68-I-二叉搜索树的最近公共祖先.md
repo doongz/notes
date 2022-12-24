@@ -6,7 +6,7 @@
 
 例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png)
+![img](../../img/binarysearchtree_improved.png)
 
  ```
  示例 1:
@@ -52,7 +52,7 @@ p,q 与 rootroot 的子树关系，即：
 - 时间复杂度 O(N)： 其中 N 为二叉树节点数；每循环一轮排除一层，二叉搜索树的层数最小为 logN （满二叉树），最大为 N （退化为链表）。
 - 空间复杂度 O(1)： 使用常数大小的额外空间。
 
-```c++
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -96,7 +96,7 @@ public:
 - 时间复杂度 O(N)： 其中 N 为二叉树节点数；每循环一轮排除一层，二叉搜索树的层数最小为 logN （满二叉树），最大为 N （退化为链表）。
 - 空间复杂度 O(N)： 最差情况下，即树退化为链表时，递归深度达到树的层数 N。
 
-```c++
+```cpp
 class Solution {
 public:
     TreeNode* dfs(TreeNode* cur, TreeNode* p, TreeNode* q) {

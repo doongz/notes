@@ -134,7 +134,7 @@ C++因为支持命名空间，函数重载等高级特性，为了避免符号�
 
 举个例子：
 
-```c++
+```cpp
 namespace MyNameSpace {
     class MyClass{
     public:

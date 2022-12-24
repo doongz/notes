@@ -43,7 +43,7 @@
 
 时间复杂度：`O(logn)`
 
-```c++
+```cpp
 class Solution {
 public:
     int hammingWeight(uint32_t n) {

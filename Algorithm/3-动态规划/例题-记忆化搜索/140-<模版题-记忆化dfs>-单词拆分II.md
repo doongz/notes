@@ -37,11 +37,11 @@ wordDict 中所有字符串都 不同
 - 是否具备「最优子结构」，是
 - 是否具备「重复子问题」，是
 
-![](../doc/140.png)
+![](../../img/140.png)
 
 偷懒，没分析复杂度
 
-```c++
+```cpp
 class Solution {
 public:
     int sz;

@@ -35,7 +35,7 @@ order.length == 26
 
 ---
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> order_map;

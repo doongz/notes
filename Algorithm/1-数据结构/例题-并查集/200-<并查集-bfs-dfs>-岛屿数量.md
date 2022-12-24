@@ -43,7 +43,7 @@
 
 内存消耗：13.3 MB, 在所有 C++ 提交中击败了26.30%的用户
 
-```c++
+```cpp
 class UnionFind {
 public:
     vector<int> parent;  // 下标idx为节点，parent[idx]为该节点的父亲

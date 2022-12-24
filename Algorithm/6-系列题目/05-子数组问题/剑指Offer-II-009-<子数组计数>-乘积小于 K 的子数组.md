@@ -32,7 +32,7 @@
 
 统计以 nums[i] 为结尾（固定右端点）的合法子数组个数（左端点个数）为 i−j+1
 
-```c++
+```cpp
 class Solution {
 public:
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {

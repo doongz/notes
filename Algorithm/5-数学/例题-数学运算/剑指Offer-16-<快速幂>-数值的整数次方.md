@@ -30,7 +30,7 @@
 
 ## 方法：快速幂
 
-```c++
+```cpp
 class Solution {
 public:
     double myPow(double x, int n) {
