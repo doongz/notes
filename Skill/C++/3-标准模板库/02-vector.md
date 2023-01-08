@@ -330,3 +330,203 @@ int main(void)
    return 0;
 }
 ```
+
+## 九、三种std::vector并发安全的设计思路
+
+来源：https://segmentfault.com/a/1190000041334904
+
+### vector的并发读写问题
+
+众所周知，C++标准库中的vector不保证线程安全。当我们在并发读写vector时，往往会面临两方面的风险：
+
+1. 内容读取异常：例如两个线程一个在读，一个在写，或者两个线程同时在写，都会导致单个数据内部出现不一致的情况。
+2. vector扩容时，内存位置发生改变导致Segmentation fault错误。因为vector在扩容时会将内容全部拷贝到新的内存区域中，原有的内存区域被释放，此时如果有线程依然在向旧的内存区域读或写就会出问题。
+
+举一个简单的例子：
+
+```cpp
+vector<int> vec;
+void add_vector(int range, unsigned int seed){
+    srand(seed);
+    for(int i = 0 ; i < range; i++){
+        vec.push_back(rand());
+    }
+}
+int main(){
+    vec.reserve(100);
+    thread t1 = thread(add_vector, 1000, 2);
+    thread t2 = thread(add_vector, 1000, 1);
+
+    t1.join();
+    t2.join();
+}
+```
+
+两个线程都在向vec中添加元素，如果没有任何处理，很容易崩溃，就是因为第二个原因。而这种并发写的情况，在很多业务场景中都是很可能出现的，例如：在推荐系统中，为了提高运算效率每个线程都按照不同的策略生产推荐召回，这些线程产生召回后就会向同一个数组中合并。然后根据这些召回中选出最好的推荐结果。
+
+在文章中提出了三种向vector并发添加元素的方案，目的是保证多线程并发条件下能正确向vector中。项目放在了[safe_vector](https://gitee.com/hlinbit/safe_vector)。
+
+### 多线程安全的vector设计---有锁的设计
+
+对于解决并发问题中的最简单的设计就是加锁。在这里我们使用标准库为我们提供的mutex来对push_back临界区加锁。
+
+```cpp
+template<typename T>
+class lock_vector{
+    std::mutex mlock;
+    vector<T> mvec;
+
+public:
+    T operator[](unsigned int idx){
+        return mvec[idx];
+    }
+    lock_vector()=default;
+    lock_vector(lock_vector<T>& vec){
+         vec.getVector(mvec);
+    };
+    lock_vector(lock_vector<T>&& vec){
+        vec.getVector(mvec);
+    };
+
+    void push_back(const T& value) noexcept{
+        mlock.lock();
+        mvec.push_back(value);
+        mlock.unlock();
+    }
+
+    void getVector(vector<T> & res){
+        res = mvec;
+    }
+};
+```
+
+### 多线程安全的vector设计---无锁设计
+
+除了使用互斥锁，还可以通过无锁的设计来实现线程同步。其中一种常见的思路就是CAS(compare-and-swap)。
+
+C++的原子变量（atomic）就提供了compare_exchange_weak和compare_exchange_strong来实现CAS机制。
+
+下面的代码是基于CAS实现的多线程安全方案。
+
+```cpp
+template<typename T>
+class cas_vector{
+    std::atomic<bool> flag;
+    vector<T> mvec;
+
+    void lock(){
+        bool expect = false;
+        while(!flag.compare_exchange_weak(expect, true)){
+            expect = false;
+        }
+    }
+
+    void unlock(){
+        flag.store(false);
+    }
+
+public:
+    T operator[](unsigned int idx){
+        return mvec[idx];
+    }
+    cas_vector(){
+        flag.store(false);
+    };
+    cas_vector(const cas_vector& vec){
+        mvec = vec;
+        flag.store(false);
+    };
+    cas_vector(cas_vector&& vec){
+        mvec = vec;
+        flag.store(false);
+    };
+
+    void replace(const int idx, const T& value) noexcept{
+        lock();
+        mvec[idx] = value;
+        unlock();
+    }
+
+    void push_back(const T& value) noexcept{
+        lock();
+        mvec.push_back(value);
+        unlock();
+    }
+};
+```
+
+### 多线程安全的vector设计---借助thread_local变量
+
+#### thread_local 变量简介
+
+thread_local是C++11之后才引入的关键字。thread_local变量与其所在线程同步创建和销毁，并且只能被创建它的线程所访问，也就是说thread_local变量是线程安全的。每个线程在自身TIB(Thread Information Block)中存储thread_local变量的副本。
+
+#### 基于thread_local变量实现的方案
+
+该方案的代码实现如下，vector_thl就是多线程添加元素安全的类型。在我的实现中，每个类分别存在两个vector，一个是thread_local类型，每次调用push_back时，都会向其中添加元素。因为该变量在每个线程中都存在一个副本，因此不需要进行线程同步，但同时，为了获取最终结果，必须将这些分散在各个线程的副本合并到一起。因此在vector_thl增加了merge接口来合并这些线程局部的vector。
+
+```cpp
+template<typename T>
+class vector_thl{
+    vector<T> mvec;
+    mutex lock;
+public:
+
+    thread_local static vector<T> vec;
+
+    vector_thl()=default;
+    vector_thl(const vector_thl& vec){
+        mvec = vec;
+        vec = vec;
+    };
+    vector_thl(vector_thl&& vec){
+        mvec = vec;
+        vec = vec;
+    };
+
+
+    void push_back(const T& value) noexcept{
+        vec.push_back(value);
+    }
+
+    void merge(){
+        mvec.insert(mvec.end(), vec.begin(), vec.end());
+    }
+
+    void getVector(vector<T>& res){
+        res = mvec;
+    }
+};
+
+template<typename T>
+thread_local vector<T> vector_thl<T>::vec(0);
+```
+
+### 性能比较
+
+对三种实现方案进行基准测试，得到以下结果：
+
+```
+Run on (12 X 2994.27 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 512 KiB (x6)
+  L3 Unified 4096 KiB (x1)
+Load Average: 0.00, 0.09, 0.22
+--------------------------------------------------------
+Benchmark              Time             CPU   Iterations
+--------------------------------------------------------
+BM_VEC_LOC/10    4574464 ns      1072230 ns          639
+BM_VEC_LOC/2     6627843 ns       176688 ns         1000
+BM_VEC_CAS/10    9280705 ns      1027921 ns          683
+BM_VEC_CAS/2     7537580 ns       180541 ns         1000
+BM_VEC_THL/10    1108654 ns       993997 ns          687
+BM_VEC_THL/2      693148 ns       123333 ns         5723
+```
+
+可见借助thread_local实现的方案是运行效率最高的，大概是互斥方案的4倍，是无锁方案的8倍。同时也是CPU利用效率最高的方案。
+
+在文章中我们实现了三种多线程并发添加元素安全的vector。其中利用thread_local实现的方案效率最高，主要原因是thread_local变量在每个线程中都有一个副本，不会并发写，避免了锁竞争。
+
+然而这种方案并非完美，由于每个线程的thread_local变量都是不完整的，因此在添加元素阶段并不能正确的读取元素，只有在每个添加元素的线程都讲元素合并到之后才能进行读。

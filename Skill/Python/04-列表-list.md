@@ -78,6 +78,19 @@ res = sorted(m, key=lambda x: (x[1], -x[2]))
 # 先根据第三个值升序排序，若第三个值相等则根据第二个值降序排列
 res = sorted(m, key=lambda x: (x[2], -x[1]))
 # [['jojo', 8, 5], ['dodo', 2, 5], ['koko', 3, 8], ['gogo', 4, 10], ['bobo', 4, 11]]
+
+# 自定义排序
+nums = [3,30,34,5,9]
+strs = map(str, nums)
+def cmp(a, b):
+    if a + b == b + a:
+        return 0
+    elif a + b > b + a:
+        return 1
+    else:
+        return -1
+strs = sorted(strs, key=functools.cmp_to_key(cmp), reverse=True)
+print(strs) # ['9', '5', '34', '3', '30']
 ```
 
 也支持对对象的排序，具体看 高级玩法-重载运算符
