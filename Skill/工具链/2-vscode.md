@@ -37,8 +37,8 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 | 查找替换                                     | Ctrl+H                       |                     |
 | 全局查找                                     | Ctrl+Shift+F                 |                     |
 | 全局查找替换                                 | Ctrl+Shift+H                 |                     |
-| 依次找出文中所有的当前选中的单词             | ctrl + d                     | command + d         |
-| 一次性找出文所有的当前选中的单词             | ctrl + shift + l             | shift + command + l |
+| 依次找出文中所有的当前选中的单词             | ctrl + D                     | command + D         |
+| 一次性找出文所有的当前选中的单词             | ctrl + shift + L             | shift + command + L |
 | 向左缩进                                     | Ctrl+[                       |                     |
 | 向右缩进                                     | Ctrl+]                       |                     |
 | 向上移动当前行                               | Alt+Up                       |                     |
