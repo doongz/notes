@@ -78,6 +78,16 @@ Ctrl+K Ctrl+R：查看keyboard-shortcuts-windows.pdf
 | 扩展（插件）管理窗口（Extentions）                   | Ctrl+Shift+X     |                     |
 |                                                      |                  |                     |
 
+### vscode 文件标签栏多行显示
+
+1. 按住 ctrl + shift + p
+
+2. 输入 open workspace settings
+
+3. 搜索 workbench.editor.wrapTabs
+
+4. 选中 workbench.editor.wrapTabs
+
 ## 二、代码格式化
 
 ### c++
