@@ -196,6 +196,53 @@ string s2 = "asd";
 cout << s1.find_first_of(s2) << endl;  // 3
 ```
 
+https://cplusplus.com/reference/string/string/find/
+
+```cpp
+// string::find
+#include <iostream>       // std::cout
+#include <string>         // std::string
+
+int main ()
+{
+  std::string str ("There are two needles in this haystack with needles.");
+  std::string str2 ("needle");
+
+  // different member versions of find in the same order as above:
+  std::size_t found = str.find(str2);
+  if (found!=std::string::npos)
+    std::cout << "first 'needle' found at: " << found << '\n';
+
+  found=str.find("needles are small",found+1,6);
+  if (found!=std::string::npos)
+    std::cout << "second 'needle' found at: " << found << '\n';
+
+  found=str.find("haystack");
+  if (found!=std::string::npos)
+    std::cout << "'haystack' also found at: " << found << '\n';
+
+  found=str.find('.');
+  if (found!=std::string::npos)
+    std::cout << "Period found at: " << found << '\n';
+
+  // let's replace the first needle:
+  str.replace(str.find(str2),str2.length(),"preposition");
+  std::cout << str << '\n';
+
+  return 0;
+}
+```
+
+Notice how parameter *pos* is used to search for a second instance of the same search string. Output:
+
+```
+first 'needle' found at: 14
+second 'needle' found at: 44
+'haystack' also found at: 30
+Period found at: 51
+There are two prepositions in this haystack with needles.
+```
+
 ### 9、字典序
 
 c\c++中字符串字典序比较函数的区别
@@ -298,7 +345,36 @@ string b = to_string(a);
 cout << b << endl;  // "123"
 ```
 
-### 6、类似 python ord() 实现
+### 6、char数组转换成string
+
+将C风格的字符串数组转换为C++风格的字符串
+
+假设c字符串定义为 `char ch[]="hello world!";`
+
+1.向构造函数传入c字符串创建string对象：
+
+```cpp
+string str(ch);
+```
+
+2.使用拷贝构造函数创建string对象：
+
+```cpp
+string str = ch;
+```
+
+3.对已有的string对象调用string类内部定义的赋值运算符：
+
+```cpp
+string str;
+str = ch; 
+```
+
+前两种类似，但和第三种有较大区别，前两种是运用构造函数直接创建一个内容与c字符串一致的string对象；
+
+第三种是c++标准库编写的string类的内部重载了赋值运算符，使之能够以c字符串作为右操作数对string对象进行赋值，使string对象的内容与c字符串一致。
+
+### 7、类似 python ord() 实现
 
 ```cpp
 string s = "";
