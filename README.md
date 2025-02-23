@@ -16,9 +16,6 @@
         <img src="https://img.shields.io/github/license/doongz/notes?color=white" />
     </a>
     <a>
-        <img src="https://img.shields.io/github/workflow/status/doongz/notes/Markdown-CI?color=white&logo=github" />
-    </a>
-    <a>
         <img src="https://img.shields.io/github/repo-size/doongz/notes?color=white&logo=git&logoColor=white" />
     </a>
     <a>
@@ -31,7 +28,6 @@
         <img src="https://img.shields.io/github/commit-activity/m/doongz/notes?color=white&logo=github" />
     </a>
 </p>
-
 ## *Contents*
 
 ### *Chapter-1 [Problem Solving](./Algorithm)*
@@ -232,3 +228,4 @@ naming rule:
 
 ***Thanks Your Star***
 
+![Star History Chart](https://api.star-history.com/svg?repos=doongz/notes&type=Date)

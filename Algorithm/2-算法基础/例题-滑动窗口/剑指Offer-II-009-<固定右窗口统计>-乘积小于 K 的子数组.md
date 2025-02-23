@@ -40,6 +40,11 @@ public:
         int ans = 0;
 
         while (r < n) {
+            if (nums[r]>=k) {
+                r++;
+                if (r>=n) break;
+                l=r;
+            }
             window *= nums[r];
             while (l < r && window >= k) {
                 window /= nums[l];

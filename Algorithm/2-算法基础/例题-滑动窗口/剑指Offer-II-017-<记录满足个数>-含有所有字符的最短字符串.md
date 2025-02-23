@@ -34,6 +34,43 @@
 
  注意：本题与主站 76 题相似（本题答案不唯一）：https://leetcode-cn.com/problems/minimum-window-substring/
 
+```python
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        n = len(s)
+        l = 0
+        r = 0
+        need = collections.Counter(t)
+        cnt = len(need)
+        cnt_ = 0
+        wind = collections.defaultdict(int)
+        ans = ""
+        max_len = len(s)
+        while (r<n):
+            cur_r = s[r]
+            if cur_r in need:
+                wind[cur_r] += 1
+                if wind[cur_r] == need[cur_r]:
+                    cnt_ += 1
+            
+            while cnt_ == cnt:
+                # print(l, r)
+                if (r-l+1<=max_len): # 等于是为了让他第一个进去
+                    ans = s[l:r+1]
+                    max_len = len(ans)
+                cur_l = s[l]
+                if cur_l in need:
+                    if wind[cur_l] == need[cur_l]:
+                        cnt_ -= 1
+                    wind[cur_l] -= 1
+                l += 1
+            r += 1
+
+        return ans
+```
+
+
+
 ```cpp
 class Solution {
 public:
