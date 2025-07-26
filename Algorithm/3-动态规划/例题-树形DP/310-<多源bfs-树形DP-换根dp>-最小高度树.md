@@ -123,15 +123,19 @@ https://leetcode.cn/problems/minimum-height-trees/solution/by-ac_oier-7xio/
 ![310](../../img/310.png)
 
 可以发现，在这种相邻的换根中，以 `a_i` 或 `b_i` 为根的子树高度是没有变化的，即 `height_r(a_i) == height_u(a_i)`、`height_r(b_i) == height_u(b_i)`，这意味着计算以 `u` 为根的树高时，大部分子树高没有变化，只需要重新计算以 r 为根的子树高，而这个子树高 height_u(r) 有
+
 $$
 height_u(r) = \max\{height_u(ai),... \} + 1 = max\{height_r(ai),... \} + 1
 $$
+
 也就是把与 `r` 相邻的节点中去掉 `u`，剩余节点的子树高的最大值，虽然在计算 `r` 向 `u` 换根时，这一步需要遍历 `r` 的所有相邻节点，但 `r` 对每个相邻节点换根时，所有的值可以在「一次遍历」中算出，可以使用  [238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)  中的技巧，也可以**直接记录最大值和次大值**，因为只去掉了一个节点，因此结果不是最大值就是次大值。
 
 由于 `height_r(u)` 中已经包含了以节点 `b_i` 为根的子树高，换根到 `u` 之后，只是增加了以节点 `r` 为根的子树，因此
+
 $$
 height_u(u) = \max(height_r(u), \ height_u(r) + 1)
 $$
+
 这样就在 `O(1)` 时间内计算出了以 `u` 为根的树高
 
 如果使用记录最大值和次大值的方法，也可以直接用最大值加一来计算出树高。
