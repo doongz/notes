@@ -89,7 +89,7 @@ def cmp(a, b):
         return 1
     else:
         return -1
-strs = sorted(strs, key=functools.cmp_to_key(cmp), reverse=True)
+strs = sorted(strs, key=functools.cmp_to_key(cmp), reverse=True) # 注意这个reverse cmp上的是反的
 print(strs) # ['9', '5', '34', '3', '30']
 ```
 

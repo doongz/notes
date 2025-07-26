@@ -53,3 +53,17 @@ public:
     }
 };
 ```
+
+```python
+class Solution:
+    def crackPassword(self, password: List[int]) -> str:
+        password = list(map(str, password))
+        def cmp(a,b):
+            if a+b < b+a:
+                return -1
+            else:
+                return 1
+        password.sort(key=functools.cmp_to_key(cmp))
+        return "".join(password)
+```
+

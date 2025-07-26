@@ -46,6 +46,12 @@ public:
 
 ![Picture0.png](../../img/1618146573-bOieFQ-Picture0.png)
 
+num[ i ]=b, num[num[i]]=num[a]=a
+
+num[ 0 ]=2, num[num[0]]=num[2]=1
+
+num[ 0 ]=1 num[ 2 ]=2
+
 遍历中，第一次遇到数字 x 时，将其交换至索引 x 处；而当第二次遇到数字 x 时，一定有 nums[x] = x ，此时即可得到一组重复数字。
 
 ##### 算法流程：
@@ -93,3 +99,24 @@ nums[nums[i]], nums[i] = nums[i], nums[nums[i]]，为什么这里的交换可以
 下面供大家方便看出来（因为我看了好久才反应过来）：
 
 记num[ i ] =a，num[num[ i ] ]=num[ a ]=b,那么 交换后，num[ i ]=b, num[num[i]]=num[a]=a，这时候下标 a 对应的元素也是a，达到目的
+
+```python
+class Solution:
+    def findRepeatDocument(self, documents: List[int]) -> int:
+        n = len(documents)
+        i = 0
+        while i < n:
+            if documents[i] == i:
+                i+=1
+                continue
+            else:
+                if documents[i] != documents[documents[i]]:
+                    a= documents[i]
+                    b= documents[documents[i]]
+                    documents[a] = a
+                    documents[i] = b
+                else:
+                    return documents[i]
+        return -1
+```
+

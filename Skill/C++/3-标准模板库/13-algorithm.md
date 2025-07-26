@@ -19,6 +19,11 @@ int main() {
     int max = *max_element(vec.begin(), vec.end());
     cout << min << endl;  // 1
     cout << max << endl;  // 5
+    cout << *min_element(vec.begin(), vec.begin()+3) << endl; // 5 +3指的是begin后面看三个数
+  
+    // 最大元素下标
+    int idx = max_element(vec.begin(), vec.end()) - arr.begin();
+    cout << idx << endl; // 0
 }
 ```
 
@@ -34,7 +39,7 @@ using namespace std;
 
 int main() {
     vector<int> vec{1, 2, 3};
-    reverse(vec.begin(), vec.end());
+    reverse(vec.begin(), vec.end()); // 等价 reverse(vec.begin(), vec.begin()+3);
     for (int i = 0; i < vec.size(); i++) {
         cout << vec[i] << " ";
     }
