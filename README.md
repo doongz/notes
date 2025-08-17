@@ -28,6 +28,14 @@
         <img src="https://img.shields.io/github/commit-activity/m/doongz/notes?color=white&logo=github" />
     </a>
 </p>
+我工作6年，经历自研NPU从无到有的发展历程，核心业务**围绕 NPU做AI领域端到端的解决方案**。现在带团队，需要同学们能加入，一起成长。我的团队像一个AI训练营，有强烈兴趣是最看重的，不要求AI或计算机背景（因为来了后会给予充足的培养时间）。hc、sp、ssp充足，来就有🤟
+
+技术方向：AI计算架构，高性能计算
+
+业务：LLM/AIGC大模型，多模态大模型，Agent
+
+2026年毕业的同学可以+V了解下：DoDo_1202
+
 ## *Contents*
 
 ### *Chapter-1 [Problem Solving](./Algorithm)*
