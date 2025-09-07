@@ -24,9 +24,10 @@ void dfs(int cur) {
   	}
   	vis[u] = 1;
   	for (auto next : 待选列表) {
- 		if (next 节点无效) continue;
+ 		  if (next 节点无效) continue;
   		if (vis[next] 节点走过) continue;
     	dfs(v);
+    }
 }
 ```
 
