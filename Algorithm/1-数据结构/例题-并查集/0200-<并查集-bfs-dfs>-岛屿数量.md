@@ -37,6 +37,73 @@
 - 1 <= m, n <= 300
 - `grid[i][j]` 的值为 '0' 或 '1'
 
+
+
+```c++
+class Solution {
+public:
+    int rows;
+    int cols;
+    vector<vector<char>> grid_;
+    vector<pair<int, int>> ds = {{0,1},{1,0},{0,-1},{-1,0}};
+    void dfs(int r, int c) {
+        grid_[r][c] = '2';
+        for (auto[dr, dc] : ds) {
+            int nr = r+dr;
+            int nc = c+dc;
+            if (nr<0||nr>=rows||nc<0||nc>=cols) continue;
+            // cout << nr << " " << nc << endl;
+            if (grid_[nr][nc]=='1') {
+                dfs(nr, nc);
+            }
+        }
+    }
+    void bfs(int r, int c) {
+        // 核心修改1：入队前先标记为已访问，避免重复入队
+        grid_[r][c] = '2'; 
+        // 核心修改2：用queue替代deque（BFS标准容器，pop()是O(1)）
+        queue<pair<int, int>> q;
+        q.push({r, c}); // 入队已标记的节点
+
+        while (!q.empty()) {
+            auto [rr, cc] = q.front();
+            q.pop(); // 弹出元素（此时已无需标记，因为入队时已标记）
+
+            for (auto[dr, dc] : ds) {
+                int nr = rr + dr;
+                int nc = cc + dc;
+                // 边界检查
+                if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;
+                // 仅当格子是'1'时，标记+入队（避免重复）
+                if (grid_[nr][nc] == '1') {
+                    grid_[nr][nc] = '2'; // 核心：入队前标记！
+                    q.push({nr, nc});
+                }
+            }
+        }
+    }
+    int numIslands(vector<vector<char>>& grid) {
+        rows = grid.size();
+        cols = grid[0].size();
+        grid_ = grid;
+        int ans = 0;
+        for (int r=0;r<rows;r++) {
+            for (int c=0;c<cols;c++) {
+                if (grid_[r][c]=='1') {
+                    bfs(r, c);
+                    ans++;
+                }
+            }
+        }
+        return ans;
+    }
+};
+```
+
+
+
+
+
 ## 方法一：并查集
 
 执行用时：32 ms, 在所有 C++ 提交中击败了63.65%的用户
@@ -146,7 +213,7 @@ class Solution:
         cols = len(grid[0])
         def bfs(row, col):
             queue = [(row, col)]
-            visited = set([(row, col)]) # 其实不用这个也不会走回头路
+            visited = set([(row, col)])
             while queue:
                 r, c = queue.pop(0)
                 grid[r][c] = "2"

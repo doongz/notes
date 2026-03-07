@@ -31,6 +31,8 @@
 
 注意：本题与主站 236 题相同：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
+## 方法一
+
 ![Picture2.png](../../img/1599885247-mgYjRv-Picture2.png)
 
 考虑通过递归对二叉树进行先序遍历，当遇到节点 p 或 q 时返回。从底至顶回溯，当节点 p, q 在节点 root 的异侧时，节点 root 即为最近公共祖先，则向上返回 root 。
@@ -89,5 +91,60 @@ public:
     }
 };
 
+```
+
+## 方法二
+
+存父节点
+
+```c++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    unordered_set<TreeNode*> p_path;
+    vector<TreeNode*> q_path;
+    TreeNode* P;
+    TreeNode* Q;
+    bool dfs(TreeNode* node) {
+        if (!node) return false;
+        p_path.insert(node);
+        if (node == P) return true;
+        if (dfs(node->left)) return true;
+        if (dfs(node->right)) return true;
+        p_path.erase(node);
+        return false;
+    }
+    bool dfs2(TreeNode* node) {
+        if (!node) return false;
+        q_path.push_back(node);
+        if (node == Q) return true;
+        if (dfs2(node->left)) return true;
+        if (dfs2(node->right)) return true;
+        q_path.pop_back();
+        return false;
+    }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        P = p;
+        Q = q;
+        dfs(root);
+        dfs2(root);
+        int n = q_path.size();
+        for (int i = n-1; i >= 0;i--) {
+            TreeNode* node = q_path[i];
+            if (p_path.count(node)) {
+                return node;
+            }
+        }
+        return nullptr;
+    }
+};
 ```
 

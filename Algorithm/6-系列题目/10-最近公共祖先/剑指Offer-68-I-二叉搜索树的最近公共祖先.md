@@ -33,9 +33,9 @@
 
 p,q 与 rootroot 的子树关系，即：
 
-- 若 root.val < p.val ，则 pp 在 root 右子树 中；
-- 若 root.val > p.val ，则 pp 在 root 左子树 中；
-- 若 root.val = p.val ，则 pp 和 root 指向 同一节点 。
+- 若 root.val < p.val ，则 p 在 root 右子树 中；
+- 若 root.val > p.val ，则 p 在 root 左子树 中；
+- 若 root.val = p.val ，则 p 和 root 指向 同一节点 。
 
 #### 方法一：迭代
 
