@@ -48,7 +48,6 @@ public:
     int dfs(int t) {
         if (t < 0) return 0;
         if (t == 0) return 1;
-        if (vis.count(t)) return vis[t];
         for (int op : options) {
             res += dfs(t - op);
         }
@@ -62,6 +61,8 @@ public:
 ```
 
 同样的 target 会重复计算，因此时间复杂度很高，可以进行记忆化dfs
+
+为什么会超时，因为下一次和上一次面临的子问题一样（可选余地一样都是nums中的），所以可以用记忆化dfs记录到过的点
 
 ## 方法二：记忆化dfs
 
