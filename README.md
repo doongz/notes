@@ -1,11 +1,9 @@
 # NOTES
 
-> **🏳️ 求生欲**
->
 > 此仓库，仅作为个人学习时的「笔记」；  
-> 所有的写作和整理工作，于「家中」并「空闲时间」独自完成，未曾产生收益，也不谋求收益；  
+>所有的写作和整理工作，于「家中」并「空闲时间」独自完成，未曾产生收益，也不谋求收益；  
 > 其中的内容，与个人「从前」「现在」以及「未来」所从事的工作「无关」；
->
+> 
 > *如果涉及到任何版权等法律行为，请联系我，我将删除内容。*
 
 <p>
@@ -28,6 +26,7 @@
         <img src="https://img.shields.io/github/commit-activity/m/doongz/notes?color=white&logo=github" />
     </a>
 </p>
+
 ## *Contents*
 
 ### *Chapter-1 [Problem Solving](./Algorithm)*
