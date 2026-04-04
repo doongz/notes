@@ -31,8 +31,6 @@
 
 ### *Chapter-1 [Problem Solving](./Algorithm)*
 
-> 主要是一些模版和~~套路~~，方便在 codeforces 和 leetcode 的比赛时~~快速上分~~
-
 - [前述](./Algorithm/0-前述/)  `C++调试模版`  `常见报错`  `自定义排序合集`
 - **数据结构**  [🧾例题清单](./Algorithm/1-数据结构/)
   - [基本概念](./Algorithm/1-数据结构/0-基本概念.md)  `基本概念`  `算法评价`
@@ -100,8 +98,6 @@
 
 ### *Chapter-2 [Skill](./Skill)*
 
-> ctrl + c & ctrl + v 的一章
-
 - [ASM](./Skill/ASM)
   - [RISC-V](./Skill/ASM/RISC-V)  `riscv asm manual`  `简介`  `通用寄存器和指令`  `扩展寄存器和指令`  `五级流水线`  `硬件模块`  `译码模块`  `ALU模块(执行计算)`  `branch模块(条件跳转)`  `load/store(访存)`  `CSR读写控制`
   - [x86-64](./Skill/ASM/x86)  `汇编`  `指令集`
@@ -130,8 +126,6 @@
 - [Mermaid](./Skill/Mermaid/README.md)  `流程图`  `时序图`  `甘特图`  `类图`  `状态图`  `饼图`  `用户体验旅程图`
 
 ### *Chapter-3 [Knowledge](./Knowledge)*
-
-> 下述大多来源教科书，~~都是些夸夸其谈、老旧的、假的知识~~。
 
 - [IC](./Knowledge/01-IC)  `design`  `fabrication`  `package`  `EDA`  `FPGA`  `Verilog`
 - [计算机组成](./Knowledge/02-计算机组成)
@@ -177,10 +171,6 @@
   - 分布式存储「未完工」 `ceph`
 
 ### *Chapter-4 [Math](./Math)*
-
-> 为什么要去学*牛顿-莱布尼茨* 时代的微积分？因为在 2016 年，身体里的编程力量没有觉醒。
->
-> ~~其实是为了考研，令人欣慰的是考了满分~~
 
 - [微积分](./Math/微积分)
   - [极限](./Math/微积分/1-极限.md)
